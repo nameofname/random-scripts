@@ -5,7 +5,7 @@ currVolume=$(osascript -e 'output volume of (get volume settings)')
 crontabs="$(crontab -l)"
 crontabs="$(echo "$crontabs" | grep -v $scriptName)"
 randNum=$((RANDOM%10+1))
-newCron="*/$randNum * * * * $scriptName"
+newCron="* */$randNum * * * $scriptName"
 crontabs="$(echo "$crontabs" & echo "$newCron")"
 echo "$crontabs" | crontab
 
