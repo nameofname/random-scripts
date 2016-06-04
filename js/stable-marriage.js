@@ -63,18 +63,16 @@ const lib = {
 };
 
 
-const propose = (m, w) => {
-    const man = lib.men[m];
-    const woman = lib.women[2];
+const propose = (man, woman) => {
     let tmpFiancee;
 
     if (woman.fiancee === undefined) {
-        woman.fiancee = man;
-        man.fiancee = woman;
+        woman.fiancee = man.name;
+        man.fiancee = woman.name;
     } else {
         if (woman.ranks[man] < woman.ranks[woman.fiancee]) {
             tmpFiancee = woman.fiancee;
-            woman.fiancee = man;
+            woman.fiancee = man.name;
             lib.men[tmpFiancee].fiancee = undefined;
         } else {
             // they remain engaged.
@@ -87,13 +85,19 @@ let woman;
 const len = lib.men.length;
 
 
+// for each round...
 for (let round=0; round<len; round++) {
+    // for each man, he proposes to his top choice corresponding to that round.
+    // IF he already has a fiancee, he does not propose (because he would be proposing to a someone below his current choice.
     for (var i in lib.men) {
-        man = lib.men[i].name;
+        man = lib.men[i];
         woman = lib.women[round];
-        propose(i, woman);
+        if (!man.fiancee) {
+            propose(man, woman);
+        }
     }
 }
 
 
-// for each man, he proposes to his top choice
+console.log(lib.men.map(m => m.fiancee));
+console.log(lib.women.map(w => w.fiancee));
