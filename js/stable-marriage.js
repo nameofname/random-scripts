@@ -2,64 +2,40 @@
 
 
 const lib = {
-    men : [
-        {
+    men : {
+        rob: {
             name : 'rob',
-            fiancee : undefined,
-            ranks : {
-                danielle : 1,
-                samantha : 2,
-                joan : 3
-            }
+            fiancee: undefined,
+            ranks : ['danielle', 'samantha', 'joan']
         },
-        {
-            name : 'tom',
-            fiancee : undefined,
-            ranks : {
-                danielle : 2,
-                samantha : 3,
-                joan : 1
-            }
+        tom: {
+            name: 'tom',
+            fiancee: undefined,
+            ranks : ['joan', 'danielle', 'samantha']
         },
-        {
-            name : 'ronald',
-            fiancee : undefined,
-            ranks : {
-                danielle : 3,
-                samantha : 2,
-                joan : 1
-            }
+        ronald: {
+            name: 'ronald',
+            fiancee: undefined,
+            ranks : ['joan', 'samantha', 'danielle']
         }
-    ],
-    women : [
-        {
-            name : 'danielle',
-            fiancee : undefined,
-            ranks : {
-                rob : 1,
-                tom : 2,
-                ronald : 3
-            }
+    },
+    women : {
+        danielle: {
+            name: 'danielle',
+            fiancee: undefined,
+            ranks : ['rob', 'tom', 'ronald']
         },
-        {
-            name : 'joan',
-            fiancee : undefined,
-            ranks : {
-                rob : 2,
-                tom : 3,
-                ronald : 1
-            }
+        joan: {
+            name: 'joan',
+            fiancee: undefined,
+            ranks : ['ronald', 'rob', 'tom']
         },
-        {
-            name : 'samantha',
-            fiancee : undefined,
-            ranks : {
-                rob : 3,
-                tom : 2,
-                ronald : 1
-            }
+        samantha: {
+            name: 'samantha',
+            fiancee: undefined,
+            ranks : ['ronald', 'tom', 'rob']
         }
-    ]
+    }
 };
 
 
@@ -82,7 +58,8 @@ const propose = (man, woman) => {
 
 let man;
 let woman;
-const len = lib.men.length;
+let womanName;
+const len = lib.men.ronald.ranks.length;
 
 
 // for each round...
@@ -91,7 +68,9 @@ for (let round=0; round<len; round++) {
     // IF he already has a fiancee, he does not propose (because he would be proposing to a someone below his current choice.
     for (var i in lib.men) {
         man = lib.men[i];
-        woman = lib.women[round];
+        womanName = lib.men[i].ranks[round];
+        woman = lib.women[womanName];
+
         if (!man.fiancee) {
             propose(man, woman);
         }
@@ -99,5 +78,6 @@ for (let round=0; round<len; round++) {
 }
 
 
-console.log(lib.men.map(m => m.fiancee));
-console.log(lib.women.map(w => w.fiancee));
+
+console.log(Object.keys(lib.men).map(m => lib.men[m].fiancee));
+console.log(Object.keys(lib.women).map(w => lib.women[w].fiancee));
