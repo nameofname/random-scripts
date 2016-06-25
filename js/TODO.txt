@@ -1,0 +1,7 @@
+install new version of osx
+re-install x code with my apple ID
+install sox which was failing due to out dated xcode utils
+sox is required for baudio
+after installing sox, try to use baudio by running this : 
+/Users/ronald/projects/random-scripts/js/audio-example.js
+
