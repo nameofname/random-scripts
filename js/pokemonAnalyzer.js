@@ -57,11 +57,7 @@ dataContainer.prototype.findByName = function (name) {
  * @returns {dataContainer}
  */
 dataContainer.prototype.getTop = function (n) {
-    const arr = [];
-    for (let i=0; i<n; i++) {
-        arr.push(this.value[i]);
-    }
-    return new dataContainer(arr);
+    return new dataContainer(this.value.slice(0, n));
 };
 
 /**
@@ -70,12 +66,8 @@ dataContainer.prototype.getTop = function (n) {
  * @returns {dataContainer}
  */
 dataContainer.prototype.getBottom = function (n) {
-    const arr = [];
     const len = this.value.length;
-    for (let i=len; i>=len-n; i--) {
-        arr.unshift(this.value[i]);
-    }
-    return new dataContainer(arr);
+    return new dataContainer(this.value.slice((len-n), len));
 };
 
 /**
@@ -99,6 +91,8 @@ dataContainer.prototype.filterByType = function (type) {
  * @returns {Array}
  */
 dataContainer.prototype.val = function (keys) {
+    keys = (keys instanceof Array) ? keys : [keys];
+
     return this.value.map(o => {
         return keys.reduce((prev, k) => {
             prev[k] = o[k]; return prev;
