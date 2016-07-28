@@ -40,14 +40,14 @@ data.forEach(o => {
  * @returns {dataContainer}
  */
 dataContainer.prototype.findByName = function (name) {
-    const arr = data.reduce((prev, o) => {
+    const obj = data.reduce((prev, o) => {
         if (prev) {
             return prev;
         } else {
             return o.name.toLowerCase() === name.toLowerCase() ? o : null 
         }
     }, null);
-    return new dataContainer([arr]);
+    return new dataContainer((obj ? [obj] : []));
 };
 
 /**
@@ -91,6 +91,7 @@ dataContainer.prototype.filterByType = function (type) {
  */
 dataContainer.prototype.val = function (keys) {
     keys = (keys instanceof Array) ? keys : [keys];
+    if (!this.value.length) return undefined;
 
     return this.value.map(o => {
         return keys.reduce((prev, k) => {
@@ -108,6 +109,12 @@ dataContainer.prototype.log = function () {
     return this;
 };
 
+dataContainer.prototype.summary = function (name) {
+    return this.findByName(name).val(['name', 'rank']);
+};
+
 const analyzer = new dataContainer(data);
 module.exports = analyzer;
 
+
+analyzer.summary('ghastly');
