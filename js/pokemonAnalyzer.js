@@ -9,10 +9,9 @@ const log = require('./colorLog');
  * dataContainer is a factory for the exported object. Used here to promote chaining.
  * examples :
  *      const analyzer = require('./pokemonAnalyzer.js')
- *
- *      analyzer
- *          .getBottom(5)
- *          .getTop(1)
+ *      analyzer.getBottom(5)
+ *          .filterByType('electric')
+ *          .getTop(3)
  *          .val();
  *
  *      analyzer
