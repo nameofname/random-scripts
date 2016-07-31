@@ -3,7 +3,7 @@
 
 const data = require("./pokemonData.json");
 const log = require('./colorLog');
-
+const allKeys = Object.keys(data[0]);
 
 /**
  * dataContainer is a factory for the exported object. Used here to promote chaining.
@@ -92,10 +92,11 @@ dataContainer.prototype.filterByType = function (type) {
 dataContainer.prototype.val = function (keys) {
     keys = (keys instanceof Array) ? keys : [keys];
     if (!this.value.length) return undefined;
+    if (!keys.length) { keys = allKeys }
 
     return this.value.map(o => {
-        return keys.reduce((prev, k) => {
-            prev[k] = o[k]; return prev;
+        return keys.reduce((prev, key) => {
+            prev[key] = o[key]; return prev;
         }, {});
     });
 };
@@ -110,11 +111,20 @@ dataContainer.prototype.log = function () {
 };
 
 dataContainer.prototype.summary = function (name) {
-    return this.findByName(name).val(['name', 'rank']);
+    if (name) {
+        return this.findByName(name).val(['name', 'rank']);
+    }
+    return this.val(['name', 'rank']);
+};
+
+dataContainer.prototype.help = function (name) {
+    for (var i in this) {console.log(i)}
 };
 
 const analyzer = new dataContainer(data);
 module.exports = analyzer;
 
 
-analyzer.summary('ghastly');
+console.log(
+    analyzer.getTop(30).summary()
+)
