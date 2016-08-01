@@ -1,4 +1,5 @@
 "use strict"; 
+// TODO !!!!!!!!!! https://github.com/andromedado/pokemon-go-iv-calculator/tree/master/support
 
 
 const data = require("./pokemonData.json");
