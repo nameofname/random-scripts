@@ -83,6 +83,18 @@ dataContainer.prototype.filterByType = function (type) {
 };
 
 /**
+ * Filters on name substring, ie. finds "Ninetales" if you search for "nine"
+ * @param type
+ * @returns {dataContainer}
+ */
+dataContainer.prototype.filterByNameMatch = function (str) {
+    const arr = this.value.filter((o) => {
+        return o.name.toLowerCase().indexOf(str.toLowerCase()) !== -1;
+    });
+    return new dataContainer(arr);
+};
+
+/**
  * Returns the value of a data set sans the wrapper object.
  * Pass in an array of keys to trim down your data set
  * eg.
@@ -91,9 +103,9 @@ dataContainer.prototype.filterByType = function (type) {
  * @returns {Array}
  */
 dataContainer.prototype.val = function (keys) {
-    keys = (keys instanceof Array) ? keys : [keys];
+    keys = (typeof keys === 'string') ? [keys] : keys;
     if (!this.value.length) return undefined;
-    if (!keys.length) { keys = allKeys }
+    if (!keys || !keys.length) { keys = allKeys }
 
     return this.value.map(o => {
         return keys.reduce((prev, key) => {
@@ -119,7 +131,7 @@ dataContainer.prototype.summary = function (name) {
 };
 
 dataContainer.prototype.help = function (name) {
-    for (var i in this) {console.log(i)}
+    for (var i in this) {log.green(i)}
 };
 
 const analyzer = new dataContainer(data);
@@ -127,5 +139,5 @@ module.exports = analyzer;
 
 
 console.log(
-    analyzer.getTop(30).summary()
+    analyzer.filterByNameMatch('lick').val()
 )
