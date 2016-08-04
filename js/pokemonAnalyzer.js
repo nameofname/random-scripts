@@ -1,8 +1,9 @@
 "use strict"; 
-// TODO !!!!!!!!!! https://github.com/andromedado/pokemon-go-iv-calculator/tree/master/support
 
 
-const data = require("./pokemonData.json");
+// Data courtesy of @andromedado :
+// https://github.com/andromedado/pokemon-go-iv-calculator/tree/master/support
+const data = require("./pokemonGoData.json");
 const log = require('./colorLog');
 const allKeys = Object.keys(data[0]);
 
@@ -23,17 +24,6 @@ const allKeys = Object.keys(data[0]);
  */
 const dataContainer = function (a) { this.value = a };
 
-
-// assign a rank type array to each pokemon :
-data.forEach((o, idx) => { o.rank = idx; });
-data.forEach(o => {
-    o.type = o.type
-        .split(/(?=[A-Z])/)
-        .map(s => s.toLowerCase() )
-});
-
-
-// dataContainer.prototype.log = function () { return log.green(JSON.stringify(this.value)); };
 
 /**
  * findByName - find a pokemon object by name
@@ -139,5 +129,6 @@ module.exports = analyzer;
 
 
 console.log(
-    analyzer.filterByNameMatch('lick').val()
-)
+    // analyzer.filterByNameMatch('lick').val()
+    analyzer.filterByType('electric').summary()
+);
