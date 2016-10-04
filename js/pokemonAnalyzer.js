@@ -114,10 +114,11 @@ dataContainer.prototype.log = function () {
 };
 
 dataContainer.prototype.summary = function (name) {
+    const arr = ['name', 'total', 'rank'];
     if (name) {
-        return this.findByName(name).val(['name', 'rank']);
+        return this.findByName(name).val(arr);
     }
-    return this.val(['name', 'rank']);
+    return this.val(arr);
 };
 
 dataContainer.prototype.help = function (name) {
