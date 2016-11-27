@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "clm": "^1.1.0"
+    "clm": "^1.2.0"
   }
 }
