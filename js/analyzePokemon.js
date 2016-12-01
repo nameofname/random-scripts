@@ -3,7 +3,7 @@
 
 // Data courtesy of the silph road :
 // URL:https://thesilphroad.com/js/monRater.data.js?2.0
-const data = require("./pokemonGoData.json").reverse();
+const data = require("./pokemonGoData").reverse();
 const log = require('./colorLog');
 const allKeys = Object.keys(data[0]);
 
