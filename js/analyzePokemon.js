@@ -1,9 +1,9 @@
 "use strict"; 
 
 
-// Data courtesy of @andromedado :
-// https://github.com/andromedado/pokemon-go-iv-calculator/tree/master/support
-const data = require("./pokemonGoData.json");
+// Data courtesy of the silph road :
+// URL:https://thesilphroad.com/js/monRater.data.js?2.0
+const data = require("./pokemonGoData.json").reverse();
 const log = require('./colorLog');
 const allKeys = Object.keys(data[0]);
 
@@ -35,7 +35,7 @@ dataContainer.prototype.findByName = function (name) {
         if (prev) {
             return prev;
         } else {
-            return o.name.toLowerCase() === name.toLowerCase() ? o : null 
+            return o.Name.toLowerCase() === name.toLowerCase() ? o : null
         }
     }, null);
     return new dataContainer((obj ? [obj] : []));
@@ -67,7 +67,8 @@ dataContainer.prototype.getBottom = function (n) {
  */
 dataContainer.prototype.filterByType = function (type) {
     const arr = this.value.filter((o, idx) => {
-        return o.type.indexOf(type) !== -1;
+        return (o.Type1.toLowerCase() === type.toLowerCase())
+            || (o.Type2.toLowerCase() === type.toLowerCase());
     });
     return new dataContainer(arr);
 };
@@ -79,7 +80,7 @@ dataContainer.prototype.filterByType = function (type) {
  */
 dataContainer.prototype.filterByNameMatch = function (str) {
     const arr = this.value.filter((o) => {
-        return o.name.toLowerCase().indexOf(str.toLowerCase()) !== -1;
+        return o.Name.toLowerCase().indexOf(str.toLowerCase()) !== -1;
     });
     return new dataContainer(arr);
 };
@@ -114,7 +115,7 @@ dataContainer.prototype.log = function () {
 };
 
 dataContainer.prototype.summary = function (name) {
-    const arr = ['name', 'total', 'rank'];
+    const arr = ['Name', 'Total', 'Rank'];
     if (name) {
         return this.findByName(name).val(arr);
     }
@@ -128,8 +129,3 @@ dataContainer.prototype.help = function (name) {
 const analyzer = new dataContainer(data);
 module.exports = analyzer;
 
-
-console.log(
-    // analyzer.filterByNameMatch('lick').val()
-    analyzer.filterByType('electric').summary()
-);
