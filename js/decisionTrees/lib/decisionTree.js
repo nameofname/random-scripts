@@ -1,20 +1,17 @@
 "use strict";
 
 
-// the attributes map stores each of the attributes by key, it's possible values (calculated out if a range), and a
-// function to test a given input for one of the possible attribute values
-const sampleAttributesMap = new Map(
-    [
-        'color',
-        {
-            attributeName : 'color',
-            possibleValues : ['red', 'green', 'blue', 'indigo', 'violet'],
-            test : (input) => input.color
-        }
-    ]
-);
-const attributesMap = new Map();
+const buildAttributeMap = require('./buildAttributeMap');
+const syncQuery = require('./syncQuery');
+const getMockData = async () => {
+    const data = await syncQuery('select * from dibssellers where dibs_V_status="active";');
+    return data;
+};
 
 
-const decisionTree = () => {};
+const decisionTree = async () => {
+    const trainingData = await getMockData();
+    console.log('get training data', trainingData)
+};
 
+module.exports = decisionTree;

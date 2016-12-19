@@ -1,17 +1,21 @@
 "use strict";
 
 
-const uniq = require('lodash.uniq');
-const connection = mysql.createConnection(dbConfig);
-connection.query('show columns', (err, res) => { console.og('error - ', err); console.log('res - ', res) })
+// const uniq = require('lodash.uniq'); / TODO ! maybe don't need this?
+const syncQuery = require('./syncQuery');
 
-
-/**
- // * IMPORTANT! The training data passed to this function to build up the map MUST include all attribute values for each
- // * individual input! The map is built based on the attributes from the 0th input in the training data, so if it's
- // * missing some portion of the attributes then the map will not be built correctly!!! Don't mess with me man.
- *
- */
+// the attributes map stores each of the attributes by key, it's possible values (calculated out if a range), and a
+// function to test a given input for one of the possible attribute values
+// const sampleAttributesMap = new Map(
+//     [
+//         'color',
+//         {
+//             attributeName : 'color',
+//             possibleValues : ['red', 'green', 'blue', 'indigo', 'violet'],
+//             test : (input) => input.color
+//         }
+//     ]
+// );
 
 /**
  *
@@ -19,13 +23,16 @@ connection.query('show columns', (err, res) => { console.og('error - ', err); co
  *      - from MYSQL, should have a field name and type.
  * @param trainingData <array> - of training data objects
  */
-const buildMap = (fields, trainingData) => {
+module.exports = (dbTableName, trainingData) => {
 
-    const attributeKeys = trainingData[0].keys();
+    const attributeKeys = syncQuery(`SHOW COLUMNS FROM ${dbTableName}`);
 
     const map = trainingData.reduce((outputMap, input) => {
 
         //
 
     }, new Map());
+
+    return map;
+
 };
