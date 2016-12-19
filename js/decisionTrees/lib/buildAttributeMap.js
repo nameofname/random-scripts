@@ -26,7 +26,7 @@ const ATTRIBUTE_NUM_CUTOFF = 20;
 //     if (a === b) return 0;
 // })
 
-
+// TODO !!! in numeric ranges, account for null attribute values
 const _getNumRangesAndTestFn = (fieldName, possibleValues) => {
     // if there are fewer than N numbers in the list, it's easy enough to branch on those specific attribute values :
     if (possibleValues.length < ATTRIBUTE_NUM_CUTOFF) {
@@ -54,6 +54,7 @@ const _getNumRangesAndTestFn = (fieldName, possibleValues) => {
 
     return {
         values,
+        range: true,
         test: (input, range) => {
             return (input[fieldName] > range[0] && input[fieldName] <= range[1]);
         }
@@ -84,9 +85,7 @@ const _getWordValuesAndTestFn = (fieldName, possibleValues) => {
  *      - from MYSQL, should have a field name and type.
  * @param trainingData <array> - of training data objects
  */
-module.exports = async (dbTableName, trainingData) => {
-
-    const attributes = await asyncQuery(`SHOW COLUMNS FROM ${dbTableName}`);
+module.exports = async (trainingData, attributes) => {
 
     const map = new Map();
 

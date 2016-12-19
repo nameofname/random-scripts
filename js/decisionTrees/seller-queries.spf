@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ContentFilters</key>
+	<dict/>
+	<key>auto_connect</key>
+	<true/>
+	<key>data</key>
+	<dict>
+		<key>connection</key>
+		<dict>
+			<key>database</key>
+			<string>stdib1</string>
+			<key>host</key>
+			<string>qadb</string>
+			<key>kcid</key>
+			<string>270361675816115354</string>
+			<key>name</key>
+			<string>QA</string>
+			<key>rdbms_type</key>
+			<string>mysql</string>
+			<key>sslCACertFileLocation</key>
+			<string></string>
+			<key>sslCACertFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslCertificateFileLocation</key>
+			<string></string>
+			<key>sslCertificateFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>sslKeyFileLocation</key>
+			<string></string>
+			<key>sslKeyFileLocationEnabled</key>
+			<integer>0</integer>
+			<key>type</key>
+			<string>SPTCPIPConnection</string>
+			<key>useSSL</key>
+			<integer>0</integer>
+			<key>user</key>
+			<string>engineering</string>
+		</dict>
+		<key>session</key>
+		<dict>
+			<key>connectionEncoding</key>
+			<string>utf8</string>
+			<key>contentPageNumber</key>
+			<integer>1</integer>
+			<key>contentSelection</key>
+			<data>
+			YnBsaXN0MDDUAQIDBAUGJCVYJHZlcnNpb25YJG9iamVjdHNZJGFy
+			Y2hpdmVyVCR0b3ASAAGGoKgHCBMUFRYaIVUkbnVsbNMJCgsMDxJX
+			TlMua2V5c1pOUy5vYmplY3RzViRjbGFzc6INDoACgAOiEBGABIAF
+			gAdUdHlwZVRyb3dzXxAdU2VsZWN0aW9uRGV0YWlsVHlwZU5TSW5k
+			ZXhTZXTSFwsYGVxOU1JhbmdlQ291bnQQAIAG0hscHR5aJGNsYXNz
+			bmFtZVgkY2xhc3Nlc1pOU0luZGV4U2V0oh8gWk5TSW5kZXhTZXRY
+			TlNPYmplY3TSGxwiI1xOU0RpY3Rpb25hcnmiIiBfEA9OU0tleWVk
+			QXJjaGl2ZXLRJidUZGF0YYABAAgAEQAaACMALQAyADcAQABGAE0A
+			VQBgAGcAagBsAG4AcQBzAHUAdwB8AIEAoQCmALMAtQC3ALwAxwDQ
+			ANsA3gDpAPIA9wEEAQcBGQEcASEAAAAAAAACAQAAAAAAAAAoAAAA
+			AAAAAAAAAAAAAAABIw==
+			</data>
+			<key>contentSortColIsAsc</key>
+			<true/>
+			<key>contentViewport</key>
+			<string>{{0, 0}, {1694, 896}}</string>
+			<key>isToolbarVisible</key>
+			<true/>
+			<key>queries</key>
+			<string>SHOW COLUMNS FROM dibssellers;
+
+select dibs_V_status from dibssellers limit 100;
+
+desc dibssellers;
+
+select * from dibssellers where dibs_V_status="active";
+
+select distinct dibs_V_billingamount from dibssellers;
+
+
+select distinct Type from (
+		SHOW COLUMNS FROM dibssellers
+);
+
+select
+	dibs_V_pay_skip,
+	count(*)
+from dibssellers
+group by dibs_V_pay_skip;
+
+select
+	dibs_V_min_posts_first_month,
+	count(*) as count
+from dibssellers
+group by dibs_V_min_posts_first_month;
+
+
+
+</string>
+			<key>view</key>
+			<string>SP_VIEW_CUSTOMQUERY</string>
+			<key>windowVerticalDividerPosition</key>
+			<real>226</real>
+		</dict>
+	</dict>
+	<key>encrypted</key>
+	<false/>
+	<key>format</key>
+	<string>connection</string>
+	<key>queryFavorites</key>
+	<array/>
+	<key>queryHistory</key>
+	<array>
+		<string>select
+	dibs_V_min_posts_first_month,
+	count(*) as count
+from dibssellers
+group by dibs_V_min_posts_first_month</string>
+		<string>select
+	dibs_V_pay_skip,
+	count(*)
+from dibssellers
+group by dibs_V_pay_skip</string>
+		<string>select count from (
+select
+	dibs_V_min_posts_first_month,
+	count(*) as count
+from dibssellers
+group by dibs_V_min_posts_first_month</string>
+		<string>select
+	dibs_V_min_posts_first_month,
+	count(*)
+from dibssellers
+group by dibs_V_min_posts_first_month</string>
+		<string>select
+	count(*)
+from dibssellers
+group by dibs_V_pay_skip</string>
+		<string>select
+	distinct dibs_V_pay_skip, 
+	count(*)
+from dibssellers</string>
+		<string>select
+	distinct dibs_V_pay_skip, 
+	count(dibs_v_id)
+from dibssellers</string>
+		<string>select
+	distinct dibs_V_pay_skip, 
+	count(dibs_v_id), 
+from dibssellers</string>
+		<string>select count(dibs_v_id), distinct dibs_V_pay_skip from dibssellers</string>
+		<string>select count(distinct dibs_V_pay_skip) from dibssellers</string>
+		<string>select distinct dibs_V_pay_skip from dibssellers</string>
+		<string>select count distinct dibs_V_pay_skip from dibssellers</string>
+		<string>select count distinct dibs_V_pay_skip from dibssellers'</string>
+		<string>select distinct Type from (
+	SHOW COLUMNS FROM dibssellers
+)</string>
+		<string>select Type from (
+	SHOW COLUMNS FROM dibssellers
+)</string>
+		<string>select * from (
+	SHOW COLUMNS FROM dibssellers
+)</string>
+		<string>)</string>
+		<string>select distinct dibs_V_billingamount from dibssellers</string>
+		<string>select distinct dibs_V_seo_score from dibssellers</string>
+		<string>desc dibssellers</string>
+	</array>
+	<key>rdbms_type</key>
+	<string>mysql</string>
+	<key>rdbms_version</key>
+	<string>5.6.27-log</string>
+	<key>version</key>
+	<integer>1</integer>
+</dict>
+</plist>
