@@ -4,7 +4,6 @@
 const buildAttributeMap = require('./buildAttributeMap');
 const informationGain = require('./informationGain');
 let attributeMap;
-let decisionTree;
 
 /**
  * Recursive function builds the decision tree based on info gain, etc.
@@ -12,10 +11,12 @@ let decisionTree;
  * @param attributeKeys
  * @private
  */
-const _buildTree = (trainingData, attributeKeys) => {
+const _buildTree = (trainingData, attributeKeys, node) => {
     const highestIGAttribute = attributeKeys.reduce((prev, attrKey) => {
-        const obj = attributeMap.get(attrKey);
-        const ig = informationGain(trainingData, attributeMap);
+
+        const ig = informationGain(trainingData, attributeMap.get(attrKey));
+        console.log(`I got the information gain!!!!! For ${attrKey} : ${ig}`);
+
     }, null);
 };
 
@@ -28,7 +29,9 @@ const _buildTree = (trainingData, attributeKeys) => {
  *      - classificationAttribute <string> the attribute name to use as classifier
  */
 const decisionTreeBuilder = async (getData) => {
+    console.log('START building decision tree');
 
+    const decisionTree = {};
     const { trainingData, attributes, classificationAttribute } = await getData();
     attributeMap = await buildAttributeMap(trainingData, attributes);
     const attributeKeyArray = attributeMap.keys();
@@ -53,8 +56,11 @@ const decisionTreeBuilder = async (getData) => {
 
     return;
 
-    const decisionTreeObject = _buildTree(trainingData, attributeKeyArray);
-    console.log('attributeMap', attributeMap)
+    _buildTree(trainingData, attributeKeyArray, decisionTree);
+    console.log('attributeMap', attributeMap);
+
+
+    return decisionTree;
 };
 
 module.exports = decisionTreeBuilder;
