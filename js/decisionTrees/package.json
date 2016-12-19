@@ -1,0 +1,12 @@
+{
+  "name": "decisionTrees",
+  "version": "1.0.0",
+  "description": "test repo for playing with decision trees",
+  "main": "index.js",
+  "author": "nameofname",
+  "license": "MIT",
+  "dependencies": {
+    "lodash.uniq": "^4.5.0",
+    "mysql": "^2.12.0"
+  }
+}
