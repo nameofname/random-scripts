@@ -36,6 +36,7 @@ const _buildSortedValueMap = (trainingData, attributeMapObject, classificationMa
                         const newMap = new Map();
                         newMap.set('values', new Map());
                         newMap.set('total', 0);
+                        newMap.set('entropy', 0);
                         sortedInputs.set(attrVals[i], newMap);
                     }
                     const currAttrMap = sortedInputs.get(attrVals[i]);
@@ -65,9 +66,9 @@ const probability = (val, total) => (val / total);
 // entropy iterator is a single step in calculating entropy of a series
 const _entropyIterator = (val, total) => (probability(val, total) * Math.log2(probability(val, total)));
 // get the entropy for a single series :
+// to calculate entropy, for each probability in series multiply by log2(probability) - subtract the result from prev
 const entropyForSeries = (catMap, total) => {
     let out = 0;
-    // const maps = series.values();
     for (let arr of catMap.values()) {
         out -= _entropyIterator(arr.length, total);
     }
@@ -98,27 +99,35 @@ const ig = (trainingData, attributeMapObject, classificationMapObject) => {
     // input classification. The first level of this structure is a map, the lower level an array.
     const sortedInputs = _buildSortedValueMap(trainingData, attributeMapObject, classificationMapObject);
 
-    console.log('THIS IS FUCKING HAPPENING', sortedInputs);
-
     // now get the entropy for each of the buckets discovered - each L1 bucket is a possible branch, each L2 bucket
     // expresses the uncertainty within it (it's divided amongst the different classes).
     // _calculateEntropies(sortedInputs, totalLength);
-    const entropies = [];
+    // const entropies = [];
     // here attrMap is a map with 2 props : total and values. values is another map of cat val to array
     for (let attrMap of sortedInputs.values()) {
         const entropy = entropyForSeries(attrMap.get('values'), totalLength);
-        console.log(`I THINK I HAVE : entropy ${entropy}`);
-        entropies.push(entropy);
+        attrMap.set('entropy', entropy);
     }
 
-    // const infoGain = _calculateIGFrom
+    // console.log('THIS IS FUCKING HAPPENING', sortedInputs);
 
-
-    // TODO !!! test code :
-    if (incr > 0) {
-        process.exit();
+    let infoGain = 1;
+    // to calculate info gain, in series we subtract probability * etnropy
+    // note here we are talking about the probability of the L1 bucket, of the given attribute value, not related to
+    // the L2 buckets of classes.
+    for (let attrMap of sortedInputs.values()) {
+        const probability = attrMap.get('total') / totalLength;
+        const entropy = attrMap.get('entropy');
+        infoGain -= (probability * entropy)
     }
-    incr++;
+
+    return infoGain;
+
+    // // TODO !!! test code :
+    // if (incr > 0) {
+    //     process.exit();
+    // }
+    // incr++;
 };
 
 module.exports = ig;
