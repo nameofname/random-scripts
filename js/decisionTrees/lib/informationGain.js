@@ -8,6 +8,15 @@ let incr = 0;
  * This helper function builds a sorted map of the training data. The sorted output will be a map with 2 levels :
  *      L1 : a layer of maps, keyed on each attribute value
  *      L2 : a layer of arrays, each array including inputs sorted by class (classification)
+ * Full structure is :
+ *      - Map {
+ *          [attribute value] : Map {
+ *              total : number
+ *              values : Map {
+ *                  [category value] : [Array], ...
+ *              }
+ *          }, ...
+ *      }
  * @param trainingData
  * @param attributeMapObject
  * @param classificationMapObject
@@ -24,21 +33,22 @@ const _buildSortedValueMap = (trainingData, attributeMapObject, classificationMa
                 const attrMatch = attributeMapObject.test(input, attrVals[i]);
                 if (attrMatch) {
                     if (!sortedInputs.get(attrVals[i])) {
-                        sortedInputs.set(attrVals[i], new Map());
+                        const newMap = new Map();
+                        newMap.set('values', new Map());
+                        newMap.set('total', 0);
+                        sortedInputs.set(attrVals[i], newMap);
                     }
+                    const currAttrMap = sortedInputs.get(attrVals[i]);
                     classLoop:
                         for (var j = 0; j < classVals.length; j++) {
                             const classMatch = classificationMapObject.test(input, classVals[j]);
                             if (classMatch) {
-                                if (!sortedInputs.get(attrVals[i]).get(classVals[j])) {
-                                    const newMap = new Map();
-                                    newMap.set('values', []);
-                                    newMap.set('total', 0);
-                                    sortedInputs.get(attrVals[i]).set(classVals[j], newMap);
+                                if (!currAttrMap.get('values').get(classVals[j])) {
+                                    currAttrMap.get('values').set(classVals[j], []);
                                 }
-                                const currBucket = sortedInputs.get(attrVals[i]).get(classVals[j]);
-                                currBucket.get('values').push(input);
-                                currBucket.set('total', (currBucket.get('total') + 1));
+                                const currBucket = currAttrMap.get('values').get(classVals[j]);
+                                currBucket.push(input);
+                                currAttrMap.set('total', (currAttrMap.get('total') + 1));
                                 break classLoop;
                             }
                         }
@@ -55,11 +65,11 @@ const probability = (val, total) => (val / total);
 // entropy iterator is a single step in calculating entropy of a series
 const _entropyIterator = (val, total) => (probability(val, total) * Math.log2(probability(val, total)));
 // get the entropy for a single series :
-const entropyForSeries = (series, total) => {
+const entropyForSeries = (catMap, total) => {
     let out = 0;
-    const maps = series.values();
-    for (let map of maps) {
-        out -= _entropyIterator(map.get('values').length, total);
+    // const maps = series.values();
+    for (let arr of catMap.values()) {
+        out -= _entropyIterator(arr.length, total);
     }
     return out;
 };
@@ -94,11 +104,15 @@ const ig = (trainingData, attributeMapObject, classificationMapObject) => {
     // expresses the uncertainty within it (it's divided amongst the different classes).
     // _calculateEntropies(sortedInputs, totalLength);
     const entropies = [];
-    for (let inputMap of sortedInputs.values()) {
-        const entropy = entropyForSeries(inputMap, totalLength);
-        console.log(`I THINK I HAVE : entropy ${entropy}`)
+    // here attrMap is a map with 2 props : total and values. values is another map of cat val to array
+    for (let attrMap of sortedInputs.values()) {
+        const entropy = entropyForSeries(attrMap.get('values'), totalLength);
+        console.log(`I THINK I HAVE : entropy ${entropy}`);
         entropies.push(entropy);
     }
+
+    // const infoGain = _calculateIGFrom
+
 
     // TODO !!! test code :
     if (incr > 0) {
