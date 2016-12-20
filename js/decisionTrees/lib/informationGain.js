@@ -1,63 +1,68 @@
 "use strict";
 
+
+// TODO !!! delete this - test code.
 let incr = 0;
-// // SAMPLE :
-// // this is what i want the sorted data thing to look like :
-// const obj = { // map
-//     attr1 : { // map
-//         class1 : [],
-//         class2 : []
-//     },
-//     attr2 : { // map
-//         class1 : [],
-//         class2 : []
-//     }
-// }
-// /**
-//  * Calculate the entropy for a given attribute value (branch).
-//  * @private
-//  */
-// const _sortInputs = (attributeValue, trainingInputs) => {
-//     //
-// };
 
+/**
+ * This helper function builds a sorted map of the training data. The sorted output will be a map with 2 levels :
+ *      L1 : a layer of maps, keyed on each attribute value
+ *      L2 : a layer of arrays, each array including inputs sorted by class (classification)
+ * @param trainingData
+ * @param attributeMapObject
+ * @param classificationMapObject
+ * @private
+ */
+const _buildSortedValueMap = (trainingData, attributeMapObject, classificationMapObject) => {
+    const sortedInputs = new Map();
+    const attrVals = attributeMapObject.values;
+    const classVals = classificationMapObject.values;
 
-// OLD test code - this is the WHILE Loop version of the nested breaking for loops in the IG function below.
-// It's a little messier, I think it has a bug ...
+    trainingData.forEach(input => {
+        attrLoop:
+            for (var i = 0; i < attrVals.length; i++) {
+                const attrMatch = attributeMapObject.test(input, attrVals[i]);
+                if (attrMatch) {
+                    if (!sortedInputs.get(attrVals[i])) {
+                        sortedInputs.set(attrVals[i], new Map());
+                    }
+                    classLoop:
+                        for (var j = 0; j < classVals.length; j++) {
+                            const classMatch = classificationMapObject.test(input, classVals[j]);
+                            if (classMatch) {
+                                if (!sortedInputs.get(attrVals[i]).get(classVals[j])) {
+                                    const newMap = new Map();
+                                    newMap.set('values', []);
+                                    newMap.set('total', 0);
+                                    sortedInputs.get(attrVals[i]).set(classVals[j], newMap);
+                                }
+                                const currBucket = sortedInputs.get(attrVals[i]).get(classVals[j]);
+                                currBucket.get('values').push(input);
+                                currBucket.set('total', (currBucket.get('total') + 1));
+                                break classLoop;
+                            }
+                        }
+                    break attrLoop;
+                }
+            }
+    });
 
-// here we want to sort each training input into a 2 teir list which is keyed on the attribute value and the
-// input classification. The first level of this structure is a map, the lower level an array.
-// trainingData.forEach(input => {
-//     let attrTest = 0;
-//     while (typeof attrTest === 'number') {
-//         const testAttr = attrVals[attrTest];
-//         const attrMatch = attributeMapObject.test(input, testAttr);
-//
-//         if (attrMatch) {
-//             attrTest = true;
-//             if (!sortedInputs.get(testAttr)) {
-//                 sortedInputs.set(testAttr, new Map());
-//             }
-//             const attrBucket = sortedInputs.get(testAttr);
-//
-//             let classTest = 0;
-//             while (typeof classTest === 'number') {
-//                 const testClass = classVals[classTest];
-//                 const classMatch = attributeMapObject.test(input, testClass);
-//
-//                 if (classMatch) {
-//                     classTest = true;
-//                     if (!attrBucket.get(testClass)) {
-//                         attrBucket.set(testClass, []);
-//                     }
-//                     const classBucket = attrBucket.get(testClass);
-//                     classBucket.push(input);
-//                 }
-//             }
-//         }
-//     }
-// });
+    return sortedInputs;
+};
 
+// probability (used in entropy)
+const probability = (val, total) => (val / total);
+// entropy iterator is a single step in calculating entropy of a series
+const _entropyIterator = (val, total) => (probability(val, total) * Math.log2(probability(val, total)));
+// get the entropy for a single series :
+const entropyForSeries = (series, total) => {
+    let out = 0;
+    const maps = series.values();
+    for (let map of maps) {
+        out -= _entropyIterator(map.get('values').length, total);
+    }
+    return out;
+};
 
 
 /**
@@ -78,41 +83,25 @@ let incr = 0;
 const ig = (trainingData, attributeMapObject, classificationMapObject) => {
     // here we want to sort each training input into a 2 teir list which is keyed on the attribute value and the
     // input classification. First build the data structure your inputs will fall into :
-    const sortedInputs = new Map();
-    const attrVals = attributeMapObject.values;
-    const classVals = classificationMapObject.values;
-
-    // now that we have the empty 2 tier data structure, we will sort each input into those buckets :
+    const totalLength = trainingData.length;
     // here we want to sort each training input into a 2 teir list which is keyed on the attribute value and the
     // input classification. The first level of this structure is a map, the lower level an array.
-    trainingData.forEach(input => {
-        attrLoop:
-            for (var i = 0; i < attrVals.length; i++) {
-                const attrMatch = attributeMapObject.test(input, attrVals[i]);
-                if (attrMatch) {
-                    if (!sortedInputs.get(attrVals[i])) {
-                        sortedInputs.set(attrVals[i], new Map());
-                    }
-                    classLoop:
-                        for (var j = 0; j < classVals.length; j++) {
-                            const classMatch = classificationMapObject.test(input, classVals[j]);
-                            if (classMatch) {
-                                if (!sortedInputs.get(attrVals[i]).get(classVals[j])) {
-                                    sortedInputs.get(attrVals[i]).set(classVals[j], []);
-                                }
-                                sortedInputs.get(attrVals[i]).get(classVals[j]).push(input);
-                                break classLoop;
-                            }
-                        }
-                    break attrLoop;
-                }
-            }
-    });
+    const sortedInputs = _buildSortedValueMap(trainingData, attributeMapObject, classificationMapObject);
 
-    console.log('THIS IS FUCKING HAPPENING', sortedInputs)
+    console.log('THIS IS FUCKING HAPPENING', sortedInputs);
+
+    // now get the entropy for each of the buckets discovered - each L1 bucket is a possible branch, each L2 bucket
+    // expresses the uncertainty within it (it's divided amongst the different classes).
+    // _calculateEntropies(sortedInputs, totalLength);
+    const entropies = [];
+    for (let inputMap of sortedInputs.values()) {
+        const entropy = entropyForSeries(inputMap, totalLength);
+        console.log(`I THINK I HAVE : entropy ${entropy}`)
+        entropies.push(entropy);
+    }
 
     // TODO !!! test code :
-    if (incr > 3) {
+    if (incr > 0) {
         process.exit();
     }
     incr++;
