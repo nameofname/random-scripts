@@ -22,6 +22,44 @@
 // };
 
 
+// OLD test code - this is the WHILE Loop version of the nested breaking for loops in the IG function below.
+// It's a little messier, I think it has a bug ...
+
+// here we want to sort each training input into a 2 teir list which is keyed on the attribute value and the
+// input classification. The first level of this structure is a map, the lower level an array.
+// trainingData.forEach(input => {
+//     let attrTest = 0;
+//     while (typeof attrTest === 'number') {
+//         const testAttr = attrVals[attrTest];
+//         const attrMatch = attributeMapObject.test(input, testAttr);
+//
+//         if (attrMatch) {
+//             attrTest = true;
+//             if (!sortedInputs.get(testAttr)) {
+//                 sortedInputs.set(testAttr, new Map());
+//             }
+//             const attrBucket = sortedInputs.get(testAttr);
+//
+//             let classTest = 0;
+//             while (typeof classTest === 'number') {
+//                 const testClass = classVals[classTest];
+//                 const classMatch = attributeMapObject.test(input, testClass);
+//
+//                 if (classMatch) {
+//                     classTest = true;
+//                     if (!attrBucket.get(testClass)) {
+//                         attrBucket.set(testClass, []);
+//                     }
+//                     const classBucket = attrBucket.get(testClass);
+//                     classBucket.push(input);
+//                 }
+//             }
+//         }
+//     }
+// });
+
+
+
 /**
  * Calculate the information gain at a specified branch node.
  * what do you need to take in the info gain?
@@ -38,85 +76,42 @@
  *      of the attribute value.
  */
 const ig = (trainingData, attributeMapObject, classificationMapObject) => {
-    console.log('THIS IS FUCKING HAPPENING. part 1 : the first ... happening')
-
-    // const trainingClassesArray = trainingData.reduce((prev, curr) => {
-    //     if (!prev.contains(curr.class)) {
-    //         prev.push(curr.class);
-    //     }
-    //     return prev;
-    // }, []);
-
     // here we want to sort each training input into a 2 teir list which is keyed on the attribute value and the
     // input classification. First build the data structure your inputs will fall into :
     const sortedInputs = new Map();
     const attrVals = attributeMapObject.values;
     const classVals = classificationMapObject.values;
 
+    console.log('THIS IS FUCKING HAPPENING. part 1 : the first ... happening')
     // now that we have the empty 2 tier data structure, we will sort each input into those buckets :
-    // TODO !!!! This is the old version of the double nested while loop below.
-    // TODO !!! I think the while loops are a bit neater looking, and you avoid having to write your own break
-    // TODO !!! statements.
-    // trainingData.forEach(input => {
-    //     attrLoop:
-    //         for (var i = 0; i < attrVals.length; i++) {
-    //             const attrMatch = attributeMapObject.test(input, attrVals[i]);
-    //             if (attrMatch) {
-    //                 if (!sortedInputs.get(attrVals[i])) {
-    //                     sortedInputs.set(attrVals[i], new Map());
-    //                 }
-    //                 classLoop:
-    //                     for (var j = 0; j < classVals.length; j++) {
-    //                         const classMatch = classificationMapObject.test(input, classVals[j]);
-    //                         if (classMatch) {
-    //                             if (!sortedInputs.get(attrVals[i]).get(classVals[j])) {
-    //                                 sortedInputs.get(attrVals[i]).set(classVals[j], []);
-    //                             }
-    //                             sortedInputs.get(attrVals[i]).get(classVals[j]).push(input);
-    //                             break classLoop;
-    //                         }
-    //                     }
-    //                 break attrLoop;
-    //             }
-    //         }
-    // });
-
-    // TODO !!!!! This is the (hopefully) neater version of what's right above :
     // here we want to sort each training input into a 2 teir list which is keyed on the attribute value and the
     // input classification. The first level of this structure is a map, the lower level an array.
-    console.log('this is wats messing it up', typeof trainingData)
-    trainingData.foreEach(input => {
-        let attrTest = 0;
-        while (typeof attrTest === 'number') {
-            const testAttr = attrVals[attrTest];
-            const attrMatch = attributeMapObject.test(input, testAttr);
-
-            if (attrMatch) {
-                attrTest = true;
-                if (!sortedInputs.get(testAttr)) {
-                    sortedInputs.set(testAttr, new Map());
-                }
-                const attrBucket = sortedInputs.get(testAttr);
-
-                let classTest = 0;
-                while (typeof classTest === 'number') {
-                    const testClass = classVals[classTest];
-                    const classMatch = attributeMapObject.test(input, testClass);
-
-                    if (classMatch) {
-                        classTest = true;
-                        if (!attrBucket.get(testClass)) {
-                            attrBucket.set(testClass, []);
-                        }
-                        const classBucket = attrBucket.get(testClass);
-                        classBucket.push(input);
+    trainingData.forEach(input => {
+        attrLoop:
+            for (var i = 0; i < attrVals.length; i++) {
+                const attrMatch = attributeMapObject.test(input, attrVals[i]);
+                if (attrMatch) {
+                    if (!sortedInputs.get(attrVals[i])) {
+                        sortedInputs.set(attrVals[i], new Map());
                     }
+                    classLoop:
+                        for (var j = 0; j < classVals.length; j++) {
+                            const classMatch = classificationMapObject.test(input, classVals[j]);
+                            if (classMatch) {
+                                if (!sortedInputs.get(attrVals[i]).get(classVals[j])) {
+                                    sortedInputs.get(attrVals[i]).set(classVals[j], []);
+                                }
+                                sortedInputs.get(attrVals[i]).get(classVals[j]).push(input);
+                                break classLoop;
+                            }
+                        }
+                    break attrLoop;
                 }
             }
-        }
     });
 
     console.log('THIS IS FUCKING HAPPENING', sortedInputs)
+    // process.exit();
 };
 
 module.exports = ig;

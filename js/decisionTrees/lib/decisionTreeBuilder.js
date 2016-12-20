@@ -26,7 +26,6 @@ const _buildTree = (trainingData, attributeKeys, node) => {
 
 
 /**
- *
  * @param getData <function> - async function that returns an object with the following properties :
  *      - trainingData <array> of objects (training inputs)
  *      - attributes <array> of objects (attributes ie. DB columns)
