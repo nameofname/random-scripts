@@ -1,6 +1,6 @@
 "use strict";
 
-
+let incr = 0;
 // // SAMPLE :
 // // this is what i want the sorted data thing to look like :
 // const obj = { // map
@@ -82,7 +82,6 @@ const ig = (trainingData, attributeMapObject, classificationMapObject) => {
     const attrVals = attributeMapObject.values;
     const classVals = classificationMapObject.values;
 
-    console.log('THIS IS FUCKING HAPPENING. part 1 : the first ... happening')
     // now that we have the empty 2 tier data structure, we will sort each input into those buckets :
     // here we want to sort each training input into a 2 teir list which is keyed on the attribute value and the
     // input classification. The first level of this structure is a map, the lower level an array.
@@ -111,7 +110,12 @@ const ig = (trainingData, attributeMapObject, classificationMapObject) => {
     });
 
     console.log('THIS IS FUCKING HAPPENING', sortedInputs)
-    // process.exit();
+
+    // TODO !!! test code :
+    if (incr > 3) {
+        process.exit();
+    }
+    incr++;
 };
 
 module.exports = ig;
