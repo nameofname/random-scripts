@@ -8,4 +8,8 @@ const mockData = require('./lib/mockData');
 const decisionTree = require('./lib/decisionTreeBuilder');
 
 
-decisionTree(mockData);
+try {
+    decisionTree(mockData);
+} catch (e) {
+    throw new Error(e);
+}

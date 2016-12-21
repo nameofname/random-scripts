@@ -95,6 +95,7 @@ group by dibs_V_min_posts_first_month;
 
 
 
+
 </string>
 			<key>view</key>
 			<string>SP_VIEW_CUSTOMQUERY</string>
@@ -110,6 +111,8 @@ group by dibs_V_min_posts_first_month;
 	<array/>
 	<key>queryHistory</key>
 	<array>
+		<string>select * from dibssellers limit 1</string>
+		<string>select * from dibssellers where dibs_V_id = "f_9883"</string>
 		<string>select
 	dibs_V_min_posts_first_month,
 	count(*) as count
@@ -163,8 +166,6 @@ from dibssellers</string>
 )</string>
 		<string>)</string>
 		<string>select distinct dibs_V_billingamount from dibssellers</string>
-		<string>select distinct dibs_V_seo_score from dibssellers</string>
-		<string>desc dibssellers</string>
 	</array>
 	<key>rdbms_type</key>
 	<string>mysql</string>
