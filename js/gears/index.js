@@ -33,24 +33,27 @@ module.exports = ({ desiredNumber, requiredFactors, numberOfPairs, upperBound, l
 
     // TEST!!!! First, let's start off by finding the solution for 2 pairs of gears :
 
-    let product;
+    let lastProduct;
     let solution;
 
+    // for each of the sorted quotients, find the other quotient, or "buddy" quotient in the sorted list that produces
+    // the product closest to the desired product
+    // eg. as close as we can get to quotient1 * quotient2 = desiredProduct
     sortedQuotients.forEach(obj => {
         const desiredBuddy = desiredProduct / obj.quotient;
-        const findDistance = (quotient) => Math.abs(desiredBuddy - quotient);
+        const findDistanceFromDesiredBuddy = (quotient) => Math.abs(desiredBuddy - quotient);
         let buddy = sortedQuotients[0];
-        let distanceFromBuddy = findDistance(buddy.quotient);
+        let distanceFromBuddy = findDistanceFromDesiredBuddy(buddy.quotient);
 
         findBuddy:
         for (var i = 1; i <= sortedQuotients.length; i++) {
 
-            const curr = sortedQuotients[i].quotient;
-            const distance = findDistance(curr);
-            const gotCloser = distance < distanceFromBuddy;
+            const currQuotient = sortedQuotients[i].quotient;
+            const currDistanceFromBuddy = findDistanceFromDesiredBuddy(currQuotient);
+            const gotCloser = currDistanceFromBuddy < distanceFromBuddy;
 
             if (gotCloser) {
-                distanceFromBuddy = distance;
+                distanceFromBuddy = currDistanceFromBuddy;
                 buddy = sortedQuotients[i];
             } else {
                 break findBuddy;
@@ -59,14 +62,15 @@ module.exports = ({ desiredNumber, requiredFactors, numberOfPairs, upperBound, l
 
         const currProduct = obj.quotient * buddy.quotient;
 
-        if (!product) {
-            product = currProduct;
+        if (!lastProduct) {
+            lastProduct = currProduct;
             solution = [obj, buddy];
             return;
         }
 
-        if (Math.abs(desiredProduct - currProduct) < Math.abs(desiredProduct - product)) {
-            product = currProduct;
+        console.log(`desiredProduct: ${desiredProduct} currProduct: ${currProduct} lastProduct: ${lastProduct}`)
+        if (Math.abs(desiredProduct - currProduct) < Math.abs(desiredProduct - lastProduct)) {
+            lastProduct = currProduct;
             solution = [obj, buddy];
             return;
         }
