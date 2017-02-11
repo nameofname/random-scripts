@@ -1,0 +1,7 @@
+{
+  "name": "gears",
+  "version": "1.0.0",
+  "description": "a (hopefully) efficient algorithm for finding factors in a given range that reach a desired product",
+  "main": "index.js",
+  "license": "MIT"
+}
