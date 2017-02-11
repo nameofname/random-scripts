@@ -40,17 +40,18 @@ module.exports = ({ desiredNumber, requiredFactors, numberOfPairs, upperBound, l
     // the product closest to the desired product
     // eg. as close as we can get to quotient1 * quotient2 = desiredProduct
     sortedQuotients.forEach(obj => {
-        const desiredBuddy = desiredProduct / obj.quotient;
-        const findDistanceFromDesiredBuddy = (quotient) => Math.abs(desiredBuddy - quotient);
+
+        const desiredBuddyQuotient = desiredProduct / obj.quotient;
+        const findDistanceFromDesiredBuddy = (quotient) => Math.abs(desiredBuddyQuotient - quotient);
         let buddy = sortedQuotients[0];
         let distanceFromBuddy = findDistanceFromDesiredBuddy(buddy.quotient);
 
-        findBuddy:
-        for (var i = 1; i <= sortedQuotients.length; i++) {
 
+        findBuddy:
+        for (var i = 1; i <= sortedQuotients.length - 1; i++) {
             const currQuotient = sortedQuotients[i].quotient;
             const currDistanceFromBuddy = findDistanceFromDesiredBuddy(currQuotient);
-            const gotCloser = currDistanceFromBuddy < distanceFromBuddy;
+            const gotCloser = currDistanceFromBuddy <= distanceFromBuddy;
 
             if (gotCloser) {
                 distanceFromBuddy = currDistanceFromBuddy;
