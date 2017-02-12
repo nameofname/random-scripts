@@ -40,7 +40,9 @@ const addToArr = (quotient, numerator, denominator, arr) => {
 /**
  * Takes in a range with an lower and upper bound and returns a sorted list of quotients (Map) with some metadata
  * about each quotient
- * @param range
+ * @param upperBound
+ * @param lowerBound
+ * @returns {Array}
  */
 module.exports = ({ upperBound, lowerBound }) => {
     const arr = [];
