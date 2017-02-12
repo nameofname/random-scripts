@@ -7,7 +7,13 @@ let combinations;
 
 
 /**
- * Gets all possible unique combinations of N "spots" from an array where REPETITION IS ALLOWED.
+ * Gets all possible unique combinations of N "spots" from an array where repetition is allowed.
+ *
+ * USE WITH CAUTION!!! Running this function on large sets of numbers can beat the living s*** out of your machine if
+ * you're not careful / running your code on distributed software.
+ *
+ *      *** be warned that increasing the number of "spots" (eg. choose r) will blow up repetitions much faster than
+ *      increasing the number of entries in the array
  */
 const getUniques = (array, spots) => {
     if (spots > array.length) {

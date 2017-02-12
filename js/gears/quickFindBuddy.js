@@ -29,7 +29,7 @@ module.exports = (arrayOfNumbers, sortedQuotients, desiredProduct) => {
         let distanceFromBuddy = distanceFromDesired(obj.buddy.quotient);
 
         findBestBuddy :
-            for (var i = obj.buddyIndex; i >= 0 - 1; i--) {
+            for (var i = obj.buddyIndex; i >= 0; i--) {
                 itar++;
                 const currQuotient = sortedQuotients[i].quotient;
                 const currDistanceFromBuddy = distanceFromDesired(currQuotient);

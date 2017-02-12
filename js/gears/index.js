@@ -2,7 +2,7 @@
 
 const calculateQuotients = require('./calculateQuotients');
 const quickFindBuddy = require('./quickFindBuddy');
-const combinationsRepeatAllowed = require('./combinationsRepeatAllowed');
+const buildUniquePairs = require('./buildUniquePairs');
 
 /**
  * The base formula we are solving for looks like this :
@@ -55,7 +55,7 @@ const fourGearSolution = (sortedQuotients, desiredProduct) => {
 
 const sixGearSolution = (sortedQuotients, desiredProduct) => {
 
-    const list = combinationsRepeatAllowed(sortedQuotients, 2);
+    const list = buildUniquePairs(sortedQuotients);
 
     return quickFindBuddy(list, sortedQuotients, desiredProduct);
 };

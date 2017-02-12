@@ -19,7 +19,7 @@ let solution = solve({
     lowerBound: 13,
     upperBound: 50
 });
-console.log(solution);
+console.log(JSON.stringify(solution));
 
 
 // BRUTE FORCE :
