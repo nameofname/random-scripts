@@ -57,7 +57,7 @@ module.exports = ({ desiredNumber, requiredFactors, numberOfPairs, upperBound, l
 
 
 
-        findBuddy :
+        findBestBuddy :
             for (var i = obj.buddyIndex; i >= 0 - 1; i--) {
                 itar++;
                 const currQuotient = sortedQuotients[i].quotient;
@@ -69,7 +69,7 @@ module.exports = ({ desiredNumber, requiredFactors, numberOfPairs, upperBound, l
                     obj.buddy = sortedQuotients[i];
                     obj.buddyIndex = i;
                 } else {
-                    break findBuddy;
+                    break findBestBuddy;
                 }
             }
 

@@ -1,12 +1,15 @@
 "use strict";
 
 
-// let calculateQuotients = require('./calculateQuotients');
-// const arr = calculateQuotients({ lowerBound : 3, upperBound : 10 });
-// const arr = calculateQuotients({ lowerBound : 13, upperBound : 50 });
+let calculateQuotients = require('./calculateQuotients');
+let solve = require('./index');
+let bruteForce = require('./bruteForce');
 
 
-let solve = require('./index')
-let solution = solve({ desiredNumber: 127, requiredFactors : [40], numberOfPairs: 2, lowerBound: 13, upperBound: 50 });
-
+// let solution = solve({ desiredNumber: 127, requiredFactors : [40], numberOfPairs: 2, lowerBound: 13, upperBound: 50 });
+const solution = bruteForce.findFour(13, 50);
 console.log(solution);
+
+const solution1 = bruteForce.findSix(13, 50);
+console.log(solution1);
+
