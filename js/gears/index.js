@@ -2,7 +2,7 @@
 
 const calculateQuotients = require('./calculateQuotients');
 const quickFindBuddy = require('./quickFindBuddy');
-let itar = 0;
+const combinationsRepeatAllowed = require('./combinationsRepeatAllowed');
 
 /**
  * The base formula we are solving for looks like this :
@@ -26,15 +26,22 @@ let itar = 0;
  * @param lowerBound
  */
 module.exports = ({ desiredNumber, requiredFactors, numberOfPairs, upperBound, lowerBound }) => {
-    const sortedQuotients = calculateQuotients({ upperBound, lowerBound });
+    const sortedQuotients = calculateQuotients(lowerBound, upperBound);
     let requiredFactor;
     requiredFactor = requiredFactors.reduce((prev, val) => (prev * val), 1);
     const desiredProduct = desiredNumber / requiredFactor;
 
 
+    if (numberOfPairs === 2) {
+        return fourGearSolution(sortedQuotients, desiredProduct);
+    } else if (numberOfPairs === 3) {
+        return sixGearSolution(sortedQuotients, desiredProduct);
+    } else {
+        throw new Error('Any more than 3 pairs of gears will cause this function to crash your machine dumb ass.');
+    }
+};
 
-    // 2 GEAR PAIR SOLUTION :
-
+const fourGearSolution = (sortedQuotients, desiredProduct) => {
     // create map of sorted quotients with "value" instead of "quotient"
     const arrayOfNumbers = sortedQuotients.map(({ quotient, numerator, denominator}) => {
         return Object.assign({}, {
@@ -43,69 +50,12 @@ module.exports = ({ desiredNumber, requiredFactors, numberOfPairs, upperBound, l
         });
     });
 
-    const solution = quickFindBuddy(arrayOfNumbers, sortedQuotients, desiredProduct);
+    return quickFindBuddy(arrayOfNumbers, sortedQuotients, desiredProduct);
+};
 
-    return solution;
+const sixGearSolution = (sortedQuotients, desiredProduct) => {
 
+    const list = combinationsRepeatAllowed(sortedQuotients, 2);
 
-
-
-    // // TEST!!!! First, let's start off by finding the solution for 2 pairs of gears :
-    //
-    // let lastProduct;
-    // let solution;
-    //
-    // // for each of the sorted quotients, find the other quotient, or "buddy" quotient in the sorted list that produces
-    // // the product closest to the desired product
-    // // eg. as close as we can get to quotient1 * quotient2 = desiredProduct
-    // sortedQuotients.forEach((obj, idx) => {
-    //
-    //     const desiredBuddyQuotient = desiredProduct / obj.quotient;
-    //     const distanceFromDesired = (quotient) => Math.abs(desiredBuddyQuotient - quotient);
-    //
-    //     if (idx === 0) {
-    //         obj.buddyIndex = sortedQuotients.length - 1;
-    //     } else {
-    //         obj.buddyIndex = sortedQuotients[idx - 1].buddyIndex;
-    //     }
-    //
-    //     obj.buddy = sortedQuotients[obj.buddyIndex];
-    //
-    //     let distanceFromBuddy = distanceFromDesired(obj.buddy.quotient);
-    //
-    //
-    //
-    //     findBestBuddy :
-    //         for (var i = obj.buddyIndex; i >= 0 - 1; i--) {
-    //             itar++;
-    //             const currQuotient = sortedQuotients[i].quotient;
-    //             const currDistanceFromBuddy = distanceFromDesired(currQuotient);
-    //             const gotCloser = currDistanceFromBuddy <= distanceFromBuddy;
-    //
-    //             if (gotCloser) {
-    //                 distanceFromBuddy = currDistanceFromBuddy;
-    //                 obj.buddy = sortedQuotients[i];
-    //                 obj.buddyIndex = i;
-    //             } else {
-    //                 break findBestBuddy;
-    //             }
-    //         }
-    //
-    //     const currProduct = obj.quotient * obj.buddy.quotient;
-    //
-    //     if (!lastProduct) {
-    //         lastProduct = currProduct;
-    //         solution = [obj, obj.buddy];
-    //         return;
-    //     }
-    //
-    //     if (Math.abs(desiredProduct - currProduct) < Math.abs(desiredProduct - lastProduct)) {
-    //         lastProduct = currProduct;
-    //         solution = [obj, obj.buddy];
-    //         return;
-    //     }
-    // });
-    //
-    // console.log(`found solution with ${itar} iteration`);
-    // return solution;
+    return quickFindBuddy(list, sortedQuotients, desiredProduct);
 };

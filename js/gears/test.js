@@ -6,8 +6,19 @@ let solve = require('./index');
 let bruteForce = require('./bruteForce');
 
 
+// testing out calculate quotients :
+// const quotients = calculateQuotients(13, 50);
+// console.log(quotients.length);
+
+
 // SOLUTION :
-let solution = solve({ desiredNumber: 127, requiredFactors : [40], numberOfPairs: 2, lowerBound: 13, upperBound: 50 });
+let solution = solve({
+    desiredNumber: 127,
+    requiredFactors : [40],
+    numberOfPairs: 3,
+    lowerBound: 13,
+    upperBound: 50
+});
 console.log(solution);
 
 

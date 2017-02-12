@@ -11,7 +11,7 @@ let combinations;
  */
 const getUniques = (array, spots) => {
     if (spots > array.length) {
-        throw new Error('Invalid function call to uniqueCombinations. Asked for ' + spots + ' spots from arrayay of ' +
+        throw new Error('Invalid function call to uniqueCombinations. Asked for ' + spots + ' spots from array of ' +
         'length ' + array.length);
     }
 
@@ -27,7 +27,7 @@ const getUniques = (array, spots) => {
 const _buildUniques = (lastIndex, spotIndex) => {
 
     // starting at the last index iterated over, loop up to the length of the starting array.
-    for (var index = (lastIndex); index < startingArr.length; index++) {
+    for (let index = (lastIndex); index < startingArr.length; index++) {
 
         // push the current entry in the starting array to the current combo. Use the spotIndex to know which
         // spot in the combination array you are populating.
