@@ -36,8 +36,11 @@ module.exports = ({ desiredNumber, requiredFactors, numberOfPairs, upperBound, l
     // 2 GEAR PAIR SOLUTION :
 
     // create map of sorted quotients with "value" instead of "quotient"
-    const arrayOfNumbers = sortedQuotients.map(obj => {
-        return Object.assign({}, {value : obj.quotient});
+    const arrayOfNumbers = sortedQuotients.map(({ quotient, numerator, denominator}) => {
+        return Object.assign({}, {
+            value : quotient,
+            numerator, denominator
+        });
     });
 
     const solution = quickFindBuddy(arrayOfNumbers, sortedQuotients, desiredProduct);

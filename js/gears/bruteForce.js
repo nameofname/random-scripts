@@ -1,7 +1,6 @@
 "use strict";
 
 
-
 const calc = (i, j, k, l, m, n) => {
     if (m === undefined && n === undefined) {
         return (i/j) * (k/l) * 40;

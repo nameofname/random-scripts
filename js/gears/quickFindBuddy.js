@@ -15,7 +15,7 @@ module.exports = (arrayOfNumbers, sortedQuotients, desiredProduct) => {
     // eg. as close as we can get to quotient1 * quotient2 = desiredProduct
     arrayOfNumbers.forEach((obj, idx) => {
 
-        const desiredBuddyQuotient = desiredProduct / obj.quotient;
+        const desiredBuddyQuotient = desiredProduct / obj.value;
         const distanceFromDesired = (quotient) => Math.abs(desiredBuddyQuotient - quotient);
 
         if (idx === 0) {
@@ -44,7 +44,7 @@ module.exports = (arrayOfNumbers, sortedQuotients, desiredProduct) => {
                 }
             }
 
-        const currProduct = obj.quotient * obj.buddy.quotient;
+        const currProduct = obj.value * obj.buddy.quotient;
 
         if (!lastProduct) {
             lastProduct = currProduct;
