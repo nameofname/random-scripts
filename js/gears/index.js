@@ -1,6 +1,7 @@
 "use strict";
 
 const calculateQuotients = require('./calculateQuotients');
+let itar = 0;
 
 /**
  * The base formula we are solving for looks like this :
@@ -39,44 +40,54 @@ module.exports = ({ desiredNumber, requiredFactors, numberOfPairs, upperBound, l
     // for each of the sorted quotients, find the other quotient, or "buddy" quotient in the sorted list that produces
     // the product closest to the desired product
     // eg. as close as we can get to quotient1 * quotient2 = desiredProduct
-    sortedQuotients.forEach(obj => {
+    sortedQuotients.forEach((obj, idx) => {
 
         const desiredBuddyQuotient = desiredProduct / obj.quotient;
-        const findDistanceFromDesiredBuddy = (quotient) => Math.abs(desiredBuddyQuotient - quotient);
-        let buddy = sortedQuotients[0];
-        let distanceFromBuddy = findDistanceFromDesiredBuddy(buddy.quotient);
+        const distanceFromDesired = (quotient) => Math.abs(desiredBuddyQuotient - quotient);
 
-
-        findBuddy:
-        for (var i = 1; i <= sortedQuotients.length - 1; i++) {
-            const currQuotient = sortedQuotients[i].quotient;
-            const currDistanceFromBuddy = findDistanceFromDesiredBuddy(currQuotient);
-            const gotCloser = currDistanceFromBuddy <= distanceFromBuddy;
-
-            if (gotCloser) {
-                distanceFromBuddy = currDistanceFromBuddy;
-                buddy = sortedQuotients[i];
-            } else {
-                break findBuddy;
-            }
+        if (idx === 0) {
+            obj.buddyIndex = sortedQuotients.length - 1;
+        } else {
+            obj.buddyIndex = sortedQuotients[idx - 1].buddyIndex;
         }
 
-        const currProduct = obj.quotient * buddy.quotient;
+        obj.buddy = sortedQuotients[obj.buddyIndex];
+
+        let distanceFromBuddy = distanceFromDesired(obj.buddy.quotient);
+
+
+
+        findBuddy :
+            for (var i = obj.buddyIndex; i >= 0 - 1; i--) {
+                itar++;
+                const currQuotient = sortedQuotients[i].quotient;
+                const currDistanceFromBuddy = distanceFromDesired(currQuotient);
+                const gotCloser = currDistanceFromBuddy <= distanceFromBuddy;
+
+                if (gotCloser) {
+                    distanceFromBuddy = currDistanceFromBuddy;
+                    obj.buddy = sortedQuotients[i];
+                    obj.buddyIndex = i;
+                } else {
+                    break findBuddy;
+                }
+            }
+
+        const currProduct = obj.quotient * obj.buddy.quotient;
 
         if (!lastProduct) {
             lastProduct = currProduct;
-            solution = [obj, buddy];
+            solution = [obj, obj.buddy];
             return;
         }
 
-        console.log(`desiredProduct: ${desiredProduct} currProduct: ${currProduct} lastProduct: ${lastProduct}`)
         if (Math.abs(desiredProduct - currProduct) < Math.abs(desiredProduct - lastProduct)) {
             lastProduct = currProduct;
-            solution = [obj, buddy];
+            solution = [obj, obj.buddy];
             return;
         }
     });
 
-
+    console.log(`found solution with ${itar} iteration`);
     return solution;
 };
