@@ -41,8 +41,16 @@ module.exports = ({ desiredNumber, requiredFactors, numberOfPairs, upperBound, l
     }
 };
 
+/**
+ * The four gear solution produces an answer with 4 numbers to fit the pattern :
+ * (a / b) * (c / d) * C = A;
+ *
+ * Return value should be formatted as an array of objects, each with a numerator and denominator
+ *
+ * @param sortedQuotients
+ * @param desiredProduct
+ */
 const fourGearSolution = (sortedQuotients, desiredProduct) => {
-    // create map of sorted quotients with "value" instead of "quotient"
     const arrayOfNumbers = sortedQuotients.map(({ quotient, numerator, denominator}) => {
         return Object.assign({}, {
             value : quotient,
@@ -50,12 +58,29 @@ const fourGearSolution = (sortedQuotients, desiredProduct) => {
         });
     });
 
-    return quickFindBuddy(arrayOfNumbers, sortedQuotients, desiredProduct);
+    const buddys = quickFindBuddy(arrayOfNumbers, sortedQuotients, desiredProduct);
+    const solution = [buddys, buddys.buddy].map(({ numerator, denominator }) => ({ numerator, denominator }));
+    return solution;
 };
 
+
+/**
+ * The six gear solution produces an answer with 6 numbers to fit the pattern :
+ * (a / b) * (c / d) * (e / f) * C = A;
+ *
+ * Return value should be formatted as an array of objects, each with a numerator and denominator
+ *
+ * @param sortedQuotients
+ * @param desiredProduct
+ */
 const sixGearSolution = (sortedQuotients, desiredProduct) => {
 
     const list = buildUniquePairs(sortedQuotients);
 
-    return quickFindBuddy(list, sortedQuotients, desiredProduct);
+    const buddys = quickFindBuddy(list, sortedQuotients, desiredProduct);
+    const solution = [buddys.buddy, buddys.factors[0], buddys.factors[1]]
+        .map(({ numerator, denominator }) => ({ numerator, denominator }));
+
+    return solution;
+
 };

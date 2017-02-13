@@ -1,14 +1,9 @@
 "use strict";
 
 
-let itar = 0;
-
-
 module.exports = (arrayOfNumbers, sortedQuotients, desiredProduct) => {
-
     let lastProduct;
     let solution;
-
 
     // for each of the sorted quotients, find the other quotient, or "buddy" quotient in the sorted list that produces
     // the product closest to the desired product
@@ -30,7 +25,6 @@ module.exports = (arrayOfNumbers, sortedQuotients, desiredProduct) => {
 
         findBestBuddy :
             for (var i = obj.buddyIndex; i >= 0; i--) {
-                itar++;
                 const currQuotient = sortedQuotients[i].quotient;
                 const currDistanceFromBuddy = distanceFromDesired(currQuotient);
                 const gotCloser = currDistanceFromBuddy <= distanceFromBuddy;
@@ -48,13 +42,13 @@ module.exports = (arrayOfNumbers, sortedQuotients, desiredProduct) => {
 
         if (!lastProduct) {
             lastProduct = currProduct;
-            solution = [obj, obj.buddy];
+            solution = obj;
             return;
         }
 
         if (Math.abs(desiredProduct - currProduct) < Math.abs(desiredProduct - lastProduct)) {
             lastProduct = currProduct;
-            solution = [obj, obj.buddy];
+            solution = obj;
             return;
         }
     });
