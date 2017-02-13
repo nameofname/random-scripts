@@ -1,6 +1,15 @@
 "use strict";
 
 
+/**
+ * Takes in 2 sorted lists and finds the matching pair from each list which produces the closest match to the deired
+ * product. Both lists must be sorted or the return value will be incorrect.
+ *
+ * @param arrayOfNumbers - sorted array of objects, each object must have a 'value' property to match against
+ * @param sortedQuotients - sorted array of quotient objects, each one must have a 'quotient' property to match
+ * @param desiredProduct
+ * @returns {*}
+ */
 module.exports = (arrayOfNumbers, sortedQuotients, desiredProduct) => {
     let lastProduct;
     let solution;
