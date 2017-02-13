@@ -1,8 +1,6 @@
 "use strict";
 
-
 const arraySortPush = require('./arraySortPush');
-
 
 /**
  * Takes in a range with an lower and upper bound and returns a sorted list of quotients (Map) with some metadata

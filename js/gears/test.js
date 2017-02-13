@@ -33,7 +33,7 @@ const findSolution = () => {
     let solution = solve({
         desiredNumber: 127,
         requiredFactors : [40],
-        numberOfPairs: 2,
+        numberOfPairs: 3,
         lowerBound: 13,
         upperBound: 50
     });

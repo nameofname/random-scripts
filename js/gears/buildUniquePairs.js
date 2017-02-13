@@ -3,7 +3,8 @@
 let usedProducts;
 
 /**
- * Build a list of unique
+ * Build a list of unique pairs
+ * NOTE!! THIS FUNCTION IS COMPLETELY USELESS TO MY GEARS PROBLEM as does not produce a sorted list. 
  * @param sortedQuotients
  * @returns {Array}
  */
