@@ -6,6 +6,7 @@ const buildUniquePairs = require('./buildUniquePairs');
 const solve = require('./index');
 const bruteForce = require('./bruteForce');
 const calcFinalValue = require('./calcFinalValue');
+const mergeSort = require('./mergeSort');
 const timer = require('./timer');
 
 
@@ -72,8 +73,23 @@ const testListMaker = () => {
     console.log(answer);
 };
 
+const testMergeSort = () => {
+
+    // const arr = [1,2,5,6,7,6,5,4,3,4,5,8,9,0,5,6,7,3,2,6,5,3,4,7,3,7,3,9,5];
+    // const sorted = mergeSort(arr);
+
+    const arr1 = [1,2,5,6,7,2];
+    const sorted = mergeSort(arr1);
+
+    console.log(sorted);
 
 
-const time = timer(findSolution);
+    // TODO !!! Test merge sort of a large number and run through the timer.
+    // TODO !!! What happens with merge sort in the thousands?
+};
+
+
+
+const time = timer(testMergeSort);
 console.log(`finished solution in time of ${time}`);
 

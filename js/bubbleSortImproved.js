@@ -2,6 +2,9 @@
 
 
 /**
+ * This is an improved version of bubble sort - for each number we bubble it up the list, however, we start from
+ * an empty list so the worst case scenario is O(∑(n)) not O(n^n)
+ *      - am I writing that correctly? I'm trying to denote it's the summation of 1 ... n
  *
  * @param arr <Array> - the array to sort
  * @param getValue <Function> - a function that returns the value to sort by. It receives the current value in the array
