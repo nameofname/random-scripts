@@ -51,6 +51,7 @@ module.exports = ({ desiredNumber, requiredFactors, numberOfPairs, upperBound, l
  * @param desiredProduct
  */
 const fourGearSolution = (sortedQuotients, desiredProduct) => {
+
     const arrayOfNumbers = sortedQuotients.map(({ quotient, numerator, denominator}) => {
         return Object.assign({}, {
             value : quotient,
@@ -59,8 +60,8 @@ const fourGearSolution = (sortedQuotients, desiredProduct) => {
     });
 
     const buddys = quickFindBuddy(arrayOfNumbers, sortedQuotients, desiredProduct);
-    const solution = [buddys, buddys.buddy].map(({ numerator, denominator }) => ({ numerator, denominator }));
-    return solution;
+    return [buddys, buddys.buddy]
+        .map(({ numerator, denominator }) => ({ numerator, denominator }));
 };
 
 
@@ -78,9 +79,6 @@ const sixGearSolution = (sortedQuotients, desiredProduct) => {
     const list = buildUniquePairs(sortedQuotients);
 
     const buddys = quickFindBuddy(list, sortedQuotients, desiredProduct);
-    const solution = [buddys.buddy, buddys.factors[0], buddys.factors[1]]
+    return [buddys.buddy, buddys.factors[0], buddys.factors[1]]
         .map(({ numerator, denominator }) => ({ numerator, denominator }));
-
-    return solution;
-
 };

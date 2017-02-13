@@ -56,10 +56,7 @@ module.exports = (lowerBound, upperBound) => {
     for (let i = lowerBound; i <= upperBound; i++) {
         for (let j = lowerBound; j <= upperBound; j++) {
             const quotient = i / j;
-            // OPTIMIZATION : don't ever add a quotient of 1, it's pointless
-            if (quotient !== 1) {
-                addToArr(quotient, i, j, arr);
-            }
+            addToArr(quotient, i, j, arr);
         }
     }
 
