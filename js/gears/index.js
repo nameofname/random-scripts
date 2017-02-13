@@ -81,21 +81,4 @@ const sixGearSolution = (sortedQuotients, desiredProduct) => {
     const buddys = quickFindBuddy(list, sortedQuotients, desiredProduct);
     return [buddys.buddy, buddys.factors[0], buddys.factors[1]]
         .map(({ numerator, denominator }) => ({ numerator, denominator }));
-
-    // const arrayOfNumbers = sortedQuotients.map(({ quotient, numerator, denominator}) => {
-    //     return Object.assign({}, {
-    //         value : quotient,
-    //         numerator, denominator
-    //     });
-    // });
-    //
-    // const buddys = quickFindBuddy(arrayOfNumbers, sortedQuotients, desiredProduct);
-    //
-    // arrayOfNumbers.forEach(obj => {
-    //     console.log((obj.value * obj.buddy.quotient))
-    // });
-    //
-    // return[];
-    // // const level1 = buddys.map(obj => ({ numerator, denominator }));
-    //
 };
