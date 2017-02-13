@@ -2,9 +2,9 @@
 
 
 const timer = require('./timer');
-const calculateQuotients = require('../calculateQuotients');
-const buildUniquePairs = require('../buildUniquePairs');
-const calcFinalValue = require('../calcFinalValue');
+const calculateQuotients = require('../src/calculateQuotients');
+const buildUniquePairs = require('../src/buildUniquePairs');
+const calcFinalValue = require('../src/calcFinalValue');
 
 
 const testListMaker = () => {

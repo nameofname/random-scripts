@@ -1,7 +1,7 @@
 "use strict";
 
 
-const calculateQuotients = require('../calculateQuotients');
+const calculateQuotients = require('../src/calculateQuotients');
 const timer = require('./timer');
 
 

@@ -1,7 +1,7 @@
 "use strict";
 
 
-const mergeSort = require('../mergeSort');
+const mergeSort = require('../src/mergeSort');
 const timer = require('./timer');
 
 

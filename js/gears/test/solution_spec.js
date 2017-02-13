@@ -1,8 +1,8 @@
 "use strict";
 
 const timer = require('./timer');
-const solve = require('../index');
-const calcFinalValue = require('../calcFinalValue');
+const solve = require('../src/solution');
+const calcFinalValue = require('../src/calcFinalValue');
 
 
 // SOLUTION :
