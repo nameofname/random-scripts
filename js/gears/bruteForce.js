@@ -1,12 +1,7 @@
 "use strict";
 
+const calcFinalValue = require('./calcFinalValue');
 
-const calc = (i, j, k, l, m, n) => {
-    if (m === undefined && n === undefined) {
-        return (i/j) * (k/l) * 40;
-    }
-    return (i/j) * (k/l) * (m/n) * 40;
-};
 
 const isBetter = (bestAttempt, attempt) => {
     return Math.abs(attempt - 127) < Math.abs(bestAttempt - 127);
@@ -21,7 +16,7 @@ const findFour = (lowerBound, upperBound) => {
         for(let j = lowerBound; j <= upperBound; j++) {
             for(let k = lowerBound; k <= upperBound; k++) {
                 for(let l = lowerBound; l <= upperBound; l++) {
-                    const num = calc(i, j, k, l);
+                    const num = calcFinalValue(i, j, k, l);
                     if (closest === undefined) {
                         closest = num;
                     } else {
@@ -48,7 +43,7 @@ const findSix = (lowerBound, upperBound) => {
                 for(let l = lowerBound; l <= upperBound; l++) {
                     for(let m = lowerBound; m <= upperBound; m++) {
                         for(let n = lowerBound; n <= upperBound; n++) {
-                            const num = calc(i, j, k, l, m, n);
+                            const num = calcFinalValue(i, j, k, l, m, n);
                             if (closest === undefined) {
                                 closest = num;
                             } else {
