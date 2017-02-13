@@ -8,9 +8,23 @@ const calcFinalValue = require('./calcFinalValue');
 const timer = require('./timer');
 
 
-// testing out calculate quotients :
-// const quotients = calculateQuotients(13, 50);
-// console.log(quotients.length);
+
+// CALCULATING QUOTIENTS :
+const findQuotiens = () => {
+    const quotients = calculateQuotients(13, 50);
+    console.log(quotients.length);
+};
+
+// BRUTE FORCE :
+const bruteForceFour = () => {
+    const solution = bruteForce.findFour(13, 50);
+    console.log(solution); // [ 41, 22, 46, 27 ]
+};
+
+const bruteForceSix = () => {
+    const solution1 = bruteForce.findSix(13, 50);
+    console.log(solution1); // [ 35, 17, 38, 31, 39, 31 ]
+};
 
 
 // SOLUTION :
@@ -30,15 +44,9 @@ const findSolution = () => {
     console.log(calcFinalValue.apply(null, arr));
 };
 
-const time = timer(findSolution);
+
+
+
+const time = timer(bruteForceFour);
 console.log(`finished solution in time of ${time}`);
-
-
-
-// BRUTE FORCE :
-// const solution = bruteForce.findFour(13, 50);
-// console.log(solution);
-//
-// const solution1 = bruteForce.findSix(13, 50);
-// console.log(solution1);
 
