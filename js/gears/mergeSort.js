@@ -15,8 +15,13 @@ const _merge = (arr1, arr2) => {
         const left = arr1[lowIdx];
         const right = arr2[highIdx];
 
-        if (left === undefined || right === undefined) {
+        if (left === undefined) {
+            arr[i] = right;
+            highIdx++;
+        } else if (right === undefined) {
+            arr[i] = left;
             arr[i] = (left === undefined) ? right : left;
+            lowIdx++;
         } else {
             if (left <= right) {
                 arr[i] = left;
@@ -27,7 +32,6 @@ const _merge = (arr1, arr2) => {
             }
         }
 
-        console.log(`placed number ${arr[i]} for itar ${itar}`)
     }
     return arr;
 };
@@ -40,18 +44,17 @@ const mergeSort = (arr) => {
     } else {
 
         const halfWay = Math.floor(arr.length / 2);
-        const arr1 = arr.slice(0, halfWay);
-        const arr2 = arr.slice(halfWay, arr.length);
+        let arr1 = arr.slice(0, halfWay);
+        let arr2 = arr.slice(halfWay, arr.length);
 
-        if (arr1.length > 1 || arr2.length > 1) {
-            return _merge(
-                mergeSort(arr1),
-                mergeSort(arr2)
-            );
-
-        } else {
-            return _merge(arr1, arr2);
+        if (arr1.length > 1) {
+            arr1 = mergeSort(arr1);
         }
+        if (arr2.length > 1) {
+            arr2 = mergeSort(arr2);
+        }
+
+        return _merge(arr1,arr2);
     }
 };
 
