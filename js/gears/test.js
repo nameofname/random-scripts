@@ -75,21 +75,25 @@ const testListMaker = () => {
 
 const testMergeSort = () => {
 
-    // const arr = [1,2,5,6,7,6,5,4,3,4,5,8,9,0,5,6,7,3,2,6,5,3,4,7,3,7,3,9,5];
-    // const sorted = mergeSort(arr);
-
-    const arr1 = [1,2,5,6,7,2];
-    const sorted = mergeSort(arr1);
-
+    const arr = [1,2,5,6,7,2];
+    const sorted = mergeSort(arr);
     console.log(sorted);
 
+    const arr1 = [1,2,5,6,7,6,5,4,3,4,5,8,9,0,5,6,7,3,2,6,5,3,4,7,3,7,3,9,5];
+    const sorted1 = mergeSort(arr1);
+    console.log(sorted1);
 
-    // TODO !!! Test merge sort of a large number and run through the timer.
-    // TODO !!! What happens with merge sort in the thousands?
+    let arr2 = [];
+    for (let i = 0; i <= 1400; i++) {
+        arr2.push(Math.random() * 100);
+    }
+
+    const sorted2 = mergeSort(arr2);
+    console.log(sorted2);
 };
 
 
 
-const time = timer(testMergeSort);
+const time = timer(findSolution);
 console.log(`finished solution in time of ${time}`);
 

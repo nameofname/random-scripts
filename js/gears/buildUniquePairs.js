@@ -1,6 +1,7 @@
 "use strict";
 
 let usedProducts;
+const mergeSort = require('./mergeSort');
 
 /**
  * Build a list of unique pairs
@@ -28,5 +29,5 @@ module.exports = (sortedQuotients) => {
         }
     }
 
-    return pairs;
+    return mergeSort(pairs);
 };
