@@ -19,7 +19,7 @@ module.exports = (sortedQuotients) => {
                 value: one.quotient * two.quotient,
                 factors: [one, two]
             };
-            // de-dupe products 
+            // de-dupe products
             if (!usedProducts.get(obj.value)) {
                 pairs.push(obj);
                 usedProducts.get(obj.value, true);
