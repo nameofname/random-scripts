@@ -21,7 +21,6 @@ String.prototype.indexOf = function (subString) {
                 if (arr[j] === substringArr[j]) {
                     valid = true;
                 } else {
-                    console.log('this is why im hot', i, j)
                     valid = false;
                     break innerLoop;
                 }
