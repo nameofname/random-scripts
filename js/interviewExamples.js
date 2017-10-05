@@ -90,3 +90,44 @@ const findDuplicate = arr => {
 console.log('findDuplicate', findDuplicate([1,2,3,4,5,6,3,7,8,9]));
 
 
+// { 1: 'a', 2: 'b', ... }
+const alphaMap = [...Array(26)]
+    .reduce((prev, a, idx) => Object.assign(prev, { [idx + 1] : String.fromCharCode(idx + 97) }), {});
+
+
+// for a given number, translate to all permutations of a string it could represent
+// for example, 1 = a, 12 = either ab or l (since l is the 12th letter in the alphabet)
+// 123 could be abc, am, lc,
+const translateNumbers = number => {
+
+    const arr = `${number}`.split('');
+
+    const recur = (remainingArr, permutations) => {
+        let withLetter1 = [];
+        let withLetter2 = [];
+
+        const n1 = remainingArr.shift();
+        const n2 = `${n1}${remainingArr[0]}`;
+        const letter1 = alphaMap[n1];
+        const letter2 = alphaMap[n2];
+
+        withLetter1 = permutations.map(str => `${str}${letter1}`);
+        if (letter2) {
+            withLetter2 = permutations.map(str => `${str}${letter2}`);
+        }
+
+        const newPermutations = [...withLetter1, ...withLetter2];
+
+        if (remainingArr.length > 1) {
+            return recur(remainingArr, newPermutations)
+        }
+
+        return newPermutations;
+    };
+
+    return recur(arr, ['']);
+};
+
+console.log('=========================')
+console.log(translateNumbers(12345));
+console.log(translateNumbers(1125312));
