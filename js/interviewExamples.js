@@ -118,7 +118,7 @@ const translateNumbers = number => {
 
         const newPermutations = [...withLetter1, ...withLetter2];
 
-        if (remainingArr.length > 1) {
+        if (remainingArr.length > 0) {
             return recur(remainingArr, newPermutations)
         }
 
