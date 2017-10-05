@@ -61,4 +61,32 @@ console.log('getFullname 3', getName.apply(obj.prop)); // 'John Doe' in browser,
 
 
 
+// occurrences of a given character in a string
+
+const occurrences = (string, char) => {
+    return string
+        .split('')
+        .reduce((prev, c) => {
+            return prev + (c === char ? 1 : 0);
+        }, 0);
+};
+
+console.log('occurrences', occurrences('ronalds rons r', 'r'));
+
+
+
+const findDuplicate = arr => {
+    const obj = {};
+    let dupes = [];
+    arr.forEach(n => {
+        if (obj[n]) {
+            dupes.push(n);
+        }
+        obj[n] = true;
+    });
+    return dupes;
+};
+
+console.log('findDuplicate', findDuplicate([1,2,3,4,5,6,3,7,8,9]));
+
 

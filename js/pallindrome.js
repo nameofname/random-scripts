@@ -1,6 +1,8 @@
 "use strict";
 
 
+// totally didn't think of this, but it's waaayyyy easier.
+// but also it's less efficient.
 const easyAnswer = str => {
     return str === str.split('').reverse().join('');
 };
