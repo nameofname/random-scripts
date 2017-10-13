@@ -23,7 +23,7 @@ var arr = [
 
 
 
-const findCluster = matrix => {
+const findClusterBak = matrix => {
 
     const usedMap = {};
     const width = matrix[0].length - 1;
@@ -32,11 +32,17 @@ const findCluster = matrix => {
     const clusterRecur = (matrix, x, y, counter) => {
 
         const currKey = `${y}${x}`;
+        const isOne = matrix[y][x] === 1;
         console.log('clusterRecur', currKey);
         if (usedMap[currKey]) {
             return 0; 
         }
+
         usedMap[`${y}${x}`] = true;
+
+        if (isOne) {
+            counter++;
+        }
 
         const coordinatesArr = [[x - 1, y], [x + 1, y], [x, y - 1], [x, y + 1]];
 
@@ -50,7 +56,7 @@ const findCluster = matrix => {
 
             const innerKey = `${currY}${currX}`;
             console.log('innerKey', innerKey);
-            usedMap[innerKey] = true;
+            // usedMap[innerKey] = true;
             // console.log(currX, currY)
             if (xOutOfRange || yOutOfRange || alreadyUsed) {
                 continue;
@@ -87,6 +93,61 @@ const findCluster = matrix => {
 
 
 
-console.log(findCluster(arr));
+// console.log(findCluster(arr));
 
+const clusterIterator = (matrix, y, x, callback, usedMap) => {
+    usedMap = usedMap || {};
 
+    const width = matrix[0].length - 1;
+    const height = matrix.length - 1;
+    const inRange = (y > -1) && (x > -1) && (y <= height) && (x <= width);
+    const coordinateKey = `${y}-${x}`;
+    const isUsed = usedMap[coordinateKey] === true;
+
+    usedMap[coordinateKey] = true;
+
+    if (!inRange || isUsed) {
+        return;
+    }
+
+    const isOne = matrix[y][x] === 1;
+
+    if (isOne) {
+        callback(matrix, y, x);
+
+        const adjacentCoordinates = [[y, x - 1], [y, x + 1], [y - 1, x], [y + 1, x]];
+
+        for (let i = 0; i < adjacentCoordinates.length; i++) {
+            const currY = adjacentCoordinates[i][0];
+            const currX = adjacentCoordinates[i][1];
+            clusterIterator(matrix, currY, currX, callback, usedMap);
+        }
+    }
+};
+
+const replaceLargestCluster = matrix => {
+
+    let largest = 0;
+    let largestCoordinates;
+
+    matrix.forEach((arr, y) => {
+        arr.forEach((int, x) => {
+            let clusterSize = 0;
+            clusterIterator(matrix, y, x, () => {
+                clusterSize++;
+            });
+            if (clusterSize > largest) {
+                largest = clusterSize;
+                largestCoordinates = [y, x];
+            }
+        });
+    });
+
+    clusterIterator(matrix, largestCoordinates[0], largestCoordinates[1], (mx, y, x) => {
+        mx[y][x] = 0;
+    });
+
+    return matrix;
+};
+
+console.log(replaceLargestCluster(arr));
