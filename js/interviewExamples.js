@@ -131,3 +131,14 @@ const translateNumbers = number => {
 console.log('=========================')
 console.log(translateNumbers(12345));
 console.log(translateNumbers(1125312));
+
+const hoisting = () => {
+    console.log(theVar);
+    // console.log(theLet); // reference error
+    var theVar = 'ronald1';
+    let theLet = 'ronald2';
+    console.log(theVar);
+};
+
+console.log('=========================')
+hoisting();
