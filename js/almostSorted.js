@@ -3,65 +3,143 @@ const processArr = (arr, callback) => {
         const curr = arr[idx];
         let prev = arr[idx - 1];
         let next = arr[idx + 1];
-        prev = prev === undefined ? -Infinity : prev;
-        next = next === undefined ? Infinity : next;
-        callback(arr, prev, curr, next, idx);
+        // prev = prev === undefined ? -Infinity : prev;
+        // next = next === undefined ? Infinity : next;
+        callback(prev, curr, next, idx);
     }
+};
+
+function printSwap(n1, n2) {
+    return console.log(`yes\nswap ${n1} ${n2}`);
+}
+function printReverse(n1, n2) {
+    return console.log(`yes\nreverse ${n1} ${n2}`);
 }
 
 function findSwapReverse (a) {
     const arr = new Array(a.length).fill('').map((x, i) => a[i]);
-    const arr1 = new Array(a.length).fill('').map((x, i) => a[i]);
+    const len = arr.length;
+    const segments = [];
+    // let direction = arr[0] < arr[1] ? "+" : "-";
 
-    let swaps = 0;
-    let toSwap = [];
-    let toReverse = [];
+    while (arr.length) {
+        loop :
+        for (let idx = 0; idx < arr.length; idx++) {
+            const curr = arr[idx];
+            const prev = arr[idx - 1];
+            const next = arr[idx + 1];
 
-    // explanation : figuring out the number of swaps is easy, but we have to actually do the swaps because as 
-    // we go, if we swap 2 numbers, and the immediate next pair also needs to be swapped, then the swapped int
-    // must be in the correct place 
-    processArr(arr, (a, prev, curr, next, idx) => {
-        if (next < curr) {
-            if (next > prev) {
-                ++swaps;
-                toSwap = [idx + 1, idx + 2];
-                a[idx] = next;
-                a[idx + 1] = curr;
-            } else {
-                swaps = 100;
+            if (prev === undefined) {
+                continue;
+            }
+
+            const negativeInflection = (prev <= curr) && (next < curr);
+            const positiveInflection = (prev >= curr) && (next > curr);
+
+            // console.log('test', positiveInflection, negativeInflection, prev, curr, next)
+            if (positiveInflection || negativeInflection) {
+                const splitOn = negativeInflection ? idx : idx + 1;
+                segments.push(arr.splice(0, splitOn));
+                break loop;
+            } else if (next === undefined) {
+                segments.push(arr.splice(0, arr.length));
             }
         }
-    });
-
-    if (swaps <= 1) {
-        return console.log(`yes\nswap ${toSwap.join(' ')}`);
     }
 
-    // explanation : figuring out the number of reversals is a little trickier, we don't have to actually reverse
-    // the array, because we just count the number of times the array is reversed and keep track. however, we 
-    // must also account for the invalid case where there are 2 reversals (valid), that yeild an array that is 
-    // still not sotred, eg, 1, 2, 6, 5, 3, 4 => 1, 2, 3, 5, 6, 4 -- here we reversed 6, 5, 3 but 4 is still out of place. 
-    processArr(arr1, (a, prev, curr, next, idx) => {
+    if (segments.length > 3) {
+        return console.log('no');
+    }
 
-        if (toReverse.length === 0) {
-            if (next < curr) {
-                toReverse.push(idx);
-            }
-        } else if (toReverse.length === 1) {
-            if (next > curr) {
-                toReverse.push(idx);
-                if (next < a[toReverse[0]]) {
-                    toReverse.push('whatever');
-                }
-            }
+    let negativeSegmentLength;
+    let ordered = [];
+
+    for (let j = 0; j < segments.length; j++) {
+        const segment = segments[j];
+        const isNegative = segment[1] < segment[0];
+        let currSegment = segment;
+        if (isNegative) {
+            negativeSegmentLength = segment.length;
+            currSegment = segment.reverse();
         }
-    });
-
-    if (toReverse.length <= 2) {
-        return console.log(`yes\nreverse ${toReverse.map(n => n + 1).join(' ')}`);
+        ordered = [...ordered, ...currSegment];
     }
 
-    return console.log(`no`);
+    let orderCheck = ordered
+        .reduce((prev, curr, idx) => {
+            if (!prev) {
+                return prev;
+            }
+            //console.log(curr <= ordered[idx + 1], curr, ordered[idx + 1])
+            const next = ordered[idx + 1] === undefined ? Infinity : ordered[idx + 1];
+            return curr <= next;
+        }, true);
+
+
+    if (!orderCheck) {
+        return console.log('no');
+    } else {
+        if (negativeSegmentLength === 2) {
+            return console.log(`yes\nswap${1}${2}`);
+        } else {
+            return console.log(`yes\nreverse${1}${2}`);
+        }
+    }
+
+
+
+
+
+
+
+
+
+    return;
+
+    if (directionChanges.length === 1) {
+        return segments[0].length <= 2
+            ? printSwap(directionChanges[0], len)
+            : printReverse(directionChanges[0], len)
+    } else if (directionChanges.length > 3) {
+        return console.log('no');
+    }
+
+    let numOfDescending = 0;
+
+    const reOrderedArr = segments
+        .reduce((ar, segment, idx) => {
+
+            const curr = segment[idx];
+            const prev = segment[idx - 1] === undefined ? -Infinity : segment[idx - 1];
+            const direction = (prev > curr) ? '-' : '+';
+            console.log('testing prev > curr', prev > curr, prev, curr)
+            if (direction === '-') {
+                ++numOfDescending;
+                segment = segment.reverse();
+            }
+            return [...ar, ...segment];
+        }, []);
+
+    console.log('numOfDescending', numOfDescending);
+    if (numOfDescending > 1) {
+        return console.log('no');
+    }
+
+    const isOrdered = reOrderedArr
+        .reduce((result, curr, idx) => {
+            if (!result) {
+                return result;
+            }
+            const prev = idx === 0 ? -Infinity : reOrderedArr[idx - 1];
+            return curr > prev;
+        });
+
+    console.log('isOrdered', isOrdered, reOrderedArr);
+    if (isOrdered) {
+        return printSwap(directionChanges[1] + 1, directionChanges[2]);
+    } else {
+        return console.log('no');
+    }
 }
 
 function processData(input) {
@@ -78,7 +156,12 @@ process.stdin.on("data", function (input) {
 });
 
 process.stdin.on("end", function () {
-    processData(_input);
+    //processData(_input);
 });
 
 
+findSwapReverse([1, 2, 3, 6, 5, 4, 7 ,8]);
+findSwapReverse([3, 2, 1, 4, 5, 6]);
+
+// [1, 2, 3, 6, 5, 4, 7 ,8]
+// [3, 2, 1, 4, 5, 6]
