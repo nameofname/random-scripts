@@ -16,21 +16,40 @@ function printReverse(n1, n2) {
     return console.log(`yes\nreverse ${n1} ${n2}`);
 }
 
+const checkOrder = ordered => ordered
+    .reduce((prev, curr, idx) => {
+        if (!prev) {
+            return prev;
+        }
+        //console.log(curr <= ordered[idx + 1], curr, ordered[idx + 1])
+        const next = ordered[idx + 1] === undefined ? Infinity : ordered[idx + 1];
+        return curr <= next;
+    }, true);
+
+
+
 function findSwapReverse (a) {
-    const arr = new Array(a.length).fill('').map((x, i) => a[i]);
+    const arr = new Array(a.length).fill('').map((x, i) => Number(a[i]));
+    const arrCopy = new Array(a.length).fill('').map((x, i) => Number(a[i]));
     const segments = [];
+
+    const unorderedInts = arr
+        .reduce((unordered, curr, idx) => {
+            const next = arr[idx + 1] === undefined ? Infinity : arr[idx + 1];
+            return curr > next ? [...unordered, idx] : unordered;
+        }, []);
 
     while (arr.length) {
         loop :
         for (let idx = 0; idx < arr.length; idx++) {
-            const curr = Number(arr[idx]);
-            const prev = Number(arr[idx - 1]);
-            const next = Number(arr[idx + 1]);
+            const curr = arr[idx];
+            const prev = arr[idx - 1];
+            const next = arr[idx + 1];
 
             let negativeInflection = (prev <= curr) && (next < curr);
             let positiveInflection = (prev >= curr) && (next > curr);
 
-            if (Number.isNaN(prev)) {
+            if (prev === undefined) {
                 negativeInflection = false;
                 positiveInflection = false;
             }
@@ -40,13 +59,23 @@ function findSwapReverse (a) {
                 const splitOn = negativeInflection ? idx : idx + 1;
                 segments.push(arr.splice(0, splitOn));
                 break loop;
-            } else if (Number.isNaN(next)) {
+            } else if (next === undefined) {
                 segments.push(arr.splice(0, arr.length));
             }
         }
     }
 
-    // console.log('segments', segments);
+    console.log('segments - unorderedInts', segments.length, unorderedInts);
+
+    if (unorderedInts.length === 2) {
+        const tmp = arrCopy[unorderedInts[0]];
+        arrCopy[unorderedInts[0]] = arrCopy[unorderedInts[1]];
+        arrCopy[unorderedInts[1]] = tmp;
+        console.log('this case', arrCopy, checkOrder(arrCopy));
+        if (checkOrder(arrCopy)) {
+            return console.log(`yes\nswap ${unorderedInts.map(i => i + 1).join(' ')}`);
+        }
+    }
 
     if (segments.length > 3) {
         return console.log('no');
@@ -68,16 +97,7 @@ function findSwapReverse (a) {
         ordered = [...ordered, ...currSegment];
     }
 
-    let orderCheck = ordered
-        .reduce((prev, curr, idx) => {
-            if (!prev) {
-                return prev;
-            }
-            //console.log(curr <= ordered[idx + 1], curr, ordered[idx + 1])
-            const next = ordered[idx + 1] === undefined ? Infinity : ordered[idx + 1];
-            return curr <= next;
-        }, true);
-
+    const orderCheck = checkOrder(ordered);
 
     if (!orderCheck) {
         return console.log('no');
