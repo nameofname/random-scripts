@@ -20,6 +20,7 @@ function findSwapReverse (a) {
     const arr = new Array(a.length).fill('').map((x, i) => a[i]);
     const len = arr.length;
     const segments = [];
+    const inflections = [];
     // let direction = arr[0] < arr[1] ? "+" : "-";
 
     while (arr.length) {
@@ -36,10 +37,11 @@ function findSwapReverse (a) {
             const negativeInflection = (prev <= curr) && (next < curr);
             const positiveInflection = (prev >= curr) && (next > curr);
 
-            // console.log('test', positiveInflection, negativeInflection, prev, curr, next)
+            console.log('test', positiveInflection, negativeInflection, prev, curr, next)
             if (positiveInflection || negativeInflection) {
                 const splitOn = negativeInflection ? idx : idx + 1;
                 segments.push(arr.splice(0, splitOn));
+                inflections.push(splitOn);
                 break loop;
             } else if (next === undefined) {
                 segments.push(arr.splice(0, arr.length));
@@ -79,66 +81,9 @@ function findSwapReverse (a) {
     if (!orderCheck) {
         return console.log('no');
     } else {
-        if (negativeSegmentLength === 2) {
-            return console.log(`yes\nswap${1}${2}`);
-        } else {
-            return console.log(`yes\nreverse${1}${2}`);
-        }
-    }
-
-
-
-
-
-
-
-
-
-    return;
-
-    if (directionChanges.length === 1) {
-        return segments[0].length <= 2
-            ? printSwap(directionChanges[0], len)
-            : printReverse(directionChanges[0], len)
-    } else if (directionChanges.length > 3) {
-        return console.log('no');
-    }
-
-    let numOfDescending = 0;
-
-    const reOrderedArr = segments
-        .reduce((ar, segment, idx) => {
-
-            const curr = segment[idx];
-            const prev = segment[idx - 1] === undefined ? -Infinity : segment[idx - 1];
-            const direction = (prev > curr) ? '-' : '+';
-            console.log('testing prev > curr', prev > curr, prev, curr)
-            if (direction === '-') {
-                ++numOfDescending;
-                segment = segment.reverse();
-            }
-            return [...ar, ...segment];
-        }, []);
-
-    console.log('numOfDescending', numOfDescending);
-    if (numOfDescending > 1) {
-        return console.log('no');
-    }
-
-    const isOrdered = reOrderedArr
-        .reduce((result, curr, idx) => {
-            if (!result) {
-                return result;
-            }
-            const prev = idx === 0 ? -Infinity : reOrderedArr[idx - 1];
-            return curr > prev;
-        });
-
-    console.log('isOrdered', isOrdered, reOrderedArr);
-    if (isOrdered) {
-        return printSwap(directionChanges[1] + 1, directionChanges[2]);
-    } else {
-        return console.log('no');
+        const keyWord = (negativeSegmentLength === 2) ? 'swap' : 'reverse';
+        console.log(a);
+        return console.log(`yes\n${keyWord} ${inflections.join(' ')}`);
     }
 }
 
@@ -160,8 +105,10 @@ process.stdin.on("end", function () {
 });
 
 
-findSwapReverse([1, 2, 3, 6, 5, 4, 7 ,8]);
-findSwapReverse([3, 2, 1, 4, 5, 6]);
+// findSwapReverse([1, 2, 3, 6, 5, 4, 7 ,8]);
+// findSwapReverse([3, 2, 1, 4, 5, 6]);
+findSwapReverse([3, 1, 2]);
+findSwapReverse([1, 5, 4, 3, 2, 6]);
 
 // [1, 2, 3, 6, 5, 4, 7 ,8]
 // [3, 2, 1, 4, 5, 6]
