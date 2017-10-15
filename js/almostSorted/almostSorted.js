@@ -23,14 +23,14 @@ function findSwapReverse (a) {
     while (arr.length) {
         loop :
         for (let idx = 0; idx < arr.length; idx++) {
-            const curr = arr[idx];
-            const prev = arr[idx - 1];
-            const next = arr[idx + 1];
+            const curr = Number(arr[idx]);
+            const prev = Number(arr[idx - 1]);
+            const next = Number(arr[idx + 1]);
 
             let negativeInflection = (prev <= curr) && (next < curr);
             let positiveInflection = (prev >= curr) && (next > curr);
 
-            if (prev === undefined) {
+            if (Number.isNaN(prev)) {
                 negativeInflection = false;
                 positiveInflection = false;
             }
@@ -39,15 +39,14 @@ function findSwapReverse (a) {
             if (positiveInflection || negativeInflection) {
                 const splitOn = negativeInflection ? idx : idx + 1;
                 segments.push(arr.splice(0, splitOn));
-                // inflections.push(splitOn);
                 break loop;
-            } else if (next === undefined) {
+            } else if (Number.isNaN(next)) {
                 segments.push(arr.splice(0, arr.length));
             }
         }
     }
 
-    console.log('segments', segments);
+    // console.log('segments', segments);
 
     if (segments.length > 3) {
         return console.log('no');
@@ -55,14 +54,14 @@ function findSwapReverse (a) {
 
     let negativeSegmentLength;
     let ordered = [];
-    const inflections = [];
+    let inflections;
 
     for (let j = 0; j < segments.length; j++) {
         const segment = segments[j];
         const isNegative = segment[1] < segment[0];
         let currSegment = segment;
-        inflections.push(ordered.length);
         if (isNegative) {
+            inflections = [ordered.length + 1, ordered.length + segment.length];
             negativeSegmentLength = segment.length;
             currSegment = segment.reverse();
         }
@@ -103,13 +102,14 @@ process.stdin.on("data", function (input) {
 });
 
 process.stdin.on("end", function () {
-    //processData(_input);
+    processData(_input);
 });
 
 
 // [1, 2, 3, 6, 5, 4, 7 ,8]
 // [3, 2, 1, 4, 5, 6]
-findSwapReverse([1, 2, 3, 6, 5, 4, 7 ,8]);
-findSwapReverse([3, 2, 1, 4, 5, 6]);
-findSwapReverse([3, 1, 2]);
-findSwapReverse([1, 5, 4, 3, 2, 6]);
+
+// findSwapReverse([1, 2, 3, 6, 5, 4, 7 ,8]);
+// findSwapReverse([3, 2, 1, 4, 5, 6]);
+// findSwapReverse([3, 1, 2]);
+// findSwapReverse([1, 5, 4, 3, 2, 6]);
