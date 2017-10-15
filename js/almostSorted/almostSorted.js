@@ -32,12 +32,24 @@ function findSwapReverse (a) {
     const arr = new Array(a.length).fill('').map((x, i) => Number(a[i]));
     const arrCopy = new Array(a.length).fill('').map((x, i) => Number(a[i]));
     const segments = [];
+    const outOfOrder = {};
 
-    const unorderedInts = arr
-        .reduce((unordered, curr, idx) => {
-            const next = arr[idx + 1] === undefined ? Infinity : arr[idx + 1];
-            return curr > next ? [...unordered, idx] : unordered;
-        }, []);
+    // check for 2 integers out of order (swap case)
+    for (let idx1 = 0; idx1 < arrCopy.length; idx1++) {
+        const prev = arr[idx1 - 1] === undefined ? -Infinity : arr[idx1 - 1];
+        const curr = arr[idx1];
+        const next = arr[idx1 + 1] === undefined ? Infinity : arr[idx1 + 1];
+        if (prev !== null) {
+            const smallerThanNeighbors = curr <= prev && curr < next;
+            const largerThanNeighbors = curr >= prev && curr > next;
+            const testFail = (smallerThanNeighbors || largerThanNeighbors);
+            console.log('testFail', testFail, prev, curr, next)
+            if (testFail) {
+                outOfOrder[idx1] = arrCopy[idx1];
+                arrCopy[idx1] = null;
+            }
+        }
+    }
 
     while (arr.length) {
         loop :
@@ -65,15 +77,15 @@ function findSwapReverse (a) {
         }
     }
 
-    console.log('segments - unorderedInts', segments.length, unorderedInts);
+    console.log('segments - outOfOrder', segments.length, outOfOrder);
 
-    if (unorderedInts.length === 2) {
-        const tmp = arrCopy[unorderedInts[0]];
-        arrCopy[unorderedInts[0]] = arrCopy[unorderedInts[1]];
-        arrCopy[unorderedInts[1]] = tmp;
-        console.log('this case', arrCopy, checkOrder(arrCopy));
+    const oooKeys = Object.keys(outOfOrder);
+    if (oooKeys.length === 2) {
+        console.log('this case', outOfOrder, oooKeys);
+        arrCopy[oooKeys[0]] = arrCopy[outOfOrder[oooKeys[1]]];
+        arrCopy[oooKeys[1]] = arrCopy[outOfOrder[oooKeys[0]]];
         if (checkOrder(arrCopy)) {
-            return console.log(`yes\nswap ${unorderedInts.map(i => i + 1).join(' ')}`);
+            return console.log(`yes\nswap ${oooKeys.map(i => i + 1).join(' ')}`);
         }
     }
 
