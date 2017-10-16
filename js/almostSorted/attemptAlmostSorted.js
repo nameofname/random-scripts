@@ -125,18 +125,29 @@ function findSwapReverse (a) {
 
     // second possible success case is where we have 3 or fewer segments where one is reversed :
     if (segments.length <= 3 && numNegatives === 1) {
+        let reverseIndicies = [];
         const ordered = segmentsWithDirections
             .reduce((ord, {direction, segment}, idx) => {
-                const curr = direction === '-' ? segment.reverse() : segment;
-                return [...ord, ...curr];
+                if (direction === '-') {
+                    reverseIndicies = [ord.length + 1, ord.length + segment.length];
+                    return [...ord, ...segment.reverse()];
+                } else {
+                    return [...ord, ...segment];
+                }
             }, []);
+        const orderedCheck = checkOrder(ordered);
         console.log('for this reverse job, lets check our work : ', ordered);
-        console.log('for this reverse job, lets check our work : ', checkOrder(ordered));
+        console.log('for this reverse job, lets check our work : ', orderedCheck);
+        console.log(arr);
+        if (orderedCheck) {
+            return console.log(`yes\nreverse ${reverseIndicies.join(' ')}`);
+        }
     }
 
-    console.log(arr);
-    console.log(singleUnordered);
-    return console.log(segments);
+    // console.log(arr);
+    // console.log(singleUnordered);
+    // console.log(segments);
+    return console.log('no');
 }
 
 function processData(input) {
