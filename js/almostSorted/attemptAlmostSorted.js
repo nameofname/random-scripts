@@ -108,9 +108,30 @@ function findSwapReverse (a) {
         }
     }
 
+    let numNegatives = 0;
+    const segmentsWithDirections = segments.map(segment => {
+        let direction;
+        let counter = 0;
+        while (direction === undefined && counter <= segment.length) {
+            const positive = segment[counter] < segment[counter + 1];
+            const negative = segment[counter] > segment[counter + 1];
+            if (positive || negative) {
+                direction = positive ? '+' : '-';
+            }
+        }
+        numNegatives = direction === '-' ? ++numNegatives : numNegatives;
+        return {direction, segment};
+    });
+
     // second possible success case is where we have 3 or fewer segments where one is reversed :
-    if (segments.length <= 3) {
-        
+    if (segments.length <= 3 && numNegatives === 1) {
+        const ordered = segmentsWithDirections
+            .reduce((ord, {direction, segment}, idx) => {
+                const curr = direction === '-' ? segment.reverse() : segment;
+                return [...ord, ...curr];
+            }, []);
+        console.log('for this reverse job, lets check our work : ', ordered);
+        console.log('for this reverse job, lets check our work : ', checkOrder(ordered));
     }
 
     console.log(arr);
