@@ -30,10 +30,8 @@ const checkOrder = ordered => ordered
 
 function findSwapReverse (a) {
     const arr = new Array(a.length).fill('').map((x, i) => Number(a[i]));
-    // const arrCopy = new Array(a.length).fill('').map((x, i) => Number(a[i]));
-    let direction;
-    const segments = [[]];
-    const singleUnorderedIndicies = [];
+    let segments = [[]];
+    const singleUnordered = [];
 
     // to find your inflection points, you have to consider how you would re-arrange the numbers in your array
     // for an inflection switching to negative, you always want to include the current index, whereas if it's switching
@@ -58,28 +56,32 @@ function findSwapReverse (a) {
     // therefore, as we check for positive and negative segments, we must also check for single integers out of order
     // that is where the current number is either greater or less than both surrounding numbers
 
+    // NOTE* For this case to work, you have to check that the number is out of order with regards to numbers 2 deep
+    // on either side, take this example :
+    // 1 2 3 7 5 6
+    // bot 7 and 5 are unordered with regards to 2 immediately surrounding numbers, so we check 2 back and 2 forward
+
     for (let idx = 0; idx < arr.length; idx++) {
         const prev = arr[idx - 1] === undefined ? -Infinity : arr[idx - 1];
         const next = arr[idx + 1] === undefined ? Infinity : arr[idx + 1];
         const curr = arr[idx];
 
-        // first check for a single index out of order :
         const isUnorderedGreater = curr >= prev && curr > next;
         const isUnorderedLess = curr <= prev && curr < next;
+
+        // first check for a single index out of order :
         if (isUnorderedGreater || isUnorderedLess) {
-            singleUnorderedIndicies.push(idx);
+            const prev1 = arr[idx - 2] === undefined ? -Infinity : arr[idx - 2];
+            const next1 = arr[idx + 2] === undefined ? Infinity : arr[idx + 2];
+            const isDoubleUnorderedGreater = isUnorderedGreater && curr >= prev1 && curr >= next1;
+            const isDoubleUnorderedLess = isUnorderedLess && curr <= prev1 && curr <= next1;
+            if (isDoubleUnorderedGreater || isDoubleUnorderedLess) {
+                singleUnordered.push(idx);
+            }
         }
-
-        // next build up the segments by splitting on the conditions described above :
-        // if (next === Infinity) {
-        //     continue;
-        // }
-
-        let directionChange;
 
         // if unordered greater, then this is a negative inflection point, the start of a negative segment : [1 2] [6 5 4]
         if (isUnorderedGreater) {
-            directionChange = '-';
             segments.push([]);
         }
 
@@ -91,8 +93,28 @@ function findSwapReverse (a) {
         }
     }
 
+    segments = segments.filter(seg => seg.length);
+
+    // first case is if there are exactly 4 unordered indicies, this could happen in a swap case : 1 2 6 4 5 3 7
+    if (singleUnordered.length === 2) {
+
+        // check that the swap is successful
+        const prev1 = arr[singleUnordered[0] - 1] !== undefined ? arr[singleUnordered[0] - 1] : -Infinity;
+        const next1 = arr[singleUnordered[0] + 1] !== undefined ? arr[singleUnordered[0] + 1] : Infinity;
+        if (arr[singleUnordered[0]] >= prev1 && arr[singleUnordered[0]] <= next1) {
+            if (arr[singleUnordered[1]] >= prev2 && arr[singleUnordered[1]] <= next2) {
+                return console.log(`yes\nswap ${singleUnordered[0] + 1} ${singleUnordered[1] + 1}`);
+            }
+        }
+    }
+
+    // second possible success case is where we have 3 or fewer segments where one is reversed :
+    if (segments.length <= 3) {
+        
+    }
+
     console.log(arr);
-    console.log(singleUnorderedIndicies);
+    console.log(singleUnordered);
     return console.log(segments);
 }
 
