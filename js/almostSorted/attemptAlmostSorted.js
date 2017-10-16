@@ -104,22 +104,22 @@ function findSwapReverse (a) {
     // first case is if there are exactly 2 unordered indicies, this could happen in a swap case : 1 2 6 4 5 3 7
     if (singleUnordered.length === 2) {
 
-        // check that the swap is successful
+        // check that the swap is successful - I check the surrounding numbers before the whole array for efficiency
         const prev1 = arr[singleUnordered[0] - 1] !== undefined ? arr[singleUnordered[0] - 1] : -Infinity;
         const next1 = arr[singleUnordered[0] + 1] !== undefined ? arr[singleUnordered[0] + 1] : Infinity;
         if (prev1 <= arr[singleUnordered[1]] <= next1) {
             const prev2 = arr[singleUnordered[1] - 1] !== undefined ? arr[singleUnordered[1] - 1] : -Infinity;
             const next2 = arr[singleUnordered[1] + 1] !== undefined ? arr[singleUnordered[1] + 1] : Infinity;
             if (prev2 <= arr[singleUnordered[0]] <= next2) {
-                const swapOrderedArr = arr.map((int, idx) => {
+                const swapOrderedCheck = checkOrder(arr.map((int, idx) => {
                     if (idx === singleUnordered[0]) {
                         return arr[singleUnordered[1]];
                     } else if (idx === singleUnordered[1]) {
                         return arr[singleUnordered[0]];
                     }
                     return int;
-                });
-                if (checkOrder(swapOrderedArr)) {
+                }));
+                if (swapOrderedCheck) {
                     return console.log(`yes\nswap ${singleUnordered[0] + 1} ${singleUnordered[1] + 1}`);
                 }
             }
@@ -166,10 +166,10 @@ function findSwapReverse (a) {
         }
     }
 
-    console.log(arr);
-    console.log(singleUnordered);
-    console.log(segments);
-    console.log(segmentsWithDirections, segments.length, numNegatives);
+    // console.log(arr);
+    // console.log(singleUnordered);
+    // console.log(segments);
+    // console.log(segmentsWithDirections, segments.length, numNegatives);
     return console.log('no');
 }
 
