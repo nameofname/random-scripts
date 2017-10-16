@@ -156,8 +156,8 @@ function findSwapReverse (a) {
     }
 
     // console.log(arr);
-    // console.log(singleUnordered);
-    // console.log(segments);
+    console.log(singleUnordered);
+    console.log(segments.length);
     return console.log('no');
 }
 
