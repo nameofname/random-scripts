@@ -101,14 +101,16 @@ function findSwapReverse (a) {
 
     segments = segments.filter(seg => seg.length);
 
-    // first case is if there are exactly 4 unordered indicies, this could happen in a swap case : 1 2 6 4 5 3 7
+    // first case is if there are exactly 2 unordered indicies, this could happen in a swap case : 1 2 6 4 5 3 7
     if (singleUnordered.length === 2) {
 
         // check that the swap is successful
         const prev1 = arr[singleUnordered[0] - 1] !== undefined ? arr[singleUnordered[0] - 1] : -Infinity;
         const next1 = arr[singleUnordered[0] + 1] !== undefined ? arr[singleUnordered[0] + 1] : Infinity;
-        if (arr[singleUnordered[0]] >= prev1 && arr[singleUnordered[0]] <= next1) {
-            if (arr[singleUnordered[1]] >= prev2 && arr[singleUnordered[1]] <= next2) {
+        if (arr[singleUnordered[0]] >= prev1 && arr[singleUnordered[1]] <= next1) {
+            const prev2 = arr[singleUnordered[1] - 1] !== undefined ? arr[singleUnordered[1] - 1] : -Infinity;
+            const next2 = arr[singleUnordered[1] + 1] !== undefined ? arr[singleUnordered[1] + 1] : Infinity;
+            if (arr[singleUnordered[1]] >= prev2 && arr[singleUnordered[0]] <= next2) {
                 return console.log(`yes\nswap ${singleUnordered[0] + 1} ${singleUnordered[1] + 1}`);
             }
         }
@@ -145,8 +147,7 @@ function findSwapReverse (a) {
                 }
             }, []);
         const orderedCheck = checkOrder(ordered);
-        // console.log('for this reverse job, lets check our work : ', ordered);
-        // console.log('for this reverse job, lets check our work : ', orderedCheck);
+        // console.log('for this reverse job, lets check our work : ', orderedCheck, ordered);
         // console.log(arr);
         if (orderedCheck && reverseSegmentLength === 2) {
             return console.log(`yes\nswap ${reverseIndicies.join(' ')}`);
