@@ -131,14 +131,15 @@ function findSwapReverse (a) {
         let direction;
         let counter = 0;
         while (direction === undefined && counter <= segment.length) {
-            counter++;
             const positive = segment[counter] < segment[counter + 1];
             const negative = segment[counter] > segment[counter + 1];
             if (positive || negative) {
                 direction = positive ? '+' : '-';
             }
+            counter++;
         }
         numNegatives = direction === '-' ? ++numNegatives : numNegatives;
+        direction = direction || '+';
         return {direction, segment};
     });
 
