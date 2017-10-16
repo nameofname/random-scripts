@@ -157,8 +157,8 @@ function findSwapReverse (a) {
     }
 
     // console.log(arr);
-    console.log(singleUnordered);
-    console.log(segments.length);
+    // console.log(singleUnordered);
+    // console.log(segments.length);
     return console.log('no');
 }
 
@@ -178,15 +178,3 @@ process.stdin.on("data", function (input) {
 process.stdin.on("end", function () {
     processData(_input);
 });
-
-
-// [1, 2, 3, 6, 5, 4, 7 ,8]
-// [3, 2, 1, 4, 5, 6]
-
-// findSwapReverse([1, 2, 3, 6, 5, 4, 7 ,8]);
-// findSwapReverse([3, 2, 1, 4, 5, 6]);
-// findSwapReverse([3, 1, 2]);
-// findSwapReverse([1, 5, 4, 3, 2, 6]);
-
-
-
