@@ -111,7 +111,17 @@ function findSwapReverse (a) {
             const prev2 = arr[singleUnordered[1] - 1] !== undefined ? arr[singleUnordered[1] - 1] : -Infinity;
             const next2 = arr[singleUnordered[1] + 1] !== undefined ? arr[singleUnordered[1] + 1] : Infinity;
             if (prev2 <= arr[singleUnordered[0]] <= next2) {
-                return console.log(`yes\nswap ${singleUnordered[0] + 1} ${singleUnordered[1] + 1}`);
+                const swapOrderedArr = arr.map((int, idx) => {
+                    if (idx === singleUnordered[0]) {
+                        return arr[singleUnordered[1]];
+                    } else if (idx === singleUnordered[1]) {
+                        return arr[singleUnordered[0]];
+                    }
+                    return int;
+                });
+                if (checkOrder(swapOrderedArr)) {
+                    return console.log(`yes\nswap ${singleUnordered[0] + 1} ${singleUnordered[1] + 1}`);
+                }
             }
         }
     }
@@ -156,9 +166,10 @@ function findSwapReverse (a) {
         }
     }
 
-    // console.log(arr);
-    // console.log(singleUnordered);
-    // console.log(segments.length);
+    console.log(arr);
+    console.log(singleUnordered);
+    console.log(segments);
+    console.log(segmentsWithDirections, segments.length, numNegatives);
     return console.log('no');
 }
 
