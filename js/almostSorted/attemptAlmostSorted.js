@@ -33,6 +33,12 @@ function findSwapReverse (a) {
     let segments = [[]];
     const singleUnordered = [];
 
+    if (checkOrder(a)) {
+        return console.log('yes');
+    } else if (a.length === 2) {
+        return console.log('yes\nswap 1 2');
+    }
+
     // to find your inflection points, you have to consider how you would re-arrange the numbers in your array
     // for an inflection switching to negative, you always want to include the current index, whereas if it's switching
     // to positive, you don't want the current index in the segment. Consider the following cases :
@@ -113,6 +119,7 @@ function findSwapReverse (a) {
         let direction;
         let counter = 0;
         while (direction === undefined && counter <= segment.length) {
+            counter++;
             const positive = segment[counter] < segment[counter + 1];
             const negative = segment[counter] > segment[counter + 1];
             if (positive || negative) {
@@ -126,20 +133,24 @@ function findSwapReverse (a) {
     // second possible success case is where we have 3 or fewer segments where one is reversed :
     if (segments.length <= 3 && numNegatives === 1) {
         let reverseIndicies = [];
+        let reverseSegmentLength;
         const ordered = segmentsWithDirections
             .reduce((ord, {direction, segment}, idx) => {
                 if (direction === '-') {
                     reverseIndicies = [ord.length + 1, ord.length + segment.length];
+                    reverseSegmentLength = segment.length;
                     return [...ord, ...segment.reverse()];
                 } else {
                     return [...ord, ...segment];
                 }
             }, []);
         const orderedCheck = checkOrder(ordered);
-        console.log('for this reverse job, lets check our work : ', ordered);
-        console.log('for this reverse job, lets check our work : ', orderedCheck);
-        console.log(arr);
-        if (orderedCheck) {
+        // console.log('for this reverse job, lets check our work : ', ordered);
+        // console.log('for this reverse job, lets check our work : ', orderedCheck);
+        // console.log(arr);
+        if (orderedCheck && reverseSegmentLength === 2) {
+            return console.log(`yes\nswap ${reverseIndicies.join(' ')}`);
+        } else if (orderedCheck) {
             return console.log(`yes\nreverse ${reverseIndicies.join(' ')}`);
         }
     }
