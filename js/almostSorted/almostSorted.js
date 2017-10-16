@@ -53,28 +53,28 @@ function findSwapReverse (a) {
 
     while (arr.length) {
         loop :
-        for (let idx = 0; idx < arr.length; idx++) {
-            const curr = arr[idx];
-            const prev = arr[idx - 1];
-            const next = arr[idx + 1];
+            for (let idx = 0; idx < arr.length; idx++) {
+                const curr = arr[idx];
+                const prev = arr[idx - 1];
+                const next = arr[idx + 1];
 
-            let negativeInflection = (prev <= curr) && (next < curr);
-            let positiveInflection = (prev >= curr) && (next > curr);
+                let negativeInflection = (prev <= curr) && (next < curr);
+                let positiveInflection = (prev >= curr) && (next > curr);
 
-            if (prev === undefined) {
-                negativeInflection = false;
-                positiveInflection = false;
+                if (prev === undefined) {
+                    negativeInflection = false;
+                    positiveInflection = false;
+                }
+
+                // console.log('test', positiveInflection, negativeInflection, prev, curr, next);
+                if (positiveInflection || negativeInflection) {
+                    const splitOn = negativeInflection ? idx : idx + 1;
+                    segments.push(arr.splice(0, splitOn));
+                    break loop;
+                } else if (next === undefined) {
+                    segments.push(arr.splice(0, arr.length));
+                }
             }
-
-            // console.log('test', positiveInflection, negativeInflection, prev, curr, next);
-            if (positiveInflection || negativeInflection) {
-                const splitOn = negativeInflection ? idx : idx + 1;
-                segments.push(arr.splice(0, splitOn));
-                break loop;
-            } else if (next === undefined) {
-                segments.push(arr.splice(0, arr.length));
-            }
-        }
     }
 
     console.log('segments - outOfOrder', segments.length, outOfOrder);
