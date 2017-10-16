@@ -107,10 +107,10 @@ function findSwapReverse (a) {
         // check that the swap is successful
         const prev1 = arr[singleUnordered[0] - 1] !== undefined ? arr[singleUnordered[0] - 1] : -Infinity;
         const next1 = arr[singleUnordered[0] + 1] !== undefined ? arr[singleUnordered[0] + 1] : Infinity;
-        if (arr[singleUnordered[0]] >= prev1 && arr[singleUnordered[1]] <= next1) {
+        if (prev1 <= arr[singleUnordered[1]] <= next1) {
             const prev2 = arr[singleUnordered[1] - 1] !== undefined ? arr[singleUnordered[1] - 1] : -Infinity;
             const next2 = arr[singleUnordered[1] + 1] !== undefined ? arr[singleUnordered[1] + 1] : Infinity;
-            if (arr[singleUnordered[1]] >= prev2 && arr[singleUnordered[0]] <= next2) {
+            if (prev2 <= arr[singleUnordered[0]] <= next2) {
                 return console.log(`yes\nswap ${singleUnordered[0] + 1} ${singleUnordered[1] + 1}`);
             }
         }
