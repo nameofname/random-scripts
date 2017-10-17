@@ -20,6 +20,35 @@ function readLine() {
 
 /////////////// ignore above this line ////////////////////
 
+const whatTheLiteralFuckWasIThinking = int => {
+    let factors = [];
+    console.log('1nst look' , int)
+    for (let i = 2; i <= int / 2; i++) {
+        if (int % i === 0) {
+            factors.push(i, int / i);
+        }
+    }
+    if (!factors.length) {
+        return false;
+    }
+    console.log('2nd look' , factors)
+    return factors
+        // find factors for each factor
+        .map(findFactors)
+        // flatten
+        .reduce((arr, curr) => {
+            return Array.isArray(curr) ? [...arr, ...curr] : [...arr, curr];
+        }, [])
+        // remove 'false' values
+        .filter(Boolean)
+        // sort to prep for de-duping
+        .sort()
+        // de-dupe
+        .reduce((arr, curr) => {
+            return arr.includes(curr) ? arr : [...arr, curr];
+        }, []);
+};
+
 const findFactors = int => {
     let factors = [];
     for (let i = 2; i <= int / 2; i++) {
@@ -27,37 +56,16 @@ const findFactors = int => {
             factors.push(i, int / i);
         }
     }
-    return factors.length ? factors : false;
-};
-
-const findAllFactors = int => {
-    let factors = findFactors(int);
-    let currLen = factors.length;
-    let growing = true;
-
-    while (growing) {
-        console.log('growing', growing, factors)
-        const newFactors = factors
-            .map(findFactors)
-            .reduce((ar, cur) => {
-                return Array.isArray(cur) ? [...ar, ...cur] : [...ar, cur];
-            }, [])
-            .filter(Boolean);
-
-        factors = [...factors, ...newFactors]
-            .sort()
-            .reduce((arr, curr) => {
-                return arr.includes(curr) ? arr : [...arr, curr];
-            }, []);
-
-        growing = (factors.length > currLen);
-        currLen = factors.length;
-    }
+    return factors
+        .sort()
+        .reduce((arr, curr) => {
+            return arr.includes(curr) ? arr : [...arr, curr];
+        }, []);
 };
 
 
 function getTotalX(a, b) {
-    return console.log('find factors of...', b[0], findAllFactors(b[0]));
+    return console.log('find factors of...', b[0], findFactors(b[0]));
     const factorsOfB = b.map(findFactors); // array of factors for each of the ints in B, yeilding a 2-dimensional array
     return factorsOfB;
 }
