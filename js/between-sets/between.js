@@ -20,37 +20,8 @@ function readLine() {
 
 /////////////// ignore above this line ////////////////////
 
-const whatTheLiteralFuckWasIThinking = int => {
-    let factors = [];
-    console.log('1nst look' , int)
-    for (let i = 2; i <= int / 2; i++) {
-        if (int % i === 0) {
-            factors.push(i, int / i);
-        }
-    }
-    if (!factors.length) {
-        return false;
-    }
-    console.log('2nd look' , factors)
-    return factors
-        // find factors for each factor
-        .map(findFactors)
-        // flatten
-        .reduce((arr, curr) => {
-            return Array.isArray(curr) ? [...arr, ...curr] : [...arr, curr];
-        }, [])
-        // remove 'false' values
-        .filter(Boolean)
-        // sort to prep for de-duping
-        .sort()
-        // de-dupe
-        .reduce((arr, curr) => {
-            return arr.includes(curr) ? arr : [...arr, curr];
-        }, []);
-};
-
 const findFactors = int => {
-    let factors = [];
+    let factors = [int];
     for (let i = 2; i <= int / 2; i++) {
         if (int % i === 0) {
             factors.push(i, int / i);
@@ -63,11 +34,32 @@ const findFactors = int => {
         }, []);
 };
 
-
+// any number N that is between A and B is a number where every integer in A is a factor of N, and N is a factor of
+// every number in B
+// A = [a1, a2, ... an] = factors of N
+// B = [b1, b2, ... bn] = N is factor of all B
 function getTotalX(a, b) {
-    return console.log('find factors of...', b[0], findFactors(b[0]));
-    const factorsOfB = b.map(findFactors); // array of factors for each of the ints in B, yeilding a 2-dimensional array
-    return factorsOfB;
+    const factorsOfBMap = b
+        // array of factors for each of the ints in B, yeilding a 2-dimensional array
+        .map(findFactors)
+        .reduce((obj, arr) => {
+            arr.forEach(int => {
+                obj[int] = obj[int] || 0;
+                ++obj[int];
+            });
+            return obj;
+        }, {});
+
+    const factorsOfEveryB = Object.keys(factorsOfBMap)
+        .filter(int => factorsOfBMap[int] === b.length)
+        .map(Number);
+
+    return factorsOfEveryB
+        .filter(num1 => {
+            return a.reduce((prev, num2) => {
+                return !prev ? prev : num1 % num2 === 0;
+            }, true);
+        });
 }
 
 function main() {
@@ -79,6 +71,7 @@ function main() {
     b = readLine().split(' ');
     b = b.map(Number);
     var total = getTotalX(a, b);
-    process.stdout.write("" + total + "\n");
+    return console.log(total.length);
+    // process.stdout.write("" + total + "\n");
 
 }
