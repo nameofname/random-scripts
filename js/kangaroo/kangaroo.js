@@ -21,6 +21,9 @@ function readLine() {
 /////////////// ignore above this line ////////////////////
 
 function kangaroo(x1, v1, x2, v2) {
+    if (v1 === v2) {
+        return false;
+    }
     const staratingDistance = Math.abs(x1 - x2);
     let distance = staratingDistance;
     while (distance <= staratingDistance) {
