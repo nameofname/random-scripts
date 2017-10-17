@@ -21,7 +21,7 @@ function readLine() {
 /////////////// ignore above this line ////////////////////
 
 const findFactors = int => {
-    let factors = [int];
+    let factors = [1, int];
     for (let i = 2; i <= int / 2; i++) {
         if (int % i === 0) {
             factors.push(i, int / i);
