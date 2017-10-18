@@ -20,8 +20,23 @@ function readLine() {
 
 /////////////// ignore above this line ////////////////////
 
-function solve(n, s, d, m){
-    // Complete this function
+function solve(arr, sum, n) {
+    // const test = [1, 2, 3]; // n = 1, end = 1, (3 - (1 + 1))
+
+    const end = arr.length - (n + 1);
+    let count = 0;
+
+    for (let i = 0; i <= end; i++) {
+        let currSum = 0;
+        for (let j = i; j <= n; j++) {
+            currSum += arr[j];
+        }
+        if (currSum === sum) {
+            count++;
+        }
+    }
+
+    return count;
 }
 
 function main() {
@@ -31,7 +46,7 @@ function main() {
     var d_temp = readLine().split(' ');
     var d = parseInt(d_temp[0]);
     var m = parseInt(d_temp[1]);
-    var result = solve(n, s, d, m);
+    var result = solve(s, d, m);
     process.stdout.write(""+result+"\n");
 
 }
