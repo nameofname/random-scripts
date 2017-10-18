@@ -21,16 +21,15 @@ function readLine() {
 /////////////// ignore above this line ////////////////////
 
 function solve(arr, sum, n) {
-    // const test = [1, 2, 3]; // n = 1, end = 1, (3 - (1 + 1))
-
-    const end = arr.length - (n + 1);
+    const end = arr.length - n;
     let count = 0;
 
     for (let i = 0; i <= end; i++) {
         let currSum = 0;
-        for (let j = i; j <= n; j++) {
-            currSum += arr[j];
+        for (let j = 0; j < n; j++) {
+            currSum += arr[i + j];
         }
+        // console.log('curr sum', currSum, n)
         if (currSum === sum) {
             count++;
         }
