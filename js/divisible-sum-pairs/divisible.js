@@ -21,7 +21,15 @@ function readLine() {
 /////////////// ignore above this line ////////////////////
 
 function divisibleSumPairs(int, arr) {
-    console.log(int, arr)
+    let counter = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if ((arr[i] + arr[j]) % int === 0) {
+                counter++;
+            }
+        }
+    }
+    return counter;
 }
 
 function main() {
@@ -30,7 +38,7 @@ function main() {
     var k = parseInt(n_temp[1]);
     ar = readLine().split(' ');
     ar = ar.map(Number);
-    var result = divisibleSumPairs(n, k, ar);
+    var result = divisibleSumPairs(k, ar);
     process.stdout.write("" + result + "\n");
 
 }
