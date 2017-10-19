@@ -13,17 +13,15 @@ const addToTop = (arr, int) => {
     loop:
     for (let i = arr.length; i > 0; i--) {
         const curr = arr[i - 1];
-        console.log('comparison', arr, i, curr)
         if (curr === undefined || curr < int) {
             found = i;
             break loop;
         }
     }
-    console.log('found', int, found)
     if (found !== undefined) {
         if (arr.length === 3) {
-            arr.shift();
             arr.splice(found, 0, int);
+            arr.shift();
         } else {
             arr.push(int)
         }
