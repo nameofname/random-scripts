@@ -11,3 +11,7 @@ const lergestProductOfThree = arr => {
 
 
 console.log(lergestProductOfThree([1, 4, 5, 7, 3, 13, 10, 5, 11, 6, 9, 60, 2])); // 8580
+
+console.log(largestThree(new Array(1000)
+    .fill(0)
+    .map(() => (Math.floor(Math.random() * 100000)))));
