@@ -25,6 +25,21 @@ const solve = (arr, upperBound, lowerBound) => {
 };
 
 
+const improvedSolution = (arr, upper, lower) => {
 
-const arr1 = [2, 5, 1, 4, 9, 6, 3, 7];
+    let hopefulSum = 0;
+    let actualSum = 0;
+
+    for (let i = 0; i <= arr.length; i++) {
+        hopefulSum += (lower + i);
+        if (arr[i]) {
+            actualSum += arr[i];
+        }
+    }
+
+    return hopefulSum - actualSum;
+};
+
+const arr1 = [2, 5, 1, 4, 9, 6, 3, 7]; // missing 8
 console.log(solve(arr1, 9, 1));
+console.log(improvedSolution(arr1, 9, 1));
