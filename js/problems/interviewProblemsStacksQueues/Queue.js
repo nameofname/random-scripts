@@ -1,34 +1,38 @@
 "use strict";
 
-// 3.1 Implement enqueue and dequeue using only two stacks
-
 class QueueNode {
-    constructor({value, next}) {
+    constructor({value, previous, next}) {
         this.value = value;
         this.next = next;
+        this.previous = previous;
     }
 }
 
 class Queue {
     constructor () {
-        this.length = 0;
+        this.tail = null;
         this.head = null;
     }
 
-    push(val) {
-        const newHead = new QueueNode({ value: val, next: this.head});
+    enqueue(val) {
+        const newHead = new QueueNode({ value: val, previous: this.head, next: null});
+        if (this.head) {
+            this.head.next = newHead;
+        }
+        if (!this.tail) {
+            this.tail = newHead;
+        }
         this.head = newHead;
     }
 
-    pop() {
-        if (!this.head) {
+    dequeue() {
+        if (!this.tail) {
             return undefined;
         }
-        const val = this.head.value;
-        this.head = this.head.next;
+        const val = this.tail.value;
+        this.tail = this.tail.next;
         return val;
     }
 }
-
 
 module.exports = Queue;
