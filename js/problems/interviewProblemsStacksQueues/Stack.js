@@ -18,6 +18,7 @@ class Stack {
     push(val) {
         const newHead = new StackNode({ value: val, next: this.head});
         this.head = newHead;
+        this.length++;
     }
 
     pop() {
@@ -26,6 +27,7 @@ class Stack {
         }
         const val = this.head.value;
         this.head = this.head.next;
+        this.length--;
         return val;
     }
 }

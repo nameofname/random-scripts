@@ -12,6 +12,7 @@ class Queue {
     constructor () {
         this.tail = null;
         this.head = null;
+        this.length = 0;
     }
 
     enqueue(val) {
