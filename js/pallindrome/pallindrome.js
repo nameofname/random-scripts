@@ -45,7 +45,7 @@ const checkHalves = (arr1, arr2) => {
  * BUT ! This is like waaaayyyy slower.
  * I took a look and it must have to do with the fact that I am pushing, popping, and unshifting from arrays so much.
  * Basically, I know I could come up with a solution that runs in O(n) - where you just loop to the middle of the array
- * ... but I think I would have to do a lot of leg work to avoid edge cases. 
+ * ... but I think I would have to do a lot of leg work to avoid edge cases.
  * @param str
  * @returns {[*,*]}
  */
