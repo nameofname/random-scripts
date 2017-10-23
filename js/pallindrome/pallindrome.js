@@ -24,7 +24,7 @@ const onlineSolution = function (word) {
 };
 
 
-const pallindrome = str => {
+const secondAttempt = str => {
     const arr = str.split('');
     const middle = (arr.length / 2) + (arr.length % 1);
     for (let i = 0; i < arr.length; i++) {
@@ -42,17 +42,21 @@ const checkHalves = (arr1, arr2) => {
 };
 /**
  * Also runs in O(n) - but accounts for spaces.
+ * BUT ! This is like waaaayyyy slower.
+ * I took a look and it must have to do with the fact that I am pushing, popping, and unshifting from arrays so much.
+ * Basically, I know I could come up with a solution that runs in O(n) - where you just loop to the middle of the array
+ * ... but I think I would have to do a lot of leg work to avoid edge cases. 
  * @param str
  * @returns {[*,*]}
  */
 const pallindromeImproved = str => {
-    const arr = str.split('');
+    const arr = str.toLowerCase().split('');
     const middle = Math.ceil((arr.length / 2));
     const bottom = [];
     const top = [];
 
     for (let i = 0; i < arr.length; i++) {
-        const curr = arr[i].toLowerCase();
+        const curr = arr[i];
         if (curr !== ' ') {
             if (i < middle) {
                 bottom.push(curr);
@@ -87,22 +91,24 @@ const true4 = ' b a N a n A ananab';
 const false1 = 'manface';
 
 
-console.log(easyAnswer(true1));
-console.log(easyAnswer(true2));
-console.log(easyAnswer(false1));
-
-console.log('--- --- --- --- --- --- --- --- --- --- --- ');
-
-console.log(pallindrome(true1));
-console.log(pallindrome(true2));
-console.log(pallindrome(false1));
-
-console.log('--- --- --- --- --- --- --- --- --- --- --- ');
-
-console.log(pallindromeImproved(true1));
-console.log(pallindromeImproved(true3));
-console.log(pallindromeImproved(true4));
-console.log(pallindromeImproved(false1));
+// console.log(easyAnswer(true1));
+// console.log(easyAnswer(true2));
+// console.log(easyAnswer(false1));
+//
+// console.log('--- --- --- --- --- --- --- --- --- --- --- ');
+//
+// console.log(pallindrome(true1));
+// console.log(pallindrome(true2));
+// console.log(pallindrome(false1));
+//
+// console.log('--- --- --- --- --- --- --- --- --- --- --- ');
+//
+// console.log(pallindromeImproved(true1));
+// console.log(pallindromeImproved(true3));
+// console.log(pallindromeImproved(true4));
+// console.log(pallindromeImproved(false1));
 
 module.exports.mySolution = pallindromeImproved;
 module.exports.onlineSolution = onlineSolution;
+module.exports.easyAnswer = easyAnswer;
+module.exports.secondAttempt = secondAttempt;
