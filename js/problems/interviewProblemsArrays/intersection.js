@@ -10,7 +10,7 @@ const intersection = (a1, a2) => {
     const map = shorter.reduce((o, int) => (Object.assign(o, { [int]: true })), {});
 
     // using the map, and a new map for what was re-used, reduce to an array of integers in both arrays :
-    // the alternate solution is to have the first map store a counter instead of a boolean. 
+    // the alternate solution is to have the first map store a counter instead of a boolean.
     const used = {};
     return longer.reduce((arr, int) => {
         if (!used[int] && map[int]) {
