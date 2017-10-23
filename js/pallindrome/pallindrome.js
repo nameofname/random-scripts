@@ -15,6 +15,15 @@ const easyAnswer = str => {
 };
 
 
+const onlineSolution = function (word) {
+    // Replace all non-letter chars with "" and change to lowercase
+    var lettersOnly = word.toLowerCase().replace(/\s/g, "");
+
+    // Compare the string with the reversed version of the string
+    return lettersOnly === lettersOnly.split("").reverse().join("");
+};
+
+
 const pallindrome = str => {
     const arr = str.split('');
     const middle = (arr.length / 2) + (arr.length % 1);
@@ -95,4 +104,5 @@ console.log(pallindromeImproved(true3));
 console.log(pallindromeImproved(true4));
 console.log(pallindromeImproved(false1));
 
-module.exports = pallindrome;
+module.exports.mySolution = pallindromeImproved;
+module.exports.onlineSolution = onlineSolution;
