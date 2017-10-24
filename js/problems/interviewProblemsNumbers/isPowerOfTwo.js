@@ -5,6 +5,7 @@
 
 
 const isPowerOfTwo = num => {
+    // console.log(num)
     if (num === 2 || num === 1) {
         return true;
     } else if (num === 0 || num % 2 !== 0) {
@@ -19,3 +20,4 @@ console.log(isPowerOfTwo(64)); // true
 console.log(isPowerOfTwo(1)); // true
 console.log(isPowerOfTwo(0)); // false
 console.log(isPowerOfTwo(-1)); // false
+console.log(isPowerOfTwo(1048576)); // true
