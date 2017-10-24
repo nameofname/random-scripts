@@ -35,19 +35,3 @@ console.log(decimalToBinary(6)); // 110
 console.log(decimalToBinary(7)); // 111
 console.log(decimalToBinary(8)); // 1000
 
-
-/*
- firstZeroIdx = firstZeroIdx ? firstZeroIdx : arr[i] === 0;
- if (firstZeroIdx && arr[i] === 0) {
- arr[i] = 1;
- } else if (firstZeroIdx && arr[i] === 1) {
- arr[i] = 0;
- }
- // arr[i] = arr[i] === 1 ? 0 : 1;
- // if (arr[i] === 0) {
- //     keepGoing = arr[i - 1] === 1;
- // } else {
- //     keepGoing = arr[i - 1] === 1;
- // }
-
- */
