@@ -59,7 +59,7 @@ let allMoves = processArr([...arr1, ...arr2])
     }))
 
 // console.log(allMoves[0])
-console.log(allValidListings.length)
+// console.log(allValidListings.length)
 
 allMoves.forEach(move => {
     const { positionNum: position, listingId } = move;
@@ -71,5 +71,16 @@ allMoves.forEach(move => {
     allValidListings.splice(position-1, 0, listingId)
 });
 
-console.log(allValidListings.length)
+
+console.log(JSON.stringify(allMoves));
+process.exit(0);
+
+const movedOrder = allMoves
+    .sort((a, b) => {
+        return a.positionNum > b.positionNum ? 1 : -1;
+    })
+    .map(o => o.listingId);
+
+// console.log(allValidListings.length)
+console.log(movedOrder)
 // console.log(JSON.stringify(allValidListings))
