@@ -1,11 +1,13 @@
 "use strict";
 
 const fs = require('fs');
-let listingsJson = JSON.parse(fs.readFileSync('./listings.json', {encoding: 'utf-8'}));
-listingsJson.sort((a, b) => {
-    return a.order > b.order ? 1 : -1;
-})
-let allValidListings = listingsJson.map(o => o.id)
+// let listingsJson = JSON.parse(fs.readFileSync('./listings.json', {encoding: 'utf-8'}));
+// listingsJson.sort((a, b) => {
+//     return a.order > b.order ? 1 : -1;
+// })
+// let allValidListings = listingsJson.map(o => o.id)
+
+let allValidListings = fs.readFileSync('./listingsBadOrder.txt', {encoding: 'utf-8'}).split('\n');
 
 // console.log(allValidListings);
 // process.exit()
