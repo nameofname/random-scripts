@@ -59,7 +59,7 @@ let allMoves = processArr([...arr1, ...arr2])
     }))
 
 // console.log(allMoves[0])
-// console.log(allValidListings.length)
+console.log(allValidListings.length)
 
 allMoves.forEach(move => {
     const { positionNum: position, listingId } = move;
@@ -67,8 +67,9 @@ allMoves.forEach(move => {
         .filter(s => {
             return s !== move.listingId;
         });
-    // console.log(`replacing this at that`, position, listingId, allValidListings.length)
-    allValidListings.splice(position, 0, listingId)
+    // console.log(`replacing this at that`, position-1, listingId, allValidListings.length)
+    allValidListings.splice(position-1, 0, listingId)
 });
 
-console.log(JSON.stringify(allValidListings))
+console.log(allValidListings.length)
+// console.log(JSON.stringify(allValidListings))
