@@ -1,0 +1,2603 @@
+Sort update successful: position: 97 startIndex: 215632 endIndex: 216116 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6660_1509722407_3065690 215632
+	12_508_1509722291_3082840 216116
+Sorted Listings:
+	12_4352_1509722471_3073910 215873
+--
+Sort update successful: position: 49 startIndex: 171738 endIndex: 173782 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5327_1509728921_90640 171738
+	12_5675_1509996847_2438350 173782
+Sorted Listings:
+	12_2487_1509722470_3107080 172759
+--
+Sort update successful: position: 577 startIndex: 5751666 endIndex: 5752499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4535_1509734707_198470 5751666
+	12_676_1509644120_35640090 5752499
+Sorted Listings:
+	12_9481_1509722446_3069980 5752082
+--
+Sort update successful: position: 529 startIndex: 5316666 endIndex: 5320000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5034_1509949620_14232490 5316666
+	12_41_1509742480_636090 5320000
+Sorted Listings:
+	12_2590_1509722471_3073870 5318332
+--
+Sort update successful: position: 193 startIndex: 2061998 endIndex: 2062664 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8542_1509638932_35431580 2061998
+	12_59_1509638655_35397000 2062664
+Sorted Listings:
+	12_3873_1509917138_11919230 2062164
+--
+Sort update successful: position: 481 startIndex: 4730000 endIndex: 4764999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4626_1509574728_32031950 4730000
+	12_4912_1509644120_35640130 4764999
+Sorted Listings:
+	12_5787_1509722471_3073950 4747499
+--
+Sort update successful: position: 433 startIndex: 4256666 endIndex: 4260000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8579_1509746111_30470 4256666
+	12_688_1509981606_18266400 4260000
+Sorted Listings:
+	12_4352_1509722471_3073910 4258332
+--
+Sort update successful: position: 385 startIndex: 3840000 endIndex: 3842499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7719_1509996564_2275970 3840000
+	12_2257_1509644120_36218920 3842499
+Sorted Listings:
+	12_7650_1509722472_3107210 3841249
+--
+Sort update successful: position: 337 startIndex: 3410000 endIndex: 3420000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7041_1509733101_129230 3410000
+	12_5866_1509658680_165440 3420000
+Sorted Listings:
+	12_2206_1509722471_3107140 3414999
+--
+Sort update successful: position: 289 startIndex: 2820000 endIndex: 2823333 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4942_1509982403_18438400 2820000
+	12_4684_1509794935_4203950 2823333
+Sorted Listings:
+	12_5562_1509722471_3107120 2821666
+--
+Sort update successful: position: 241 startIndex: 2326666 endIndex: 2330000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4014_1509814687_5382770 2326666
+	12_3290_1509807504_71700 2330000
+Sorted Listings:
+	12_5484_1509722472_3107180 2328332
+--
+Sort update successful: position: 193 startIndex: 2065328 endIndex: 2065994 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8342_1509638013_34748020 2065328
+	12_2374_1509976940_17170670 2065994
+Sorted Listings:
+	12_537_1509912186_11513380 2065401
+--
+Sort update successful: position: 193 startIndex: 1857777 endIndex: 1858888 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2821_1509949619_14232310 1857777
+	12_5329_1509949621_14277320 1858888
+Sorted Listings:
+	12_4672_1509722447_3070020 1858332
+--
+Sort update successful: position: 145 startIndex: 1400000 endIndex: 1410000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1247_1509739022_442190 1400000
+	12_3395_1509651657_37115620 1410000
+Sorted Listings:
+	12_5458_1509722472_3107160 1404999
+--
+Sort update successful: position: 49 startIndex: 7752 endIndex: 7956 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3950_1509930844_13218190 7752
+	12_739_1509914757_11760850 7956
+Sorted Listings:
+	12_219_1509987116_20029320 7853
+--
+Sort update successful: position: 1 startIndex: null endIndex: 27 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3841_1509722471_3073930 27
+Sorted Listings:
+	12_4915_1509996204_2054160 13
+
+--
+Sort update successful: position: 577 startIndex: 5750000 endIndex: 5751666 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9543_1509981608_18266610 5750000
+	12_4535_1509734707_198470 5751666
+Sorted Listings:
+	12_8351_1509996206_2115250 5750832
+--
+Sort update successful: position: 1 startIndex: null endIndex: 10000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8287_1509469952_26361720 10000
+Sorted Listings:
+	12_529_1509715727_2154940 1428
+	12_8622_1509965170_15462610 2856
+--
+Sort update successful: position: 145 startIndex: 1540000 endIndex: 1550000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7229_1509830047_7251750 1540000
+	12_6462_1509744004_2629060 1550000
+Sorted Listings:
+	12_114_1509723671_3270170 1544999
+--
+Sort update successful: position: 97 startIndex: 1020000 endIndex: 1024999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9229_1509731918_814690 1020000
+	12_376_1509724187_3359590 1024999
+Sorted Listings:
+	12_9768_1509724245_3319460 1022499
+--
+Sort update successful: position: 433 startIndex: 4253333 endIndex: 4256666 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2288_1509798929_4433820 4253333
+	12_8579_1509746111_30470 4256666
+Sorted Listings:
+	12_2_1509996205_2055090 4254999
+--
+Sort update successful: position: 49 startIndex: 7752 endIndex: 7853 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3950_1509930844_13218190 7752
+	12_219_1509987116_20029320 7853
+Sorted Listings:
+	12_4443_1509540097_29282550 7802
+--
+Sort update successful: position: 385 startIndex: 3830000 endIndex: 3840000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4093_1509997169_2603620 3830000
+	12_7719_1509996564_2275970 3840000
+Sorted Listings:
+	12_8100_1509996205_2113090 3834999
+--
+Sort update successful: position: 49 startIndex: 7752 endIndex: 7802 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3950_1509930844_13218190 7752
+	12_4443_1509540097_29282550 7802
+Sorted Listings:
+	12_9186_1509741238_2277540 7776
+--
+Sort update successful: position: 481 startIndex: 4747499 endIndex: 4764999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5787_1509722471_3073950 4747499
+	12_4912_1509644120_35640130 4764999
+Sorted Listings:
+	12_2_1509996205_2055090 4756248
+--
+Sort update successful: position: 97 startIndex: 990000 endIndex: 992499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5385_1509992525_849640 990000
+	12_4814_1509829976_7246180 992499
+Sorted Listings:
+	12_9181_1509993584_1159320 991249
+--
+Sort update successful: position: 433 startIndex: 4253333 endIndex: 4256666 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2288_1509798929_4433820 4253333
+	12_8579_1509746111_30470 4256666
+Sorted Listings:
+	12_3846_1509996205_2113060 4254999
+--
+Sort update successful: position: 145 startIndex: 1470000 endIndex: 1480000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5353_1509831496_7345840 1470000
+	12_4598_1509831614_7388550 1480000
+Sorted Listings:
+	12_9199_1509993730_1274620 1474999
+--
+Sort update successful: position: 241 startIndex: 2330000 endIndex: 2342499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3290_1509807504_71700 2330000
+	12_5862_1509949620_14276180 2342499
+Sorted Listings:
+	12_3052_1509996205_2055210 2336249
+--
+Sort update successful: position: 193 startIndex: 1860000 endIndex: 1870000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1800_1509997023_2538140 1860000
+	12_2839_1509987769_20215960 1870000
+Sorted Listings:
+	12_4496_1509996204_2112900 1864999
+--
+Sort update successful: position: 49 startIndex: 167649 endIndex: 169693 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1333_1509980111_17910710 167649
+	12_8184_1509996204_2112940 169693
+Sorted Listings:
+	12_9578_1509655575_36240 168670
+--
+Sort update successful: position: 145 startIndex: 1460000 endIndex: 1470000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8722_1509831729_7365520 1460000
+	12_5353_1509831496_7345840 1470000
+Sorted Listings:
+	12_8518_1509998280_3053640 1464999
+--
+Sort update successful: position: 1 startIndex: null endIndex: 13 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4915_1509996204_2054160 13
+Sorted Listings:
+	12_6964_1509655577_36820 6
+
+--
+Sort update successful: position: 97 startIndex: 990000 endIndex: 990624 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5385_1509992525_849640 990000
+	12_8408_1509579904_32819430 990624
+Sorted Listings:
+	12_2778_1509828903_7111690 990311
+--
+Sort update successful: position: 97 startIndex: 217406 endIndex: 217568 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2881_1509644120_35640050 217406
+	12_1867_1509980420_18007220 217568
+Sorted Listings:
+	12_7755_1509741881_604690 217486
+--
+Sort update successful: position: 97 startIndex: 990000 endIndex: 990311 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5385_1509992525_849640 990000
+	12_2778_1509828903_7111690 990311
+Sorted Listings:
+	12_1636_1509827653_6996650 990155
+--
+Sort update successful: position: 145 startIndex: 1440000 endIndex: 1450000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2043_1509831977_7379790 1440000
+	12_3308_1509831891_7373530 1450000
+Sorted Listings:
+	12_3269_1509996832_2361480 1444999
+--
+Sort update successful: position: 145 startIndex: 1440000 endIndex: 1444999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2043_1509831977_7379790 1440000
+	12_3269_1509996832_2361480 1444999
+Sorted Listings:
+	12_2549_1509997026_2471130 1442499
+--
+Sort update successful: position: 145 startIndex: 1440000 endIndex: 1442499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2043_1509831977_7379790 1440000
+	12_2549_1509997026_2471130 1442499
+Sorted Listings:
+	12_4435_1509907370_10884850 1441249
+--
+Sort update successful: position: 193 startIndex: 1856666 endIndex: 1857777 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3791_1509793703_4104940 1856666
+	12_2821_1509949619_14232310 1857777
+Sorted Listings:
+	12_3375_1509735157_218090 1857221
+--
+Sort update successful: position: 193 startIndex: 1990000 endIndex: 2010000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_401_1509973658_16623300 1990000
+	12_3022_1509732937_990270 2010000
+Sorted Listings:
+	12_1355_1509907562_10923420 1999999
+--
+Sort update successful: position: 241 startIndex: 2300000 endIndex: 2320000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2482_1509736534_281370 2300000
+	12_145_1509807524_72690 2320000
+Sorted Listings:
+	12_5222_1509655577_36800 2309999
+--
+Sort update successful: position: 97 startIndex: 990000 endIndex: 990155 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5385_1509992525_849640 990000
+	12_1636_1509827653_6996650 990155
+Sorted Listings:
+	12_8813_1509744040_2637050 990077
+--
+Sort update successful: position: 49 startIndex: 7752 endIndex: 7763 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3950_1509930844_13218190 7752
+	12_3513_1509994023_1394550 7763
+Sorted Listings:
+	12_1062_1509747188_2970620 7757
+--
+Sort update successful: position: 577 startIndex: 5747499 endIndex: 5750000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3912_1509815280_5449200 5747499
+	12_9543_1509981608_18266610 5750000
+Sorted Listings:
+	12_5335_1509733986_167950 5748749
+--
+Sort update successful: position: 481 startIndex: 4690000 endIndex: 4700000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7834_1509996692_2336720 4690000
+	12_227_1509619199_33240440 4700000
+Sorted Listings:
+	12_5199_1509655577_39460 4694999
+--
+Sort update successful: position: 529 startIndex: 5300000 endIndex: 5310000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_667_1509989590_20817470 5300000
+	12_2474_1509742481_636150 5310000
+Sorted Listings:
+	12_6645_1509735158_218180 5304999
+--
+Sort update successful: position: 97 startIndex: 980000 endIndex: 990000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2100_1509992547_859490 980000
+	12_5385_1509992525_849640 990000
+Sorted Listings:
+	12_6796_1509658628_176170 982499
+--
+Sort update successful: position: 1 startIndex: null endIndex: 10000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6964_1509655577_36820 10000
+Sorted Listings:
+	12_8725_1509996847_2438980 909
+	12_3928_1509644121_35640170 1818
+--
+Sort update successful: position: 1 startIndex: null endIndex: 909 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8725_1509996847_2438980 909
+Sorted Listings:
+	12_996_1509742297_626250 90
+	12_434_1509891410_9727590 180
+--
+Sort update successful: position: 49 startIndex: 300000 endIndex: 310000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9900_1509995654_1927420 300000
+	12_6469_1509994980_1694020 310000
+Sorted Listings:
+	12_3834_1509998237_3037030 300555
+--
+Sort update successful: position: 8 startIndex: 5820000 endIndex: 5810000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_9651_1509890115_9641570 5820000
+	12_4035_1509132374_684290 5810000
+Sorted Listings:
+	12_1355_1509922433_12496910 5814999
+--
+Sort update successful: position: 97 startIndex: 309435 endIndex: 310000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5675_1509996847_2438350 309435
+	12_6469_1509994980_1694020 310000
+Sorted Listings:
+	12_6032_1509733443_144890 309466
+--
+Sort update successful: position: 1 startIndex: null endIndex: 1428 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_529_1509715727_2154940 1428
+Sorted Listings:
+	12_1758_1509721432_2912690 713
+
+--
+Sort update successful: position: 145 startIndex: 1410000 endIndex: 1420000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4626_1509551605_30272730 1410000
+	12_3680_1509551604_30272700 1420000
+Sorted Listings:
+	12_975_1509996848_2439790 1411428
+--
+Sort update successful: position: 49 startIndex: 390000 endIndex: 400000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4309_1509819112_5932950 390000
+	12_4190_1509804008_4592520 400000
+Sorted Listings:
+	12_5655_1509985642_19495990 394999
+--
+Sort update successful: position: 1537 startIndex: 15840000 endIndex: 15860000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5721_1507318651_2132924 15840000
+	12_3350_1509923886_12673920 15860000
+Sorted Listings:
+	12_7491_1507317714_1959324 15849999
+--
+Sort update successful: position: 1538 startIndex: 15849999 endIndex: 15860000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7491_1507317714_1959324 15849999
+	12_3350_1509923886_12673920 15860000
+Sorted Listings:
+	12_2287_1509934536_13489750 15854999
+--
+Sort update successful: position: 1541 startIndex: 15860000 endIndex: 15880000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3350_1509923886_12673920 15860000
+	12_4074_1509934263_13441220 15880000
+Sorted Listings:
+	12_9539_1509981490_18291420 15869999
+--
+Sort update successful: position: 1490 startIndex: 15370000 endIndex: 15380000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1476_1509920353_12270630 15370000
+	12_3258_1507316906_1788444 15380000
+Sorted Listings:
+	12_7219_1509741738_2329290 15374999
+--
+Sort update successful: position: 1511 startIndex: 15580000 endIndex: 15590000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_333_1509709305_1714810 15580000
+	12_4021_1509934074_13427160 15590000
+Sorted Listings:
+	12_8839_1509998097_3032940 15584999
+--
+Sort update successful: position: 1523 startIndex: 15700000 endIndex: 15710000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8635_1509925213_12720960 15700000
+	12_5646_1507318794_2158314 15710000
+Sorted Listings:
+	12_8096_1509998097_2966540 15704999
+--
+Sort update successful: position: 1472 startIndex: 15190000 endIndex: 15200000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_982_1509992599_871530 15190000
+	12_9249_1509988038_20357600 15200000
+Sorted Listings:
+	12_4953_1509724918_3501840 15194999
+--
+Sort update successful: position: 1409 startIndex: 14560000 endIndex: 14570000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6747_1509932280_13303880 14560000
+	12_3645_1509726455_3701630 14570000
+Sorted Listings:
+	12_7809_1509994068_1338060 14564999
+--
+Sort update successful: position: 1415 startIndex: 14620000 endIndex: 14630000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9178_1509983164_18666130 14620000
+	12_6937_1509992924_928770 14630000
+Sorted Listings:
+	12_7134_1509731363_736500 14624999
+--
+Sort update successful: position: 97 startIndex: 308325 endIndex: 308880 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5416_1509463994_25775880 308325
+	12_9661_1509644121_36219040 308880
+Sorted Listings:
+	12_1505_1509552566_30338920 308602
+--
+Sort update successful: position: 3 startIndex: 22499 endIndex: 28748 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2541_1509880323_9157700 22499
+	12_1880_1509942943_13913390 28748
+Sorted Listings:
+	12_4783_1509987177_20006340 25623
+--
+Sort update successful: position: 1 startIndex: null endIndex: 2 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3312_1509998061_2949950 2
+Sorted Listings:
+	12_8725_1509996847_2438980 1
+
+--
+Sort update successful: position: 2 startIndex: 10000 endIndex: 20000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8725_1509996847_2438980 10000
+	12_3312_1509998061_2949950 20000
+Sorted Listings:
+	12_9839_1509552671_29893360 14999
+--
+Sort update successful: position: 1316 startIndex: 13630000 endIndex: 13650000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6746_1509994967_1686220 13630000
+	12_1015_1509818538_5861410 13650000
+Sorted Listings:
+	12_1239_1509990049_20940890 13639999
+--
+Sort update successful: position: 1322 startIndex: 13690000 endIndex: 13710000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1249_1509920883_12354630 13690000
+	12_2276_1509882935_9337990 13710000
+Sorted Listings:
+	12_2074_1509829795_7216240 13699999
+--
+Sort update successful: position: 145 startIndex: 1413331 endIndex: 1413806 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_858_1509985642_19496040 1413331
+	12_9852_1509987981_20342090 1413806
+Sorted Listings:
+	12_5403_1509993163_1004860 1413568
+--
+Sort update successful: position: 337 startIndex: 3270000 endIndex: 3280000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2119_1509730851_647240 3270000
+	12_4750_1509993788_1231230 3280000
+Sorted Listings:
+	12_9934_1509992725_861040 3274999
+--
+Sort update successful: position: 1009 startIndex: 10150000 endIndex: 10160000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3034_1509597062_32773620 10150000
+	12_2092_1509997389_2686590 10160000
+Sorted Listings:
+	12_3315_1509914159_11713840 10154999
+--
+Sort update successful: position: 1 startIndex: null endIndex: 6860000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7909_1509997808_2833220 6860000
+Sorted Listings:
+	12_7978_1509993711_1207540 6870000
+
+--
+Sort update successful: position: 5 startIndex: 6850000 endIndex: 6830000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_4005_1509997424_2703160 6850000
+	12_4439_1509996229_2067360 6830000
+Sorted Listings:
+	12_9918_1509994954_1607770 6839999
+--
+Sort update successful: position: 2 startIndex: 6870000 endIndex: 6860000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7978_1509993711_1207540 6870000
+	12_7909_1509997808_2833220 6860000
+Sorted Listings:
+	12_9918_1509994954_1607770 6864999
+--
+Sort update successful: position: 5 startIndex: 6861249 endIndex: 6860000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_4005_1509997424_2703160 6861249
+	12_7909_1509997808_2833220 6860000
+Sorted Listings:
+	12_2528_1509993233_1084780 6860624
+--
+Sort update successful: position: 6 startIndex: 6860624 endIndex: 6860000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_2528_1509993233_1084780 6860624
+	12_7909_1509997808_2833220 6860000
+Sorted Listings:
+	12_1824_1509992705_912510 6860311
+--
+Sort update successful: position: 7 startIndex: 6860311 endIndex: 6860000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_1824_1509992705_912510 6860311
+	12_7909_1509997808_2833220 6860000
+Sorted Listings:
+	12_4737_1509995771_1970110 6860155
+--
+Sort update successful: position: 10 startIndex: 6830000 endIndex: 6810000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_4439_1509996229_2067360 6830000
+	12_6783_1509995355_1811910 6810000
+Sorted Listings:
+	12_6064_1509993094_979680 6819999
+--
+Sort update successful: position: 15 startIndex: 6740000 endIndex: 6720000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7220_1509992834_949830 6740000
+	12_7141_1509986597_19785970 6720000
+Sorted Listings:
+	12_6956_1509986502_19740420 6729999
+--
+Sort update successful: position: 20 startIndex: 6697499 endIndex: 6690000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_773_1509986352_19730110 6697499
+	12_5771_1509986457_19722200 6690000
+Sorted Listings:
+	12_6524_1509986234_19680790 6693749
+--
+Sort update successful: position: 28 startIndex: 6600000 endIndex: 6590000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_550_1509986023_19604800 6600000
+	12_5639_1509985978_19547690 6590000
+Sorted Listings:
+	12_2960_1509383928_19667440 6594999
+--
+Sort update successful: position: 22 startIndex: 6691874 endIndex: 6690000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_485_1509986186_19616720 6691874
+	12_5771_1509986457_19722200 6690000
+Sorted Listings:
+	12_2960_1509383928_19667440 6690936
+--
+Sort update successful: position: 24 startIndex: 6690467 endIndex: 6690000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_3525_1509986276_19659720 6690467
+	12_5771_1509986457_19722200 6690000
+Sorted Listings:
+	12_3994_1509385084_20203530 6690233
+--
+Sort update successful: position: 16 startIndex: 6729999 endIndex: 6724999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_6956_1509986502_19740420 6729999
+	12_5878_1509986537_19755660 6724999
+Sorted Listings:
+	12_2960_1509383928_19667440 6727498
+--
+Sort update successful: position: 17 startIndex: 6727498 endIndex: 6724999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_2960_1509383928_19667440 6727498
+	12_5878_1509986537_19755660 6724999
+Sorted Listings:
+	12_3525_1509986276_19659720 6726248
+--
+Sort update successful: position: 21 startIndex: 6722499 endIndex: 6720000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_6524_1509986234_19680790 6722499
+	12_7141_1509986597_19785970 6720000
+Sorted Listings:
+	12_485_1509986186_19616720 6721249
+--
+Sort update successful: position: 26 startIndex: 6690000 endIndex: 6630000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_5771_1509986457_19722200 6690000
+	12_6851_1509986145_19643830 6630000
+Sorted Listings:
+	12_4920_1509387052_21263130 6659999
+--
+Sort update successful: position: 22 startIndex: 6721249 endIndex: 6720624 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_485_1509986186_19616720 6721249
+	12_773_1509986352_19730110 6720624
+Sorted Listings:
+	12_2361_1509382770_18791120 6720936
+--
+Sort update successful: position: 241 startIndex: 2330000 endIndex: 2333333 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2177_1509591487_33128710 2330000
+	12_4047_1509986914_19963020 2333333
+Sorted Listings:
+	12_1959_1509819214_5938330 2331666
+--
+Sort update successful: position: 34 startIndex: 6551873 endIndex: 6545624 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_8704_1509384658_19650800 6551873
+	12_5322_1509388293_21602380 6545624
+Sorted Listings:
+	12_7141_1509986597_19785970 6548748
+--
+Sort update successful: position: 37 startIndex: 6520000 endIndex: 6514999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_4813_1509386555_20614500 6520000
+	12_94_1509385852_20587670 6514999
+Sorted Listings:
+	12_5771_1509986457_19722200 6517499
+--
+Sort update successful: position: 73 startIndex: 6220000 endIndex: 6189999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_1587_1508778885_25149023 6220000
+	12_7405_1508776101_23938324 6189999
+Sorted Listings:
+	12_5771_1509986457_19722200 6204999
+--
+Sort update successful: position: 5 startIndex: 356 endIndex: 534 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1475_1509730958_661650 356
+	12_6323_1509988181_20412660 534
+Sorted Listings:
+	12_6264_1509818370_5807040 444
+--
+Sort update successful: position: 1 startIndex: null endIndex: 88 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6793_1509564371_31188460 88
+Sorted Listings:
+	12_6264_1509818370_5807040 43
+
+--
+Sort update successful: position: 1 startIndex: null endIndex: 43 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6264_1509818370_5807040 43
+Sorted Listings:
+	12_529_1509715727_2154940 21
+
+--
+Sort update successful: position: 2 startIndex: 10 endIndex: 21 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6264_1509818370_5807040 10
+	12_529_1509715727_2154940 21
+Sorted Listings:
+	12_6793_1509564371_31188460 15
+--
+Sort update successful: position: 4 startIndex: 17 endIndex: 266 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6727_1509914709_11759810 17
+	12_529_1509715727_2154940 266
+Sorted Listings:
+	12_6323_1509988181_20412660 141
+--
+Sort update successful: position: 2 startIndex: 1249 endIndex: 2499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6266_1509735083_214710 1249
+	12_9900_1509995654_1927420 2499
+Sorted Listings:
+	12_8725_1509996847_2438980 1873
+--
+Sort update successful: position: 3 startIndex: 1873 endIndex: 2499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8725_1509996847_2438980 1873
+	12_9900_1509995654_1927420 2499
+Sorted Listings:
+	12_9839_1509552671_29893360 2185
+--
+Sort update successful: position: 14 startIndex: 20000 endIndex: 30000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9636_1509478448_26761000 20000
+	12_3774_1509470370_25993440 30000
+Sorted Listings:
+	12_8088_1509537070_29198270 24999
+--
+Sort update successful: position: 27 startIndex: 160000 endIndex: 170000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8585_1509998152_3050990 160000
+	12_6276_1509981524_18301040 170000
+Sorted Listings:
+	12_9450_1509984780_19145890 164999
+--
+Sort update successful: position: 29 startIndex: 170000 endIndex: 180000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6276_1509981524_18301040 170000
+	12_3774_1509983941_18892660 180000
+Sorted Listings:
+	12_3077_1509986875_19948230 174999
+--
+Sort update successful: position: 38 startIndex: 270000 endIndex: 280000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1924_1509715384_2162130 270000
+	12_6640_1509985813_19488730 280000
+Sorted Listings:
+	12_5263_1509469649_26326600 274999
+--
+Sort update successful: position: 44 startIndex: 340000 endIndex: 350000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_128_1509889780_9615000 340000
+	12_831_1509996634_2306540 350000
+Sorted Listings:
+	12_9921_1509726979_3832870 344999
+--
+Sort update successful: position: 47 startIndex: 360000 endIndex: 370000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3913_1509752748_3248670 360000
+	12_7501_1509566931_31467950 370000
+Sorted Listings:
+	12_4309_1509819112_5932950 364999
+--
+Sort update successful: position: 15 startIndex: 864999 endIndex: 861249 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_4570_1495736916_1634563 864999
+	12_2332_1508647583_12718913 861249
+Sorted Listings:
+	12_2524_1509925475_12728800 863123
+--
+Sort update successful: position: 14 startIndex: 867503 endIndex: 864999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_8448_1504904068_947973 867503
+	12_4570_1495736916_1634563 864999
+Sorted Listings:
+	12_2524_1509925475_12728800 866250
+--
+Sort update successful: position: 26 startIndex: 620000 endIndex: 614999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7398_1507436668_9245263 620000
+	12_6670_1506307437_9947863 614999
+Sorted Listings:
+	12_3628_1506307369_9944753 617499
+--
+Sort update successful: position: 29 startIndex: 612498 endIndex: 609999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_9604_1507437017_8948874 612498
+	12_9149_1509925475_12728820 609999
+Sorted Listings:
+	12_1077_1504369517_16387134 611248
+--
+Sort update successful: position: 20 startIndex: 847888 endIndex: 843123 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_2497_1509329143_11642780 847888
+	12_8262_1509925475_12728990 843123
+Sorted Listings:
+	12_465_1509925475_12774780 845505
+--
+Sort update successful: position: 1 startIndex: null endIndex: 5960000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_9386_1499553416_963364 5960000
+Sorted Listings:
+	12_2475_1475431630_826553 5970000
+
+--
+Sort update successful: position: 4 startIndex: 5950000 endIndex: 5940000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_278_1485790903_1560803 5950000
+	12_6524_1463324052_934824 5940000
+Sorted Listings:
+	12_5959_1496622999_219433 5944999
+--
+Sort update successful: position: 5 startIndex: 5944999 endIndex: 5940000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_5959_1496622999_219433 5944999
+	12_6524_1463324052_934824 5940000
+Sorted Listings:
+	12_5821_1473631715_547133 5942499
+--
+Sort update successful: position: 8 startIndex: 5900000 endIndex: 5890000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7362_1509132374_684230 5900000
+	12_3361_1509921427_12420580 5890000
+Sorted Listings:
+	12_4510_1508537759_7565144 5894999
+--
+Sort update successful: position: 10 startIndex: 5890000 endIndex: 5884999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_3361_1509921427_12420580 5890000
+	12_9651_1509890115_9641570 5884999
+Sorted Listings:
+	12_2589_1509890245_9673450 5887499
+--
+Sort update successful: position: 7 startIndex: 5940000 endIndex: 5900000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_6524_1463324052_934824 5940000
+	12_7362_1509132374_684230 5900000
+Sorted Listings:
+	12_1410_1509132481_691000 5919999
+--
+Sort update successful: position: 1 startIndex: null endIndex: 6050000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_181_1489383479_1805184 6050000
+Sorted Listings:
+	12_6656_1474314236_202344 6060000
+
+--
+Sort update successful: position: 3 startIndex: 6134999 endIndex: 6130000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_278_1485790903_1560803 6134999
+	12_5389_1506107271_5099203 6130000
+Sorted Listings:
+	12_9386_1499553416_963364 6132499
+--
+Sort update successful: position: 5 startIndex: 6131249 endIndex: 6130000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7918_1487567194_2586293 6131249
+	12_5389_1506107271_5099203 6130000
+Sorted Listings:
+	12_5959_1496622999_219433 6130624
+--
+Sort update successful: position: 8 startIndex: 6120000 endIndex: 6110000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_9951_1504647583_34284174 6120000
+	12_3461_1504647583_34284064 6110000
+Sorted Listings:
+	12_5821_1473631715_547133 6114999
+--
+Sort update successful: position: 17 startIndex: 6030000 endIndex: 6020000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_3547_1475426198_797743 6030000
+	12_7268_1480307328_8151794 6020000
+Sorted Listings:
+	12_4510_1508537759_7565144 6024999
+--
+Sort update successful: position: 15 startIndex: 6060000 endIndex: 6054999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_6656_1474314236_202344 6060000
+	12_4510_1508537759_7565144 6054999
+Sorted Listings:
+	12_181_1489383479_1805184 6057499
+--
+Sort update successful: position: 16 startIndex: 6067498 endIndex: 6060000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_181_1489383479_1805184 6067498
+	12_6656_1474314236_202344 6060000
+Sorted Listings:
+	12_3040_1483994252_2440363 6063748
+--
+Sort update successful: position: 18 startIndex: 6060000 endIndex: 6020000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_6656_1474314236_202344 6060000
+	12_7268_1480307328_8151794 6020000
+Sorted Listings:
+	12_6524_1463324052_934824 6039999
+--
+Sort update successful: position: 19 startIndex: 6039999 endIndex: 6020000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_6524_1463324052_934824 6039999
+	12_7268_1480307328_8151794 6020000
+Sorted Listings:
+	12_1410_1509132481_691000 6029999
+--
+Sort update successful: position: 22 startIndex: 6020000 endIndex: 6010000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7268_1480307328_8151794 6020000
+	12_2511_1509132374_692570 6010000
+Sorted Listings:
+	12_4099_1472424905_811063 6014999
+--
+Sort update successful: position: 26 startIndex: 5890000 endIndex: 5887499 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_3361_1509921427_12420580 5890000
+	12_2589_1509890245_9673450 5887499
+Sorted Listings:
+	12_6687_1487477764_2109484 5888749
+--
+Sort update successful: position: 28 startIndex: 5887499 endIndex: 5884999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_2589_1509890245_9673450 5887499
+	12_9651_1509890115_9641570 5884999
+Sorted Listings:
+	12_7979_1509921472_12389710 5886248
+--
+Sort update successful: position: 31 startIndex: 5882499 endIndex: 5870000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_2208_1509132481_690980 5882499
+	12_8930_1509933446_13406420 5870000
+Sorted Listings:
+	12_5167_1509132481_697520 5876249
+--
+Sort update successful: position: 32 startIndex: 5876249 endIndex: 5873124 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_5167_1509132481_697520 5876249
+	12_4035_1509132374_684290 5873124
+Sorted Listings:
+	12_7307_1509132374_692620 5874686
+--
+Sort update successful: position: 35 startIndex: 5870000 endIndex: 5842499 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_8930_1509933446_13406420 5870000
+	12_8592_1509933814_13403590 5842499
+Sorted Listings:
+	12_1355_1509922433_12496910 5856249
+--
+Sort update successful: position: 1873 startIndex: 18790000 endIndex: 18800000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_192_1509993011_1012750 18790000
+	12_2715_1509833646_7512800 18800000
+Sorted Listings:
+	12_4422_1509477319_27033440 18794999
+--
+Sort update successful: position: 4 startIndex: 2185 endIndex: 2499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9839_1509552671_29893360 2185
+	12_9900_1509995654_1927420 2499
+Sorted Listings:
+	12_3312_1509998061_2949950 2341
+--
+Sort update successful: position: 5 startIndex: 2341 endIndex: 2499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3312_1509998061_2949950 2341
+	12_9900_1509995654_1927420 2499
+Sorted Listings:
+	12_1700_1509793081_4066010 2419
+--
+Sort update successful: position: 6 startIndex: 2419 endIndex: 2499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1700_1509793081_4066010 2419
+	12_9900_1509995654_1927420 2499
+Sorted Listings:
+	12_7757_1509967709_15761550 2458
+--
+Sort update successful: position: 1 startIndex: null endIndex: 187 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8992_1509949620_14276390 187
+Sorted Listings:
+	12_6266_1509735083_214710 93
+
+--
+Sort update successful: position: 3 startIndex: 139 endIndex: 187 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8725_1509996847_2438980 139
+	12_8992_1509949620_14276390 187
+Sorted Listings:
+	12_9839_1509552671_29893360 162
+--
+Sort update successful: position: 3 startIndex: 139 endIndex: 162 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8725_1509996847_2438980 139
+	12_9839_1509552671_29893360 162
+Sorted Listings:
+	12_9900_1509995654_1927420 150
+--
+Sort update successful: position: 3 startIndex: 15 endIndex: 17 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6793_1509564371_31188460 15
+	12_6727_1509914709_11759810 17
+Sorted Listings:
+	12_529_1509715727_2154940 16
+--
+Sort update successful: position: 6 startIndex: 162 endIndex: 187 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9839_1509552671_29893360 162
+	12_8992_1509949620_14276390 187
+Sorted Listings:
+	12_3312_1509998061_2949950 174
+--
+Sort update successful: position: 7 startIndex: 174 endIndex: 187 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3312_1509998061_2949950 174
+	12_8992_1509949620_14276390 187
+Sorted Listings:
+	12_9839_1509552671_29893360 180
+--
+Sort update successful: position: 8 startIndex: 180 endIndex: 187 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9839_1509552671_29893360 180
+	12_8992_1509949620_14276390 187
+Sorted Listings:
+	12_996_1509742297_626250 183
+--
+Sort update successful: position: 9 startIndex: 2274 endIndex: 2856 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1475_1509730958_661650 2274
+	12_8622_1509965170_15462610 2856
+Sorted Listings:
+	12_8287_1509469952_26361720 2564
+--
+Sort update successful: position: 13 startIndex: 561 endIndex: 748 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9724_1509741318_574820 561
+	12_4915_1509996204_2054160 748
+Sorted Listings:
+	12_1700_1509793081_4066010 654
+--
+Sort update successful: position: 17 startIndex: 748 endIndex: 80000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4915_1509996204_2054160 748
+	12_9757_1509386324_20474830 80000
+Sorted Listings:
+	12_1700_1509793081_4066010 40373
+--
+Sort update successful: position: 7 startIndex: 310 endIndex: 1001 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1758_1509721432_2912690 310
+	12_6482_1509912396_11543990 1001
+Sorted Listings:
+	12_8287_1509469952_26361720 655
+--
+Sort update successful: position: 20 startIndex: 70092 endIndex: 80000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5204_1509582690_32920560 70092
+	12_9757_1509386324_20474830 80000
+Sorted Listings:
+	12_7627_1509731030_38790 75045
+--
+Sort update successful: position: 29 startIndex: 149686 endIndex: 149842 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9757_1509386324_20474830 149686
+	12_3841_1509722471_3073930 149842
+Sorted Listings:
+	12_4917_1509989931_20956660 149763
+--
+Sort update successful: position: 16 startIndex: 24999 endIndex: 30000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8088_1509537070_29198270 24999
+	12_3774_1509470370_25993440 30000
+Sorted Listings:
+	12_8108_1509738890_1905540 27499
+--
+Sort update successful: position: 27 startIndex: 148749 endIndex: 149374 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6964_1509655577_36820 148749
+	12_4093_1509997169_2603620 149374
+Sorted Listings:
+	12_5809_1509734500_189590 149061
+--
+Sort update successful: position: 29 startIndex: 149374 endIndex: 149686 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4093_1509997169_2603620 149374
+	12_9757_1509386324_20474830 149686
+Sorted Listings:
+	12_4917_1509989931_20956660 149529
+--
+Sort update successful: position: 28 startIndex: 149061 endIndex: 149374 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5809_1509734500_189590 149061
+	12_4093_1509997169_2603620 149374
+Sorted Listings:
+	12_5379_1509971775_16276060 149217
+--
+Sort update successful: position: 29 startIndex: 149217 endIndex: 149374 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5379_1509971775_16276060 149217
+	12_4093_1509997169_2603620 149374
+Sorted Listings:
+	12_3841_1509722471_3073930 149295
+--
+Sort update successful: position: 20 startIndex: 60000 endIndex: 90000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3282_1509769478_3525760 60000
+	12_6083_1509962394_15086030 90000
+Sorted Listings:
+	12_6899_1509739906_2039710 74999
+--
+Sort update successful: position: 37 startIndex: 244999 endIndex: 247499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8328_1509390643_22847650 244999
+	12_8523_1509732613_108070 247499
+Sorted Listings:
+	12_2378_1509746102_30040 246248
+--
+Sort update successful: position: 39 startIndex: 274999 endIndex: 280000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5263_1509469649_26326600 274999
+	12_6640_1509985813_19488730 280000
+Sorted Listings:
+	12_2489_1509690712_2928700 277499
+--
+Sort update successful: position: 37 startIndex: 244999 endIndex: 246248 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8328_1509390643_22847650 244999
+	12_2378_1509746102_30040 246248
+Sorted Listings:
+	12_8642_1509736211_266250 245623
+--
+Sort update successful: position: 38 startIndex: 245623 endIndex: 246248 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8642_1509736211_266250 245623
+	12_2378_1509746102_30040 246248
+Sorted Listings:
+	12_8523_1509732613_108070 245935
+--
+Sort update successful: position: 39 startIndex: 245935 endIndex: 246248 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8523_1509732613_108070 245935
+	12_2378_1509746102_30040 246248
+Sorted Listings:
+	12_6955_1509725524_3608780 246091
+--
+Sort update successful: position: 42 startIndex: 246248 endIndex: 250000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2378_1509746102_30040 246248
+	12_1525_1509994312_1416700 250000
+Sorted Listings:
+	12_9305_1509757912_3461850 248123
+--
+Sort update successful: position: 43 startIndex: 248123 endIndex: 350000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9305_1509757912_3461850 248123
+	12_6543_1509757913_3472700 350000
+Sorted Listings:
+	12_2942_1509734509_189920 299061
+--
+Sort update successful: position: 337 startIndex: 3370000 endIndex: 3380000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3327_1509997024_2470680 3370000
+	12_3271_1509729024_254780 3380000
+Sorted Listings:
+	12_8454_1509664670_523220 3374999
+--
+Sort update successful: position: 46 startIndex: 364999 endIndex: 480000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1525_1509994312_1416700 364999
+	12_1266_1509996633_2244900 480000
+Sorted Listings:
+	12_6174_1509619214_33241210 422499
+--
+Sort update successful: position: 52 startIndex: 524999 endIndex: 530000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_276_1509466597_25630530 524999
+	12_2393_1509733180_132780 530000
+Sorted Listings:
+	12_1332_1509992809_944600 527499
+--
+Sort update successful: position: 54 startIndex: 528749 endIndex: 530000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3681_1509745785_13210 528749
+	12_2393_1509733180_132780 530000
+Sorted Listings:
+	12_6240_1509644120_35640070 529374
+--
+Sort update successful: position: 56 startIndex: 530000 endIndex: 550000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2393_1509733180_132780 530000
+	12_623_1509739036_442980 550000
+Sorted Listings:
+	12_3216_1509985090_19266650 539999
+--
+Sort update successful: position: 7 startIndex: 6130624 endIndex: 6130000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_5959_1496622999_219433 6130624
+	12_5389_1506107271_5099203 6130000
+Sorted Listings:
+	12_9951_1504647583_34284174 6130311
+--
+Sort update successful: position: 61 startIndex: 559999 endIndex: 570000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5725_1509967755_15770800 559999
+	12_2211_1509980324_18004610 570000
+Sorted Listings:
+	12_2101_1509738399_371480 564999
+--
+Sort update successful: position: 64 startIndex: 568749 endIndex: 570000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9856_1509734585_193080 568749
+	12_2211_1509980324_18004610 570000
+Sorted Listings:
+	12_8304_1509734021_169490 569374
+--
+Sort update successful: position: 66 startIndex: 569374 endIndex: 570000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8304_1509734021_169490 569374
+	12_2211_1509980324_18004610 570000
+Sorted Listings:
+	12_2377_1509991566_434490 569686
+--
+Sort update successful: position: 62 startIndex: 510000 endIndex: 530000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7798_1509559079_30560950 510000
+	12_3343_1509634240_34742330 530000
+Sorted Listings:
+	12_2601_1509740683_2172610 519999
+--
+Sort update successful: position: 66 startIndex: 568982 endIndex: 569061 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2161_1509998110_2974850 568982
+	12_4278_1509982405_18479620 569061
+Sorted Listings:
+	12_8105_1509989591_20817750 569021
+--
+Sort update successful: position: 65 startIndex: 550000 endIndex: 560000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1880_1509713390_1950350 550000
+	12_4228_1509714900_2125950 560000
+Sorted Listings:
+	12_599_1509896479_10028250 554999
+--
+Sort update successful: position: 67 startIndex: 560000 endIndex: 580000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4228_1509714900_2125950 560000
+	12_5756_1509743078_2495800 580000
+Sorted Listings:
+	12_3563_1509922068_12486870 569999
+--
+Sort update successful: position: 66 startIndex: 554999 endIndex: 560000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_599_1509896479_10028250 554999
+	12_4228_1509714900_2125950 560000
+Sorted Listings:
+	12_8054_1509923198_12564930 557499
+--
+Sort update successful: position: 71 startIndex: 570000 endIndex: 660000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2211_1509980324_18004610 570000
+	12_4441_1509732699_111490 660000
+Sorted Listings:
+	12_5416_1509463994_25775880 614999
+--
+Sort update successful: position: 71 startIndex: 570000 endIndex: 614999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2211_1509980324_18004610 570000
+	12_5416_1509463994_25775880 614999
+Sorted Listings:
+	12_9962_1509741288_573250 592499
+--
+Sort update successful: position: 71 startIndex: 590000 endIndex: 610000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5740_1509918834_12083600 590000
+	12_9538_1509920311_12292870 610000
+Sorted Listings:
+	12_6570_1509934596_13462060 599999
+--
+Sort update successful: position: 73 startIndex: 614999 endIndex: 660000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5416_1509463994_25775880 614999
+	12_4441_1509732699_111490 660000
+Sorted Listings:
+	12_2211_1509980324_18004610 637499
+--
+Sort update successful: position: 75 startIndex: 660000 endIndex: 670000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4441_1509732699_111490 660000
+	12_6319_1509987340_20131100 670000
+Sorted Listings:
+	12_5462_1509729884_461150 664999
+--
+Sort update successful: position: 78 startIndex: 730000 endIndex: 770000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5091_1509980048_17916120 730000
+	12_688_1509981606_18266400 770000
+Sorted Listings:
+	12_2100_1509651656_36553090 749999
+--
+Sort update successful: position: 79 startIndex: 749999 endIndex: 770000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2100_1509651656_36553090 749999
+	12_688_1509981606_18266400 770000
+Sorted Listings:
+	12_5793_1509731007_37770 759999
+--
+Sort update successful: position: 83 startIndex: 810000 endIndex: 814999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_84_1509735675_241570 810000
+	12_3181_1509441261_24242170 814999
+Sorted Listings:
+	12_9661_1509644121_36219040 812499
+--
+Sort update successful: position: 85 startIndex: 814999 endIndex: 820000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3181_1509441261_24242170 814999
+	12_3834_1509998237_3037030 820000
+Sorted Listings:
+	12_2487_1509722470_3107080 817499
+--
+Sort update successful: position: 88 startIndex: 824999 endIndex: 830000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5221_1509733530_148550 824999
+	12_8184_1509996204_2112940 830000
+Sorted Listings:
+	12_199_1509997640_2773510 827499
+--
+Sort update successful: position: 83 startIndex: 750000 endIndex: 760000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7345_1509991501_406050 750000
+	12_4149_1509992011_687980 760000
+Sorted Listings:
+	12_9098_1509995365_1814250 754999
+--
+Sort update successful: position: 90 startIndex: 830000 endIndex: 850000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8184_1509996204_2112940 830000
+	12_8291_1509880270_9156250 850000
+Sorted Listings:
+	12_2321_1509593603_32698790 839999
+--
+Sort update successful: position: 91 startIndex: 839999 endIndex: 850000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2321_1509593603_32698790 839999
+	12_8291_1509880270_9156250 850000
+Sorted Listings:
+	12_5168_1509745999_24780 844999
+--
+Sort update successful: position: 89 startIndex: 810000 endIndex: 820000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3250_1509979267_17721230 810000
+	12_7847_1509997625_2764820 820000
+Sorted Listings:
+	12_5876_1509985573_19477580 814999
+--
+Sort update successful: position: 97 startIndex: 990000 endIndex: 1000000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5675_1509996847_2438350 990000
+	12_3743_1509392562_22720210 1000000
+Sorted Listings:
+	12_1808_1509997022_2536300 994999
+--
+Sort update successful: position: 95 startIndex: 870000 endIndex: 880000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4058_1509824999_6649090 870000
+	12_7524_1509824147_6550520 880000
+Sorted Listings:
+	12_8802_1509850421_8264610 874999
+--
+Sort update successful: position: 97 startIndex: 990000 endIndex: 994999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5675_1509996847_2438350 990000
+	12_1808_1509997022_2536300 994999
+Sorted Listings:
+	12_250_1509744459_737740 992499
+--
+Sort update successful: position: 102 startIndex: 1010000 endIndex: 1030000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9488_1509996830_2420250 1010000
+	12_904_1509996560_2273230 1030000
+Sorted Listings:
+	12_9541_1509990900_201030 1019999
+--
+Sort update successful: position: 100 startIndex: 997499 endIndex: 1000000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8299_1509745758_11830 997499
+	12_3743_1509392562_22720210 1000000
+Sorted Listings:
+	12_3976_1509993492_1195190 998749
+--
+Sort update successful: position: 102 startIndex: 999374 endIndex: 1000000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6013_1509989929_20956270 999374
+	12_3743_1509392562_22720210 1000000
+Sorted Listings:
+	12_46_1509989590_20817640 999686
+--
+Sort update successful: position: 529 startIndex: 5290000 endIndex: 5300000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8827_1509997022_2537060 5290000
+	12_8170_1509879471_9108990 5300000
+Sorted Listings:
+	12_46_1509989590_20817640 5294999
+--
+Sort update successful: position: 111 startIndex: 1100000 endIndex: 1120000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3767_1509967799_15871140 1100000
+	12_339_1509883889_9365140 1120000
+Sorted Listings:
+	12_1039_1509802692_4595040 1109999
+--
+Sort update successful: position: 113 startIndex: 1134999 endIndex: 1150000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3542_1509734626_194880 1134999
+	12_409_1509881626_9243170 1150000
+Sorted Listings:
+	12_6032_1509733443_144890 1142499
+--
+Sort update successful: position: 116 startIndex: 1150000 endIndex: 1170000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_409_1509881626_9243170 1150000
+	12_9841_1509740766_543940 1170000
+Sorted Listings:
+	12_6867_1509739580_466470 1159999
+--
+Sort update successful: position: 117 startIndex: 1159999 endIndex: 1170000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6867_1509739580_466470 1159999
+	12_9841_1509740766_543940 1170000
+Sorted Listings:
+	12_4640_1509733382_142320 1164999
+--
+Sort update successful: position: 118 startIndex: 1164999 endIndex: 1170000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4640_1509733382_142320 1164999
+	12_9841_1509740766_543940 1170000
+Sorted Listings:
+	12_7719_1509996564_2275970 1167499
+--
+Sort update successful: position: 120 startIndex: 1168749 endIndex: 1170000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5494_1509729025_254800 1168749
+	12_9841_1509740766_543940 1170000
+Sorted Listings:
+	12_4112_1509737256_313980 1169374
+--
+Sort update successful: position: 121 startIndex: 1169374 endIndex: 1170000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4112_1509737256_313980 1169374
+	12_9841_1509740766_543940 1170000
+Sorted Listings:
+	12_3615_1509719849_2668470 1169686
+--
+Sort update successful: position: 123 startIndex: 1169842 endIndex: 1170000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7026_1509872632_8656840 1169842
+	12_9841_1509740766_543940 1170000
+Sorted Listings:
+	12_3106_1509740892_550850 1169920
+--
+Sort update successful: position: 125 startIndex: 1170000 endIndex: 1180000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9841_1509740766_543940 1170000
+	12_9671_1509742244_623570 1180000
+Sorted Listings:
+	12_1898_1509659309_247490 1174999
+--
+Sort update successful: position: 129 startIndex: 1194999 endIndex: 1210000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4120_1509739919_499360 1194999
+	12_9514_1509981050_18200000 1210000
+Sorted Listings:
+	12_9821_1509967762_15861570 1202499
+--
+Sort update successful: position: 132 startIndex: 1208124 endIndex: 1210000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5272_1509737723_335100 1208124
+	12_9514_1509981050_18200000 1210000
+Sorted Listings:
+	12_4254_1509719849_2705500 1209061
+--
+Sort update successful: position: 137 startIndex: 1210000 endIndex: 1214999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9514_1509981050_18200000 1210000
+	12_2710_1509997023_2469850 1214999
+Sorted Listings:
+	12_7583_1509996368_2117530 1212499
+--
+Sort update successful: position: 141 startIndex: 1389999 endIndex: 1400000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4770_1509727655_3979720 1389999
+	12_44_1509483837_27226430 1400000
+Sorted Listings:
+	12_6947_1509985090_19266700 1394999
+--
+Sort update successful: position: 99 startIndex: 894999 endIndex: 900000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5525_1509400769_23480090 894999
+	12_9392_1509417133_24390770 900000
+Sorted Listings:
+	12_5782_1509487501_27869260 897499
+--
+Sort update successful: position: 146 startIndex: 1490000 endIndex: 1500000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_49_1509739494_462280 1490000
+	12_9127_1509466446_25992200 1500000
+Sorted Listings:
+	12_1333_1509980111_17910710 1494999
+--
+Sort update successful: position: 101 startIndex: 900000 endIndex: 910000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9392_1509417133_24390770 900000
+	12_4385_1509416220_24003690 910000
+Sorted Listings:
+	12_4444_1509919186_12124230 904999
+--
+Sort update successful: position: 147 startIndex: 1494999 endIndex: 1500000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1333_1509980111_17910710 1494999
+	12_9127_1509466446_25992200 1500000
+Sorted Listings:
+	12_3543_1509928248_13061280 1497499
+--
+Sort update successful: position: 149 startIndex: 1500000 endIndex: 1509999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9127_1509466446_25992200 1500000
+	12_9767_1509730680_23790 1509999
+Sorted Listings:
+	12_1314_1509949698_14280290 1504999
+--
+Sort update successful: position: 151 startIndex: 1520000 endIndex: 1530000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1999_1509974657_16720880 1520000
+	12_1081_1509981479_18236970 1530000
+Sorted Listings:
+	12_9127_1509466446_25992200 1524999
+--
+Sort update successful: position: 113 startIndex: 1110000 endIndex: 1120000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2458_1509761162_3484610 1110000
+	12_2039_1509760740_3483450 1120000
+Sorted Listings:
+	12_9099_1509984738_19199040 1114999
+--
+Sort update successful: position: 577 startIndex: 5770000 endIndex: 5780000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2667_1509739215_451370 5770000
+	12_2661_1509732627_108560 5780000
+Sorted Listings:
+	12_6253_1509738605_401290 5774999
+--
+Sort update successful: position: 122 startIndex: 1210000 endIndex: 1220000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7791_1509984191_18945930 1210000
+	12_2602_1509834270_7595350 1220000
+Sorted Listings:
+	12_4277_1509968264_15828510 1214999
+--
+Sort update successful: position: 125 startIndex: 1230000 endIndex: 1240000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1347_1509997782_2863290 1230000
+	12_5107_1509997240_2568330 1240000
+Sorted Listings:
+	12_2832_1509559491_30605980 1234999
+--
+Sort update successful: position: 149 startIndex: 1504999 endIndex: 1509999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1314_1509949698_14280290 1504999
+	12_9767_1509730680_23790 1509999
+Sorted Listings:
+	12_6287_1509996204_2054200 1507498
+--
+Sort update successful: position: 149 startIndex: 1504999 endIndex: 1507498 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1314_1509949698_14280290 1504999
+	12_6287_1509996204_2054200 1507498
+Sorted Listings:
+	12_1999_1509974657_16720880 1506248
+--
+Sort update successful: position: 154 startIndex: 1550000 endIndex: 1560000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5327_1509728921_90640 1550000
+	12_437_1509660772_328420 1560000
+Sorted Listings:
+	12_1314_1509949698_14280290 1554999
+--
+Sort update successful: position: 125 startIndex: 1240000 endIndex: 1250000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5107_1509997240_2568330 1240000
+	12_6818_1509997762_2817820 1250000
+Sorted Listings:
+	12_2832_1509559491_30605980 1244999
+--
+Sort update successful: position: 154 startIndex: 1550000 endIndex: 1554999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5327_1509728921_90640 1550000
+	12_1314_1509949698_14280290 1554999
+Sorted Listings:
+	12_9043_1509928250_13028690 1552499
+--
+Sort update successful: position: 126 startIndex: 1244999 endIndex: 1250000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2832_1509559491_30605980 1244999
+	12_6818_1509997762_2817820 1250000
+Sorted Listings:
+	12_693_1509997361_2620480 1247499
+--
+Sort update successful: position: 155 startIndex: 1550000 endIndex: 1552499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5327_1509728921_90640 1550000
+	12_9043_1509928250_13028690 1552499
+Sorted Listings:
+	12_1314_1509949698_14280290 1551249
+--
+Sort update successful: position: 156 startIndex: 1551249 endIndex: 1552499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1314_1509949698_14280290 1551249
+	12_9043_1509928250_13028690 1552499
+Sorted Listings:
+	12_437_1509660772_328420 1551873
+--
+Sort update successful: position: 159 startIndex: 1600000 endIndex: 1620000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6970_1509737708_334530 1600000
+	12_1806_1509995694_1938920 1620000
+Sorted Listings:
+	12_8504_1509744628_746220 1609999
+--
+Sort update successful: position: 134 startIndex: 1340000 endIndex: 1350000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5847_1509591182_33120880 1340000
+	12_5394_1509551730_29811300 1350000
+Sorted Listings:
+	12_2680_1509820155_6029020 1344999
+--
+Sort update successful: position: 160 startIndex: 1609999 endIndex: 1620000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8504_1509744628_746220 1609999
+	12_1806_1509995694_1938920 1620000
+Sorted Listings:
+	12_7306_1509736736_290910 1614999
+--
+Sort update successful: position: 157 startIndex: 1551873 endIndex: 1552499 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_437_1509660772_328420 1551873
+	12_9043_1509928250_13028690 1552499
+Sorted Listings:
+	12_8108_1509980371_18014600 1552185
+--
+Sort update successful: position: 153 startIndex: 1530000 endIndex: 1539999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1081_1509981479_18236970 1530000
+	12_1429_1509745871_18000 1539999
+Sorted Listings:
+	12_1672_1509730841_30560 1534999
+--
+Sort update successful: position: 159 startIndex: 1552499 endIndex: 1600000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9043_1509928250_13028690 1552499
+	12_6970_1509737708_334530 1600000
+Sorted Listings:
+	12_1672_1509730841_30560 1576249
+--
+Sort update successful: position: 167 startIndex: 1690000 endIndex: 1700000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7094_1509846328_8145050 1690000
+	12_6980_1509846330_8106400 1700000
+Sorted Listings:
+	12_9311_1509736738_290960 1694999
+--
+Sort update successful: position: 166 startIndex: 1680000 endIndex: 1690000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3248_1509739977_505520 1680000
+	12_7094_1509846328_8145050 1690000
+Sorted Listings:
+	12_2630_1509745786_13280 1684999
+--
+Sort update successful: position: 167 startIndex: 1684999 endIndex: 1690000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2630_1509745786_13280 1684999
+	12_7094_1509846328_8145050 1690000
+Sorted Listings:
+	12_3993_1509980050_17917970 1687499
+--
+Sort update successful: position: 168 startIndex: 1687499 endIndex: 1690000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3993_1509980050_17917970 1687499
+	12_7094_1509846328_8145050 1690000
+Sorted Listings:
+	12_2805_1509466447_25614130 1688749
+--
+Sort update successful: position: 172 startIndex: 1700000 endIndex: 1710000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6980_1509846330_8106400 1700000
+	12_9177_1509741497_584790 1710000
+Sorted Listings:
+	12_5260_1509730853_31060 1704999
+--
+Sort update successful: position: 577 startIndex: 5774999 endIndex: 5780000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6253_1509738605_401290 5774999
+	12_2661_1509732627_108560 5780000
+Sorted Listings:
+	12_5927_1509934084_13428330 5777499
+--
+Sort update successful: position: 337 startIndex: 3420000 endIndex: 3430000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_475_1509728852_82960 3420000
+	12_5316_1509728834_80970 3430000
+Sorted Listings:
+	12_7712_1509933513_13407380 3424999
+--
+Sort update successful: position: 170 startIndex: 1690000 endIndex: 1694999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7094_1509846328_8145050 1690000
+	12_9311_1509736738_290960 1694999
+Sorted Listings:
+	12_6980_1509846330_8106400 1692499
+--
+Sort update successful: position: 169 startIndex: 1688749 endIndex: 1704999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2805_1509466447_25614130 1688749
+	12_5260_1509730853_31060 1704999
+Sorted Listings:
+	12_8211_1509933181_13369140 1696873
+--
+Sort update successful: position: 171 startIndex: 1696873 endIndex: 1704999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8211_1509933181_13369140 1696873
+	12_5260_1509730853_31060 1704999
+Sorted Listings:
+	12_7816_1509734502_189650 1700935
+--
+Sort update successful: position: 178 startIndex: 1900000 endIndex: 1920000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7646_1509996632_2243870 1900000
+	12_1867_1509980420_18007220 1920000
+Sorted Listings:
+	12_8508_1509990902_202290 1909999
+--
+Sort update successful: position: 177 startIndex: 1890000 endIndex: 1900000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7784_1509996847_2372130 1890000
+	12_7646_1509996632_2243870 1900000
+Sorted Listings:
+	12_3235_1509466448_25614170 1894999
+--
+Sort update successful: position: 179 startIndex: 1897499 endIndex: 1898749 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3513_1509746104_30180 1897499
+	12_9573_1509724134_3349300 1898749
+Sorted Listings:
+	12_3794_1509751553_3205930 1898123
+--
+Sort update successful: position: 185 startIndex: 1924999 endIndex: 1930000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1457_1509742299_626380 1924999
+	12_592_1509739959_504600 1930000
+Sorted Listings:
+	12_375_1509998388_3112340 1927499
+--
+Sort update successful: position: 189 startIndex: 1929686 endIndex: 1930000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4631_1509738504_380150 1929686
+	12_592_1509739959_504600 1930000
+Sorted Listings:
+	12_435_1509722470_3073850 1929842
+--
+Sort update successful: position: 187 startIndex: 1928749 endIndex: 1929374 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7401_1509981608_18266650 1928749
+	12_7676_1509985090_19330050 1929374
+Sorted Listings:
+	12_6086_1509995256_1781050 1929061
+--
+Sort update successful: position: 385 startIndex: 3940000 endIndex: 3950000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2212_1509729026_255430 3940000
+	12_1403_1509984127_18986920 3950000
+Sorted Listings:
+	12_7140_1509823894_6512450 3944999
+--
+Sort update successful: position: 577 startIndex: 5777499 endIndex: 5780000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5927_1509934084_13428330 5777499
+	12_2661_1509732627_108560 5780000
+Sorted Listings:
+	12_6717_1509573445_31958120 5778749
+--
+Sort update successful: position: 149 startIndex: 1430000 endIndex: 1440000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2639_1509471294_26503390 1430000
+	12_3503_1509474225_26336960 1440000
+Sorted Listings:
+	12_3680_1509551604_30272700 1434999
+--
+Sort update successful: position: 158 startIndex: 1510000 endIndex: 1520000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2358_1509536262_28743040 1510000
+	12_8122_1509535082_29142460 1520000
+Sorted Listings:
+	12_2263_1509468006_26142070 1514999
+--
+Sort update successful: position: 161 startIndex: 1540000 endIndex: 1550000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8356_1509539242_29254830 1540000
+	12_3280_1509739620_2033670 1550000
+Sorted Listings:
+	12_9009_1509534498_28695450 1544999
+--
+Sort update successful: position: 170 startIndex: 1640000 endIndex: 1650000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7841_1509722821_3147630 1640000
+	12_6668_1509717957_2478280 1650000
+Sorted Listings:
+	12_6786_1509714835_2072930 1644999
+--
+Sort update successful: position: 193 startIndex: 1930000 endIndex: 1999999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_592_1509739959_504600 1930000
+	12_4685_1509573445_32459560 1999999
+Sorted Listings:
+	12_3493_1509807506_71800 1934999
+--
+Sort update successful: position: 185 startIndex: 1780000 endIndex: 1800000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7298_1509769345_3524600 1780000
+	12_2171_1509769345_3540130 1800000
+Sorted Listings:
+	12_4337_1509739798_2033140 1789999
+--
+Sort update successful: position: 188 startIndex: 1810000 endIndex: 1820000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4712_1509769345_3540090 1810000
+	12_6387_1509769748_3527500 1820000
+Sorted Listings:
+	12_833_1509728879_224570 1814999
+--
+Sort update successful: position: 200 startIndex: 1930000 endIndex: 1940000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9109_1509992721_917970 1930000
+	12_8994_1509992967_996550 1940000
+Sorted Listings:
+	12_482_1509851561_8262300 1934999
+--
+Sort update successful: position: 204 startIndex: 1980000 endIndex: 1990000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3034_1509848407_8161960 1980000
+	12_9179_1509929585_13137250 1990000
+Sorted Listings:
+	12_1077_1509911264_11419160 1984999
+--
+Sort update successful: position: 216 startIndex: 2100000 endIndex: 2120000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9838_1509392558_22720120 2100000
+	12_3753_1509984502_19116180 2120000
+Sorted Listings:
+	12_3556_1509986224_19676400 2109999
+--
+Sort update successful: position: 218 startIndex: 2140000 endIndex: 2150000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6469_1509986175_19657590 2140000
+	12_1449_1509985911_19576750 2150000
+Sorted Listings:
+	12_3753_1509984502_19116180 2144999
+--
+Sort update successful: position: 221 startIndex: 2170000 endIndex: 2180000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6352_1509980840_18148010 2170000
+	12_3459_1509996172_2038300 2180000
+Sorted Listings:
+	12_7197_1509986043_19558530 2174999
+--
+Sort update successful: position: 224 startIndex: 2200000 endIndex: 2210000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2455_1509984103_18927060 2200000
+	12_8639_1509986238_19641450 2210000
+Sorted Listings:
+	12_5289_1509998374_3104930 2204999
+--
+Sort update successful: position: 230 startIndex: 2250000 endIndex: 2260000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2481_1509993225_1082910 2250000
+	12_4499_1509985902_19519420 2260000
+Sorted Listings:
+	12_1004_1509632575_34625520 2254999
+--
+Sort update successful: position: 233 startIndex: 2290000 endIndex: 2300000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9277_1509805515_4706100 2290000
+	12_9759_1509805967_4698880 2300000
+Sorted Listings:
+	12_4793_1509926471_12874100 2294999
+--
+Sort update successful: position: 236 startIndex: 2320000 endIndex: 2324999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9000_1509558829_31017220 2320000
+	12_3470_1509985642_19437750 2324999
+Sorted Listings:
+	12_8447_1509998344_3148040 2322499
+--
+Sort update successful: position: 32 startIndex: 5704999 endIndex: 5689998 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_9139_1503085454_1098414 5704999
+	12_6490_1502496953_5407584 5689998
+Sorted Listings:
+	12_257_1503085545_1133743 5697498
+--
+Sort update successful: position: 242 startIndex: 2340000 endIndex: 2350000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_409_1509591487_32646030 2340000
+	12_1822_1509591264_33126030 2350000
+Sorted Listings:
+	12_2096_1509985642_19496100 2344999
+--
+Sort update successful: position: 287 startIndex: 3060000 endIndex: 3070000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8851_1509737946_345130 3060000
+	12_2416_1509737947_345180 3070000
+Sorted Listings:
+	12_2940_1509981607_18316360 3064999
+--
+Sort update successful: position: 248 startIndex: 2390000 endIndex: 2400000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6157_1509559431_30595340 2390000
+	12_5265_1509559566_30615660 2400000
+Sorted Listings:
+	12_387_1509467896_26122050 2394999
+--
+Sort update successful: position: 272 startIndex: 2640000 endIndex: 2650000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4743_1509985869_19510470 2640000
+	12_9725_1509985773_19479060 2650000
+Sorted Listings:
+	12_289_1509979005_17651710 2644999
+--
+Sort update successful: position: 287 startIndex: 2784999 endIndex: 2790000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8130_1509990024_20931750 2784999
+	12_5278_1509751459_3202600 2790000
+Sorted Listings:
+	12_8800_1509729180_310100 2787499
+--
+Sort update successful: position: 290 startIndex: 2820000 endIndex: 2830000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9873_1509567021_31472850 2820000
+	12_3373_1509591487_32646010 2830000
+Sorted Listings:
+	12_3592_1509715347_2160180 2824999
+--
+Sort update successful: position: 302 startIndex: 2930000 endIndex: 2940000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5418_1509980122_17932300 2930000
+	12_3134_1509979862_17876300 2940000
+Sorted Listings:
+	12_2587_1509885364_9388820 2934999
+--
+Sort update successful: position: 43 startIndex: 5582497 endIndex: 5572497 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_4675_1500421851_2309593 5582497
+	12_144_1501801206_7614 5572497
+Sorted Listings:
+	12_8775_1500421799_2309193 5577496
+--
+Sort update successful: position: 314 startIndex: 3060000 endIndex: 3070000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1052_1509990245_21048410 3060000
+	12_876_1509390023_22376840 3070000
+Sorted Listings:
+	12_7374_1509988158_20402730 3064999
+--
+Sort update successful: position: 54 startIndex: 5449998 endIndex: 5434999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_1925_1495573854_749823 5449998
+	12_2411_1496648366_310903 5434999
+Sorted Listings:
+	12_4497_1499104565_637953 5442498
+--
+Sort update successful: position: 57 startIndex: 5424999 endIndex: 5419998 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_4380_1496648122_308673 5424999
+	12_196_1496650096_315484 5419998
+Sorted Listings:
+	12_82_1496648024_307514 5422498
+--
+Sort update successful: position: 368 startIndex: 3640000 endIndex: 3650000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8470_1509980498_18052390 3640000
+	12_9102_1509946057_14024970 3650000
+Sorted Listings:
+	12_599_1509726566_3756760 3644999
+--
+Sort update successful: position: 577 startIndex: 5784999 endIndex: 5786666 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2482_1509736534_281370 5784999
+	12_9031_1509980111_17928990 5786666
+Sorted Listings:
+	12_9781_1509734584_193030 5785832
+--
+Sort update successful: position: 433 startIndex: 4480000 endIndex: 4490000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9120_1509977361_17330220 4480000
+	12_998_1509991273_331940 4490000
+Sorted Listings:
+	12_1236_1509732341_95910 4484999
+--
+Sort update successful: position: 337 startIndex: 3670000 endIndex: 3680000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_977_1509982404_18479540 3670000
+	12_138_1509982404_18438450 3680000
+Sorted Listings:
+	12_8871_1509733659_154330 3674999
+--
+Sort update successful: position: 577 startIndex: 5785832 endIndex: 5786666 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9781_1509734584_193030 5785832
+	12_9031_1509980111_17928990 5786666
+Sorted Listings:
+	12_4598_1509737798_338480 5786248
+--
+Sort update successful: position: 529 startIndex: 5370000 endIndex: 5380000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1436_1509980608_18085550 5370000
+	12_5262_1509734859_205050 5380000
+Sorted Listings:
+	12_9217_1509737803_338640 5374999
+--
+Sort update successful: position: 433 startIndex: 4510000 endIndex: 4520000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9873_1509741972_609540 4510000
+	12_3268_1509996563_2275650 4520000
+Sorted Listings:
+	12_6247_1509737811_338960 4514999
+--
+Sort update successful: position: 481 startIndex: 4940000 endIndex: 4950000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6954_1509743652_697280 4940000
+	12_1463_1509743653_697340 4950000
+Sorted Listings:
+	12_3959_1509982407_18480630 4944999
+--
+Sort update successful: position: 74 startIndex: 5229998 endIndex: 5204999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_1135_1494029984_576474 5229998
+	12_8258_1494029738_656393 5204999
+Sorted Listings:
+	12_7252_1494033567_665813 5217498
+--
+Sort update successful: position: 385 startIndex: 4099163 endIndex: 4100000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2940_1509981607_18316360 4099163
+	12_1666_1509724368_3341400 4100000
+Sorted Listings:
+	12_977_1509982404_18479540 4099581
+--
+Sort update successful: position: 328 startIndex: 3610000 endIndex: 3650000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2989_1509982407_18480610 3610000
+	12_7718_1509982405_18439800 3650000
+Sorted Listings:
+	12_5911_1509734397_185420 3629999
+--
+Sort update successful: position: 332 startIndex: 3690000 endIndex: 3700000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1163_1509655576_36480 3690000
+	12_9307_1509746138_32080 3700000
+Sorted Listings:
+	12_4684_1509794935_4203950 3694999
+--
+Sort update successful: position: 91 startIndex: 4954999 endIndex: 4949998 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7237_1489222673_449044 4954999
+	12_1091_1491602062_147724 4949998
+Sorted Listings:
+	12_7053_1490635471_1035834 4952498
+--
+Sort update successful: position: 241 startIndex: 2430000 endIndex: 2450000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9495_1509644120_35640030 2430000
+	12_5518_1509466598_26011290 2450000
+Sorted Listings:
+	12_8583_1509856936_8369730 2439999
+--
+Sort update successful: position: 385 startIndex: 4099581 endIndex: 4100000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_977_1509982404_18479540 4099581
+	12_1666_1509724368_3341400 4100000
+Sorted Listings:
+	12_9034_1509856934_8369570 4099790
+--
+Sort update successful: position: 193 startIndex: 1930000 endIndex: 1930021 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_592_1509739959_504600 1930000
+	12_3032_1509856933_8413650 1930021
+Sorted Listings:
+	12_7610_1509738396_371290 1930010
+--
+Sort update successful: position: 112 startIndex: 4593748 endIndex: 4589998 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_9580_1484345689_321904 4593748
+	12_7890_1484345897_325304 4589998
+Sorted Listings:
+	12_6284_1484346013_224913 4591872
+--
+Sort update successful: position: 529 startIndex: 5380000 endIndex: 5390000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5262_1509734859_205050 5380000
+	12_1894_1509735023_212030 5390000
+Sorted Listings:
+	12_8166_1509996829_2359590 5384999
+--
+Sort update successful: position: 433 startIndex: 4550000 endIndex: 4560000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3046_1509990809_178880 4550000
+	12_3369_1509990809_245340 4560000
+Sorted Listings:
+	12_4091_1509996838_2427480 4554999
+--
+Sort update successful: position: 529 startIndex: 5390000 endIndex: 5400000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1894_1509735023_212030 5390000
+	12_185_1509734854_204790 5400000
+Sorted Listings:
+	12_2191_1509744278_728520 5394999
+--
+Sort update successful: position: 529 startIndex: 5394999 endIndex: 5400000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2191_1509744278_728520 5394999
+	12_185_1509734854_204790 5400000
+Sorted Listings:
+	12_8432_1509739114_446840 5397499
+--
+Sort update successful: position: 400 startIndex: 4320000 endIndex: 4330000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2930_1509744472_738330 4320000
+	12_3949_1509743443_686540 4330000
+Sorted Listings:
+	12_3763_1509949621_14277180 4324999
+--
+Sort update successful: position: 289 startIndex: 3050000 endIndex: 3070000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2294_1509744429_736200 3050000
+	12_2416_1509737947_345180 3070000
+Sorted Listings:
+	12_5170_1509967757_15859790 3059999
+--
+Sort update successful: position: 577 startIndex: 5786560 endIndex: 5786666 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6685_1509734303_181440 5786560
+	12_9031_1509980111_17928990 5786666
+Sorted Listings:
+	12_2565_1509967770_15775060 5786612
+--
+Sort update successful: position: 481 startIndex: 4990000 endIndex: 5000000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_361_1509742556_640040 4990000
+	12_1832_1509742555_639980 5000000
+Sorted Listings:
+	12_5255_1509967786_15777270 4994999
+--
+Sort update successful: position: 414 startIndex: 4460000 endIndex: 4470000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6973_1509989453_20719360 4460000
+	12_1111_1509934219_13440140 4470000
+Sorted Listings:
+	12_1236_1509732341_95910 4464999
+--
+Sort update successful: position: 289 startIndex: 3040000 endIndex: 3050000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9297_1509974657_16720840 3040000
+	12_2294_1509744429_736200 3050000
+Sorted Listings:
+	12_6734_1509996563_2212460 3044999
+--
+Sort update successful: position: 155 startIndex: 3960466 endIndex: 3940232 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_8271_1468292558_3640964 3960466
+	12_3700_1472861932_9632134 3940232
+Sorted Listings:
+	12_8977_1468283951_3519003 3950348
+--
+Sort update successful: position: 577 startIndex: 5780000 endIndex: 5790000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9031_1509980111_17928990 5780000
+	12_2980_1509732628_108620 5790000
+Sorted Listings:
+	12_6129_1509723968_3314210 5783333
+--
+Sort update successful: position: 166 startIndex: 3717498 endIndex: 3701717 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7600_1462232315_1550653 3717498
+	12_8779_1461888489_153984 3701717
+Sorted Listings:
+	12_474_1462232785_1582674 3709607
+--
+Sort update successful: position: 289 startIndex: 2870000 endIndex: 2880000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3698_1509974658_16721000 2870000
+	12_9297_1509974657_16720840 2880000
+Sorted Listings:
+	12_3934_1509987340_20094260 2874999
+--
+Sort update successful: position: 14 startIndex: 140000 endIndex: 150000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9724_1509741318_574820 140000
+	12_5584_1509744404_2678220 150000
+Sorted Listings:
+	12_1068_1509745997_24660 144999
+--
+Sort update successful: position: 13 startIndex: 120000 endIndex: 140000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1994_1509996368_2117510 120000
+	12_9724_1509741318_574820 140000
+Sorted Listings:
+	12_1317_1509743425_685800 129999
+--
+Sort update successful: position: 10 startIndex: 90000 endIndex: 100000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9756_1509908456_11025430 90000
+	12_8992_1509949620_14276390 100000
+Sorted Listings:
+	12_4915_1509996204_2054160 94999
+--
+Sort update successful: position: 27 startIndex: 270000 endIndex: 280000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5809_1509734500_189590 270000
+	12_5379_1509971775_16276060 280000
+Sorted Listings:
+	12_1700_1509793081_4066010 274999
+--
+Sort update successful: position: 17 startIndex: 144999 endIndex: 150000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1068_1509745997_24660 144999
+	12_5584_1509744404_2678220 150000
+Sorted Listings:
+	12_1700_1509793081_4066010 147499
+--
+Sort update successful: position: 189 startIndex: 3369999 endIndex: 3347185 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_6906_1452647524_1079399 3369999
+	12_5888_1452647525_278350 3347185
+Sorted Listings:
+	12_3141_1458379458_486084 3358591
+--
+Sort update successful: position: 42 startIndex: 410000 endIndex: 420000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_2378_1509746102_30040 410000
+	12_9305_1509757912_3461850 420000
+Sorted Listings:
+	12_1266_1509996633_2244900 414999
+--
+Sort update successful: position: 196 startIndex: 3164999 endIndex: 3149998 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_9889_1452647525_9414390 3164999
+	12_3212_1452647525_6284311 3149998
+Sorted Listings:
+	12_5888_1452647525_278350 3157498
+--
+Sort update successful: position: 192 startIndex: 3264999 endIndex: 3184999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_3859_1452647525_3990325 3264999
+	12_8103_1452647525_168334 3184999
+Sorted Listings:
+	12_5010_1452647524_3583337 3224998
+--
+Sort update successful: position: 196 startIndex: 3164999 endIndex: 3157498 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_9889_1452647525_9414390 3164999
+	12_5888_1452647525_278350 3157498
+Sorted Listings:
+	12_7258_1452647524_8182338 3161248
+--
+Sort update successful: position: 202 startIndex: 3075623 endIndex: 3071560 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_4818_1450726148_3085325 3075623
+	12_4620_1452647524_3591342 3071560
+Sorted Listings:
+	12_3175_1452646478_3311358 3073591
+--
+Sort update successful: position: 204 startIndex: 3067499 endIndex: 3058942 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_4362_1452647524_7018349 3067499
+	12_8907_1452647524_8875366 3058942
+Sorted Listings:
+	12_4620_1452647524_3591342 3063220
+--
+Sort update successful: position: 223 startIndex: 2649998 endIndex: 2648864 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_5494_1452027805_3295370 2649998
+	12_9234_1452027849_6575341 2648864
+Sorted Listings:
+	12_4460_1452646476_8354355 2649430
+--
+Sort update successful: position: 238 startIndex: 2507887 endIndex: 2506392 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_8704_1452027804_2812387 2507887
+	12_4081_1452027805_1307322 2506392
+Sorted Listings:
+	12_6135_1452027850_2772341 2507139
+--
+Sort update successful: position: 246 startIndex: 2313748 endIndex: 2292499 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_9128_1452027804_650390 2313748
+	12_3723_1452027851_7812357 2292499
+Sorted Listings:
+	12_6114_1452027805_262837 2303123
+--
+Sort update successful: position: 252 startIndex: 2154999 endIndex: 2147499 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_5026_1452027850_8446388 2154999
+	12_3098_1452027850_2811312 2147499
+Sorted Listings:
+	12_3723_1452027851_7812357 2151248
+--
+Sort update successful: position: 253 startIndex: 2147499 endIndex: 2143749 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_3098_1452027850_2811312 2147499
+	12_4467_1452027850_7898386 2143749
+Sorted Listings:
+	12_3723_1452027851_7812357 2145623
+--
+Sort update successful: position: 250 startIndex: 2234999 endIndex: 2232499 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_35_1452027850_75237 2234999
+	12_9270_1452027850_782310 2232499
+Sorted Listings:
+	12_5026_1452027850_8446388 2233748
+--
+Sort update successful: position: 256 startIndex: 2131873 endIndex: 2119998 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_8016_1452027851_318936 2131873
+	12_6573_1452027804_9793372 2119998
+Sorted Listings:
+	12_3723_1452027851_7812357 2125935
+--
+Sort update successful: position: 259 startIndex: 2090000 endIndex: 2039999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7055_1452027851_9846388 2090000
+	12_7197_1452027851_1203386 2039999
+Sorted Listings:
+	12_3723_1452027851_7812357 2064999
+--
+Sort update successful: position: 261 startIndex: 1958749 endIndex: 1944999 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_4515_1452027806_370377 1958749
+	12_4012_1452027851_968318 1944999
+Sorted Listings:
+	12_3723_1452027851_7812357 1951873
+--
+Sort update successful: position: 260 startIndex: 2039999 endIndex: 1958749 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7197_1452027851_1203386 2039999
+	12_4515_1452027806_370377 1958749
+Sorted Listings:
+	12_3723_1452027851_7812357 1999373
+--
+Sort update successful: position: 303 startIndex: 1391248 endIndex: 1368749 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_5517_1452027809_7253323 1391248
+	12_7772_1452027807_7781378 1368749
+Sorted Listings:
+	12_9065_1452027807_2863313 1379998
+--
+Sort update successful: position: 8 startIndex: 7520000 endIndex: 7510000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_1404_1510092884_568260 7520000
+	12_3582_1510092616_498540 7510000
+Sorted Listings:
+	12_5710_1510026992_4529950 7514999
+--
+Sort update successful: position: 34 startIndex: 330000 endIndex: 340000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9757_1509386324_20474830 330000
+	12_2559_1509995207_1694250 340000
+Sorted Listings:
+	12_5209_1509671314_786870 334999
+--
+Sort update successful: position: 37 startIndex: 7140000 endIndex: 7130000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_3980_1509413422_23982980 7140000
+	12_2600_1510024362_4492190 7130000
+Sorted Listings:
+	12_3582_1510092616_498540 7138991
+--
+Sort update successful: position: 43 startIndex: 414999 endIndex: 420000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1266_1509996633_2244900 414999
+	12_9305_1509757912_3461850 420000
+Sorted Listings:
+	12_1525_1509994312_1416700 417499
+--
+Sort update successful: position: 2 startIndex: 7470000 endIndex: 7460000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_8068_1510091140_348450 7470000
+	12_5998_1509914454_11767140 7460000
+Sorted Listings:
+	12_5710_1510026992_4529950 7464999
+--
+Sort update successful: position: 14 startIndex: 7354999 endIndex: 7350000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7422_1510094973_765240 7354999
+	12_1624_1510014272_4412130 7350000
+Sorted Listings:
+	12_2114_1509420509_24423110 7352499
+--
+Sort update successful: position: 17 startIndex: 7330000 endIndex: 7320000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_2992_1510015055_4343380 7330000
+	12_664_1509406943_23826760 7320000
+Sorted Listings:
+	12_740_1509417694_24019990 7324999
+--
+Sort update successful: position: 25 startIndex: 7260000 endIndex: 7250000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_1650_1510014642_4333020 7260000
+	12_7842_1509649233_36388510 7250000
+Sorted Listings:
+	12_994_1509407231_23835030 7254999
+--
+Sort update successful: position: 28 startIndex: 7230000 endIndex: 7220000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_2408_1509477824_27094920 7230000
+	12_7853_1509407779_24233030 7220000
+Sorted Listings:
+	12_5574_1509918547_12093810 7224999
+--
+Sort update successful: position: 363 startIndex: 269205 endIndex: 203004 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7563_1452027841_2964368 269205
+	12_3129_1452027844_478135 203004
+Sorted Listings:
+	12_212_1452027844_942377 236104
+--
+Sort update successful: position: 30 startIndex: 7220000 endIndex: 7210000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_7853_1509407779_24233030 7220000
+	12_9657_1510025073_4506100 7210000
+Sorted Listings:
+	12_1682_1510015573_4352350 7214999
+--
+Sort update successful: position: 31 startIndex: 7214999 endIndex: 7210000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_1682_1510015573_4352350 7214999
+	12_9657_1510025073_4506100 7210000
+Sorted Listings:
+	12_1874_1509419936_24419380 7212499
+--
+Sort update successful: position: 34 startIndex: 7190000 endIndex: 7160000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_162_1509482242_27088470 7190000
+	12_5977_1509648761_36898940 7160000
+Sorted Listings:
+	12_3980_1509413422_23982980 7174999
+--
+Sort update successful: position: 35 startIndex: 7174999 endIndex: 7160000 sortInterval: 10000 orderBy: DESC
+Surround Listings:
+	12_3980_1509413422_23982980 7174999
+	12_5977_1509648761_36898940 7160000
+Sorted Listings:
+	12_1156_1509074680_8148970 7167499
+--
+Sort update successful: position: 47 startIndex: 460000 endIndex: 480000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6174_1509619214_33241210 460000
+	12_4593_1509807509_71950 480000
+Sorted Listings:
+	12_4685_1509573445_32459560 469999
+--
+Sort update successful: position: 194 startIndex: 1924999 endIndex: 1930000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5053_1509990899_200830 1924999
+	12_2027_1509967856_15783570 1930000
+Sorted Listings:
+	12_8367_1509728904_85640 1927499
+--
+Sort update successful: position: 196 startIndex: 1940000 endIndex: 1950000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3588_1509996837_2427250 1940000
+	12_7610_1509738396_371290 1950000
+Sorted Listings:
+	12_5053_1509990899_200830 1944999
+--
+Sort update successful: position: 196 startIndex: 1940000 endIndex: 1944999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3588_1509996837_2427250 1940000
+	12_5053_1509990899_200830 1944999
+Sorted Listings:
+	12_4496_1509996204_2112900 1942499
+--
+Sort update successful: position: 199 startIndex: 1950000 endIndex: 1960000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7610_1509738396_371290 1950000
+	12_3032_1509856933_8413650 1960000
+Sorted Listings:
+	12_9641_1509734483_188990 1954999
+--
+Sort update successful: position: 202 startIndex: 1990000 endIndex: 2000000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4683_1509732386_97950 1990000
+	12_5156_1509737810_338900 2000000
+Sorted Listings:
+	12_908_1509982405_18439200 1994999
+--
+Sort update successful: position: 203 startIndex: 1994999 endIndex: 2000000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_908_1509982405_18439200 1994999
+	12_5156_1509737810_338900 2000000
+Sorted Listings:
+	12_7856_1509996844_2369640 1997499
+--
+Sort update successful: position: 207 startIndex: 2020000 endIndex: 2050000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1154_1509660946_326900 2020000
+	12_3837_1509466599_25630750 2050000
+Sorted Listings:
+	12_9519_1509732439_100150 2034999
+--
+Sort update successful: position: 215 startIndex: 2084999 endIndex: 2090000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_5458_1509722472_3107160 2084999
+	12_3491_1509552370_29876500 2090000
+Sorted Listings:
+	12_3493_1509807506_71800 2087499
+--
+Sort update successful: position: 216 startIndex: 2087499 endIndex: 2090000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3493_1509807506_71800 2087499
+	12_3491_1509552370_29876500 2090000
+Sorted Listings:
+	12_3395_1509651657_37115620 2088749
+--
+Sort update successful: position: 218 startIndex: 2089374 endIndex: 2089686 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6706_1509997168_2602670 2089374
+	12_8178_1509949621_14277300 2089686
+Sorted Listings:
+	12_8144_1509802712_4565950 2089529
+--
+Sort update successful: position: 221 startIndex: 2089686 endIndex: 2090000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_8178_1509949621_14277300 2089686
+	12_3491_1509552370_29876500 2090000
+Sorted Listings:
+	12_6575_1509574730_32544530 2089842
+--
+Sort update successful: position: 222 startIndex: 2089842 endIndex: 2090000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_6575_1509574730_32544530 2089842
+	12_3491_1509552370_29876500 2090000
+Sorted Listings:
+	12_582_1509891412_9704090 2089920
+--
+Sort update successful: position: 223 startIndex: 2089920 endIndex: 2089959 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_582_1509891412_9704090 2089920
+	12_3334_1509987772_20217090 2089959
+Sorted Listings:
+	12_9550_1509980114_17910940 2089939
+--
+Sort update successful: position: 225 startIndex: 2089959 endIndex: 2090000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3334_1509987772_20217090 2089959
+	12_3491_1509552370_29876500 2090000
+Sorted Listings:
+	12_84_1509729923_478470 2089979
+--
+Sort update successful: position: 226 startIndex: 2089979 endIndex: 2089989 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_84_1509729923_478470 2089979
+	12_3309_1509994799_1625150 2089989
+Sorted Listings:
+	12_1513_1509995978_1962990 2089983
+--
+Sort update successful: position: 228 startIndex: 2089989 endIndex: 2090000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_3309_1509994799_1625150 2089989
+	12_3491_1509552370_29876500 2090000
+Sorted Listings:
+	12_6558_1509743469_687860 2089994
+--
+Sort update successful: position: 235 startIndex: 2340000 endIndex: 2350000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_7636_1509976176_17063360 2340000
+	12_1078_1509734755_200460 2350000
+Sorted Listings:
+	12_3491_1509552370_29876500 2344999
+--
+Sort update successful: position: 237 startIndex: 2370000 endIndex: 2380000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1247_1509739022_442190 2370000
+	12_204_1509651658_37115660 2380000
+Sorted Listings:
+	12_7636_1509976176_17063360 2374999
+--
+Sort update successful: position: 234 startIndex: 2320000 endIndex: 2344999 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_9368_1509484055_27240850 2320000
+	12_3491_1509552370_29876500 2344999
+Sorted Listings:
+	12_1247_1509739022_442190 2332499
+--
+Sort update successful: position: 6 startIndex: 50000 endIndex: 60000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_1745_1509754368_3325300 50000
+	12_3312_1509998061_2949950 60000
+Sorted Listings:
+	12_8992_1509949620_14276390 54999
+--
+Sort update successful: position: 11 startIndex: 94999 endIndex: 120000 sortInterval: 10000 orderBy: ASC
+Surround Listings:
+	12_4915_1509996204_2054160 94999
+	12_1994_1509996368_2117510 120000
+Sorted Listings:
+	12_3312_1509998061_2949950 107499
