@@ -65,7 +65,7 @@ allMoves.forEach(move => {
         .filter(s => {
             return s !== move.listingId;
         });
-    console.log(`replacing this at that`, position, listingId, allValidListings.length)
+    // console.log(`replacing this at that`, position, listingId, allValidListings.length)
     allValidListings.splice(position, 0, listingId)
 });
 
