@@ -1,7 +1,7 @@
 "use strict";
 
-
 const { Readable, Transform } = require('stream');
+const colorLog = require('./colorLog');
 
 /**
  * Here we must distinguish between readable and writable object mode:
@@ -32,8 +32,24 @@ const objectToString = new Transform({
     }
 });
 
+// As of now this is just a simple pass through,
+// however you could see how this could easily become a throttling transformer that only invokes the next
+// stream if a certain time threshold elapses.
+const accumulator = new Transform({
+    writableObjectMode: true,
+    readableObjectMode: true,
+    transform(chunk, encoding, callback) {
+        Object.assign(this.accumulatedResult, chunk);
+        colorLog.red(JSON.stringify(this.accumulatedResult));
+        callback(null, chunk);
+    }
+});
+
+accumulator.accumulatedResult = {};
+
 process.stdin
     .pipe(stringToObject)
     // .on('data', () => process.stdout.write('.')) // create a little progress bar.
+    .pipe(accumulator)
     .pipe(objectToString)
     .pipe(process.stdout);
