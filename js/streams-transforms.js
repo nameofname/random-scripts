@@ -16,9 +16,8 @@ const stringToObject = new Transform({
         const arr = chunk.toString().trim().split(',');
         const object = {};
         for (let i of arr) {
-            object[i] = 'hey what, ths is a value not a key.';
+            this.push({[i]: 'flerp'});
         }
-        this.push(object);
         callback();
     }
 
@@ -35,5 +34,6 @@ const objectToString = new Transform({
 
 process.stdin
     .pipe(stringToObject)
+    // .on('data', () => process.stdout.write('.')) // create a little progress bar.
     .pipe(objectToString)
     .pipe(process.stdout);
