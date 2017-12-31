@@ -23,14 +23,6 @@ const stringToObject = new Transform({
 
 });
 
-const objectToString = new Transform({
-    writableObjectMode: true,
-    readableObjectMode: true,
-    transform(chunk, encoding, callback) {
-        this.push(JSON.stringify(chunk));
-        callback();
-    }
-});
 
 // As of now this is just a simple pass through,
 // however you could see how this could easily become a throttling transformer that only invokes the next
@@ -40,12 +32,21 @@ const accumulator = new Transform({
     readableObjectMode: true,
     transform(chunk, encoding, callback) {
         Object.assign(this.accumulatedResult, chunk);
-        colorLog.red(JSON.stringify(this.accumulatedResult));
         callback(null, chunk);
     }
 });
-
 accumulator.accumulatedResult = {};
+
+
+const objectToString = new Transform({
+    writableObjectMode: true,
+    readableObjectMode: true,
+    transform(chunk, encoding, callback) {
+        this.push(JSON.stringify(chunk));
+        colorLog.green('thing happened:', JSON.stringify(chunk));
+        callback();
+    }
+});
 
 process.stdin
     .pipe(stringToObject)
