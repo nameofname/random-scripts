@@ -43,7 +43,7 @@ const objectToString = new Transform({
     readableObjectMode: true,
     transform(chunk, encoding, callback) {
         this.push(JSON.stringify(chunk));
-        colorLog.green('thing happened:', JSON.stringify(chunk));
+        colorLog.green('x happened:', JSON.stringify(chunk));
         callback();
     }
 });
