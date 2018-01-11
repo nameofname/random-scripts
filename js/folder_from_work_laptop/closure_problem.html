@@ -1,0 +1,32 @@
+<html>
+<head>
+<script type="text/javascript">
+
+var arr = []; 
+
+for (var x = 0; x<10; x++) {
+
+        (function(){
+            var num = 0 + x; 
+            var fn = function(){
+                var n = num;
+                console.log(n);
+            }; 
+
+            arr.push(fn)
+
+        })(); 
+
+
+}
+
+console.log(arr[0]()); 
+console.log(arr[1]()); 
+console.log(arr[2]()); 
+
+
+</script>
+</head>
+<body>
+</body>
+</html>
