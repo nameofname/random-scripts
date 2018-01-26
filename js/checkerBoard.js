@@ -35,7 +35,26 @@ const checkerBoardNormal = function (units) {
     return board;
 }
 
-// console.log(checkerBoardNormal(6));
+function checkerBoardOneLoop (units) {
+    let arr = [];
+    let curr = true;
+    const isOdd = units % 2 === 0;
+
+    for (var i = 1; i <= (units * units); i++) {
+        curr = !curr;
+        arr.push(curr ? 'o' : 'x');
+        if (i !== 0 && i % units === 0) {
+            console.log(arr);
+            arr = [];
+            if (isOdd) {
+                curr = !curr;
+            }
+        }
+    }
+}
+
+checkerBoardOneLoop(3);
+checkerBoardOneLoop(6);
 // console.log(checkerBoardNormal(7));
 
 /**
@@ -48,5 +67,5 @@ const checkerBoard = function (units) {
     });
 }
 
-console.log(checkerBoard(7));
+// console.log(checkerBoard(7));
 
