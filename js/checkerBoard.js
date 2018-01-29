@@ -69,3 +69,6 @@ const checkerBoard = function (units) {
 
 // console.log(checkerBoard(7));
 
+
+function checkerBoardOneLine(n) { return new Array(n).fill(1).map((i, idx) => { return new Array(n).fill(1).map((j, idx1) => { return (idx + idx1) % 2 === 0 ? 'x' : 'o' }) }); }
+
