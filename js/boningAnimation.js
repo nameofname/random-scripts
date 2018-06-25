@@ -1,13 +1,20 @@
 const fuckingArr = [
-    '8=====> ({})',
-    ' 8=====>({})',
-    '  8=====>{})',
-    '   8=====>})',
-    '    8=====})',
-    '     8====})',
-    '      8===})',
-    '       8==})',
-    '        8=})',
+    ' 8=====> ({})',
+    '  8=====>({})',
+    '   8=====>{})',
+    '    8=====>})',
+    '     8=====})',
+    '      8====})',
+    '       8===})',
+    '        8==})',
+    '         8=})',
+    '        8==})',
+    '       8===})',
+    '      8====})',
+    '     8=====})',
+    '    8=====>})',
+    '   8=====>{})',
+    '  8=====>({})',
 ];
 
 const completionArr = [
@@ -18,48 +25,32 @@ const completionArr = [
     '8=====>  (~})',
     '8=====>  ({})',
 ];
-let int = 0;
-let runs = 0;
-let direction = 1;
-let started = false;
 
+let fuckingRuns = 0;
+let completionRuns = 0;
 
-function doit(callback) {
+function write(arr) {
+    process.stdout.write('\x1Bc');
+    console.log(arr[0]);
+    arr.push(arr.shift());
+}
 
-    if (fuckingArr[int]) {
-        setTimeout(() => {
-            process.stdout.write('\x1Bc')
-            console.log(fuckingArr[int]);
-            if (int + 1 === fuckingArr.length || (int === 0 && started)) {
-                direction = direction * -1;
-                runs++;
-            }
-            int+= direction;  
-            started = started || true;
-            if (runs > 7) {
-                int = 0;
-                callback();
-            } else {
-                doit(callback);
-            }
-        }, 100);
-    }
+function doit() {
+    setTimeout(() => {
+        write(fuckingArr);
+        ++fuckingRuns;
+        return (fuckingRuns > 4 * fuckingArr.length) ? completion() : doit(); 
+    }, 100);
 }
 
 function completion() {
-
     setTimeout(() => {
-        process.stdout.write('\x1Bc')
-        console.log(completionArr[int]);
-        if (int + 1 === completionArr.length) {
-            int = 0;
-            runs++;
-        }
-        int++;
-        if (runs < 16) {
+        write(completionArr);
+        ++completionRuns;
+        if (completionRuns < 4 * completionArr.length) {
             completion();
         }
     }, 100);
 }
 
-doit(completion);
+doit();
