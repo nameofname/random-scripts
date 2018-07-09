@@ -33,3 +33,13 @@ console.log(gen5.next().value); // 35
 console.log(gen5x.next().value); // 35
 console.log(gen5.next().value); // DONE
 console.log(gen5x.next().value); // DONE
+
+
+function* generateFromArr() {
+  yield* [1, 2, 3]; // note the yield*
+}
+const fromArr = generateFromArr();
+console.log(fromArr.next().value); // 1
+console.log(fromArr.next().value); // 2
+console.log(fromArr.next().value); // 3
+console.log(fromArr.next().value); // ?
