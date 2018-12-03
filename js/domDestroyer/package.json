@@ -1,0 +1,8 @@
+{
+  "name": "domDestroyer",
+  "version": "1.0.0",
+  "description": "chrome plugin, destroy dom nodes by clicking",
+  "main": "index.js",
+  "author": "nameofname",
+  "license": "MIT"
+}
