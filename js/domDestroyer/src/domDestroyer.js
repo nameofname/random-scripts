@@ -1,10 +1,12 @@
 function destroy(e) {
     e.target.parentNode.removeChild(e.target);
 }
-function enableDestroyer() {
+function enable() {
     document.addEventListener('click', destroy);
 }
 
-function disableDestroyer() {
+function disable() {
     document.removeEventListener('click', destroy);
 }
+
+module.exports = { enable, disable };

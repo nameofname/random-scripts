@@ -5,7 +5,7 @@
   "version": "1",
   "author": "nameofname",
   "permissions": [
-    "storage",
+        "storage",
     "tabs",
     "<all_urls>"
   ],
