@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "DomDestroyer",
+  "description": "Destroy parts of the dom with a click",
+  "version": "1",
+  "author": "nameofname",
+  "minimum_chrome_version": "10.0",
+  "permissions": [
+    "storage",
+    "tabs",
+    "<all_urls>"
+  ],
+  "web_accessible_resources": [
+    "src/options/options.html"
+  ],
+  "browser_action": {
+    "default_title": "Notifier",
+    "default_icon": "icon.png",
+    "default_popup": "options.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "css/notifier-chrome-extension-notice.css"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/background-bundle.js"
+    ]
+  }
+}
