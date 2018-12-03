@@ -15,7 +15,13 @@
   },
   "background": {
     "scripts": [
-      "index.js"
+      "dist/bundle.js"
     ]
-  }
-}
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["dist/bundle.js"]
+    }
+  ]
+ }
