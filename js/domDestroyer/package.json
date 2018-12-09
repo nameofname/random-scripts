@@ -6,11 +6,11 @@
   "author": "nameofname",
   "license": "MIT",
   "dependencies": {
-    "char-code-sequence": "^1.0.7",
-    "webpack-cli": "^3.1.2"
+    "char-code-sequence": "^1.0.7"
   },
   "devDependencies": {
-    "webpack": "^4.26.1"
+    "webpack": "^4.26.1",
+    "webpack-cli": "^3.1.2"
   },
   "scripts": {
     "build": "webpack"
