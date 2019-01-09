@@ -46,4 +46,6 @@ function nestedKeys(json) {
     return output.join('');
 }
 
-console.log('here is a flat array of all strings in the item json', nestedKeys(itemJson, 'string'));
+
+// console.log('here is a flat array of all strings in the item json', nestedPrimitives(itemJson, 'string'));
+console.log('here is a string representing the nested keys of the json', nestedKeys(itemJson, 'string'));
