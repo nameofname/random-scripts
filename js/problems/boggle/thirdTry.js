@@ -57,6 +57,7 @@ function boggleMatches(word, board) {
         const letter = wordArr[0];
         const currLetter = board[x] && board[x][y];
 
+        console.log(points)
         if (wordArr.length.length === 1) {
             if (currLetter === letter) {
                 matches.push(points);
@@ -64,19 +65,21 @@ function boggleMatches(word, board) {
         }
 
         const adjacentPoints = [ [ x - 1, y ], [ x + 1, y ], [ x, y - 1 ], [ x, y + 1 ] ];
-        adjacentPoints.forEach(adjacentPoint => {
+        adjacentPoints.forEach(([ adjacentX, adjacentY ]) => {
             const substr = wordArr.length > 1 ? wordArr.slice(-1) : [];
-            _seek([...points, adjacentPoint], substr);
+            if (board[adjacentX] && board[adjacentX][adjacentY]) {
+                _seek([...points, [adjacentX, adjacentY]], substr);
+            }
         });
     }
 
     const wordArr = word.split('');
-    // const matches = [];
     board.forEach((row, x) => {
         row.forEach((letter, y) => {
             _seek([[x, y]], wordArr);
         });
     });
+
     return matches;
 }
 
