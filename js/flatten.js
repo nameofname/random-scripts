@@ -48,9 +48,9 @@ function time(callback) {
     });
 }
 
-console.log('time 1', time(() => flattenTernaryConcat(nestedArray)));
-console.log('time 2', time(() => flattenConcat(nestedArray)));
-console.log('time 3', time(() => flattenClosure(nestedArray)));
-console.log('time 4', time(() => flatten(nestedArray)));
+console.log('time 1', time(() => flattenTernaryConcat(nestedArray))); // slow
+console.log('time 2', time(() => flattenConcat(nestedArray))); // slow
+console.log('time 3', time(() => flattenClosure(nestedArray))); // fastest! 
+console.log('time 4', time(() => flatten(nestedArray))); // still pretty fast.
 
 // JUST AS I SUSPECTED! ... Concat significantly hurts the performance of the function.
