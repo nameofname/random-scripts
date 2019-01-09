@@ -43,14 +43,14 @@ console.log('flatten :', flatten(nestedArray));
 function time(callback) {
     return timer(() => {
         for (let i = 0; i <= 100000; i++) {
-            callback();
+            callback(nestedArray);
         }
     });
 }
 
-console.log('time 1', time(() => flattenTernaryConcat(nestedArray))); // slow
-console.log('time 2', time(() => flattenConcat(nestedArray))); // slow
-console.log('time 3', time(() => flattenClosure(nestedArray))); // fastest! 
-console.log('time 4', time(() => flatten(nestedArray))); // still pretty fast.
+console.log('time 1', time(flattenTernaryConcat)); // slow
+console.log('time 2', time(flattenConcat)); // slow
+console.log('time 3', time(flattenClosure)); // fastest! 
+console.log('time 4', time(flatten)); // still pretty fast.
 
 // JUST AS I SUSPECTED! ... Concat significantly hurts the performance of the function.
