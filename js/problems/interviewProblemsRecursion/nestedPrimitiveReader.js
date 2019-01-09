@@ -1,10 +1,10 @@
 const itemJson = require('../../data/f_123.json');
 
-function nestedPrimitives(json) {
+function nestedPrimitives(json, type) {
     const strings = [];
 
     function _check(entity) {
-        if (typeof entity === 'string') {
+        if (typeof entity === type) {
             strings.push(entity);
         } else {
             _seek(entity);
@@ -24,4 +24,4 @@ function nestedPrimitives(json) {
     return strings;
 }
 
-console.log('here is a flat array of all strings in the item json', nestedPrimitives(itemJson));
+console.log('here is a flat array of all strings in the item json', nestedPrimitives(itemJson, 'string'));
