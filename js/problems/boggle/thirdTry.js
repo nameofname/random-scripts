@@ -57,16 +57,17 @@ function boggleMatches(word, board) {
         const letter = wordArr[0];
         const currLetter = board[x] && board[x][y];
 
-        console.log(points)
-        if (wordArr.length.length === 1) {
-            if (currLetter === letter) {
-                matches.push(points);
-            }
+        if (currLetter !== letter) {
+            return;
         }
 
+        if (wordArr.length === 1) {
+            matches.push(points);
+            return;
+        }
         const adjacentPoints = [ [ x - 1, y ], [ x + 1, y ], [ x, y - 1 ], [ x, y + 1 ] ];
         adjacentPoints.forEach(([ adjacentX, adjacentY ]) => {
-            const substr = wordArr.length > 1 ? wordArr.slice(-1) : [];
+            const substr = wordArr.length === 1 ? [] : wordArr.slice(-1 * (wordArr.length - 1));
             if (board[adjacentX] && board[adjacentX][adjacentY]) {
                 _seek([...points, [adjacentX, adjacentY]], substr);
             }
@@ -87,3 +88,14 @@ const matches = boggleMatches('cat', board);
 console.log('Found boggle matches for CAT : ', matches);
 // console.log(matches[0]);
 
+// TODO ! 
+// break the current implementation with a word that has 2 consecutive letters like 'caat'
+// because after it finds A it will look for A, and since it considers the spot it just
+// did in the last pass, it will get into an infinite loop ? no it won't. it will look for T
+// next, and not continue. Really the bug is that if you allow the algorithm to consider
+// the same position more than once for a given word then you can get a positive result for
+// a word like 'aaaaaaa' with just 2 'a's next to each other. 
+
+// TODO ! 
+// have the algorithm return a tree for performance, then create a reader that will give you
+// every array back from the tree. That would be fun. Fun.
