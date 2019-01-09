@@ -17,4 +17,21 @@ function searchNestedArray(array, type) {
     return out;
 }
 
+function flattenTernary(array) {
+    return !Array.isArray(array)
+        ? array
+        : array.reduce((concatted, curr) => concatted.concat(flatten(curr)), []);
+}
+
+function flatten(array) {
+    if (!Array.isArray(array)) return array;
+    return array.reduce((concatted, curr) => concatted.concat(flatten(curr)), []);
+}
+
+function searchWithFlatten(array, type) {
+    return flatten(array).filter(curr => typeof curr === type);
+}
+
 console.log('all of the numbers in the nested array are :', searchNestedArray(nestedArray, 'number'));
+console.log('flatten :', flatten(nestedArray));
+console.log('searchWithFlatten :', searchWithFlatten(nestedArray, 'number'));
