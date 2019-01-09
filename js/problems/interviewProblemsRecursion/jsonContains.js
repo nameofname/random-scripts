@@ -28,7 +28,7 @@ function contains(json, searchValue) {
     let found = false;
 
     function _seek(node) {
-        if (node === searchValue) {
+        if (node === searchValue || found) {
             found = true;
             return;
         }
