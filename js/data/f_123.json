@@ -1,0 +1,1184 @@
+{
+  "apiType" : "serviceResponse",
+  "httpCode" : 200,
+  "message" : "OK",
+  "result" : {
+    "apiType" : "item",
+    "id" : "f_123",
+    "vertical" : "furniture",
+    "status" : "COMPLETE",
+    "actions" : [ {
+      "apiType" : "action",
+      "code" : "EDIT_ITEM",
+      "authorizedRoles" : [ {
+        "apiType" : "userRole",
+        "name" : "SELLER",
+        "id" : "f_36",
+        "userType" : "SELLER"
+      }, {
+        "apiType" : "adminRole",
+        "name" : "ACTION_ADMIN",
+        "permissions" : [ "ITEM_ACTION" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "PUBLISHING_TOOLS_ADMIN",
+        "permissions" : [ "EXPERT_REVIEW_REJECT" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "MARK_SOLD_OVERRIDE_ADMIN",
+        "permissions" : [ "MARK_SOLD_OVERRIDE" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "TRANSFER_ADMIN",
+        "permissions" : [ "TRANSFER" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "EDIT_ADMIN",
+        "permissions" : [ "ITEM_ACCESS", "MASQUERADE_AS_DEALER" ]
+      } ]
+    }, {
+      "apiType" : "action",
+      "code" : "ON_HOLD",
+      "authorizedRoles" : [ {
+        "apiType" : "userRole",
+        "name" : "SELLER",
+        "id" : "f_36",
+        "userType" : "SELLER"
+      }, {
+        "apiType" : "adminRole",
+        "name" : "ACTION_ADMIN",
+        "permissions" : [ "ITEM_ACTION" ]
+      } ]
+    }, {
+      "apiType" : "action",
+      "code" : "REQUEST_CUSTOM_HOLD",
+      "authorizedRoles" : [ {
+        "apiType" : "adminRole",
+        "name" : "BUYER_ADMIN",
+        "permissions" : [ "MASQUERADE_AS_BUYER" ]
+      }, {
+        "apiType" : "userRole",
+        "name" : "BUYER",
+        "userType" : "BUYER"
+      } ]
+    }, {
+      "apiType" : "action",
+      "code" : "ATTACH_LISTINGS",
+      "authorizedRoles" : [ {
+        "apiType" : "userRole",
+        "name" : "SELLER",
+        "id" : "f_36",
+        "userType" : "SELLER"
+      }, {
+        "apiType" : "adminRole",
+        "name" : "MARK_SOLD_OVERRIDE_ADMIN",
+        "permissions" : [ "MARK_SOLD_OVERRIDE" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "TRANSFER_ADMIN",
+        "permissions" : [ "TRANSFER" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "EDIT_ADMIN",
+        "permissions" : [ "ITEM_ACCESS", "MASQUERADE_AS_DEALER" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "PUBLISHING_TOOLS_ADMIN",
+        "permissions" : [ "EXPERT_REVIEW_REJECT" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "ACTION_ADMIN",
+        "permissions" : [ "ITEM_ACTION" ]
+      } ]
+    }, {
+      "apiType" : "action",
+      "code" : "INCOMPLETE",
+      "authorizedRoles" : [ {
+        "apiType" : "adminRole",
+        "name" : "PUBLISHING_TOOLS_ADMIN",
+        "permissions" : [ "EXPERT_REVIEW_REJECT" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "TRANSFER_ADMIN",
+        "permissions" : [ "TRANSFER" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "EDIT_ADMIN",
+        "permissions" : [ "ITEM_ACCESS", "MASQUERADE_AS_DEALER" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "ACTION_ADMIN",
+        "permissions" : [ "ITEM_ACTION" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "MARK_SOLD_OVERRIDE_ADMIN",
+        "permissions" : [ "MARK_SOLD_OVERRIDE" ]
+      }, {
+        "apiType" : "userRole",
+        "name" : "SELLER",
+        "id" : "f_36",
+        "userType" : "SELLER"
+      } ]
+    }, {
+      "apiType" : "action",
+      "code" : "CHECKOUT",
+      "authorizedRoles" : [ {
+        "apiType" : "userRole",
+        "name" : "BUYER",
+        "userType" : "BUYER"
+      }, {
+        "apiType" : "adminRole",
+        "name" : "BUYER_ADMIN",
+        "permissions" : [ "MASQUERADE_AS_BUYER" ]
+      } ]
+    }, {
+      "apiType" : "action",
+      "code" : "DELETED",
+      "authorizedRoles" : [ {
+        "apiType" : "adminRole",
+        "name" : "PUBLISHING_TOOLS_ADMIN",
+        "permissions" : [ "EXPERT_REVIEW_REJECT" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "ACTION_ADMIN",
+        "permissions" : [ "ITEM_ACTION" ]
+      }, {
+        "apiType" : "userRole",
+        "name" : "SELLER",
+        "id" : "f_36",
+        "userType" : "SELLER"
+      } ]
+    }, {
+      "apiType" : "action",
+      "code" : "SOLD",
+      "authorizedRoles" : [ {
+        "apiType" : "adminRole",
+        "name" : "MARK_SOLD_OVERRIDE_ADMIN",
+        "permissions" : [ "MARK_SOLD_OVERRIDE" ]
+      }, {
+        "apiType" : "adminRole",
+        "name" : "ACTION_ADMIN",
+        "permissions" : [ "ITEM_ACTION" ]
+      }, {
+        "apiType" : "userRole",
+        "name" : "SELLER",
+        "id" : "f_36",
+        "userType" : "SELLER"
+      } ]
+    }, {
+      "apiType" : "workflowTransitionAction",
+      "code" : "UNAVAILABLE",
+      "type" : "WORKFLOW_TRANSITION"
+    } ],
+    "createdDate" : "2000-11-29T17:58:42.000-05:00",
+    "releaseDate" : "2000-01-01T18:00:00.000-05:00",
+    "modifiedDate" : "2017-11-07T14:14:47.000-05:00",
+    "returnPolicy" : {
+      "apiType" : "returnPolicy",
+      "id" : 6516
+    },
+    "uploadType" : "_1STDIBS",
+    "seller" : {
+      "apiType" : "seller",
+      "id" : "f_36",
+      "vertical" : "furniture"
+    },
+    "defaultSku" : {
+      "apiType" : "baseSku",
+      "id" : "f_123S1",
+      "itemId" : "f_123",
+      "status" : "ACTIVE",
+      "sortOrder" : 1,
+      "createdDate" : "2018-05-11T11:45:55.000-04:00",
+      "modifiedDate" : "2018-11-30T13:34:45.000-05:00",
+      "createdBy" : {
+        "apiType" : "user",
+        "id" : "666"
+      }
+    },
+    "skuType" : "SINGLE",
+    "classification" : {
+      "apiType" : "ItemClassification",
+      "countryOfOrigin" : "France",
+      "creationDate" : "probably 17th century ",
+      "period" : "_1900",
+      "categories" : [ {
+        "apiType" : "itemCategory",
+        "category" : {
+          "apiType" : "category",
+          "id" : 266,
+          "name" : "Decorative Objects",
+          "label" : "decorative-objects",
+          "key" : "F_DEC",
+          "code" : "DEC",
+          "active" : "Y",
+          "browseUrl" : "/furniture/decorative-objects/",
+          "parent" : {
+            "apiType" : "category",
+            "id" : 2,
+            "name" : "Furniture",
+            "label" : "furniture",
+            "key" : "F",
+            "code" : "F",
+            "active" : "Y",
+            "browseUrl" : "/furniture/",
+            "status" : "ACTIVE",
+            "legacyKey" : "f_",
+            "level" : 1
+          },
+          "status" : "ACTIVE",
+          "legacyKey" : "f_M",
+          "level" : 2
+        },
+        "precedence" : 1,
+        "itemPk" : "f_123"
+      } ]
+    },
+    "dealerInternalNotes" : "none available",
+    "customMaterial" : {
+      "apiType" : "CustomItemMaterial",
+      "restricted" : "N",
+      "description" : "solid bronze"
+    },
+    "measurement" : {
+      "apiType" : "ItemMeasurement",
+      "unit" : "CM",
+      "width" : "38",
+      "depth" : "9",
+      "height" : "11",
+      "shape" : "rectangular3d",
+      "dimensionalWeightMap" : {
+        "TRAMO_USA_DEFAULT" : 7.1777582261443784039,
+        "PLYCON_US_ART" : 7.1777582261443784039,
+        "WILLIAMS_AND_HILL_DEFAULT" : 7.1777582261443784039,
+        "WHITE_GLOVE_TRANS_DEFAULT" : 7.1777582261443784039,
+        "PLYCON_DEFAULT" : 7.1777582261443784039,
+        "B-CUBED_US_FURNITURE" : 7.1777582261443784039,
+        "UPS_US_ART" : 7.1777582261443784039,
+        "DHL_DEFAULT" : 7.1777582261443784039,
+        "FEDEX_DEFAULT" : 7.1777582261443784039,
+        "TRAMO_USA_US_FURNITURE" : 7.1777582261443784039,
+        "UPS_US_FURNITURE" : 7.1777582261443784039,
+        "UPS_EU_FURNITURE" : 7.1777582261443784039,
+        "B-CUBED_DEFAULT" : 7.1777582261443784039,
+        "PLYCON_US_FURNITURE" : 7.1777582261443784039,
+        "UPS_DEFAULT" : 7.1777582261443784039
+      },
+      "convertedMeasurements" : {
+        "FT_IN" : {
+          "apiType" : "ItemDistanceMeasurement",
+          "width" : "3",
+          "depth" : "4",
+          "height" : "4"
+        },
+        "MM" : {
+          "apiType" : "ItemDistanceMeasurement",
+          "width" : "380",
+          "depth" : "90",
+          "height" : "110"
+        },
+        "FT" : {
+          "apiType" : "ItemDistanceMeasurement",
+          "width" : "1",
+          "depth" : "0",
+          "height" : "0"
+        },
+        "CM" : {
+          "apiType" : "ItemDistanceMeasurement",
+          "width" : "38",
+          "depth" : "9",
+          "height" : "11"
+        },
+        "IN" : {
+          "apiType" : "ItemDistanceMeasurement",
+          "width" : "14.97",
+          "depth" : "3.55",
+          "height" : "4.34"
+        }
+      }
+    },
+    "condition" : {
+      "apiType" : "ItemCondition",
+      "state" : "GOOD",
+      "damageLosses" : "N",
+      "damageLight" : "N",
+      "damageSound" : "N",
+      "damageFading" : "N",
+      "itemKey" : "f_123"
+    },
+    "title" : "Early Bronze Dolphins",
+    "description" : "A pair of solid bronze dolphins, probably handles of sea-ship cannons, good decorative elements,",
+    "dibsReference" : "0048007",
+    "listings" : {
+      "apiType" : "listingDocumentList",
+      "documents" : [ {
+        "apiType" : "itemListing",
+        "id" : "12_3618_1455292800_730162",
+        "item" : {
+          "apiType" : "item",
+          "id" : "f_123"
+        },
+        "status" : "DELETED",
+        "deletedReasonCode" : "DELETED_BY_MIGRATION",
+        "type" : {
+          "apiType" : "publicationType",
+          "id" : 1,
+          "name" : "FEATURED_FURNITURE",
+          "description" : "Featured furniture new listing",
+          "group" : {
+            "apiType" : "publicationGroup",
+            "id" : 1,
+            "name" : "FEATURED",
+            "description" : "Featured new listing"
+          }
+        },
+        "sort" : 1,
+        "eligibilityDate" : "2016-02-12T11:01:17.000-05:00",
+        "createdDate" : "2016-02-12T11:01:17.000-05:00",
+        "createdBy" : {
+          "apiType" : "user",
+          "id" : "1213606"
+        },
+        "modifiedDate" : "2018-06-05T15:57:13.000-04:00",
+        "modifiedBy" : {
+          "apiType" : "user",
+          "id" : "0"
+        },
+        "actions" : [ ],
+        "archived" : "Y"
+      } ]
+    },
+    "creators" : [ ],
+    "reviews" : {
+      "apiType" : "documentList",
+      "metadata" : {
+        "itemReject" : "false",
+        "vettingStatus" : "NOT_APPLICABLE"
+      },
+      "documents" : [ {
+        "apiType" : "review",
+        "id" : "17_9048_1450128188_8899283",
+        "type" : "EXPERT_REVIEW",
+        "status" : "APPROVED",
+        "subject" : {
+          "apiType" : "anchor",
+          "sourceId" : "f_123",
+          "sourceType" : "ITEM"
+        },
+        "actions" : [ {
+          "apiType" : "workflowTransitionAction",
+          "code" : "DELETED",
+          "type" : "WORKFLOW_TRANSITION"
+        } ],
+        "createdDate" : "2015-12-14T16:23:09.000-05:00",
+        "modifiedDate" : "2018-10-24T19:02:37.000-04:00"
+      } ]
+    },
+    "updateRestrictionList" : {
+      "SELLER" : "Y",
+      "INTERNAL" : "Y"
+    },
+    "pricing" : {
+      "apiType" : "ItemPricing",
+      "totalAmount" : {
+        "apiType" : "financialAmount",
+        "currency" : "EUR",
+        "amount" : 10671.40,
+        "convertedAmounts" : {
+          "GBP" : 9788.83,
+          "USD" : 12473.93,
+          "AUD" : 17437.28,
+          "CAD" : 16502.39,
+          "CHF" : 12243.49,
+          "MXN" : 241000.81,
+          "EUR" : 10671.40
+        },
+        "conversionRateEvent" : {
+          "apiType" : "currencyConversionRateEvent",
+          "id" : 1103181
+        }
+      },
+      "initialPrice" : {
+        "apiType" : "financialAmount",
+        "currency" : "EUR",
+        "amount" : 10671.00,
+        "convertedAmounts" : {
+          "GBP" : 9788.46,
+          "USD" : 12473.46,
+          "AUD" : 17436.63,
+          "CAD" : 16501.77,
+          "CHF" : 12243.03,
+          "MXN" : 240991.78,
+          "EUR" : 10671.00
+        },
+        "conversionRateEvent" : {
+          "apiType" : "currencyConversionRateEvent",
+          "id" : 1103181
+        }
+      },
+      "pricePerPiece" : "N",
+      "negotiable" : "Y",
+      "hidePrice" : "N",
+      "bargain" : "N",
+      "qualifyForBargain" : "N",
+      "soldIndividually" : "N",
+      "purchasable" : "Y",
+      "prices" : [ {
+        "apiType" : "price",
+        "id" : "33_3618_1464833574_5163252",
+        "status" : "ACTIVE",
+        "itemKey" : "f_123",
+        "type" : "RETAIL",
+        "amount" : {
+          "apiType" : "financialAmount",
+          "currency" : "EUR",
+          "amount" : 10671.40,
+          "convertedAmounts" : {
+            "GBP" : 9788.83,
+            "USD" : 12473.93,
+            "AUD" : 17437.28,
+            "CAD" : 16502.39,
+            "CHF" : 12243.49,
+            "MXN" : 241000.81,
+            "EUR" : 10671.40
+          },
+          "conversionRateEvent" : {
+            "apiType" : "currencyConversionRateEvent",
+            "id" : 1103181
+          }
+        },
+        "source" : {
+          "apiType" : "price",
+          "id" : "33_3618_1464833574_3039268"
+        },
+        "pricePerPiece" : "N",
+        "negotiable" : "Y",
+        "hidePrice" : "N",
+        "createdDate" : "2016-06-01T22:12:56.000-04:00"
+      } ],
+      "priceLocks" : [ {
+        "apiType" : "priceLock",
+        "id" : 60893683,
+        "price" : {
+          "apiType" : "price",
+          "id" : "33_3618_1464833574_6953227",
+          "status" : "INACTIVE",
+          "itemKey" : "f_123",
+          "type" : "RETAIL",
+          "amount" : {
+            "apiType" : "financialAmount",
+            "currency" : "EUR",
+            "amount" : 10671.00,
+            "convertedAmounts" : {
+              "GBP" : 9788.46,
+              "USD" : 12473.46,
+              "AUD" : 17436.63,
+              "CAD" : 16501.77,
+              "CHF" : 12243.03,
+              "MXN" : 240991.78,
+              "EUR" : 10671.00
+            },
+            "conversionRateEvent" : {
+              "apiType" : "currencyConversionRateEvent",
+              "id" : 1103181
+            }
+          },
+          "pricePerPiece" : "N",
+          "negotiable" : "Y",
+          "hidePrice" : "N",
+          "createdDate" : "2016-06-01T22:02:56.000-04:00"
+        },
+        "lockType" : {
+          "apiType" : "priceLockType",
+          "id" : 1,
+          "name" : "ORIGINAL_PRICE"
+        },
+        "anchor" : {
+          "apiType" : "anchor",
+          "sourceId" : "f_123S1",
+          "sourceType" : "SKU"
+        },
+        "createdDate" : "2016-06-01T22:12:54.000-04:00",
+        "modifiedDate" : "2018-08-03T14:39:32.000-04:00"
+      }, {
+        "apiType" : "priceLock",
+        "id" : 176370331,
+        "price" : {
+          "apiType" : "price",
+          "id" : "33_3618_1464833574_5163252",
+          "status" : "ACTIVE",
+          "itemKey" : "f_123",
+          "type" : "RETAIL",
+          "amount" : {
+            "apiType" : "financialAmount",
+            "currency" : "EUR",
+            "amount" : 10671.40,
+            "convertedAmounts" : {
+              "GBP" : 9788.83,
+              "USD" : 12473.93,
+              "AUD" : 17437.28,
+              "CAD" : 16502.39,
+              "CHF" : 12243.49,
+              "MXN" : 241000.81,
+              "EUR" : 10671.40
+            },
+            "conversionRateEvent" : {
+              "apiType" : "currencyConversionRateEvent",
+              "id" : 1103181
+            }
+          },
+          "source" : {
+            "apiType" : "price",
+            "id" : "33_3618_1464833574_3039268"
+          },
+          "pricePerPiece" : "N",
+          "negotiable" : "Y",
+          "hidePrice" : "N",
+          "createdDate" : "2016-06-01T22:12:56.000-04:00"
+        },
+        "lockType" : {
+          "apiType" : "priceLockType",
+          "id" : 4,
+          "name" : "CONSUMER_LOWEST_PRICE"
+        },
+        "anchor" : {
+          "apiType" : "anchor",
+          "sourceId" : "f_123",
+          "sourceType" : "ITEM"
+        },
+        "createdDate" : "2018-12-18T16:17:19.000-05:00"
+      }, {
+        "apiType" : "priceLock",
+        "id" : 186200891,
+        "price" : {
+          "apiType" : "price",
+          "id" : "33_3618_1464833574_5163252",
+          "status" : "ACTIVE",
+          "itemKey" : "f_123",
+          "type" : "RETAIL",
+          "amount" : {
+            "apiType" : "financialAmount",
+            "currency" : "EUR",
+            "amount" : 10671.40,
+            "convertedAmounts" : {
+              "GBP" : 9788.83,
+              "USD" : 12473.93,
+              "AUD" : 17437.28,
+              "CAD" : 16502.39,
+              "CHF" : 12243.49,
+              "MXN" : 241000.81,
+              "EUR" : 10671.40
+            },
+            "conversionRateEvent" : {
+              "apiType" : "currencyConversionRateEvent",
+              "id" : 1103181
+            }
+          },
+          "source" : {
+            "apiType" : "price",
+            "id" : "33_3618_1464833574_3039268"
+          },
+          "pricePerPiece" : "N",
+          "negotiable" : "Y",
+          "hidePrice" : "N",
+          "createdDate" : "2016-06-01T22:12:56.000-04:00"
+        },
+        "lockType" : {
+          "apiType" : "priceLockType",
+          "id" : 5,
+          "name" : "CONSUMER_DISCOUNTED_FROM"
+        },
+        "anchor" : {
+          "apiType" : "anchor",
+          "sourceId" : "f_123",
+          "sourceType" : "ITEM"
+        },
+        "createdDate" : "2018-12-18T16:19:39.000-05:00"
+      }, {
+        "apiType" : "priceLock",
+        "id" : 196033561,
+        "price" : {
+          "apiType" : "price",
+          "id" : "33_3618_1464833574_5163252",
+          "status" : "ACTIVE",
+          "itemKey" : "f_123",
+          "type" : "RETAIL",
+          "amount" : {
+            "apiType" : "financialAmount",
+            "currency" : "EUR",
+            "amount" : 10671.40,
+            "convertedAmounts" : {
+              "GBP" : 9788.83,
+              "USD" : 12473.93,
+              "AUD" : 17437.28,
+              "CAD" : 16502.39,
+              "CHF" : 12243.49,
+              "MXN" : 241000.81,
+              "EUR" : 10671.40
+            },
+            "conversionRateEvent" : {
+              "apiType" : "currencyConversionRateEvent",
+              "id" : 1103181
+            }
+          },
+          "source" : {
+            "apiType" : "price",
+            "id" : "33_3618_1464833574_3039268"
+          },
+          "pricePerPiece" : "N",
+          "negotiable" : "Y",
+          "hidePrice" : "N",
+          "createdDate" : "2016-06-01T22:12:56.000-04:00"
+        },
+        "lockType" : {
+          "apiType" : "priceLockType",
+          "id" : 6,
+          "name" : "TRADE_LOWEST_PRICE"
+        },
+        "anchor" : {
+          "apiType" : "anchor",
+          "sourceId" : "f_123",
+          "sourceType" : "ITEM"
+        },
+        "createdDate" : "2018-12-18T16:21:30.000-05:00"
+      }, {
+        "apiType" : "priceLock",
+        "id" : 205862681,
+        "price" : {
+          "apiType" : "price",
+          "id" : "33_3618_1464833574_5163252",
+          "status" : "ACTIVE",
+          "itemKey" : "f_123",
+          "type" : "RETAIL",
+          "amount" : {
+            "apiType" : "financialAmount",
+            "currency" : "EUR",
+            "amount" : 10671.40,
+            "convertedAmounts" : {
+              "GBP" : 9788.83,
+              "USD" : 12473.93,
+              "AUD" : 17437.28,
+              "CAD" : 16502.39,
+              "CHF" : 12243.49,
+              "MXN" : 241000.81,
+              "EUR" : 10671.40
+            },
+            "conversionRateEvent" : {
+              "apiType" : "currencyConversionRateEvent",
+              "id" : 1103181
+            }
+          },
+          "source" : {
+            "apiType" : "price",
+            "id" : "33_3618_1464833574_3039268"
+          },
+          "pricePerPiece" : "N",
+          "negotiable" : "Y",
+          "hidePrice" : "N",
+          "createdDate" : "2016-06-01T22:12:56.000-04:00"
+        },
+        "lockType" : {
+          "apiType" : "priceLockType",
+          "id" : 7,
+          "name" : "TRADE_DISCOUNTED_FROM"
+        },
+        "anchor" : {
+          "apiType" : "anchor",
+          "sourceId" : "f_123",
+          "sourceType" : "ITEM"
+        },
+        "createdDate" : "2018-12-18T16:23:14.000-05:00"
+      } ]
+    },
+    "storefrontPreferences" : {
+      "apiType" : "itemStorefrontPreferences",
+      "showOnStorefrontWhenSold" : "N"
+    },
+    "store" : {
+      "apiType" : "store",
+      "id" : 1
+    },
+    "nydcInfo" : {
+      "apiType" : "itemNydcInfo",
+      "isNydc" : "N"
+    },
+    "pickupAddress" : "same",
+    "pieces" : 1,
+    "localizedPdpUrls" : {
+      "apiType" : "LocalizedPdpUrls",
+      "locale" : "en-US",
+      "primary" : "/furniture/decorative-objects/early-bronze-dolphins/id-f_123/"
+    },
+    "allLocalizedPdpUrls" : [ {
+      "apiType" : "LocalizedPdpUrls",
+      "locale" : "en-GB",
+      "primary" : "/furniture/decorative-objects/early-bronze-dolphins/id-f_123/"
+    }, {
+      "apiType" : "LocalizedPdpUrls",
+      "locale" : "en-US",
+      "primary" : "/furniture/decorative-objects/early-bronze-dolphins/id-f_123/"
+    } ],
+    "shipmentQuotes" : [ {
+      "apiType" : "shipmentQuote",
+      "id" : 360130,
+      "status" : "NEW",
+      "type" : "INVENTORY_POSTING",
+      "pricingType" : "COMMERCIAL",
+      "author" : {
+        "apiType" : "party",
+        "role" : "SELLER",
+        "id" : "f_36"
+      },
+      "billTo" : {
+        "apiType" : "party",
+        "role" : "SELLER",
+        "id" : "f_36"
+      },
+      "costs" : [ {
+        "apiType" : "shippingCost",
+        "id" : 1223353,
+        "billTo" : {
+          "apiType" : "party",
+          "role" : "LSP"
+        },
+        "author" : {
+          "apiType" : "party",
+          "role" : "SELLER",
+          "id" : "f_36"
+        },
+        "subTotalAmount" : {
+          "apiType" : "financialAmount",
+          "currency" : "EUR",
+          "amount" : 0.00,
+          "convertedAmounts" : {
+            "GBP" : 0.00,
+            "USD" : 0.00,
+            "AUD" : 0.00,
+            "CHF" : 0.00,
+            "CAD" : 0.00,
+            "MXN" : 0.00,
+            "EUR" : 0.00
+          },
+          "conversionRateEvent" : {
+            "apiType" : "currencyConversionRateEvent",
+            "id" : 1103181
+          }
+        },
+        "totalAmount" : {
+          "apiType" : "financialAmount",
+          "currency" : "EUR",
+          "amount" : 0.00,
+          "convertedAmounts" : {
+            "GBP" : 0.00,
+            "USD" : 0.00,
+            "AUD" : 0.00,
+            "CHF" : 0.00,
+            "CAD" : 0.00,
+            "MXN" : 0.00,
+            "EUR" : 0.00
+          },
+          "conversionRateEvent" : {
+            "apiType" : "currencyConversionRateEvent",
+            "id" : 1103181
+          }
+        },
+        "costType" : "UNKNOWN",
+        "anchor" : {
+          "apiType" : "anchor",
+          "sourceId" : "360130",
+          "sourceType" : "SHIPMENT_QUOTE"
+        },
+        "isLegacy" : true,
+        "createdDate" : "2015-05-20T15:13:11.000-04:00"
+      } ],
+      "complimentaryShipping" : "N",
+      "subTotalAmount" : {
+        "apiType" : "financialAmount",
+        "currency" : "EUR",
+        "amount" : 0.00,
+        "convertedAmounts" : {
+          "GBP" : 0.00,
+          "USD" : 0.00,
+          "AUD" : 0.00,
+          "CAD" : 0.00,
+          "CHF" : 0.00,
+          "MXN" : 0.00,
+          "EUR" : 0.00
+        },
+        "conversionRateEvent" : {
+          "apiType" : "currencyConversionRateEvent",
+          "id" : 1103181
+        }
+      },
+      "totalAmount" : {
+        "apiType" : "financialAmount",
+        "currency" : "EUR",
+        "amount" : 0.00,
+        "convertedAmounts" : {
+          "GBP" : 0.00,
+          "USD" : 0.00,
+          "AUD" : 0.00,
+          "CAD" : 0.00,
+          "CHF" : 0.00,
+          "MXN" : 0.00,
+          "EUR" : 0.00
+        },
+        "conversionRateEvent" : {
+          "apiType" : "currencyConversionRateEvent",
+          "id" : 1103181
+        }
+      },
+      "paddingCurrency" : "EUR",
+      "serviceMethod" : {
+        "apiType" : "shipmentServiceMethod",
+        "id" : 1,
+        "windowMin" : {
+          "apiType" : "period",
+          "numberOfUnits" : 1,
+          "timeUnit" : "MINUTE"
+        },
+        "windowMax" : {
+          "apiType" : "period",
+          "numberOfUnits" : 1,
+          "timeUnit" : "MINUTE"
+        },
+        "serviceMethodType" : "LOCAL_PICKUP",
+        "reference" : "LOCAL_PICKUP",
+        "createdDate" : "2014-06-26T19:08:47.000-04:00",
+        "modifiedDate" : "2014-07-08T18:32:46.000-04:00"
+      },
+      "anchor" : {
+        "apiType" : "anchor",
+        "sourceId" : "f_123",
+        "sourceType" : "ITEM"
+      },
+      "createdDate" : "2014-07-08T18:32:59.000-04:00",
+      "modifiedDate" : "2018-06-20T14:45:18.000-04:00"
+    } ],
+    "photos" : [ {
+      "apiType" : "image",
+      "id" : "11_3618_1436274552_38",
+      "sortOrder" : 1,
+      "versions" : [ {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 1,
+          "name" : "large"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0504.jpg",
+        "imageId" : "11_3618_1436274552_38"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 2,
+          "name" : "small"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0504-03.jpg",
+        "imageId" : "11_3618_1436274552_38"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 3,
+          "name" : "medium"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0504-02.jpg",
+        "imageId" : "11_3618_1436274552_38"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 4,
+          "name" : "thumb"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0504-01.jpg",
+        "imageId" : "11_3618_1436274552_38"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 5,
+          "name" : "original"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0504.jpg",
+        "imageId" : "11_3618_1436274552_38"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 7,
+          "name" : "zoom"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0504.jpg",
+        "imageId" : "11_3618_1436274552_38"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 6,
+          "name" : "master"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0504.jpg",
+        "imageId" : "11_3618_1436274552_38"
+      } ],
+      "format" : {
+        "apiType" : "imageFormat",
+        "name" : "JPG"
+      },
+      "status" : "NONE",
+      "source" : {
+        "apiType" : "imageSource",
+        "name" : "S3"
+      },
+      "seoStatus" : "IGNORE",
+      "placeholder" : {
+        "apiType" : "imagePlaceholder",
+        "imageId" : "11_3618_1436274552_38",
+        "svg" : "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'><filter id='b'><feGaussianBlur stdDeviation='12' /></filter><path fill='#fff' d='M0 0h240v240H0z'/><g filter='url(#b)' transform='translate(.5 .5)' fill-opacity='.5'><ellipse fill='#4a4639' rx='1' ry='1' transform='matrix(-11.05567 -54.3173 145.49273 -29.61339 137.4 116)'/><ellipse fill='#fff' cx='219' cy='80' rx='23' ry='49'/><ellipse fill='#140f00' rx='1' ry='1' transform='rotate(42.7 -19 257.4) scale(42.97893 19.82139)'/><ellipse fill='#fff' cx='109' cy='163' rx='35' ry='30'/><ellipse fill='#434237' rx='1' ry='1' transform='matrix(17.67384 -46.60246 24.60944 9.33305 56.5 138.4)'/><path fill='#393325' d='M141 126h88v32h-88z'/><ellipse fill='#40392a' rx='1' ry='1' transform='matrix(38.27079 8.7957 -3.58474 15.59748 105.7 117)'/><path fill='#fff' d='M114 20L0 113l99-30zM-5.5 117.1l39 26.3-28 41.5-39-26.3zM117 94l33-14 21 63z'/><ellipse fill='#403625' rx='1' ry='1' transform='rotate(48.8 -28.2 169.1) scale(14.04248 38.21696)'/><ellipse fill='#fff' cx='230' cy='76' rx='34' ry='51'/><ellipse fill='#fff' rx='1' ry='1' transform='rotate(-158.3 74.3 70.3) scale(42.43752 24.03338)'/><ellipse fill='#3d3d31' cx='27' cy='117' rx='32' ry='9'/><ellipse fill='#3c3b32' rx='1' ry='1' transform='matrix(-16.0628 -8.25882 13.99254 -27.21445 176.7 89.5)'/><path fill='#fff' d='M18.3 44.1L41.2 107 148.5-3.2 83.1 104z'/></g></svg>"
+      },
+      "itemKey" : "f_123"
+    }, {
+      "apiType" : "image",
+      "id" : "11_3618_1436274552_404607",
+      "sortOrder" : 2,
+      "versions" : [ {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 1,
+          "name" : "large"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0505.jpg",
+        "imageId" : "11_3618_1436274552_404607"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 4,
+          "name" : "thumb"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0505-01.jpg",
+        "imageId" : "11_3618_1436274552_404607"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 5,
+          "name" : "original"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0505.jpg",
+        "imageId" : "11_3618_1436274552_404607"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 7,
+          "name" : "zoom"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0505.jpg",
+        "imageId" : "11_3618_1436274552_404607"
+      } ],
+      "format" : {
+        "apiType" : "imageFormat",
+        "name" : "JPG"
+      },
+      "status" : "NONE",
+      "source" : {
+        "apiType" : "imageSource",
+        "name" : "S3"
+      },
+      "seoStatus" : "IGNORE",
+      "itemKey" : "f_123"
+    }, {
+      "apiType" : "image",
+      "id" : "11_3618_1436274552_778102",
+      "sortOrder" : 3,
+      "versions" : [ {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 1,
+          "name" : "large"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0504B-.jpg",
+        "imageId" : "11_3618_1436274552_778102"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 4,
+          "name" : "thumb"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0504B01.jpg",
+        "imageId" : "11_3618_1436274552_778102"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 5,
+          "name" : "original"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0504B-.jpg",
+        "imageId" : "11_3618_1436274552_778102"
+      }, {
+        "apiType" : "imageVersion",
+        "type" : {
+          "apiType" : "imageVersionType",
+          "id" : 7,
+          "name" : "zoom"
+        },
+        "webPath" : "https://a.1stdibscdn.com/archives/week4800/DSCN0504B-.jpg",
+        "imageId" : "11_3618_1436274552_778102"
+      } ],
+      "format" : {
+        "apiType" : "imageFormat",
+        "name" : "JPG"
+      },
+      "status" : "NONE",
+      "source" : {
+        "apiType" : "imageSource",
+        "name" : "S3"
+      },
+      "seoStatus" : "IGNORE",
+      "itemKey" : "f_123"
+    } ],
+    "pdpUrls" : [ "/furniture/decorative-objects/early-bronze-dolphins/id-f_123/" ],
+    "attributes" : {
+      "handlingTime" : [ {
+        "apiType" : "attributeValue",
+        "itemId" : "f_123",
+        "value" : "handlingTime",
+        "text" : "5"
+      } ],
+      "set_size" : [ {
+        "apiType" : "attributeValue",
+        "value" : "set_size",
+        "text" : "2"
+      } ],
+      "period" : [ {
+        "apiType" : "attributeValue",
+        "itemId" : "f_123",
+        "value" : "19th Century",
+        "option" : {
+          "apiType" : "attributeOption",
+          "id" : 872,
+          "name" : "19th Century",
+          "urlLabel" : "19th-century",
+          "categoryKey" : { },
+          "status" : "ACTIVE",
+          "properties" : {
+            "displayName" : "19th Century"
+          },
+          "pageExists" : "Y"
+        }
+      } ],
+      "quantity" : [ {
+        "apiType" : "attributeValue",
+        "value" : "limited",
+        "text" : "1",
+        "option" : {
+          "apiType" : "attributeOption",
+          "id" : 11173,
+          "name" : "limited",
+          "urlLabel" : "limited",
+          "categoryKey" : { },
+          "status" : "ACTIVE",
+          "pageExists" : "N"
+        }
+      } ],
+      "material" : [ {
+        "apiType" : "attributeValue",
+        "itemId" : "f_123",
+        "value" : "Bronze",
+        "option" : {
+          "apiType" : "attributeOption",
+          "id" : 62,
+          "name" : "Bronze",
+          "urlLabel" : "bronze",
+          "categoryKey" : { },
+          "status" : "ACTIVE",
+          "pageExists" : "Y",
+          "parent" : {
+            "apiType" : "attributeOption",
+            "id" : 6,
+            "name" : "Metal",
+            "urlLabel" : "metal",
+            "categoryKey" : { },
+            "status" : "ACTIVE",
+            "properties" : {
+              "solrField" : "Y"
+            },
+            "pageExists" : "Y"
+          }
+        }
+      } ],
+      "item_type" : [ {
+        "apiType" : "attributeValue",
+        "value" : "Antique and Vintage",
+        "option" : {
+          "apiType" : "attributeOption",
+          "id" : 10703,
+          "name" : "Antique and Vintage",
+          "urlLabel" : "antique-vintage",
+          "categoryKey" : { },
+          "status" : "ACTIVE",
+          "properties" : {
+            "displayName" : "Antique and Vintage"
+          },
+          "pageExists" : "N"
+        }
+      } ],
+      "origin" : [ {
+        "apiType" : "attributeValue",
+        "itemId" : "f_123",
+        "value" : "France",
+        "option" : {
+          "apiType" : "attributeOption",
+          "id" : 2862,
+          "name" : "France",
+          "urlLabel" : "french",
+          "categoryKey" : { },
+          "status" : "ACTIVE",
+          "properties" : {
+            "synonym" : "Francia",
+            "displayName" : "French",
+            "Western Europe" : "Y"
+          },
+          "pageExists" : "Y",
+          "parent" : {
+            "apiType" : "attributeOption",
+            "id" : 2512,
+            "name" : "Europe",
+            "urlLabel" : "european",
+            "categoryKey" : { },
+            "status" : "ACTIVE",
+            "properties" : {
+              "displayName" : "European"
+            },
+            "pageExists" : "Y"
+          }
+        }
+      } ],
+      "lead_time" : [ {
+        "apiType" : "attributeValue",
+        "value" : "Available Now",
+        "option" : {
+          "apiType" : "attributeOption",
+          "id" : 9693,
+          "name" : "Available Now",
+          "urlLabel" : "available-now",
+          "categoryKey" : { },
+          "status" : "ACTIVE",
+          "properties" : {
+            "endNumberOfUnits" : "0",
+            "startNumberOfUnits" : "0",
+            "timeUnit" : "WEEK"
+          },
+          "pageExists" : "Y"
+        }
+      } ]
+    }
+  }
+}
