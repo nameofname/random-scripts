@@ -5,7 +5,7 @@ const board = [
     ['x', 'a', 'c', 'x'],
 ];
 
-
+// Same solution as attempt 3, but honed.
 function boggleMatches(word, board) {
     const matches = [];
 
