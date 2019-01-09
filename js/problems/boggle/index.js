@@ -1,3 +1,10 @@
+const board = [
+    ['x', 't', 'x', 'x'],
+    ['c', 'a', 't', 'x'],
+    ['x', 't', 'x', 'x'],
+    ['x', 'a', 'c', 'x'],
+];
+
 function seek(board, wordArr, matches, x, y) {
     const nextLetter = wordArr[0];
     const currLetter = board[y] && board[y][x];
@@ -41,13 +48,5 @@ function boggleMatches(board, word) {
 
     return matches;
 }
-
-const board = [
-    ['x', 't', 'x', 'x'],
-    ['c', 'a', 't', 'x'],
-    ['x', 't', 'x', 'x'],
-    ['x', 'a', 'c', 'x'],
-];
-
 
 console.log('Found boggle matches for CAT : ', boggleMatches(board, 'cat'));
