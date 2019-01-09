@@ -24,4 +24,26 @@ function nestedPrimitives(json, type) {
     return strings;
 }
 
-console.log('here is a flat array of all strings in the item json', nestedPrimitives(itemJson, 'string'));
+// Pretty print a list of nested keys with tab indentation
+function nestedKeys(json) {
+    const indentUnit = '    ';
+    const output = [];
+
+    function _crawl(json, indent) {
+        if (Array.isArray(json)) {
+            output.push(`\n${indent}[`);
+            json.forEach(thing => _crawl(thing, indent + indentUnit));
+            output.push(`\n${indent}]`);
+        } else if (typeof json === 'object') {
+            Object.keys(json).forEach(key => {
+                output.push(`\n${indent}${key}`);
+                _crawl(json[key], indent + indentUnit);
+            });
+        }
+    }
+
+    _crawl(json, indentUnit);
+    return output.join('');
+}
+
+console.log('here is a flat array of all strings in the item json', nestedKeys(itemJson, 'string'));
