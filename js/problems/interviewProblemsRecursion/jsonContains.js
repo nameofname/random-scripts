@@ -1,6 +1,6 @@
 const itemJson = require('../../data/f_123.json');
 
-function contains(node, searchValue) {
+function contains_bak(node, searchValue) {
     if (node === searchValue) {
         return true;
     }
@@ -22,6 +22,25 @@ function contains(node, searchValue) {
         }
     }
     return false;
+}
+
+function contains(json, searchValue) {
+    let found = false;
+
+    function _seek(node) {
+        if (node === searchValue) {
+            found = true;
+            return;
+        }
+        if (Array.isArray(node)) {
+            node.forEach(subNode => _seek(subNode));
+        } else if (typeof node === 'object') {
+            Object.keys(node).forEach(key => _seek(node[key]));
+        }
+    }
+
+    _seek(json);
+    return found;
 }
 
 console.log('search this item JSON for nested value of TRANSFER_ADMIN', contains(itemJson, 'TRANSFER_ADMIN'));
