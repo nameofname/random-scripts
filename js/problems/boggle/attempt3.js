@@ -42,5 +42,4 @@ function boggleMatches(word, board) {
     return matches;
 }
 
-const matches = boggleMatches('cat', board);
-console.log('Found boggle matches for CAT : ', matches);
+console.log('Found boggle matches for CAT : ', boggleMatches('cat', board));
