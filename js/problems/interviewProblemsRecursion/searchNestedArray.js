@@ -17,6 +17,21 @@ function searchNestedArray(array, type) {
     return out;
 }
 
+function nestedArraySearch(array, callback) {
+    const out = [];
+    function _search(array) {
+        array.forEach(entry => {
+            if (Array.isArray(entry)) {
+                _search(entry)
+            } else if (callback(entry)) {
+                out.push(entry);
+            }
+        });
+        return out;
+    }
+    return _search(array);
+}
+
 function flattenTernary(array) {
     return !Array.isArray(array)
         ? array
@@ -35,3 +50,4 @@ function searchWithFlatten(array, type) {
 console.log('all of the numbers in the nested array are :', searchNestedArray(nestedArray, 'number'));
 console.log('flatten :', flatten(nestedArray));
 console.log('searchWithFlatten :', searchWithFlatten(nestedArray, 'number'));
+console.log('nestedArraySearch', nestedArraySearch(nestedArray, e => typeof e === 'string'))
