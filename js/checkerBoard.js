@@ -53,15 +53,15 @@ function checkerBoardOneLoop (units) {
     }
 }
 
-checkerBoardOneLoop(3);
-checkerBoardOneLoop(6);
+// checkerBoardOneLoop(3);
+// checkerBoardOneLoop(6);
 // console.log(checkerBoardNormal(7));
 
 /**
  * My favorite implementation - certainly the most terse implementation.
  * @param {*} units 
  */
-const checkerBoard = function (units) {
+const checkerBoardTerse = function (units) {
     return new Array(units).fill(new Array(units)).map((arr, idx) => {
         return arr.fill(0).map((z, idx1) => (idx + idx1) % 2 === 0 ? 'x' : 'o')
     });
@@ -74,3 +74,18 @@ const checkerBoard = function (units) {
 
 const checkerBoardOneLine = n => new Array(n).fill(0).map((o, idx) => new Array(n).fill(0).map((o, idx1) => (idx + idx1) % 2 === 0 ? 'x' : 'o'));
 
+// console.log(checkerBoardOneLine(7));
+
+// this optimized version of the problem avoids N^2 running time by creating the 2 possible rows up front and repeating them
+// Running time is basically 2N
+function checkerBoardOptimized(units) {
+    const row1 = []; //new Array(units).fill(0).map((z, idx) => idx % 2 === 0 ? 'x' : 'o');
+    for (let i = 0; i < units; i++) {
+        row1.push(i % 2 === 0 ? 'x' : 'o');
+    }
+    const row2 = row1.slice(1).concat(row1.slice(-1)[0] === 'x' ? 'o' : 'x');
+    return row1.map((a, idx) => idx % 2 === 0 ? row1 : row2)
+
+}
+
+console.log(checkerBoardOptimized(6));
