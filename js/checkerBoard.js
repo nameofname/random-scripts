@@ -1,5 +1,6 @@
 "use strict";
 
+
 const checkerBoardBad = function (units) {
     return new Array(units * units)
     .fill(0)
@@ -22,6 +23,7 @@ const checkerBoardBad = function (units) {
 
 // console.log(checkerBoardBad(6));
 
+
 const checkerBoardNormal = function (units) {
     const board = [];
     for (let y = 0; y < units; y++) {
@@ -34,6 +36,9 @@ const checkerBoardNormal = function (units) {
     }
     return board;
 }
+
+// console.log(checkerBoardNormal(6));
+
 
 function checkerBoardOneLoop (units) {
     let arr = [];
@@ -53,24 +58,18 @@ function checkerBoardOneLoop (units) {
     }
 }
 
-// checkerBoardOneLoop(3);
 // checkerBoardOneLoop(6);
-// console.log(checkerBoardNormal(7));
 
-/**
- * My favorite implementation - certainly the most terse implementation.
- * @param {*} units 
- */
+
+// A very terse implementation, the precursor to the one line solution :
 const checkerBoardTerse = function (units) {
     return new Array(units).fill(new Array(units)).map((arr, idx) => {
         return arr.fill(0).map((z, idx1) => (idx + idx1) % 2 === 0 ? 'x' : 'o')
     });
 }
 
-// console.log(checkerBoard(7));
+// console.log(checkerBoardTerse(7));
 
-
-// function checkerBoardOneLine(n) { return new Array(n).fill(1).map((i, idx) => { return new Array(n).fill(1).map((j, idx1) => { return (idx + idx1) % 2 === 0 ? 'x' : 'o' }) }); }
 
 const checkerBoardOneLine = n => new Array(n).fill(0).map((o, idx) => new Array(n).fill(0).map((o, idx1) => (idx + idx1) % 2 === 0 ? 'x' : 'o'));
 
@@ -79,7 +78,7 @@ const checkerBoardOneLine = n => new Array(n).fill(0).map((o, idx) => new Array(
 // this optimized version of the problem avoids N^2 running time by creating the 2 possible rows up front and repeating them
 // Running time is basically 2N
 function checkerBoardOptimized(units) {
-    const row1 = []; //new Array(units).fill(0).map((z, idx) => idx % 2 === 0 ? 'x' : 'o');
+    const row1 = [];
     for (let i = 0; i < units; i++) {
         row1.push(i % 2 === 0 ? 'x' : 'o');
     }
