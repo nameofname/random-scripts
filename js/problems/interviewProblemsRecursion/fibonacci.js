@@ -31,9 +31,7 @@ function fibonacci2(size) {
     const series = [1];
     while(size > 1) {
         --size;
-        const last = series[series.length - 1] || 0;
-        const twoAgo = series[series.length - 2] || 0;
-        series.push(last + twoAgo);
+        series.push((series[series.length - 1] || 0) + (series[series.length - 2] || 0));
     }
     return series;
 }
