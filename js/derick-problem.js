@@ -110,7 +110,10 @@ function dedupeImages(categories) {
                 if (!potentilaImgPartner || preferenceForThisCategory > preferenceForCurrentPartner) {
                     resultByImage[potentialImg] = catKey;
                     resultByCategory[catKey] = potentialImg;
-                    resultByCategory[potentilaImgPartner] = null;
+                    // if the potential image already had a partner category, make that category free
+                    if (resultByCategory[potentilaImgPartner]) {
+                        resultByCategory[potentilaImgPartner] = null;
+                    }
                 }
             }
         });
@@ -121,7 +124,10 @@ function dedupeImages(categories) {
     }
 
     _stableMarriage();
-    return [ resultByImage, resultByCategory ];
+ 
+    return Object.keys(resultByCategory).map(name => ({
+        name, image: resultByCategory[name]
+    }));
 }
 
 const answer = dedupeImages(exampleInput);
