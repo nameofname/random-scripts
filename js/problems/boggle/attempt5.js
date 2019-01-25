@@ -5,7 +5,7 @@ const board = [
     ['x', 'a', 'c', 'x'],
 ];
 
-// Same solution as attempt 3, but honed.
+// Note: This took me 21 minutes to complete.
 function boggleMatches(word, board) {
     const wordArr = word.split('');
     const out = [];
