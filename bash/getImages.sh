@@ -44,7 +44,7 @@ if [ -z $URL ]
                     console.log(matches);
                 });
             })
-        " | xargs wget --adjust-extension
+        " | xargs wget -P ./image-downloads
 
         # ")";
         # echo $OUT;
