@@ -28,9 +28,12 @@ if [ -z $URL ]
                     let matches = [];
 
                     extensions.forEach(extension => {
-                        const re = RegExp(/((https?)?:\/\/?[^\s]+.jpg)/g);
+                        const re = RegExp('((https?)?:\/\/?[^\\\s]+.' + extension + ')', 'g');
+                        console.log('plee ple', re);
                         const innerMatches = data
                             .match(re)
+
+                            /*
                             // dedupe based on host and path only
                             .reduce((o, match) => {
                                 let u = url.parse(match);
@@ -39,13 +42,14 @@ if [ -z $URL ]
                             }, {})
                         
                         matches = matches.concat(Object.keys(innerMatches));
+                        */
                     });
 
                     matches.forEach(s => console.log(s));
                     //console.log(matches);
                 });
             })
-        " | xargs wget -P ./image-downloads
-        # "
+        "
+        # " | xargs wget -P ./image-downloads
 fi
 
