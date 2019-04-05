@@ -41,14 +41,11 @@ if [ -z $URL ]
                         matches = matches.concat(Object.keys(innerMatches));
                     });
 
-                    console.log(matches);
+                    matches.forEach(s => console.log(s));
+                    //console.log(matches);
                 });
             })
         " | xargs wget -P ./image-downloads
-
-        # ")";
-        # echo $OUT;
-
-        # " | xargs wget --adjust-extension
+        # "
 fi
 
