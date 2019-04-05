@@ -38,6 +38,5 @@ fetch.get(URL, resp => {
         });
 
         matches.forEach(s => console.log(s));
-        //console.log(matches);
     });
 })
