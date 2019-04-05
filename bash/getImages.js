@@ -7,7 +7,8 @@ const https = require('https');
 const URL = process.argv[2] || '';
 const u = url.parse(URL);
 if (!URL || !u.protocol) {
-    throw new Error(`Please include a valid URL, got this: ${URL}`);
+    console.log(`Please include a valid URL, got this: ${URL}`);
+    process.exit(1);
 }
 
 const host = u.protocol + u.host;
