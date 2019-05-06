@@ -10,7 +10,7 @@ listenKeypress(startArr, () => {
     removeScrollClasses();
     console.log(muscleAscii);
 });
-listenKeypress(stopArr, stop);
+listenKeypress(stopArr, disable);
 
 function removeScrollClasses() {
     // remove all classes from the DOM that contain the word 'Scroll'
