@@ -54,17 +54,16 @@ function getChangeGreedy(price, paid, units) {
     const change = price - paid;
     const changeArr = [];
     let sum = 0;
+    let nextUnit = units.pop();
+
     while (sum < change) {
         const remainder = change - sum;
-        let nextUnit;
-        for (let i = units.length; i >= 0; i--) {
-            const currUnit = units[i];
-            if (nextUnit === undefined && currUnit <= remainder) {
-                nextUnit = currUnit;
-            }
+        if (remainder < nextUnit) {
+            nextUnit = units.pop();
+        } else {
+            sum += nextUnit;
+            changeArr.push(nextUnit);
         }
-        sum += nextUnit;
-        changeArr.push(nextUnit);
     }
     return changeArr;
 }
