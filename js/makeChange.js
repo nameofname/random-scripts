@@ -13,7 +13,7 @@
 // in this case change is 43 so output should be [20, 20, 2, 1] or { 20: 2, 2: 1, 1:1 } or something else that's easy to read and understand
 
 const euroUnits = [1, 2, 5, 10, 20, 50];
-const usUnits = [1, 5, 10, 25];
+const usUnits = [1, 5, 10, 25, 50];
 const fakeSet = [1, 4, 5, 20];
 
 function getChange(price, paid, units) {
@@ -69,19 +69,14 @@ console.log('change with recursive algo', getChange(92, 100, fakeSet)); // shoul
 console.log('change with greedy algo', getChangeGreedy(92, 100, fakeSet)); // should output 5, 1, 1, 1
 
 console.log('kicikkkk it');
-for (let i = 1; i < 5; i++) {
-    console.log(`change with greedy algo ${i}`, getChangeGreedy(i, 100, usUnits));
-    console.log(`change with recursive algo ${i}`, getChange(i, 100, usUnits));
+for (let i = 1; i < 100; i++) {
+    const greedy = getChangeGreedy(i, 100, usUnits).join('-');
+    const recur = getChange(i, 100, usUnits).join('-');
+    console.log(`change with greedy algo ${i}`, greedy);
+    console.log(`change with recursive algo ${i}`, recur);
+    if (greedy !== recur) {
+        console.log('THIS IS A PROBLEM', i)
+    }
 }
-
-// to get 9, 5 and 4 1s or 3 3s .........
-/*
-so how to figure out the smallest number of coins i could use? 
-well i could just try everything
-or, i could use modulus to figure out which things evenly divide. 
-use recursion to figure out the different paths to the correct solution! 
-
-US units, make 44 : 
-25, 10, 5, 1, 1, 1, 1
-10, 10, 10, 
-*/
+// if you run this you will see that for US units and euros there are no cases where the greedy algorithm does 
+// not match the recursive one. However, using the fake set there are many cases where they mismatch.
