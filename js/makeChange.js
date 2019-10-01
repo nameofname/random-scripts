@@ -17,41 +17,36 @@ const usUnits = [1, 5, 10, 25];
 const fakeSet = [1, 4, 5, 20];
 
 function getChange(price, paid, units) {
-    const change = price - paid;
-    const outputArrays = [];
+    const change = paid - price;
+    let shortestSolution;
 
     function doChangeRecursion(changeArr) {
+        // console.log('do the recur', changeArr)
         const changeSum = changeArr.reduce((curr, unit) => (curr + unit), 0);
         const remainder = change - changeSum;
-        // console.log(change, changeSum)
         const availableUnits = units.filter(int => int <= remainder);
 
-        // console.log(changeSum, availableUnits)
-        availableUnits.forEach(unit => {
+        for (let i = availableUnits.length - 1; i >= 0; i--) {
+            const unit = availableUnits[i];
             const newArr = [...changeArr, unit];
             const newSum = changeSum + unit;
-            // console.log(newArr)
-            if (newSum === change) {
-                outputArrays.push(newArr);
-            } else {
-                doChangeRecursion(newArr);
+            if (shortestSolution === undefined || newArr.length < shortestSolution.length) {
+                if (newSum === change) {
+                    shortestSolution = newArr;
+                } else {
+                    doChangeRecursion(newArr);
+                }
             }
-        });
+        }
     }
 
     doChangeRecursion([]);
-    // find the shortest answer
-    let shortest;
-    outputArrays.forEach(arr => {
-        if (shortest === undefined || arr.length < shortest.length) {
-            shortest = arr;
-        }
-    });
-    return shortest;
+    return shortestSolution;
 }
 
 function getChangeGreedy(price, paid, units) {
-    const change = price - paid;
+    units = [...units]; // copy so as not to mutate the original units arr
+    const change = paid - price;
     const changeArr = [];
     let sum = 0;
     let nextUnit = units.pop();
@@ -65,13 +60,19 @@ function getChangeGreedy(price, paid, units) {
             changeArr.push(nextUnit);
         }
     }
+
     return changeArr;
 }
 
 
-console.log('change with recursive algo', getChange(100, 92, fakeSet)); // should output 4, 4 - and not 5, 1, 1, 1
-console.log('change with greedy algo', getChangeGreedy(100, 92, fakeSet)); // should output 5, 1, 1, 1
+console.log('change with recursive algo', getChange(92, 100, fakeSet)); // should output 4, 4 - and not 5, 1, 1, 1
+console.log('change with greedy algo', getChangeGreedy(92, 100, fakeSet)); // should output 5, 1, 1, 1
 
+console.log('kicikkkk it');
+for (let i = 1; i < 5; i++) {
+    console.log(`change with greedy algo ${i}`, getChangeGreedy(i, 100, usUnits));
+    console.log(`change with recursive algo ${i}`, getChange(i, 100, usUnits));
+}
 
 // to get 9, 5 and 4 1s or 3 3s .........
 /*
