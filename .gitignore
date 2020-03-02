@@ -3,3 +3,4 @@ js/salesman/node_modules/
 **/*/node_modules
 *.DS_STORE
 .vscode
+*.pyc
