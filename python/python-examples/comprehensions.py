@@ -8,7 +8,7 @@ print([2 * el for el in the_list]) # same
 # filtering : 
 print([el for el in the_list if el < 8 and el > 3])
 
-#using comprehensions with dictionaries : 
+#using comprehensions with dictionaries / sets : 
 the_dict = {'ron': 'uno', 'danielle': 'dos'}
 print({k for k in the_dict})
 print({v:k for k, v in the_dict.items()}) # flip dictionary
