@@ -1,5 +1,7 @@
 // find the longest substring with no repeating characters
 // ie. abcdabcd would be 4
+// note* this is very common, but not identical to 
+// the LCS problem : https://www.cs.cmu.edu/~avrim/451f09/lectures/lect1001.pdf
 
 function lengthOfLongestSubstring(str) {
     const arr = str.split('');
