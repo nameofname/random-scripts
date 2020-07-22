@@ -1,11 +1,11 @@
 "use strict";
 
-const data = require('./data.json');
 const Highcharts = require('highcharts');
-const convertStocksToXY = require('./convertStocksToXY');
-const weightedAverageSmoothing = require('./weightedAverageSmoothing');
 
-function graph(data) {
+function graph({ data, transformer }) {
+
+    data = transformer(data);
+
     Highcharts.chart('container', {
         chart: {
             zoomType: 'x',
@@ -72,19 +72,4 @@ function graph(data) {
     });
 }
 
-const dataArr = convertStocksToXY(data);
-
-function getDateRange(arr, lowerYear, upperYear) {
-    return arr.filter(point => {
-        const date = new Date(point[0]);
-        return lowerYear < date.getFullYear() && date.getFullYear() < upperYear;
-    });
-}
-
-
-const smoothedLine = weightedAverageSmoothing(dataArr, 100, 10);
-
-document.addEventListener("DOMContentLoaded", function(event) { 
-    // graph(getDateRange(dataArr, 2008, 2014));
-    graph(smoothedLine);
-});
+module.exports = graph;

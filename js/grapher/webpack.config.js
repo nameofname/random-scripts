@@ -1,6 +1,6 @@
 module.exports = {
     mode: 'production',
-    entry: `${__dirname}/graphData.js`,
+    entry: `${__dirname}/index.js`,
     output: {
         filename: 'bundle.js',
         path: __dirname,
