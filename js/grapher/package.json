@@ -1,0 +1,17 @@
+{
+  "name": "grapher",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "highcharts": "^8.1.2",
+    "pint-sized-logger": "^1.0.3",
+    "webpack": "^4.43.0"
+  },
+  "scripts": {
+    "graph": "webpack --config ./webpack.config.js"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  }
+}
