@@ -2,11 +2,13 @@
 
 const webpack = require('webpack');
 const fs = require('fs');
+const path = require('path');
+const opn = require('opn');
 const webpackConfig = require('./webpack.config');
 const weightedAverageSmoothing = require('./weightedAverageSmoothing');
 
 
-module.exports = function buildGraph({ data, smoothing= {}, transform }) {
+module.exports = function buildGraph({ data, open = false, smoothing = {}, transform }) {
 
     console.log('__dirname', __dirname);
     function transformer(data) {
@@ -27,10 +29,12 @@ module.exports = function buildGraph({ data, smoothing= {}, transform }) {
         if (err) {
             throw err;
         } else {
-            console.log(stats);
+            // Open completed graph in browser
+            const location = `file:///${path.resolve(__dirname, '../graph.html')}`;
+            console.log(`Your complete graph is located at ${location}`);
+            if (open) {
+                opn(location);
+            }
         }
     });
-
-    // TODO ! Open Chrome with the completed graph
-
 }
