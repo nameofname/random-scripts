@@ -3,6 +3,7 @@
 const webpack = require('webpack');
 const fs = require('fs');
 const path = require('path');
+const logger = require('pint-sized-logger');
 const opn = require('opn');
 const webpackConfig = require('./webpack.config');
 const weightedAverageSmoothing = require('./weightedAverageSmoothing');
@@ -10,9 +11,9 @@ const weightedAverageSmoothing = require('./weightedAverageSmoothing');
 
 module.exports = function buildGraph({ data, open = false, smoothing = {}, transform }) {
 
-    console.log('__dirname', __dirname);
     function transformer(data) {
         data = transform(data);
+        logger.info(data);
         const { width, passes } = smoothing;
         if (width) {
             return weightedAverageSmoothing(data, width, passes);
@@ -31,7 +32,7 @@ module.exports = function buildGraph({ data, open = false, smoothing = {}, trans
         } else {
             // Open completed graph in browser
             const location = `file:///${path.resolve(__dirname, '../graph.html')}`;
-            console.log(`Your complete graph is located at ${location}`);
+            // logger.info(`Your complete graph is located at ${location}`);
             if (open) {
                 opn(location);
             }

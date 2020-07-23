@@ -2,7 +2,7 @@
 
 const buildGraph = require('./src/index');
 const convertStocksToXY = require('./src/convertStocksToXY');
-const data = require('./exampleData.json');
+const data = require('./data/exampleData.json');
 
 buildGraph({
     data,

@@ -22,7 +22,7 @@ function graph(data) {
         },
         yAxis: {
             title: {
-                text: 'Exchange rate',
+                text: 'Y',
             },
         },
         legend: {
@@ -63,7 +63,7 @@ function graph(data) {
         series: [
             {
                 type: 'area',
-                name: 'USD to EUR',
+                name: 'X',
                 data: data,
             },
         ],
