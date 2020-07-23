@@ -1,6 +1,6 @@
 module.exports = {
     mode: 'production',
-    entry: `${__dirname}/main.js`,
+    entry: `${__dirname}/domEventListener.js`,
     output: {
         filename: 'bundle.js',
         path: __dirname,

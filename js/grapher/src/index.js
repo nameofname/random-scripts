@@ -18,11 +18,19 @@ module.exports = function buildGraph({ data, smoothing= {}, transform }) {
         return data;
     }
 
-    // TODO ! Write the data to file. 
+    // Write the data to file. 
     data = transformer(data);
-    fs.writeFileSync(`${__dirname}/__data.json`, data, { encoding: 'utf-8' });
+    fs.writeFileSync(`${__dirname}/__data.json`, JSON.stringify(data, null, 2), { encoding: 'utf-8' });
 
-    // TODO ! Invoke Webpack with 
+    // Invoke Webpack with 
+    webpack(webpackConfig, (err, stats) => {
+        if (err) {
+            throw err;
+        } else {
+            console.log(stats);
+        }
+    });
+
     // TODO ! Open Chrome with the completed graph
 
 }

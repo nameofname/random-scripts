@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "highcharts": "^8.1.2",
+    "opn": "^6.0.0",
     "pint-sized-logger": "^1.0.3",
     "webpack": "^4.43.0"
   },
