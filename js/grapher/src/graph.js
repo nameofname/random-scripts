@@ -2,9 +2,7 @@
 
 const Highcharts = require('highcharts');
 
-function graph({ data, transformer }) {
-
-    data = transformer(data);
+function graph(data) {
 
     Highcharts.chart('container', {
         chart: {
