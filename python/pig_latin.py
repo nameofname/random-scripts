@@ -1,3 +1,9 @@
+"""
+    Good display of map and filter functions, as well as some string manipulation
+    You can also supply a lambda to the filter function like : 
+        filter(lambda x: x < 5)
+"""
+
 def pig(word):
     if len(word) == 0:
         return
