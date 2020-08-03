@@ -25,7 +25,7 @@ def build():
     # dataFrame[dataFrame[fieldName] === X]
     # It works because the == turns into an "element wise" operator and returns a dataFrame of true / false values
     # Pandas has a feature where that boolean dataFrame filters the list it's passed to
-    # I can't tell if this is some sort of weird language feature is specific to pandas ?!
+    # It's called an elementwise operation, and I can't tell if this is a language feature is specific to numpy!?
     # Here's a post explaining it : https://heydenberk.com/blog/posts/demystifying-pandas-numpy-filtering/
 
     # Filter out rows where quality = 0
