@@ -11,10 +11,11 @@ separator = '>>>>'
 file_name = 'msr_paraphrase_train.txt'
 file_url = 'file://{0}gpt_simple/data/{1}'.format(app_dir, file_name)
 
-output = 'grumbly weeners'
+output = None
 
 def build():
-    if (output):
+    global output
+    if (output is not None):
         return output
     # Read the file in with pandas read_csv function
     # I get an error on some rows, so I'm ignoring them with error_bad_lines=False
