@@ -1,3 +1,5 @@
+# This is JUST FOR TESTING PURPOSES.
+
 import sys
 app_dir = '/Users/ronald/projects/random-scripts/python/'
 sys.path.insert(1, app_dir)
