@@ -20,7 +20,7 @@ def build():
         return output
     # Read the file in with pandas read_csv function
     # I get an error on some rows, so I'm ignoring them with error_bad_lines=False
-    raw_data = pd.read_csv(file_url, sep='\t', error_bad_lines=False)
+    raw_data = pd.read_csv(file_url, sep='\t', error_bad_lines=False, warn_bad_lines=False)
 
     # For some reason, this crazy syntax returns all the values in the dataframe :
     # dataFrame[dataFrame[fieldName] === X]
@@ -32,12 +32,11 @@ def build():
     # Filter out rows where quality = 0
     has_quality = raw_data[raw_data['Quality'] == 1]
     # Filter out cases where there is no string 2, which happens sometimes, must be an issue with the decoding :
-    has_data = has_quality[has_quality['#2 String'].notnull()]
+    output = has_quality[has_quality['#2 String'].notnull()]
 
     # Add the training data sentence as a combination of String 1 and 2 from the file :
-    # Idea for this line taken from : https://www.geeksforgeeks.org/adding-new-column-to-existing-dataframe-in-pandas/
+    # Idea for this line taken from : https://www.geeksforgeeks.org/create-a-new-column-in-pandas-dataframe-based-on-the-existing-columns/?ref=rp
     # Note - you need to use the axis = 1 argument (default 0) so apply is performed over rows no columns
-    has_data['Training Sentence'] = has_data.apply(lambda row: "{} {} {}".format(row['#1 String'], separator, row['#2 String']), axis=1)
-    output = has_data
+    output['Training Sentence'] = output.apply(lambda row: "{} {} {}".format(row['#1 String'], separator, row['#2 String']), axis=1)
     return output
 
