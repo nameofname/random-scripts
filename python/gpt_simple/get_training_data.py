@@ -11,13 +11,13 @@ separator = '>>>>'
 file_name = 'msr_paraphrase_train.txt'
 file_url = 'file://{0}gpt_simple/data/{1}'.format(app_dir, file_name)
 
-output = None
+training_data = None
 
-def build():
-    global output
+def build_data():
+    global training_data
     # Note* you have to use "is not" instead of != or else it gets converted into an elementwise operator.
-    if (output is not None):
-        return output
+    if (training_data is not None):
+        return training_data
     # Read the file in with pandas read_csv function
     # I get an error on some rows, so I'm ignoring them with error_bad_lines=False
     raw_data = pd.read_csv(file_url, sep='\t', error_bad_lines=False, warn_bad_lines=False)
@@ -32,11 +32,15 @@ def build():
     # Filter out rows where quality = 0
     has_quality = raw_data[raw_data['Quality'] == 1]
     # Filter out cases where there is no string 2, which happens sometimes, must be an issue with the decoding :
-    output = has_quality[has_quality['#2 String'].notnull()]
+    training_data = has_quality[has_quality['#2 String'].notnull()]
 
     # Add the training data sentence as a combination of String 1 and 2 from the file :
     # Idea for this line taken from : https://www.geeksforgeeks.org/create-a-new-column-in-pandas-dataframe-based-on-the-existing-columns/?ref=rp
     # Note - you need to use the axis = 1 argument (default 0) so apply is performed over rows no columns
-    output['Training Sentence'] = output.apply(lambda row: "{} {} {}".format(row['#1 String'], separator, row['#2 String']), axis=1)
-    return output
+    # TODO ! Figure out how to suppress `SettingWithCopyWarning` https://www.dataquest.io/blog/settingwithcopywarning/
+    # Note * The warning may not be relevant, as the code seems to be doing what I want.
+    training_data['Training Sentence'] = training_data.apply(lambda row: "{} {} {}".format(row['#1 String'], separator, row['#2 String']), axis=1)
+    return training_data
 
+
+# build()
