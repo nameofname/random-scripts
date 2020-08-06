@@ -43,4 +43,11 @@ def build_data():
     return training_data
 
 
-# build()
+training_data = build_data()
+training_list = training_data['Training Sentence'].to_list()
+training_string = '\n'.join(training_list)
+# print('training data ready', training_string)
+
+# Write the file to disc for use in Google Cloud : 
+f = open("training_data.txt", "w")
+f.write(training_string)
