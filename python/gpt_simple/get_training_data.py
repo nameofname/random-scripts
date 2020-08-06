@@ -41,13 +41,3 @@ def build_data():
     # Note * The warning may not be relevant, as the code seems to be doing what I want.
     training_data['Training Sentence'] = training_data.apply(lambda row: "{} {} {}".format(row['#1 String'], separator, row['#2 String']), axis=1)
     return training_data
-
-
-training_data = build_data()
-training_list = training_data['Training Sentence'].to_list()
-training_string = '\n'.join(training_list)
-# print('training data ready', training_string)
-
-# Write the file to disc for use in Google Cloud : 
-f = open("training_data.txt", "w")
-f.write(training_string)
