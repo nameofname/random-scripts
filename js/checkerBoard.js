@@ -88,3 +88,26 @@ function checkerBoardOptimized(units) {
 }
 
 console.log(checkerBoardOptimized(6));
+
+
+// just for fun, how you would complete the problem with recursion :
+function checkerboardRecursive(num) {
+    const board = [[]];
+    function recur(xo) {
+      if (board[num - 1] && board[num - 1][num - 1]) {
+        return;
+      }
+      let currRow = board[board.length - 1];
+      if (currRow.length === num) {
+        board.push([]);
+        currRow = board[board.length - 1];
+        xo = board.length % 2 === 0 ? 'o' : 'x'
+      }
+      currRow.push(xo);
+      recur(xo === 'x' ? 'o' : 'x');
+    }
+    recur('x');
+    return board;
+}
+  
+console.log(checkerboardRecursive(6));
