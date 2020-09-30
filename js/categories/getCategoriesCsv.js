@@ -11,8 +11,8 @@ function indent(int) {
 
 function itar(children, parents, level) {
     children.forEach(category => {
-        const ll = 'L' + level
         const current = parents.concat(category.name);
+        // const ll = 'L' + level
         // console.log(indent(level), ll, current);
         results.push(current);
         if (Array.isArray(category.children)) {
@@ -31,4 +31,4 @@ const output = results.map(result => {
 
 const parser = new Parser();
 const csv = parser.parse(output);
-console.log(csv)
+console.log(csv);
