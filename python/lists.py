@@ -21,6 +21,8 @@ the_list.remove(8) # removes the first occurrency of 8
 print(the_list)
 if 3 in the_list:
     print('yeah it is') # it is
+print([1] * 10 ) # a list of ten ones
+
 
 # TUPLES
 the_tuple = (1,2,3) # this is a the_tuple, just an immutable the_list
