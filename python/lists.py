@@ -1,3 +1,5 @@
+# https://diveintopython3.problemsolving.io/native-datatypes.html
+
 # LISTS
 the_list = [1,2,3,4,5,6] # this is a list
 print(the_list[2:4])
