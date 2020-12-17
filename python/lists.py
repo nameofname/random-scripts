@@ -1,5 +1,7 @@
 # https://diveintopython3.problemsolving.io/native-datatypes.html
 
+import numpy as np
+
 # LISTS
 the_list = [1,2,3,4,5,6] # this is a list
 print(the_list[2:4])
@@ -72,3 +74,15 @@ the_dict = { 'ron': 'ronald', 'will': 'hell yeah bro'}
 print(the_dict['ron'])
 the_dict['Ron'] = 'alding';
 print(the_dict)
+
+# MANIPULATIONS ON LISTS  :
+# In python multiplying a list creates a list which repeats N times
+print([1] * 10 ) # a list of ten ones
+# You can't add an into to a list, but you can add a list to a list to concatenate
+# print([1,2,3] + 4) # ERROR!
+print([1,2,3] + [4]) # [1,2,3,4]
+
+# butnumpy arrays do things differently
+# multiplying or adding an int performs the operation on the whole array
+print(np.array([1,2,3,4]) * 2)
+print(np.array([1,2,3,4]) + 5)

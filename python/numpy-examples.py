@@ -1,5 +1,6 @@
 import numpy as np
-import pandas as pd
+
+print('NUMPY')
 
 # A numpy array can be multidimensional,
 # but let's just look at a 2d array : 
@@ -45,8 +46,11 @@ randmatrix = np.array(
 )
 print(randmatrix)
 # Now let's streamlie it using a comprehension : 
-np.array([np.random.randint([10] * 5) for n in [1] * 5])
-
+randmatrix = np.array([np.random.randint([10] * 5) for n in [1] * 5])
+# And OH GUESS WHAT! It's totally supported already by randint. 
+# The size argument can be a tuple of dimensions
+randmatrix = np.random.randint(1, 10, (10, 3))
+print(randmatrix)
 
 # Broadcasting
 # Usually in algebra you have to have 2 matricies of the same size to do operations
@@ -55,3 +59,5 @@ print(randmatrix * 5)
 print(randmatrix * [5])
 print(randmatrix * np.array([5]))
 
+# Pandas basically gives you the ability to create spreadsheet like objects in python
+# It also enables manipulating your data using several interesting features
