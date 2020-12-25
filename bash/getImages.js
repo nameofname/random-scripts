@@ -43,7 +43,7 @@ fetch(URL)
             const deduped = innerMatches.reduce((o, match) => {
                     const url1 = parse(match);
                     const useUrl = url1.host ? url1 : url;
-                    const path = url1.path.indexOf('/') === 0 ? url1.path : `/${url1.path}`;
+                    const path = (url1.path || '').indexOf('/') === 0 ? url1.path : `/${url1.path}`;
                     const location = `${useUrl.protocol}//${useUrl.host}${path}`;
                     return Object.assign(o, { [location]: true })
                 }, {})
@@ -72,3 +72,4 @@ fetch(URL)
     });
 
 // console.log(enumerateFilename('bla--1.jpg'))
+
