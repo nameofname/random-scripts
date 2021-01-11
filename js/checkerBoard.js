@@ -71,8 +71,9 @@ const checkerBoardTerse = function (units) {
 // console.log(checkerBoardTerse(7));
 
 
-const checkerBoardOneLine = n => new Array(n).fill(0).map((o, idx) => new Array(n).fill(0).map((o, idx1) => (idx + idx1) % 2 === 0 ? 'x' : 'o'));
+const checkerBoardOneLine = n => Array(n).fill(0).map((o, idx) => Array(n).fill(0).map((o, idx1) => (idx + idx1) % 2 === 0 ? 'x' : 'o'));
 
+console.log('ronaldy', checkerBoardOneLine(6))
 // console.log(checkerBoardOneLine(7));
 
 // this optimized version of the problem avoids N^2 running time by creating the 2 possible rows up front and repeating them
