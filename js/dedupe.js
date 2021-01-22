@@ -1,7 +1,5 @@
-const arrays = [ [ 1, 2, 3 ], [ 1, 2, 4 ], [ 5, 6, 6 ], [ 7, 8, 9 ] ];
-const map = {};
-const map1 = {};
 function dedupe(arrays) {
+    const map = {};
     return arrays.reduce((combined, array) => {
         array.forEach(int => {
             if (!map[int]) {
@@ -9,10 +7,11 @@ function dedupe(arrays) {
             }
             map[int] = true;
         });
-    return combined }, []);
+        return combined;
+    }, []);
 }
 
-const oneLiner = arrays => arrays.reduce((combined, array) => { array.forEach(int => { if (!map1[int]) { combined.push(int) } map1[int] = true; }); return combined }, []);
+// const arrays = [ [ 1, 2, 3 ], [ 1, 2, 4 ], [ 5, 6, 6 ], [ 7, 8, 9 ] ];
+// console.log(dedupe(arrays))
 
-console.log(dedupe(arrays))
-console.log(oneLiner(arrays))
+module.exports = dedupe;
