@@ -6,26 +6,17 @@ import bigquery_api as bigquery
 def pp(o):
     return print(json.dumps(o, indent=4, sort_keys=True))
 
-rules = twitter.get_rules()
-pp(rules)
+# # First we delete all the existing rules and set up a rule for luxury :
+# pp(twitter.delete_all_rules())
+# rules = twitter.set_rules([
+#     { "value": "luxury has:images", "tag": "luxury with img"},
+#     # { "value": "cat has:images", "tag": "cat with img"},
+#     # { "value": "dog has:images", "tag": "dog with img"}
+# ])
+# pp(rules)
 
-pp(twitter.delete_all_rules())
-
-rules = twitter.set_rules([
-    { "value": "luxury has:images", "tag": "luxury with img"},
-    # { "value": "cat has:images", "tag": "cat with img"},
-    # { "value": "dog has:images", "tag": "dog with img"}
-])
-
-pp(rules)
-
-def store_tweet(tweet):
-    # Legacy : 
-    # json_response = json.loads(response_line)
-    # callback(json.dumps(json_response, indent=4, sort_keys=True))
-    # print(tweet)
-    # pp(json.loads(tweet))
-    res = bigquery.store_record(tweet)
-    print(res) # TODO - can i use pp ? i love pp. 
-
-twitter.get_stream(store_tweet)
+# Then we stream tweets, and pass a callback to write to bigquery :
+twitter.get_stream(bigquery.store_record)
+# def test(rec):
+#     print(json.loads(rec))
+# twitter.get_stream(test)
