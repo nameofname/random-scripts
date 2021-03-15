@@ -1,4 +1,5 @@
 import requests
+import json
 import os
 
 
@@ -63,14 +64,15 @@ def delete_rules(rules):
 def get_stream(callback):
     # url = "https://api.twitter.com/2/tweets/search/stream?tweet.fields=created_at,text,context_annotations,entities,in_reply_to_user_id,lang,non_public_metrics,organic_metrics,public_metrics"
     url = "https://api.twitter.com/2/tweets/search/stream?tweet.fields=created_at,text,context_annotations,entities,in_reply_to_user_id,lang,public_metrics"
-    response = requests.get(url, headers=headers, stream=True,)
-    print(response.status_code)
-    if response.status_code != 200:
-        raise Exception(
-            "Cannot get stream (HTTP {}): {}".format(
-                response.status_code, response.text
+    # response = requests.get(url, headers=headers, stream=True,)
+    with requests.get(url, headers=headers, stream=True,) as response:
+        # print(response.status_code)
+        if response.status_code != 200:
+            raise Exception(
+                "Cannot get stream (HTTP {}): {}".format(
+                    response.status_code, response.text
+                )
             )
-        )
-    for response_line in response.iter_lines():
-        if response_line:
-            callback(response_line)
+        for response_line in response.iter_lines():
+            if response_line:
+                callback(json.loads(response_line))
