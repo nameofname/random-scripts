@@ -8,4 +8,5 @@ def store_record(rec):
     if errors == [] :
         print('inserted row', rec)
     else:
+        print('Encountered erorrs while inserting row {}\n{}'.format(errors, rec))
         print('Encountered erorrs while inserting row {}'.format(errors))
