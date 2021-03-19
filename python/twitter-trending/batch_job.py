@@ -16,9 +16,13 @@ batch = ''
 for row in res:
     batch += row.data['text']
 
-print('This is my batch : ')
+print('I have a batch! and its length is {}'.format(len(batch)))
 print(batch)
 
-print(
-    bigquery.analyze_entities('bla bla')
-)
+print('=================================================================================')
+result = bigquery.analyze_entities(batch)
+print('I have a result! Who knows wtf it is?!?!?!')
+print(result)
+print('=================================================================================')
+for entity in result.entities:
+    print(entity.name)
