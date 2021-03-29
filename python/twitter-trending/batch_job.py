@@ -1,28 +1,40 @@
 import json
 import bigquery_api as bigquery
+from datetime import datetime
+import pytz
 
-def pp(o):
-    return print(json.dumps(o, indent=4, sort_keys=True))
 
-# TODO ! Re-write this query to get the tweets within a date range
-res = bigquery.query(
-    """select *
+now = datetime.utcnow()
+date = now.strftime("%Y-%m-%d")
+hour = now.strftime("%H")
+last_hour = int(hour) - 1
+min_sec = now.strftime("%M:%S")
+start_date = "{} {}:{}".format(date, last_hour, min_sec)
+end_date = "{} {}:{}".format(date, hour, min_sec)
+
+query = """select *
     from `api-project-1065928543184.testing.twitter_luxury`
+    where data.created_at < '{}'
+    and data.created_at > '{}'
     order by data.created_at desc
-    limit 100;"""
-)
+    limit 100;""".format(end_date, start_date)
+
+print(start_date, end_date)
+print(query)
+exit('ronald out')
+
+res = bigquery.query(query)
 
 batch = ''
 for row in res:
     batch += row.data['text']
-
-print('I have a batch! and its length is {}'.format(len(batch)))
-print(batch)
-
-print('=================================================================================')
 result = bigquery.analyze_entities(batch)
-print('I have a result! Who knows wtf it is?!?!?!')
-print(result)
-print('=================================================================================')
+# print('=================================================================================')
 for entity in result.entities:
-    print(entity.name)
+    store = {
+        "batch": date_range,
+        "name": entity.name,
+        "mentions": len(entity.mentions),
+        "type": entity.type_
+    }
+    print('entity', store)
