@@ -1,4 +1,4 @@
-import json
+# import json
 import bigquery_api as bigquery
 from datetime import datetime
 import pytz
@@ -33,9 +33,9 @@ for entity in result:
     store = {
         "start_date": start_date,
         "end_date": end_date,
-        "name": entity['name'],
+        "name": str(entity['name']),
         "mentions": len(entity['mentions']),
         "type": entity['type']
     }
-    # print('le record', json.dumps(store))
+    # print(json.dumps(store))
     bigquery.store_record(store, 'twitter_luxury_entities') 
