@@ -10,7 +10,7 @@ def store_rec(rec):
     print ("Storing record in BigQuery\n", rec)
     return bigquery.store_record(rec, 'twitter_luxury')
 
-def main() :
+def start():
     # First we delete all the existing rules and set up a rule for luxury :
     pp(twitter.delete_all_rules())
     rules = twitter.set_rules([
@@ -21,6 +21,3 @@ def main() :
     pp(rules)
     # Then we stream tweets, and pass a callback to write to bigquery :
     twitter.get_stream(store_rec)
-
-if __name__ == "__main__":
-    main()

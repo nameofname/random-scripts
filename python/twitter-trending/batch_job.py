@@ -3,7 +3,7 @@ import bigquery_api as bigquery
 from datetime import datetime
 import pytz
 
-def main():
+def start():
         # get a date range of the lst hour
     now = datetime.utcnow()
     date = now.strftime("%Y-%m-%d")
@@ -40,6 +40,3 @@ def main():
         }
         # print(json.dumps(store))
         bigquery.store_record(store, 'twitter_luxury_entities') 
-
-if __name__ == "__main__":
-    main()

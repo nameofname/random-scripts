@@ -1,5 +1,6 @@
 import twitter_to_bigquery, batch_job
-import threading
+from Repeater import Repeater
 
-twitter_to_bigquery()
-# batch_job() TODO ! do this on a timer. 
+twitter_to_bigquery.start()
+
+r = Repeater(batch_job.start, 1)
