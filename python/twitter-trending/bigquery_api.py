@@ -27,7 +27,13 @@ def analyze_entities(text_content):
             'type_': language_v1.Document.Type.PLAIN_TEXT # HTML also available
         }
     }
-    return client.analyze_entities(request)
-
-
-
+    result = client.analyze_entities(request)
+    list = []
+    for entity in result.entities:
+        print('whats ur zodiac sign? ')
+        list.append({
+            "name": entity.name,
+            "mentions": entity.mentions,
+            "type": language_v1.Entity.Type(entity.type_).name
+        })
+    return list
