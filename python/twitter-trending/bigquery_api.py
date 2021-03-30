@@ -1,9 +1,11 @@
 from google.cloud import bigquery, language_v1
 
 client = bigquery.Client()
-table_id = 'api-project-1065928543184.testing.twitter_luxury'
+# table names : twitter_luxury, twitter_luxury_entities
+table_prefix = 'api-project-1065928543184.testing.'
 
-def store_record(rec):
+def store_record(rec, table_name):
+    table_id = table_prefix + table_name
     errors = client.insert_rows_json(table_id, [rec])
     if errors == [] :
         print('inserted row', rec)
