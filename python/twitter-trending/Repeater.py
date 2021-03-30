@@ -18,4 +18,3 @@ class Repeater():
     
     def stop(self):
         self.go = False
-
