@@ -8,7 +8,7 @@ def store_record(rec, table_name):
     table_id = table_prefix + table_name
     errors = client.insert_rows_json(table_id, [rec])
     if errors == [] :
-        print('inserted row', rec)
+        print('Storing record in {}'.format(table_name), rec)
     else:
         print('Encountered erorrs while inserting row {}\n{}'.format(errors, rec))
         print('Encountered erorrs while inserting row {}'.format(errors))
