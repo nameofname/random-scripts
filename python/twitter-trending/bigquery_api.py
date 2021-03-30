@@ -30,7 +30,6 @@ def analyze_entities(text_content):
     result = client.analyze_entities(request)
     list = []
     for entity in result.entities:
-        print('whats ur zodiac sign? ')
         list.append({
             "name": entity.name,
             "mentions": entity.mentions,
