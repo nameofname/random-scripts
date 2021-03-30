@@ -15,5 +15,9 @@ rules = twitter.set_rules([
 ])
 pp(rules)
 
+def store_rec(rec):
+    print ('ima gonna store it', rec)
+    return bigquery.store_record(rec, 'twitter_luxury')
+
 # Then we stream tweets, and pass a callback to write to bigquery :
-twitter.get_stream(bigquery.store_record)
+twitter.get_stream(store_rec)

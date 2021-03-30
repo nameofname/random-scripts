@@ -1,4 +1,4 @@
-import json
+# import json
 import bigquery_api as bigquery
 from datetime import datetime
 import pytz
@@ -19,10 +19,7 @@ query = """select *
     order by data.created_at desc
     limit 100;""".format(end_date, start_date)
 
-print(start_date, end_date)
-print(query)
-exit('ronald out')
-
+print("executing query :\n{}".format(query))
 res = bigquery.query(query)
 
 batch = ''
@@ -32,9 +29,10 @@ result = bigquery.analyze_entities(batch)
 # print('=================================================================================')
 for entity in result.entities:
     store = {
-        "batch": date_range,
+        "start_date": start_date,
+        "end_date": end_date,
         "name": entity.name,
         "mentions": len(entity.mentions),
         "type": entity.type_
     }
-    print('entity', store)
+    bigquery.store_record(store, 'twitter_luxury_entities') 
