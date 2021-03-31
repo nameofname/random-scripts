@@ -35,7 +35,7 @@ class Repeater():
 
     def start(self):
         self.go = True
-        self._rep()
+        threading.Timer(self.timeout, self._rep).start()
     
     def stop(self):
         self.go = False

@@ -4,7 +4,7 @@ from datetime import datetime
 import pytz
 
 def start():
-        # get a date range of the lst hour
+    # get a date range of the lst hour
     now = datetime.utcnow()
     date = now.strftime("%Y-%m-%d")
     hour = now.strftime("%H")
