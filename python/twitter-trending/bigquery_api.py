@@ -1,6 +1,13 @@
 from google.cloud import bigquery, language_v1
+from google.oauth2 import service_account
+import json, os
 
-client = bigquery.Client()
+# Enable passing credentials JSON via an environment variable :
+credentials = service_account.Credentials.from_service_account_info(
+    json.loads(os.environ.get('GOOGLE_APPLICATION_CREDENTIALS_JSON'))
+)
+client = bigquery.Client(credentials=credentials, project=credentials.project_id)
+
 # table names : twitter_luxury, twitter_luxury_entities
 table_prefix = 'api-project-1065928543184.testing.'
 

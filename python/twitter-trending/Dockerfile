@@ -1,5 +1,5 @@
 FROM python:3.7
-# COPY requirements.txt ./
-COPY ./* ./
-RUN python 3.7 -m pip install -r ./requirements.txt
-CMD ["main.py"]
+RUN mkdir app
+COPY ./* ./app
+RUN python -m pip install -r ./app/requirements.txt
+CMD ["./app/main.py"]
