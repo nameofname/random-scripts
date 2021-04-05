@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import twitter_to_bigquery, batch_job
 from Repeater import Repeater
 
