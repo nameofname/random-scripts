@@ -8,4 +8,4 @@ RUN python -m pip install -r ./app/requirements.txt
 RUN apt-get update && apt-get install -y vim
 COPY ./* ./app
 RUN chmod +x ./app/main.py
-CMD ["./app/start.sh"]
+CMD ["./app/main.py"]
