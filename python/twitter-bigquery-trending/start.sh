@@ -1,4 +1,4 @@
-# /bin/bash
+#!/bin/bash
 
 # note: to debug when the container won't stat, add `sh` to the end.
 docker run \
