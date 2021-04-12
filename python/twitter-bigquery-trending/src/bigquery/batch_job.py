@@ -1,7 +1,6 @@
 # import json
-import bigquery_api as bigquery
+import src.bigquery.bigquery_api as bqapi
 from datetime import datetime
-import pytz
 
 def start():
     # get a date range of the lst hour
@@ -21,13 +20,13 @@ def start():
         order by data.created_at desc
         limit 100;""".format(end_date, start_date)
     print("executing batch query :\n{}".format(query))
-    res = bigquery.query(query)
+    res = bqapi.query(query)
 
     # analyze entities in batch
     batch = ''
     for row in res:
         batch += row.data['text']
-    result = bigquery.analyze_entities(batch)
+    result = bqapi.analyze_entities(batch)
 
     # for each entity recognized, store in bigquery
     for entity in result:
@@ -39,4 +38,5 @@ def start():
             "type": entity['type']
         }
         # print(json.dumps(store))
-        bigquery.store_record(store, 'twitter_luxury_entities') 
+        print('IM Not GOING TO STORE THISK>!>!>!>!', store)
+        # bqapi.store_record(store, 'twitter_luxury_entities') 
