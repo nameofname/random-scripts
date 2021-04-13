@@ -1,6 +1,7 @@
 # import json
 import src.bigquery.bigquery_api as bqapi
 from datetime import datetime, timedelta
+import pytz
 
 
 def get_time_range():
@@ -16,17 +17,20 @@ def get_time_range():
         start_time = row['end_date']
 
     end_time = start_time + timedelta(hours=1)
-    return [start_time.strftime('%Y-%m-%d %H:%M:%S UTC'), end_time.strftime('%Y-%m-%d %H:%M:%S UTC')]
+    # return [start_time.strftime('%Y-%m-%d %H:%M:%S UTC'), end_time.strftime('%Y-%m-%d %H:%M:%S UTC')]
+    return [start_time, end_time]
 
 def process_one_hour(time_range):
 
+    start_date = time_range[0].strftime('%Y-%m-%d %H:%M:%S UTC')
+    end_date = time_range[1].strftime('%Y-%m-%d %H:%M:%S UTC')
     # select for all tweets within that time range 
     query = """select *
         from `api-project-1065928543184.testing.twitter_luxury`
         where data.created_at > '{}'
         and data.created_at <= '{}'
         order by data.created_at desc
-        ;""".format(time_range[0], time_range[1])
+        ;""".format(start_date, end_date)
     print("executing batch query :\n{}".format(query))
     res = bqapi.query(query).result()
 
@@ -55,6 +59,9 @@ def process_one_hour(time_range):
 # this should work until you reach the current time. 
 def start():
     time_range = get_time_range()
-    return process_one_hour(time_range)
-    # time_range = get_time_range()
-    # return print(time_range[0], time_range[1])
+    now = pytz.UTC.localize(datetime.now())
+
+    # process entities until there isn't a full hour's worth of data to compare : 
+    while now > time_range[1]:
+        process_one_hour(time_range)
+        time_range = get_time_range()
