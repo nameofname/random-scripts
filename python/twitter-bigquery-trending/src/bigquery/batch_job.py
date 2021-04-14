@@ -34,6 +34,9 @@ def process_one_hour(time_range):
     res = bqapi.query(query).result()
     print('processing X number of tweets ({})'.format(res.total_rows))
 
+    if res.total_rows == 0:
+        return
+
     # analyze entities in batch
     batch = ''
     for row in res:
