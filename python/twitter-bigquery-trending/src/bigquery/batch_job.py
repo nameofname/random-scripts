@@ -17,7 +17,6 @@ def get_time_range():
         start_time = row['end_date']
 
     end_time = start_time + timedelta(hours=1)
-    # return [start_time.strftime('%Y-%m-%d %H:%M:%S UTC'), end_time.strftime('%Y-%m-%d %H:%M:%S UTC')]
     return [start_time, end_time]
 
 def process_one_hour(time_range):
@@ -33,6 +32,7 @@ def process_one_hour(time_range):
         ;""".format(start_date, end_date)
     print("executing batch query :\n{}".format(query))
     res = bqapi.query(query).result()
+    print('processing X number of tweets ({})'.format(res.total_rows))
 
     # analyze entities in batch
     batch = ''
@@ -41,22 +41,21 @@ def process_one_hour(time_range):
     result = bqapi.analyze_entities(batch)
 
     # for each entity recognized, store in bigquery
+    records = []
     for entity in result:
-        store = {
+        record = {
             "start_date": start_date,
             "end_date": end_date,
             "name": str(entity['name']),
             "mentions": len(entity['mentions']),
             "type": entity['type']
         }
-        # print(json.dumps(store))
-        print('IM Not GOING TO STORE THISK>!>!>!>!', store)
-        # bqapi.store_record(store, 'twitter_luxury_entities') 
+        records.append(record)
+    # store all records in a single request 
+    print('storing X number of entity records ({})'.format(len(records)))
+    bqapi.store_records(records, 'twitter_luxury_entities') 
 
-# TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-# TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-# TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-# this should work until you reach the current time. 
+# Process entities until you reach the current time. 
 def start():
     time_range = get_time_range()
     now = pytz.UTC.localize(datetime.now())
