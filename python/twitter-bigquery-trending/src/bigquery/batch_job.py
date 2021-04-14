@@ -4,18 +4,17 @@ from datetime import datetime, timedelta
 import pytz
 
 
-def get_time_range():
-    query = """select end_date
-        from `api-project-1065928543184.testing.twitter_luxury_entities`
-        order by end_date desc
-        limit 1;"""
-    print("executing date query :\n{}".format(query))
-    query = bqapi.query(query)
-    res = query.result()
-    start_time=False
-    for row in res:
-        start_time = row['end_date']
-
+def get_time_range(start_time = False):
+    if start_time == False:
+        query = """select end_date
+            from `api-project-1065928543184.testing.twitter_luxury_entities`
+            order by end_date desc
+            limit 1;"""
+        print("executing date query :\n{}".format(query))
+        query = bqapi.query(query)
+        res = query.result()
+        for row in res:
+            start_time = row['end_date']
     end_time = start_time + timedelta(hours=1)
     return [start_time, end_time]
 
@@ -66,4 +65,6 @@ def start():
     # process entities until there isn't a full hour's worth of data to compare : 
     while now > time_range[1]:
         process_one_hour(time_range)
-        time_range = get_time_range()
+        # If the time range has already been picked, force increment by 1 hour
+        # so that we don't pick the same time over and over
+        time_range = get_time_range(time_range[1])
