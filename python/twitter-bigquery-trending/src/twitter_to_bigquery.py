@@ -7,8 +7,7 @@ def pp(o):
     return print(json.dumps(o, indent=4, sort_keys=True))
 
 def store_rec(rec):
-    print ("Storing record in BigQuery JK IM NOT STORING IT!!!!!!!!!!\n", rec)
-    # return bigquery.store_record(rec, 'twitter_luxury')
+    return bigquery.store_record([rec], 'twitter_luxury')
 
 def stream():
     # First we delete all the existing rules and set up a rule for luxury :

@@ -11,14 +11,13 @@ client = bigquery.Client(credentials=credentials, project=credentials.project_id
 # table names : twitter_luxury, twitter_luxury_entities
 table_prefix = 'api-project-1065928543184.testing.'
 
-def store_record(rec, table_name):
+def store_records(rec, table_name):
     table_id = table_prefix + table_name
     errors = client.insert_rows_json(table_id, [rec])
     if errors == [] :
         print('Storing record in {}'.format(table_name), rec)
     else:
         print('Encountered erorrs while inserting row {}\n{}'.format(errors, rec))
-        print('Encountered erorrs while inserting row {}'.format(errors))
 
 def query(query):
     query_job = client.query(query)  # Make an API request.
