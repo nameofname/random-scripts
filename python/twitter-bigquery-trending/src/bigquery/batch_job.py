@@ -53,7 +53,7 @@ def process_one_hour(time_range):
         records.append(record)
     # store all records in a single request 
     print('storing X number of entity records ({})'.format(len(records)))
-    bqapi.store_records(records, 'twitter_luxury_entities') 
+    bqapi.store_records(records, 'twitter_luxury_entities')
 
 # Process entities until you reach the current time. 
 def start():
