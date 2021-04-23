@@ -1,4 +1,3 @@
-# import json
 import src.bigquery.bigquery_api as bqapi
 from datetime import datetime, timedelta
 import pytz
