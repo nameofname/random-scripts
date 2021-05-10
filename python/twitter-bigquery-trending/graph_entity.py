@@ -9,5 +9,6 @@ if (not sys.argv[1]):
 
 res = graph_entity_mentions.query_entities(sys.argv[1])
 df = res.to_dataframe()
-df.plot.line(x = 'distinct_day', y = 'mentions')
+df.plot.line(x = 'day', y = 'mentions')
+print(df)
 plt.show()

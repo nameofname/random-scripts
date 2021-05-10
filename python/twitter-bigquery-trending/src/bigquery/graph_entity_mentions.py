@@ -13,18 +13,15 @@ mentions_by_day as (
     from `api-project-1065928543184.testing.twitter_luxury_entities` e
     where upper(name) = upper('{}')
     limit 10
-), 
-mention_matrix as (
-    select * from distinct_days d
-    left join mentions_by_day m
-        on d.distinct_day = m.day
 )
-
-select
-    distinct_day,
-    ifnull(mentions, 0) as mentions
-from mention_matrix
-order by distinct_day asc
+select 
+    d.distinct_day as day,
+    sum(ifnull(m.mentions, 0)) mentions
+from distinct_days d
+left join mentions_by_day m
+    on d.distinct_day = m.day
+group by day
+order by day asc
 ;
 """
 
