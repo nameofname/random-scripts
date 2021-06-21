@@ -4,8 +4,7 @@
 // (0 is not a power of two)
 
 
-const isPowerOfTwo = num => {
-    // console.log(num)
+const isPowerOfTwoBak = num => {
     if (num === 2 || num === 1) {
         return true;
     } else if (num === 0 || num % 2 !== 0) {
@@ -14,6 +13,11 @@ const isPowerOfTwo = num => {
         return isPowerOfTwo(num / 2);
     }
 };
+
+// Came back years later and this is ... a much simpler solution
+function isPowerOfTwo(num) {
+    return Math.log2(num) % 1 === 0;
+}
 
 console.log(isPowerOfTwo(4)); // true
 console.log(isPowerOfTwo(64)); // true
