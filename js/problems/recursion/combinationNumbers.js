@@ -4,7 +4,7 @@
  * by using the numbers in the same order
  */
 
-// 12:39 ... 
+// 12:39 ... 1:03
 function comboNumbers(str) {
     const arr = str.split('');
     const out = [];
