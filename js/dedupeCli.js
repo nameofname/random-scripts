@@ -25,7 +25,9 @@ const transformStream = new Transform({
             const delta = Object.keys(map).filter(key => {
                 return map[key] === 1;
             });
+            const combined = Object.keys(map);
             console.log('Delta :\n', delta);
+            console.log('Combined :\n', combined);
         }, 500);
         callback();
     }
