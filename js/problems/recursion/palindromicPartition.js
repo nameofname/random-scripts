@@ -1,6 +1,7 @@
 /**
  * Here a partition is a substring
  * The idea is to print every substirng of a given string which is a palindrome
+ * https://www.geeksforgeeks.org/given-a-string-print-all-possible-palindromic-partition/
  */
 
 function isPalindrome(str) {
