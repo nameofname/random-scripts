@@ -11,10 +11,6 @@ function boggleMatches(board, str) {
     const found = [];
 
     function _getPositions(position) {
-        // const positions = [0, 1, 3, 4].map(int => {
-        //     return [position[0] - 2 + int, position[1] - 2 + int];
-        // });
-        // return positions;
         return [
             [position[0] - 1, position[1]],
             [position[0], position[1] + 1],
@@ -22,16 +18,6 @@ function boggleMatches(board, str) {
             [position[0] + 1, position[1]]
         ]
     }
-
-    // function _step(positions, nextLetter) {
-    //     const matches = [];
-    //     for (position of positions) {
-    //         if (board[position[0], position[1]] === nextLetter) {
-    //             matches.push(position);
-    //         }
-    //     }
-    //     return matches;
-    // }
 
     function _recur(currPos, positionArr, letterArr) {
         const currLetter = board[currPos[0]] ? board[currPos[0]][currPos[1]] : undefined;
