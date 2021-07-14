@@ -17,6 +17,10 @@ const key = {
  * by the problem at first, then I came up with the following method...
  * Create 2 arrays, the first is static, the second rotates, beginning over end. Match up
  * the entries on each array to get your rotation. 
+ * This method works with groups of any size, but in the case that there are an odd number
+ * of individuals, one person will be left 'on their own' each rotation. Here I solve for
+ * that by deduping the array with a new Set().
+ * Et viola. 
  */
 function createRotation() {
     let count = 0;
