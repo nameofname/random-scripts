@@ -1,41 +1,29 @@
 /**
  * @param {number[][]} grid
  * @return {number}
- * So my 2nd solution was correct
- * However not efficient enough to pass
- * I read the leet code solution
- * which includes depth first search not recursive
- * but based on a while loop
- * so trying that out. 
- * 
- * Aaaand drumroll please......
- * Works the same as my other answer (duh)
- * But I finally read the alert on the leet code editor thing, and it doesn't want me to put a function inside a loop so... 
+ * Updated solution is much more efficient, but still not fast enough.
  */
 var largestIsland = function(grid) {
     let largest = 0;
+    let current = 0;
+    let used = {};
 
     function _seek(idx1, idx2) {
-        const seen = {};
-        const stack = [[idx1, idx2]];
-
-        while (stack.length) {
-            const [a, b] = stack.pop();
-            seen[`${a}-${b}`] = true;
-            const positionsToCheck = [
-                [a, b - 1],
-                [a, b + 1],
-                [a - 1, b],
-                [a + 1, b]
-            ];
-            for ([a1, b1] of positionsToCheck) {
-                const inRange = (0 <= a1 && a1 < grid.length) && (0 <= b1 && b1 < grid.length);
-                if (inRange && !seen[`${a1}-${b1}`] && grid[a1][b1] === 1) {
-                    stack.push([a1, b1]);
-                }
-            }
+        if (used[`${idx1}-${idx2}`]) {
+            return;
         }
-        return Object.keys(seen).length;
+        // add current cell to 'used' so we don't double check
+        used[`${idx1}-${idx2}`] = true;
+        if (Array.isArray(grid[idx1]) && grid[idx1][idx2] === 1) {
+            current++;
+            const positionsToCheck = [
+                [idx1, idx2 - 1],
+                [idx1, idx2 + 1],
+                [idx1 - 1, idx2],
+                [idx1 + 1, idx2]
+            ];
+            positionsToCheck.forEach(([a, b]) => _seek(a, b));
+        }
     }
 
     let seekUsed = false;
@@ -43,9 +31,11 @@ var largestIsland = function(grid) {
         row.forEach((cell, idx2) => {
             if (cell !== 1) {
                 seekUsed = true;
+                current = 0;
+                used = {};
                 row[idx2] = 1;
-                const current = _seek(idx1, idx2);
-                // console.log('found largest', current, largest)
+                _seek(idx1, idx2);
+                console.log('found largest', current, largest)
                 largest = current > largest ? current : largest;
                 row[idx2] = 0; //change it back when you're done. 
             }
