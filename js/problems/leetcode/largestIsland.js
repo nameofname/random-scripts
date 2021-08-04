@@ -28,7 +28,7 @@ var largestIsland = function(grid) {
                 [a - 1, b],
                 [a + 1, b]
             ];
-            for ([a1, b1] of positionsToCheck) {
+            for (let [a1, b1] of positionsToCheck) {
                 const inRange = (0 <= a1 && a1 < grid.length) && (0 <= b1 && b1 < grid.length);
                 if (inRange && !seen[`${a1}-${b1}`] && grid[a1][b1] === 1) {
                     stack.push([a1, b1]);

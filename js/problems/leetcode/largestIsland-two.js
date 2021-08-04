@@ -22,7 +22,10 @@ var largestIsland = function(grid) {
                 [idx1 - 1, idx2],
                 [idx1 + 1, idx2]
             ];
-            positionsToCheck.forEach(([a, b]) => _seek(a, b));
+            for (let [a, b] of positionsToCheck) {
+                _seek(a, b);
+            }
+            // positionsToCheck.forEach(([a, b]) => _seek(a, b));
         }
     }
 
@@ -35,7 +38,6 @@ var largestIsland = function(grid) {
                 used = {};
                 row[idx2] = 1;
                 _seek(idx1, idx2);
-                console.log('found largest', current, largest)
                 largest = current > largest ? current : largest;
                 row[idx2] = 0; //change it back when you're done. 
             }
