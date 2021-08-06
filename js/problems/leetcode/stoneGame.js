@@ -12,6 +12,8 @@ if the 2 inner are also the same…
 then you can kind of pick at random… i think. you could try to go down a level to decide… 
 but let's punt on that and do random for now. 
 
+
+
  * @param {number[]} piles
  * @return {boolean}
  */
@@ -21,9 +23,6 @@ var stoneGame = function(piles) {
 
     function _playTurn(player) {
 
-        console.log('playerA', playerA)
-        console.log('playerB', playerB)
-
         const leftOuter = piles[0];
         const rightOuter = piles.slice(-1)[0];
         const leftInner = (piles.length > 2) ? piles[1] : 0;
@@ -32,10 +31,10 @@ var stoneGame = function(piles) {
         let chooseLeft;
         if (piles.length === 3) {
             chooseLeft = leftOuter > rightOuter; 
-        } else if (leftOuter !== leftOuter) {
+        } else if (leftOuter !== rightOuter) {
             chooseLeft = leftOuter > rightOuter; 
-            currOuter = chooseLeft ? leftOuter : rightOuter;
-            const currInner = chooseLeft ? rightInner : leftInner; 
+            const currOuter = chooseLeft ? leftOuter : rightOuter;
+            const currInner = chooseLeft ? leftInner : rightInner; 
             if (currInner > currOuter) {
                 chooseLeft = !chooseLeft;
             }
@@ -43,6 +42,9 @@ var stoneGame = function(piles) {
             chooseLeft = leftInner < rightInner;
         }
 
+        console.log('additive', additive,)
+        console.log('playerA', playerA)
+        console.log('playerB', playerB)
         const additive = chooseLeft ? piles.shift() : piles.pop();
         (player === 'a') ? playerA += additive : playerB += additive;
 
@@ -55,6 +57,12 @@ var stoneGame = function(piles) {
     return playerA > playerB;
 };
 
-console.log(stoneGame([5,3,4,5]));
-// console.log(stoneGame([5,6,4,5]));
-// console.log(stoneGame([5,3,4,6]));
+// console.log(stoneGame([5,3,4,5])); // true
+// console.log(stoneGame([3,7,2,3])); // true 
+// console.log(stoneGame([3,2,10,4])); // true
+console.log(stoneGame([8,9,7,6,7,6])); // true
+// NEW LOGIC to deal with the case [8,9,7,6,7,6]
+// a - 8 7 7 = 22
+// b - 9 6 6 = 21
+// advantageLeft = leftOuter - leftInner 
+// 
