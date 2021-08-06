@@ -29,24 +29,20 @@ var stoneGame = function(piles) {
         const rightInner = (piles.length > 2) ? piles.slice(-2, -1)[0] : 0;
 
         let chooseLeft;
-        if (piles.length === 3) {
-            chooseLeft = leftOuter > rightOuter; 
-        } else if (leftOuter !== rightOuter) {
-            chooseLeft = leftOuter > rightOuter; 
-            const currOuter = chooseLeft ? leftOuter : rightOuter;
-            const currInner = chooseLeft ? leftInner : rightInner; 
-            if (currInner > currOuter) {
-                chooseLeft = !chooseLeft;
-            }
+        const advantageLeft = leftOuter - leftInner;
+        const advantageRight = rightOuter - rightInner;
+        if (advantageLeft === advantageRight) {
+            chooseLeft = leftOuter > rightOuter;
         } else {
-            chooseLeft = leftInner < rightInner;
+            chooseLeft = advantageLeft > advantageRight; 
         }
 
-        console.log('additive', additive,)
-        console.log('playerA', playerA)
-        console.log('playerB', playerB)
         const additive = chooseLeft ? piles.shift() : piles.pop();
         (player === 'a') ? playerA += additive : playerB += additive;
+
+        console.log('additive', additive);
+        console.log('playerA', playerA);
+        console.log('playerB', playerB);
 
         if (piles.length) {
             _playTurn(player === 'a' ? 'b' : 'a');
@@ -60,7 +56,8 @@ var stoneGame = function(piles) {
 // console.log(stoneGame([5,3,4,5])); // true
 // console.log(stoneGame([3,7,2,3])); // true 
 // console.log(stoneGame([3,2,10,4])); // true
-console.log(stoneGame([8,9,7,6,7,6])); // true
+// console.log(stoneGame([8,9,7,6,7,6])); // true
+console.log(stoneGame([6,3,9,9,3,8,8,7])); // true
 // NEW LOGIC to deal with the case [8,9,7,6,7,6]
 // a - 8 7 7 = 22
 // b - 9 6 6 = 21
