@@ -23,9 +23,10 @@ function minCut (s) {
                 left--;
                 right++;
             }
-            if ((right - left) >= 1) {
+            // TODO ! push all including single letter?
+            // if ((right - left) >= 1) {
                 coords.push([left, right]);
-            }
+            // }
         });
     }
 
@@ -34,6 +35,6 @@ function minCut (s) {
 };
 
 
-console.log(minCut('aab'));
+// console.log(minCut('aab'));
 // console.log(minCut('ron drive racecar theht ronor'));
 console.log(minCut('cocdorodcoccocdorod'));
