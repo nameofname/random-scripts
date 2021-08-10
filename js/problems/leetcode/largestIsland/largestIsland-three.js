@@ -5,9 +5,15 @@ You are given an n x n binary matrix grid. You are allowed to change at most one
 Return the size of the largest island in grid after applying this operation.
 An island is a 4-directionally connected group of 1s.
 
+NOTE! This solution still fails the time complexity test on leet code
+I read the solution, and there's a way to avoid re-crawling the areas you already crawled! 
+Basically you remember the size of the islands in the grid by filling each in with an id
+Then you look up the islands you are connecting and just add them 
+THIS IS NOT THAT SOLUTION...
+Another solution coming soon. 
+
  * @param {number[][]} grid
  * @return {number}
- * Updated solution is much more efficient, but still not fast enough.
  */
 var largestIsland = function(grid) {
     // 4:21 - 4:37
@@ -45,7 +51,7 @@ var largestIsland = function(grid) {
     });
 
     if (!flipUsed) {
-        return (grid.length + 1) * (grid.length + 1);
+        return (grid.length) * (grid.length);
     }
     return largest;
 }
@@ -55,6 +61,7 @@ const bigInput = [[1,0,1,1,0,1,0,1,0,0,0,0,1,0,0,1,1,1,0,1,0,0,1,0,1,0,0,1,1,0,1
 // const bigInput = makeGrid(200); 
 // const smallInput = [[1,0],[0,1]];
 // const smallInput = [[1,1],[0,1]];
+const smallInput = [[1,1],[1,1]];
 
-// console.log(largestIsland(smallInput));
-console.log(largestIsland(bigInput));
+console.log(largestIsland(smallInput));
+// console.log(largestIsland(bigInput));
