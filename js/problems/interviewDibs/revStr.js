@@ -12,3 +12,4 @@ function revStr(str) {
 }
 
 console.log(revStr('ronald'));
+console.log(revStr('twos'));
