@@ -5,7 +5,7 @@ const board = [
     ['x', 'a', 'c', 'x'],
 ];
 
-// 3:01 - 3:17 (but i was interupted by a call!)
+// 3:01 - 3:17 (but i was interupted by a call! so probably would have been ~10 minutes!)
 function boggleMatches(board, word) {
     const matches = [];
     word = word.split('');
