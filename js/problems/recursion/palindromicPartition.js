@@ -32,3 +32,4 @@ function findPalindromicPartitions(str) {
 
 console.log(findPalindromicPartitions('finis'))
 console.log(findPalindromicPartitions('this is my racecar'))
+console.log(findPalindromicPartitions('cocdorodcoccocdorod'));
