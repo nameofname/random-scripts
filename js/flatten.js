@@ -1,5 +1,5 @@
 const nestedArray = [[[5], 3], 0, 2, ['foo'], [], [4, [5, 6]]];
-const timer = require('./timer');
+const timer = require('./helpers/timer');
 
 function flattenTernaryConcat(array) {
     return !Array.isArray(array)

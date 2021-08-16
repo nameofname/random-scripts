@@ -1,3 +1,5 @@
+const {a, b} = require('./longStrings.json')
+
 /**
  * Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".
  * The testcases will be generated such that the answer is unique.
@@ -27,13 +29,17 @@ function minWindow(s, t) {
           }
           seekUsed = true;
           for (let i = start; i < sArr.length; i++) {
-               // once we hit the full number of matches, we can stop looking 
+               const window = [start, i];
+               // if it's already longer than the current window, then it's not the smallest window
+               if (currWindow !== undefined && (window[1] - window[0]) > (currWindow[1] - currWindow[0])) {
+                    return; 
+               }
                if (key[sArr[i]] !== undefined && key[sArr[i]] > 0) {
                     --key[sArr[i]];
                     matched++;
                }
+               // once we hit the full number of matches, we can stop looking 
                if (matched === t.length) {
-                    window = [start, i];
                     if (currWindow === undefined) {
                          currWindow = window;
                     } else if ((window[1] - window[0]) < (currWindow[1] - currWindow[0])) {
@@ -62,4 +68,5 @@ function minWindow(s, t) {
 };
 
 // console.log(minWindow('ADOBECODEBANC', 'ABC')); // "BANC"
-console.log(minWindow('a', 'b')); // ""
+// console.log(minWindow('a', 'b')); // ""
+console.log(minWindow(a, b));
