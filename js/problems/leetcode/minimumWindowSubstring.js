@@ -1,4 +1,5 @@
-const {a, b} = require('./longStrings.json')
+const {a, b} = require('./longStrings.json');
+const { benchmark } = require('../../helpers/benchmark');
 
 /**
  * Given two strings s and t of lengths m and n respectively, return the minimum window substring of s such that every character in t (including duplicates) is included in the window. If there is no such substring, return the empty string "".
@@ -67,6 +68,8 @@ function minWindow(s, t) {
      return s.slice(currWindow[0], currWindow[1] + 1);
 };
 
-// console.log(minWindow('ADOBECODEBANC', 'ABC')); // "BANC"
+console.log(minWindow('ADOBECODEBANC', 'ABC')); // "BANC"
 // console.log(minWindow('a', 'b')); // ""
-console.log(minWindow(a, b));
+// console.log(minWindow(a, b));
+// console.log(benchmark(() => minWindow('ADOBECODEBANC', 'ABC'), 55));
+// console.log(benchmark(() => minWindow(a, b), 1));
