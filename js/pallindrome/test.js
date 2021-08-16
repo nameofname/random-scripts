@@ -1,6 +1,6 @@
 "use strict";
 
-const timer = require('../timer');
+const timer = require('../helpers/timer');
 const { mySolution, onlineSolution, easyAnswer, secondAttempt } = require('./pallindrome');
 
 
