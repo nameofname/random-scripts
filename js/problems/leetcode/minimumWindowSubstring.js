@@ -26,12 +26,9 @@ function minWindow(s, t) {
      let left = 0, right = 0, completed = 0, smallestWindow;
 
      while (right < s.length) {
+          // check the current character
+          // if it's in the target string, then count it
           const char = sArr[right];
-          
-          // move the right pointer to the right
-          // if this is a character we need then 
-          // check if we can increment the completed count
-          ++right;
           if (tKey[char] !== undefined) {
                windowKey[char] = (windowKey[char] || 0) + 1;
                if (windowKey[char] >= tKey[char]) {
@@ -39,9 +36,18 @@ function minWindow(s, t) {
                }
           }
 
+          console.log('right', right)
           // now move the left pointer to the right
           // record the smallest window as you go
           while (left <= (right - t.length) && completed === required) {
+               console.log('checking ... ', 'left', left, 'right', right, completed, required)
+               if (smallestWindow !== undefined) {
+                    console.log('CHIECKING....', (right - left), (smallestWindow[1] - smallestWindow[0]))
+               }
+               if ((smallestWindow === undefined) || (right - left) < (smallestWindow[1] - smallestWindow[0])) {
+                    smallestWindow = [left, right];
+                    console.log('ITS A HIT!', smallestWindow)
+               }
                ++left;
                const leftChar = sArr[left];
                if (tKey[leftChar]) {
@@ -50,12 +56,12 @@ function minWindow(s, t) {
                          --completed;
                     }
                }
-               if (completed === required) {
-                    if ((smallestWindow === undefined) || (right - left) < (smallestWindow[1] - smallestWindow[2])) {
-                         smallestWindow = [left, right];
-                    }
-               }
+               console.log('left', left)
           }
+
+          // move the right pointer to the right
+          // it'll get checked again at the top of the loop
+          ++right;
      }
 
      if (smallestWindow === undefined) {
