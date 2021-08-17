@@ -10,62 +10,59 @@ const { benchmark } = require('../../helpers/benchmark');
  * @return {string}
  */
 function minWindow(s, t) {
+     // special case for if the needle is longer than the haystack :
      if (s.length < t.length) {
            return ''; 
      }
-     const key = t.split('').reduce((acc, l) => {
+
+     const tKey = t.split('').reduce((acc, l) => {
           acc[l] = acc[l] ? acc[l] + 1 : 1;
           return acc; 
      }, {});
-     
+
      const sArr  = s.split('');
-     let currWindow;
-     let seekUsed = false;
+     const required = Object.keys(tKey).length;
+     const windowKey = {};
+     let left = 0, right = 0, completed = 0, smallestWindow;
 
-     function _seek(start, key) {
-          let matched = 0;
-          // if the current letter is not in the string, skip, because it can't be shortest 
-          if (key[sArr[start]] === undefined) {
-               return; 
+     while (right < s.length) {
+          const char = sArr[right];
+          
+          // move the right pointer to the right
+          // if this is a character we need then 
+          // check if we can increment the completed count
+          ++right;
+          if (tKey[char] !== undefined) {
+               windowKey[char] = (windowKey[char] || 0) + 1;
+               if (windowKey[char] >= tKey[char]) {
+                    ++completed;
+               }
           }
-          seekUsed = true;
-          for (let i = start; i < sArr.length; i++) {
-               const window = [start, i];
-               // if it's already longer than the current window, then it's not the smallest window
-               if (currWindow !== undefined && (window[1] - window[0]) > (currWindow[1] - currWindow[0])) {
-                    return; 
-               }
-               if (key[sArr[i]] !== undefined && key[sArr[i]] > 0) {
-                    --key[sArr[i]];
-                    matched++;
-               }
-               // once we hit the full number of matches, we can stop looking 
-               if (matched === t.length) {
-                    if (currWindow === undefined) {
-                         currWindow = window;
-                    } else if ((window[1] - window[0]) < (currWindow[1] - currWindow[0])) {
-                         currWindow = window;
+
+          // now move the left pointer to the right
+          // record the smallest window as you go
+          while (left <= (right - t.length) && completed === required) {
+               ++left;
+               const leftChar = sArr[left];
+               if (tKey[leftChar]) {
+                    windowKey[leftChar] = (windowKey[leftChar] || 0) - 1;
+                    if (windowKey[leftChar] <= tKey[leftChar]) {
+                         --completed;
                     }
-                    return;
+               }
+               if (completed === required) {
+                    if ((smallestWindow === undefined) || (right - left) < (smallestWindow[1] - smallestWindow[2])) {
+                         smallestWindow = [left, right];
+                    }
                }
           }
      }
 
-     // only loop until s.length - t.length - and more and you can't have a full window 
-     for (let currX = 0; currX <= s.length - t.length; currX++) {
-          _seek(currX, {...key});
-          // if we're at the end of the string (within t.length), and we didn't find and answer
-          // and also the current start is in the target srting...
-          // that means that we did a search, and there are no matches, so stop looking! 
-          if (seekUsed && currWindow === undefined)  {
-               return ''; 
-          }
-     }
-
-     if (currWindow === undefined) {
+     if (smallestWindow === undefined) {
           return '';
      }
-     return s.slice(currWindow[0], currWindow[1] + 1);
+
+     return s.slice(smallestWindow[0], smallestWindow[1] + 1);
 };
 
 console.log(minWindow('ADOBECODEBANC', 'ABC')); // "BANC"
