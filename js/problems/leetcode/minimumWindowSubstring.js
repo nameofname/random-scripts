@@ -31,32 +31,34 @@ function minWindow(s, t) {
           const char = sArr[right];
           if (tKey[char] !== undefined) {
                windowKey[char] = (windowKey[char] || 0) + 1;
-               if (windowKey[char] >= tKey[char]) {
+               if (windowKey[char] === tKey[char]) {
+                    console.log('incrementing completed with ', char)
                     ++completed;
                }
           }
 
-          console.log('right', right)
+          // console.log('right', right)
           // now move the left pointer to the right
           // record the smallest window as you go
-          while (left <= (right - t.length) && completed === required) {
-               console.log('checking ... ', 'left', left, 'right', right, completed, required)
+          while (left <= (right - t.length + 1) && completed === required) {
+               console.log('checking ... ', 'smallestWindow', smallestWindow, 'substring', s.slice(left, right + 1))
                if (smallestWindow !== undefined) {
-                    console.log('CHIECKING....', (right - left), (smallestWindow[1] - smallestWindow[0]))
+                    console.log('CHIECKING....', (right - left), ([1] - smallestWindow[0]))
                }
                if ((smallestWindow === undefined) || (right - left) < (smallestWindow[1] - smallestWindow[0])) {
                     smallestWindow = [left, right];
                     console.log('ITS A HIT!', smallestWindow)
                }
                ++left;
-               const leftChar = sArr[left];
+               const leftChar = sArr[left - 1];
                if (tKey[leftChar]) {
                     windowKey[leftChar] = (windowKey[leftChar] || 0) - 1;
-                    if (windowKey[leftChar] <= tKey[leftChar]) {
+                    if (windowKey[leftChar] === tKey[leftChar] - 1) {
                          --completed;
+                         console.log('DECREMENTING completed with ', char)
                     }
                }
-               console.log('left', left)
+               // console.log('left', left)
           }
 
           // move the right pointer to the right
@@ -71,8 +73,8 @@ function minWindow(s, t) {
      return s.slice(smallestWindow[0], smallestWindow[1] + 1);
 };
 
-console.log(minWindow('ADOBECODEBANC', 'ABC')); // "BANC"
-// console.log(minWindow('a', 'b')); // ""
+// console.log(minWindow('ADOBECODEBANC', 'ABC')); // "BANC"
+console.log(minWindow('bba', 'ab'));
 // console.log(minWindow(a, b));
 // console.log(benchmark(() => minWindow('ADOBECODEBANC', 'ABC'), 55));
 // console.log(benchmark(() => minWindow(a, b), 1));
