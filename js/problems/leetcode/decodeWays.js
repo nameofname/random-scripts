@@ -15,66 +15,44 @@
  * @return {number}
  */
 function numDecodings(s) {
-    let combos = 0;
     const arr = s.toString().split('');
     const accepted = new Array(26).fill(1).reduce((o, x, idx) => Object.assign(o, { [idx + 1]: true }), {});
+    let decodings = {};
+    let currNum;
 
-    let count = 0;
-
-    function _seek(lastNum, remainder) {
-        if (!remainder.length) {
-            return;
-        }
-        const suffix = remainder[0];
-        const combined = lastNum + suffix;
-        if (!accepted[combined] && !accepted[suffix]) {
-            --count;
-        } else if (accepted[combined] && accepted[suffix]) {
-            ++count;
-        }
-        if (accepted[combined]) {
-            _seek(combined, remainder.slice(1, remainder.length));
-        }
-        if (accepted[suffix]) {
-            _seek(suffix, remainder.slice(1, remainder.length));
-        }
+    // seed the decodings object so that the while loop can function : 
+    const firstNum = arr.shift();
+    if (accepted[firstNum]) {
+        decodings[firstNum] = 1;
     }
-
-    if (accepted[arr[0]]) {
-        ++count;
-    }
-    _seek(arr.shift(), arr);
-
-    return count;
-
-
-    // the following has terrible peformance. 
-    function _seek_bak(curr, remainder) {
-        if (!remainder.length) {
-            ++combos;
-        } else {
-            const nexts = [remainder.slice(0, 1)];
-            if (remainder.length > 1) {
-                nexts.push(remainder.slice(0, 2))
+    
+    while (currNum = arr.shift()) {
+        const nextDecodings = {};
+        Object.keys(decodings).forEach(key => {
+            const count = decodings[key];
+            const combinedKey = key + currNum;
+            if (accepted[currNum]) {
+                nextDecodings[currNum] = nextDecodings[currNum] ? nextDecodings[currNum] + count : count;
             }
-            nexts.forEach(next => {
-                if (accepted[next.join('')]) {
-                    _seek([...curr, next.join('')], remainder.slice(next.length, arr.length));
-                }
-            })
-        }
+            if (accepted[combinedKey]) {
+                nextDecodings[combinedKey] = nextDecodings[combinedKey] ? nextDecodings[combinedKey] + count : count;
+            }
+        });
+        decodings = nextDecodings;
     }
 
-    _seek([], arr);
-    return combos;
+    return Object.values(decodings).reduce((acc, int) => {
+        return acc + int;
+    }, 0);
 };
 
-console.log(numDecodings(11106));
+console.log(numDecodings(11106)); // 2, consisting of (11, 10, 6) & (1, 1, 10, 6)
+console.log(numDecodings(12)); // 2
 console.log(numDecodings('00'));
-// console.log(numDecodings(11111));
-// console.log(numDecodings("1111111111111111111111111111111111111"));
 console.log(numDecodings('06'));
+console.log(numDecodings(11111));
+console.log(numDecodings(111111));
+console.log(numDecodings("1111111111111111111111111111111111111"));
 // 0, 06 --> no, no, shift,
 // 6 --> yes, increment, shift 
-// console.log(numDecodings(12)); // 2
 // console.log(numDecodings("111111111111111111111111111111111111111111111")); // ?
