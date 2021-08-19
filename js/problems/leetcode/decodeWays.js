@@ -20,6 +20,7 @@ function numDecodings(s) {
     const accepted = new Array(26).fill(1).reduce((o, x, idx) => Object.assign(o, { [idx + 1]: true }), {});
 
     let count = 0;
+
     function _seek(lastNum, remainder) {
         if (!remainder.length) {
             return;
@@ -39,6 +40,9 @@ function numDecodings(s) {
         }
     }
 
+    if (accepted[arr[0]]) {
+        ++count;
+    }
     _seek(arr.shift(), arr);
 
     return count;
@@ -66,8 +70,10 @@ function numDecodings(s) {
 };
 
 console.log(numDecodings(11106));
+console.log(numDecodings('00'));
+// console.log(numDecodings(11111));
 // console.log(numDecodings("1111111111111111111111111111111111111"));
-// console.log(numDecodings(06));
+console.log(numDecodings('06'));
 // 0, 06 --> no, no, shift,
 // 6 --> yes, increment, shift 
 // console.log(numDecodings(12)); // 2
