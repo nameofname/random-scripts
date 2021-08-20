@@ -18,7 +18,7 @@ function maxProduct(root) {
 
     // this works, but repeatedly calling _sum makes it inefficient 
     function _findLargest(root) {
-        const nodeSum = _sum(root);
+        let nodeSum = _sum(root);
         const product = nodeSum * (totalVal - nodeSum);
         console.log('top', nodeSum, product)
         if (product > max) {
@@ -29,12 +29,11 @@ function maxProduct(root) {
             _findLargest(root.right);
         } else if (root.left || root.right) {
             let child = root.left || root.right;
-            let childNodeSum;
             let childProduct;
             while (child) {
-                childNodeSum = nodeSum - root.val;
-                childProduct = childNodeSum * (totalVal - childNodeSum);
-                console.log('1 kid', childNodeSum, childProduct)
+                nodeSum = nodeSum - root.val;
+                childProduct = nodeSum * (totalVal - nodeSum);
+                console.log('1 kid', root.val, nodeSum, childProduct)
                 if (childProduct > max) {
                     max = childProduct;
                 }
@@ -43,6 +42,7 @@ function maxProduct(root) {
                     _findLargest(child.right);
                     child = null;
                 } else {
+                    console.log('moving on...', child.val)
                     root = child;
                     child = child.left || child.right;
                 }
@@ -70,5 +70,7 @@ function maxProduct(root) {
 
 
 const tree = {"val":1,"left":{"val":2,"left":{"val":4,"left":null,"right":null},"right":{"val":5,"left":null,"right":null}},"right":{"val":3,"left":{"val":6,"left":null,"right":null},"right":null}};
-console.log(maxProduct(tree)); // 110
-console.log(maxProduct(bigTree)); // 763478770 (wrong answer of 6043763521071)
+const tree1 = {"val":6,"left":{"val":10,"left":null,"right":{"val":6,"left":{"val":1,"left":{"val":1,"left":null,"right":null},"right":null},"right":null}},"right":null};
+console.log(maxProduct(tree1)); // 128 (wrong answer of 140)
+// console.log(maxProduct(tree)); // 110
+// console.log(maxProduct(bigTree)); // 763478770 (wrong answer of 6043763521071)
