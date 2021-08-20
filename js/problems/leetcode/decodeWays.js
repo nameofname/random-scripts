@@ -44,7 +44,7 @@ function numDecodings(s) {
     return Object.values(decodings).reduce((acc, int) => {
         return acc + int;
     }, 0);
-};
+}
 
 console.log(numDecodings(11106)); // 2, consisting of (11, 10, 6) & (1, 1, 10, 6)
 console.log(numDecodings(12)); // 2
