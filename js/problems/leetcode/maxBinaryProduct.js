@@ -14,7 +14,7 @@ const bigTree = require('./bigTree.json');
 function maxProduct(root) {
     const totalVal = _sum(root);
     const modder = Math.pow(10, 9) + 7;
-    const rootNodes = [];
+    const leafNodes = [];
     let max = 0;
 
     function _sum(root) {
@@ -23,19 +23,30 @@ function maxProduct(root) {
             if (!root) {
                 return;
             }
+            root.parent = parent;
             sum += root.val;
-            _recurAdd(root.left);
-            _recurAdd(root.right);
+            _recurAdd(root.left, root);
+            _recurAdd(root.right, root);
         }
         if (!root.left && !root.right) {
-            rootNodes.push(root);
+            leafNodes.push(root);
         }
         _recurAdd(root);
         return sum;
     }
 
     _sum(root);
-    _findLargest(root.left, null, totalVal);
+
+    // this also will not work. WTF am i doing ?
+    leafNodes.forEach(leaf => {
+        const total = leaf.value;
+        while(leaf.parent) {
+            total += leaf.parent.value;
+            leaf = leaf.parent;
+            product = 'fuck me';
+        }
+    });
+
     return max % modder;
 }
 
