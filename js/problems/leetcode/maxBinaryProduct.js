@@ -1,5 +1,11 @@
 const bigTree = require('./bigTree.json');
 /**
+ * THIS IS A PERFORMANT SOLUTION THAT I CAME UP WITH! 
+ * THERE IS A SLIGHTLY MORE PERFORMANT SOLUTION THAT YOU CAN DO
+ * YOU DON'T HAVE TO MAKE A LIST OF THE LEFT AND RIGHT VALUES AND LOOP BACK THROUGH
+ * YOU CAN INSTEAD CALCULATE THE MAX PRODUCT WHILE IN THE RECURSIVE FUNCTION
+ * SEE THE EXAMPLE BELOW, I DID NOT CODE IT I COPIED IT
+ * 
  * Definition for a binary tree node.
  * function TreeNode(val, left, right) {
  *     this.val = (val===undefined ? 0 : val)
@@ -44,6 +50,29 @@ function maxProduct(root) {
     return max % modder;
 }
 
+/**
+ * I DID NOT CODE THIS, COPIED FROM LEET CODE. 
+ */
+const bestPerformingSolution = function (root) {
+    let max = 0
+    let total = 0
+    const sum = (node) => {
+      if (!node) {
+        return 0
+      }
+      const leftSum = sum(node.left)
+      const rightSum = sum(node.right)
+      const currentSum = leftSum + rightSum + node.val
+      max = Math.max(
+        max, (total - leftSum) * leftSum, (total - rightSum) * rightSum,
+      )
+      return currentSum
+    }
+    total = sum(root)
+    sum(root)
+    return (max % (10 ** 9 + 7))
+  }
+  
 
 const tree = {"val":1,"left":{"val":2,"left":{"val":4,"left":null,"right":null},"right":{"val":5,"left":null,"right":null}},"right":{"val":3,"left":{"val":6,"left":null,"right":null},"right":null}};
 const tree1 = {"val":6,"left":{"val":10,"left":null,"right":{"val":6,"left":{"val":1,"left":{"val":1,"left":null,"right":null},"right":null},"right":null}},"right":null};
