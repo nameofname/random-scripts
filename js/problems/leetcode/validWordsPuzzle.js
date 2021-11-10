@@ -1,56 +1,31 @@
-/**
- * @param {string[]} words
- * @param {string[]} puzzles
- * @return {number[]}
- */
-function findNumOfValidWords_bak(words, puzzles) {
-    const puzzleMap = puzzles.reduce((acc, curr) => {
-        acc[curr] = curr.split('').reduce((a, c) => {
-            return Object.assign(a, {[c]: true});
-        }, {});
-        return acc;
-    }, {});
-
-    // return puzzleMap;
-    return words.map(word => {
-        console.log(word)
-        let int = 0;
-        for (puzzle of puzzles) {
-            const wordArr = word.split('');
-            if (wordArr.shift() === puzzle[0]) {
-                // letterCheck = word.split('').reduce()
-                let letterCheck = true;
-                while (letterCheck && wordArr.length) {
-                    if (!puzzleMap[puzzle][wordArr.shift()]) {
-                        letterCheck = false;
-                    }
-                }
-                if (letterCheck) {
-                    int++;
-                }
-            }
-        }
-        return int;
-    });
-};
+const { words, puzzles } = require('./bigInput.json');
 
 function findNumOfValidWords(words, puzzles) {
-    return puzzles.map(puzzle => {
-        const map = puzzle.split('').reduce((a, c) => {
+    const wordMaps = words.reduce((map, word) => {
+        let count = 0;
+        map[word] = word.split('').reduce((a, c) => {
+            if (!a[c]) ++count;
             return Object.assign(a, {[c]: true});
         }, {});
+        map[word].count = count;
+        return map;
+    }, {});
+
+    return puzzles.map(puzzle => {
+        const puzzleArr = puzzle.split('');
         return words.reduce((count, word) => {
-            const wordArr = word.split('');
-            if (wordArr.includes(puzzle[0])) {
-                let letterCheck = true;
-                while (letterCheck && wordArr.length) {
-                    if (!map[wordArr.shift()]) {
-                        letterCheck = false;
-                    }
+            const wordMap = wordMaps[word];
+            let currCount = 0;
+            if (!wordMap[puzzleArr[0]]) {
+                return count;
+            }
+            for (letter of puzzleArr) {
+                if (wordMap[letter]) {
+                    ++currCount;
                 }
-                if (letterCheck) {
-                    ++count;
-                }
+            }
+            if (currCount === wordMap.count) {
+                ++count;
             }
             return count;
         }, 0);
@@ -65,5 +40,8 @@ console.log(findNumOfValidWords(
     ["aelwxyz","aelpxyz","aelpsxy","saelpxy","xaelpsy"]
 ));
 // Output : [0,1,3,2,0]
-// Not    : [0,1,1,0,0]
+
+console.log(findNumOfValidWords(words, puzzles));
+// Should complete in time
+
  
