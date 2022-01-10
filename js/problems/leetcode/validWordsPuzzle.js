@@ -1,6 +1,11 @@
 const { words, puzzles } = require('./bigInput.json');
 
-function findNumOfValidWords(words, puzzles) {
+/**
+ * This approach works but it does not perform
+ * So I need to re-do with bitwise masking
+ * Basically it's easy ... see below
+ */
+function findNumOfValidWords_bak(words, puzzles) {
     const wordMaps = words.reduce((map, word) => {
         let count = 0;
         map[word] = word.split('').reduce((a, c) => {
@@ -30,6 +35,17 @@ function findNumOfValidWords(words, puzzles) {
             return count;
         }, 0);
     });
+}
+
+/**
+Get a map of letters to numbers, 1 - 26
+Use a new Array(26).fill(0).map((z, int) => ) ... char code at
+then use left shift to get bit
+and do a logical ... bitwise OR to make the masks 
+ */
+function findNumOfValidWords_bak(words, puzzles) {
+    // return [1,2,3,4] // no. 
+
 }
 
 
