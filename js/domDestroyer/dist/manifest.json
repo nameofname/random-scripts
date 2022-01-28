@@ -1,23 +1,21 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "DomDestroyer",
   "description": "Destroy parts of the dom with a click",
   "version": "1",
   "author": "nameofname",
-  "permissions": ["activeTab"]
-  "browser_action": {
+  "permissions": ["activeTab"],
+  "action": {
     "default_title": "Notifier",
     "default_icon": "icon.png"
-  },
-  "background": {
-    "scripts": [
-      "dist/bundle.js"
-    ]
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["dist/bundle.js"]
+      "js": ["bundle.js"]
     }
-  ]
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
  }
