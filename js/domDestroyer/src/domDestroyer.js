@@ -1,4 +1,5 @@
 function destroy(e) {
+    e.preventDefault();
     e.target.parentNode.removeChild(e.target);
 }
 function enable() {
