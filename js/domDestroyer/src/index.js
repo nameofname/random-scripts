@@ -5,20 +5,19 @@ const muscleAscii = require('./muscle-ascii');
 
 const startArr = "destroy".split('').map(letter => letter.charCodeAt());
 const stopArr = "stop".split('').map(letter => letter.charCodeAt());
+let isOn = false;
 function turnOn() {
     enable();
     removeScrollClasses();
     console.log(muscleAscii);
+    isOn = true;
 }
-listenKeypress(startArr, turnOn);
-listenKeypress(stopArr, () => {
+function turnOff () {
     disable();
     console.log('stop DOM Destroyer');
-});
-// enable when the dom destroyer icon is clicked
-chrome.browserAction.onClicked.addListener(turnOn);
- 
- function removeScrollClasses() {
+    isOn = false;
+}
+function removeScrollClasses() {
     // remove all classes from the DOM that contain the word 'Scroll'
     // this is specifically so I can read recipes on my favorite site
     var items = document.getElementsByTagName("*");
@@ -30,3 +29,12 @@ chrome.browserAction.onClicked.addListener(turnOn);
         });
     });
 }
+// enable / disable when user types key phrases
+listenKeypress(startArr, turnOn);
+listenKeypress(stopArr, turnOff);
+// enable / disable when the dom destroyer icon is clicked
+chrome.runtime.onMessage.addListener(msg => {
+    if(msg.txtt==="domDestroyer") {
+        isOn ? turnOff() : turnOn();
+    }
+});
