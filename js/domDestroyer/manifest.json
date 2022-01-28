@@ -4,11 +4,7 @@
   "description": "Destroy parts of the dom with a click",
   "version": "1",
   "author": "nameofname",
-  "permissions": [
-        "storage",
-    "tabs",
-    "<all_urls>"
-  ],
+  "permissions": ["activeTab"]
   "browser_action": {
     "default_title": "Notifier",
     "default_icon": "icon.png"
