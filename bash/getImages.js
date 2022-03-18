@@ -2,9 +2,11 @@
 
 require('isomorphic-fetch');
 const { parse } = require('url');
+const cheerio = require('cheerio');
+const { spawnSync } = require('child_process');
+
 const URL = process.argv[2] || '';
 const url = parse(URL);
-const { spawnSync } = require('child_process');
 
 if (!URL || !url.protocol) {
     console.log(`Please include a valid URL, got this: ${URL}`);
@@ -13,6 +15,7 @@ if (!URL || !url.protocol) {
 
 const extensions = ['jpg', 'jpeg', 'png'];
 
+// adds a numeric suffix to the file name, before the extension
 function enumerateFilename(fileName) {
     const fileArr = fileName.split('.');
     const extension = fileArr.pop();
@@ -51,6 +54,18 @@ fetch(URL)
             matches = matches.concat(Object.keys(deduped));
         });
 
+        // TODO !!!!!!! 
+        // There are 2 cases to solve for ... 
+        // 1. sometimes images don't have extensions
+        // 2. sometimes images are rendered very soon after load
+        // The following page is an example of both : https://www.zipcomic.com/comedy-comics-1948-issue-1 
+        // So I should check for images that don't match the regex by parsing image tags src attribute, AND 
+        // find a way to get client rendered images
+        const $ = cheerio.load(data);
+        const imgs = $('img').attr('class');
+        console.log('imgs', imgs)
+
+        console.log('matches', matches)
         // if there are duplicate file names, number them to avoid conflict : 
         const fileMap = matches.reduce((map, filePath) => {
             let fileName = filePath.split('/').slice(-1)[0];
