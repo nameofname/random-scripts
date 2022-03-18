@@ -1,6 +1,18 @@
 "use strict";
 let n = 5;
 console.log(n);
+// Arrays: 
+// An array can be specified to be of a certain type : 
+const a1 = ['asdf', 'asdfasdf'];
+const a2 = [1, 2, 3];
+// Tuples : multiple types in arrays : 
+const tup = [1, 'asdf'];
+// Tuple array: 
+const tArr = [
+    [1, 'ron'],
+    [2, 'danielle'],
+    [3, 'harry'],
+];
 // Functions : 
 function adder(x, y) {
     return x + y;
