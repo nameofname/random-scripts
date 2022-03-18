@@ -1,6 +1,20 @@
 let n:number = 5;
 console.log(n);
 
+// Arrays: 
+// An array can be specified to be of a certain type : 
+const a1: string[] = ['asdf', 'asdfasdf'];
+const a2: number[] = [1,2,3];
+
+// Tuples : multiple types in arrays : 
+const tup: [number, string] = [1, 'asdf'];
+// Tuple array: 
+const tArr: tup[] = [
+    [1, 'ron'],
+    [2, 'danielle'],
+    [3, 'harry'],
+];
+
 // Functions : 
 function adder(x: number, y: number): number {
     return x + y;
