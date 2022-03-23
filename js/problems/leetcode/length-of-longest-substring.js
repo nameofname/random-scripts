@@ -90,6 +90,23 @@ var lengthOfLongestSubstring = function(s) {
     return ss.length > longest ? ss.length : longest;
 };
 
+// Here is somebody else's BRILLIANT solution, I just had to copy it here I love this
+// It's really similar to my initial solution, but with way less cruft 
+// Also! It's use of maps over objects, and Math.max() over ternaries is just... so good 
+// All of the comments are mine : 
+var lengthOfLongestSubstring = function(s) {
+    const map = new Map() // using a map is more performant 
+    let start = 0 // they use a left pointer instead of current / longest
+    let max = 0 // longest 
+    for(let i = 0; i < s.length; i++) { // loop once through
+        let ch = s[i] // current character
+        if(map.get(ch) >= start) start = map.get(ch) + 1 // If we've seen this letter before, move the left pointer to right after it
+        // ^ also note that the >= comparison here is checking whther map.get(ch) is an interger, as undefined would return false
+        map.set(ch, i) // setting the current character index in map
+        max = Math.max(max, i - start + 1) // the current string is i (current pointer) - start (left pointer) + 1 (0 indexing)
+    }
+    return max
+};
 
 
 
