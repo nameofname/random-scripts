@@ -5,6 +5,7 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
-    "puppeteer": "^13.5.1"
+    "puppeteer": "^13.5.1",
+    "yargs": "^17.4.0"
   }
 }

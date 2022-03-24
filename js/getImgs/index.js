@@ -1,10 +1,18 @@
 const { spawnSync } = require('child_process');
 const cheerio = require('cheerio');
 const puppeteer = require("puppeteer");
+const yargs = require('yargs/yargs');
 
-let u = process.argv[2] || '';
-u = new URL(u, 'http://example.com');
-const argUrl = `${u.protocol}//${u.hostname}${u.pathname}`; // excludes query params
+const args = yargs(process.argv.slice(2))
+    .option('n', {
+        alias: 'numbered',
+        describe: 'use numbered file names',
+        type: 'boolean'
+    })
+    .argv
+;
+const u = new URL(args._ && args._[0], 'http://example.com');
+const argUrl = u.href;
 
 if (!argUrl) {
     console.log(`Please include a valid URL, got this: ${argUrl}`);
@@ -54,10 +62,11 @@ async function parseImgs(data) {
 function suffixImgs(imgArr) {
     return imgArr.reduce((map, filePath) => {
         if (!filePath) {
-            console.log(`falsy filepath defined in ${imgArr}`);
+            console.warn(`falsy filepath defined in ${imgArr}`);
             return map;
         }
-        let fileName = filePath.split('/').slice(-1)[0];
+        let fileName = new URL(filePath, 'http://example.com').pathname;
+        fileName = fileName.split('/').slice(-1)[0];
         while (map[fileName]) {
             fileName = enumerateFilename(fileName);
         }
@@ -71,11 +80,13 @@ function saveImgs(fileMap) {
     process.chdir('./image-downloads');
     Object.keys(fileMap).forEach(fileName => {
         console.log(`fetching ${fileName} from ${fileMap[fileName]}`);
-        spawnSync('wget', ['-O', fileName, fileMap[fileName], '-T', '10']);
+        // learnd the hard way that timeout option has to be in the front
+        spawnSync('wget', ['-T', '3', '--tries', '1', '-O', fileName, fileMap[fileName]]);
     });
 }
 
 async function getImgs(url) {
+    console.log(`fetching images for ${url}`);
     const data = await getData(url);
     const imgs = await parseImgs(data);
     const fileMap = suffixImgs(imgs);
