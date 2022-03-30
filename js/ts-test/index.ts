@@ -143,3 +143,6 @@ function getArray<T>(arr: T[]): T[] {
 const numArray = getArray<number>([1,2,3,4]);
 const strArray = getArray<string>(['bob', 'lob', 'law']);
 // strArray.push(1); // error
+// So you can see that the <T> is kind of a placeholder, you want to use the same function
+// for different things, but you don't want to decide the type for all uses of the funciton
+// and it allows you to do that at function invocation time. 
