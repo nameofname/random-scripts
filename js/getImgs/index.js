@@ -12,9 +12,8 @@ const args = yargs(process.argv.slice(2))
     .argv
 ;
 const u = new URL(args._ && args._[0], 'http://example.com');
-const argUrl = u.href;
 
-if (!argUrl) {
+if (!u.href) {
     console.log(`Please include a valid URL, got this: ${argUrl}`);
     process.exit(1);
 }
@@ -59,14 +58,23 @@ async function parseImgs(data) {
 }
 
 // step 3
-function suffixImgs(imgArr) {
-    return imgArr.reduce((map, filePath) => {
+function suffixImgs(imgArr, useNumbered) {
+    return imgArr.reduce((map, filePath, idx) => {
         if (!filePath) {
             console.warn(`falsy filepath defined in ${imgArr}`);
             return map;
         }
+
         let fileName = new URL(filePath, 'http://example.com').pathname;
         fileName = fileName.split('/').slice(-1)[0];
+
+        if (useNumbered) {
+            let extension = fileName.split('.')[1];
+            extension = (extension || '').length < 5 ? extension : '';
+            const numberedFileName = `${idx}${extension ? '.' : ''}${extension || ''}`;
+            return Object.assign(map, {[numberedFileName]: filePath});
+        }
+
         while (map[fileName]) {
             fileName = enumerateFilename(fileName);
         }
@@ -85,12 +93,14 @@ function saveImgs(fileMap) {
     });
 }
 
-async function getImgs(url) {
+async function getImgs(url, useNumbered) {
+    // console.log(...arguments)
+    // process.exit()
     console.log(`fetching images for ${url}`);
     const data = await getData(url);
     const imgs = await parseImgs(data);
-    const fileMap = suffixImgs(imgs);
+    const fileMap = suffixImgs(imgs, useNumbered);
     return saveImgs(fileMap);
 }
 
-module.exports = () => getImgs(argUrl);
+module.exports = () => getImgs(u.href, args.numbered);
