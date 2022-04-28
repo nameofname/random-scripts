@@ -1,3 +1,4 @@
+// https://leetcode.com/problems/container-with-most-water/
 /**
  * This solution is too slow to pass
  * @param {number[]} height
@@ -16,7 +17,7 @@ var maxArea_bad = function(height) {
             max = area > max ? area : max;
         }
     }
-    console.log('OLD loops', loops);
+    // console.log('OLD loops', loops);
     return max;
 };
 
@@ -26,10 +27,10 @@ var maxArea_bad = function(height) {
  * ... you're choosing each line as the new middle and searching outwards
  * But if you think about it, this approach discovers just as many combos as the last
  * ... and it's actually double counting a few... which I could fix, but it's not worth it. 
- * @param {*} height 
- * @returns 
+ * @param {number[]} height
+ * @return {number}
  */
-function maxArea(height) {
+function maxArea_bad1(height) {
     let l, r;
     let max = 0;
     let loops = 0;
@@ -44,9 +45,9 @@ function maxArea(height) {
             const h = height[l] < height[r] ? height[l] : height[r];
             const area = h * (r - l);
             max = area > max ? area : max;
-            console.log('checking', height[l], height[r], h, area);
+            // console.log('checking', height[l], height[r], h, area);
             if (area > max) {
-                console.log('got it', l, r, h, area);
+                // console.log('got it', l, r, h, area);
                 max = area;
             }
 
@@ -59,10 +60,70 @@ function maxArea(height) {
             }
         }
     }
-    console.log('NEW loops', loops);
+    // console.log('NEW loops', loops);
     return max;
 }
 
+/**
+ * This solution works! However it's much slower than other submissions.
+ * OK I FIGURED OUT WHY THIS SOLUTION IS SO SLOW...
+ * I'm doing way more work than I need to
+ * I'm checking each height, and finding the lines taht intersect
+ * However, you just need to work in from the outside
+ * There's a simple solution type to this kind of problem called a 2-point solution
+ * where you have a left and right poitner and you just work in from the outside
+ * 
+ * @param {number[]} height
+ * @return {number}
+ */
+function maxArea_ok(height) {
+    let max = 0;
+
+    const used = new Map();
+    for (let i = 0; i < height.length; i++) {
+        l = 0, r = height.length - 1;
+        // don't check if we've used this height before
+        if (used.get(height[i])) {
+            continue;
+        }
+        used.set(height[i], true);
+        // shhorten the length of the line until
+        // you intersect with 2 vertical lines
+        // i.e. search from the outside in
+        while (height[l] < height[i]) {
+            l++;
+        }
+        while (height[r] < height[i]) {
+            r--;
+        }
+        const area = height[i] * (r - l);
+        max = Math.max(max, area);
+    }
+
+    return max;
+}
+
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+function maxArea(height) {
+    let l = 0, r = height.length - 1, max = 0;
+    while (l < r) {
+        const shorter = Math.min(height[l], height[r]);
+        const area = shorter * (r - l);
+        max = Math.max(max, area);
+        if (height[l] > height[r]) {
+            r--;
+        } else {
+            l++;
+        }
+    }
+    return max;
+}
+
+
 console.log(maxArea([1,8,6,2,5,4,8,3,7]));
-console.log(maxArea_bad([1,8,6,2,5,4,8,3,7]));
+console.log(maxArea([1,2]));
+// console.log(maxArea_bad([1,8,6,2,5,4,8,3,7]));
 // console.log(maxArea([1,1]));
