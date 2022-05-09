@@ -1,4 +1,5 @@
 /**
+ * The problem is to remove the dupes from a sorted array by modifying in place
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/submissions/
  * @param {number[]} nums
  * @return {number}
