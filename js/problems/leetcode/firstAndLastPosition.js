@@ -7,7 +7,7 @@
  definitely more clear headed, but the edge cases and bugs were tough to nail all down
  https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/submissions/
  */
- function searchRange(nums, target) {
+function searchRange_bak(nums, target) {
     if (nums.length === 1) {
         // edge case - can't binary search over an array of length = 1
         return nums[0] === target ? [0, 0] : [-1, -1];
@@ -69,4 +69,40 @@
     }
 
     return [leftBoundary, rightBoundary];
+};
+
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number[]}
+ 9:00, 9:07, 9:35, 9:37
+ */
+function searchRange(nums, target) {
+    let l = 0, r = nums.length - 1, L, R;
+    while (l <= r && L === undefined) {
+        const mid = l + Math.floor((r - l) / 2);
+        if (nums[mid] === target && nums[mid - 1] !== target) {
+            L = mid;
+        } else if (nums[mid] < target) {
+            l = mid + 1;
+        } else {
+            r = mid - 1;
+        }
+    }
+
+    if (L === undefined) return [-1, -1];
+
+    l = 0, r = nums.length - 1; // reset l, r
+    while (l <= r && R === undefined) {
+        const mid = l + Math.floor((r - l) / 2);
+        if (nums[mid] === target && nums[mid + 1] !== target) {
+            R = mid;
+        } else if (nums[mid] > target) {
+            r = mid - 1;
+        } else {
+            l = mid + 1;
+        }
+    }
+
+    return [L, R];
 };
