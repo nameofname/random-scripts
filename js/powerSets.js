@@ -3,7 +3,7 @@
  * For an array [1, 2] the sets would be : 
  *      [1], [1, 2], [2]
  * For an array [1, 2, 3] ...
- *      [1], [1, 2], [1, 2, 3], [2], [2, 3], [3], [3, 1]
+ *      [1], [1, 2], [1, 3], [1, 2, 3], [2], [2, 3], [3]
  * Note that the subset cares about the order,
  * ie. it's not like a permutation, so you can't have [1, 2] and [2, 1]
  * 
