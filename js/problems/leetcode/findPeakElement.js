@@ -4,6 +4,8 @@
 // however, in the worst case, it's still going to take N time
 // there's just no scenario i can think of where you don't have to visit every node in the worst case
 
+// UPDATE : this one worked. f yeah.
+
 function findPeakElement(nums) {
     if (nums.length === 1) return 0;
     let found;

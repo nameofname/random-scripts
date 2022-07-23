@@ -4,7 +4,9 @@
 // maybe there are languages where you can't key a map on any arbitrary thing
 // but in JS you can just throw it into a map
 
-function getIntersectionNode(haedA, headB) {
+// UPDATE: submitted, totally worked. 
+
+function getIntersectionNode(headA, headB) {
     const m = new Map();
     function _check(node) {
         if (!node) return false;
@@ -15,8 +17,8 @@ function getIntersectionNode(haedA, headB) {
     while (headA || headB) {
         if (_check(headA)) return headA;
         if (_check(headB)) return headB;
-        headA = headA.next;
-        headB = headB.next;
+        headA = headA?.next;
+        headB = headB?.next;
     }
-    return 0;
+    return null;
 }

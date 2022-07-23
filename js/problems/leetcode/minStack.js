@@ -1,5 +1,7 @@
 // https://leetcode.com/problems/min-stack/
 
+// UPDATE : this one worked just fine! 
+
 class MinStack {
     
     a = [];
