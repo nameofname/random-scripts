@@ -7,11 +7,10 @@ function titleToNumber(str) {
             [String.fromCharCode(c)]: c - 64
         }), {});
 
-    // return codeMap;
     let res = 0;
     const letters = str.split('');
     for (let i = 0; i < str.length; i++) {
-        const factor = i === 0 ? 1 : 26 * i;
+        const factor = Math.pow(26, i);
         res += codeMap[letters.pop()] * factor;
     }
     return res;
@@ -22,3 +21,5 @@ console.log(titleToNumber('C'));
 console.log(titleToNumber('Z'));
 console.log(titleToNumber('AB'));
 console.log(titleToNumber('ZY'));
+console.log(titleToNumber('AAA'));
+console.log(titleToNumber("FXSHRXW")); // 2147483647 - not 8239
