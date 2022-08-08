@@ -8,7 +8,8 @@
  * ... the combos are of total amount and # of coins, 
  * not the specific coins used to arrive at that total
  * It's a long function, and the running time with high
- * numbers doesn't pass muster with leetcode. 
+ * numbers doesn't pass muster with leetcode 
+ * (ie. time limit exceeded)
  */
  function coinChange_ronald(coins, amount) {
     if (amount === 0) return 0;

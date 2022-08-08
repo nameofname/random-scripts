@@ -6,14 +6,34 @@ console.log(n);
 const a1: string[] = ['asdf', 'asdfasdf'];
 const a2: number[] = [1,2,3];
 
+// Arrays of objects can be confusing : 
+type MyObj = {
+    name: String
+};
+// this represents an object, with a property "objects" that 
+// points to an array of MyObj, almost always what you'd want 
+type ArrayOfMyObj = {
+    objects: MyObj[]
+};
+// this has a property "objects" that can contain only 0 or 1 
+// MyObj, the use case for this is relevant when it comes to 
+// tuples, see below
+type ArrayOfOneMyObj = {
+    objects: [MyObj?]
+}
 // Tuples : multiple types in arrays : 
+type Tup = [number, string];
+// now we have 2 ways of saying the same thing : 
 const tup: [number, string] = [1, 'asdf'];
+const Tup: [number, string] = [1, 'asdf'];
 // Tuple array: 
-const tArr: tup[] = [
+const tArr: Tup[] = [
     [1, 'ron'],
     [2, 'danielle'],
     [3, 'harry'],
 ];
+// if you try to reverse the order you get an error " 
+// const errorArr: Tup = ['bla', 1]; // Type 'string' is not assignable to type 'number'.
 
 // Functions : 
 function adder(x: number, y: number): number {
@@ -25,6 +45,19 @@ function adder(x: number, y: number): number {
 function logStrNum(message: string | number): void {
     console.log(message);
 }
+
+function cb(s: String) {
+    return 'well i did this : ' + s;
+}
+
+// Functions as arguments : 
+function doSomething(callback: Function) {
+    const s = 'id love to do this thing';
+    console.log(s);
+    return callback(s);
+}
+
+doSomething(cb);
 
 // Type Assertion, 2 forms, <> and as
 // Note* type assertion is really useful in cases like this
