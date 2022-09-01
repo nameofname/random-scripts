@@ -5,13 +5,25 @@ console.log(n);
 // An array can be specified to be of a certain type : 
 const a1 = ['asdf', 'asdfasdf'];
 const a2 = [1, 2, 3];
-// Tuples : multiple types in arrays : 
+// now we have 2 ways of saying the same thing : 
 const tup = [1, 'asdf'];
+const Tup = [1, 'asdf'];
 // Tuple array: 
 const tArr = [
     [1, 'ron'],
     [2, 'danielle'],
     [3, 'harry'],
+];
+// destructuring from arrays is sort of counterintuitive : 
+const arr = [1, 2];
+const [n1, n2] = arr;
+// but what about this : 
+const [t1, t2] = [123, 'string'];
+// if you try to reverse the order you get an error " 
+// const errorArr: Tup = ['bla', 1]; // Type 'string' is not assignable to type 'number'.
+// 2d arrays can get very confusing in TS, but the syntax is like :
+const stringMatrix = [
+    ['one', 'two', 'three']
 ];
 // Functions : 
 function adder(x, y) {
@@ -22,6 +34,18 @@ function adder(x, y) {
 function logStrNum(message) {
     console.log(message);
 }
+function cb(s) {
+    return 'well i did this : ' + s;
+}
+// Functions as arguments : 
+function doSomething(callback) {
+    const s = 'id love to do this thing';
+    console.log(s);
+    return callback(s);
+}
+doSomething(cb);
+const nn = "Ronald";
+// const nnn:NameStr = "Dumbo"; // error.
 // Type Assertion, 2 forms, <> and as
 // Note* type assertion is really useful in cases like this
 // where the type is ambiguous
@@ -75,3 +99,7 @@ function getArray(arr) {
 const numArray = getArray([1, 2, 3, 4]);
 const strArray = getArray(['bob', 'lob', 'law']);
 // strArray.push(1); // error
+// So you can see that the <T> is kind of a placeholder, you want to use the same function
+// for different things, but you don't want to decide the type for all uses of the funciton
+// and it allows you to do that at function invocation time. 
+//# sourceMappingURL=index.js.map

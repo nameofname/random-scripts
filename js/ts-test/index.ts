@@ -32,8 +32,19 @@ const tArr: Tup[] = [
     [2, 'danielle'],
     [3, 'harry'],
 ];
+// destructuring from arrays is sort of counterintuitive : 
+const arr = [1, 2];
+const [ n1, n2 ]: number[] = arr;
+// but what about this : 
+const [ t1, t2 ]: [number, string] = [123, 'string'];
+
 // if you try to reverse the order you get an error " 
 // const errorArr: Tup = ['bla', 1]; // Type 'string' is not assignable to type 'number'.
+
+// 2d arrays can get very confusing in TS, but the syntax is like :
+const stringMatrix: string[][] = [
+    ['one', 'two', 'three']
+];
 
 // Functions : 
 function adder(x: number, y: number): number {
@@ -58,6 +69,14 @@ function doSomething(callback: Function) {
 }
 
 doSomething(cb);
+
+// Enums: there is an enum concept in TS
+// however for the normal use case you'd think of, 
+// ie. a string can only be one of 5 things
+// youd use string literals, like so : 
+type NameStr = "Ronald"|"Amanda"|"Bobby"
+const nn:NameStr = "Ronald";
+// const nnn:NameStr = "Dumbo"; // error.
 
 // Type Assertion, 2 forms, <> and as
 // Note* type assertion is really useful in cases like this
