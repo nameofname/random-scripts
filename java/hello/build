@@ -1,2 +1,7 @@
-javac HelloWorld.java
-java HelloWorld $1
+#! /bin/bash
+
+# javac HelloWorld.java
+# java HelloWorld $1
+
+javac Ternary.java
+java Ternary
