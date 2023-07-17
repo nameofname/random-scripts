@@ -5,22 +5,34 @@ const yargs = require('yargs');
 const express = require('express');
 
 
+// let file;
 const args = yargs(process.argv.slice(2))
+    .command({
+        command: '<file>',
+        alias: 'f',
+        desc: 'the file to serve'
+    })
+    .demandCommand(1, 'You must specify the file to serve')
     .option('p', {
         alias: 'port',
         describe: 'port to use',
-        default: 4321,
+        default: 5555,
         type: 'number'
     })
-    .option('f', {
-        alias: 'file',
-        describe: 'path to the file',
-        type: 'string'
-    })
-    .demandOption(['file'])
+    // .check((argv) => {
+    //     file = argv._[0]
+    //     if (file) {
+    //         return true // tell Yargs that the arguments passed the check
+    //     }
+    //     throw new Error("File name is required")
+    // })
+    .help()
 .argv
 
-let { file, port } = args;
+const { port, _ } = args;
+let file = _[0];
+
+// console.log('ronaldy', args, file, port)
 
 file = path.resolve(process.cwd(), file)
 console.log('Starting static server for : ', file);
@@ -32,4 +44,4 @@ app.get('/', (req, res) => {
     res.sendFile(file);
 });
 
-app.listen(port, () => console.log(`Server listening on port: ${port}`));
+app.listen(port, () => console.log(`Server listening on : http://localhost:${port}/`));
