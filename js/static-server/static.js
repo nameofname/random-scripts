@@ -5,7 +5,6 @@ const yargs = require('yargs');
 const express = require('express');
 
 
-// let file;
 const args = yargs(process.argv.slice(2))
     .command({
         command: '<file>',
@@ -19,29 +18,16 @@ const args = yargs(process.argv.slice(2))
         default: 5555,
         type: 'number'
     })
-    // .check((argv) => {
-    //     file = argv._[0]
-    //     if (file) {
-    //         return true // tell Yargs that the arguments passed the check
-    //     }
-    //     throw new Error("File name is required")
-    // })
     .help()
 .argv
 
 const { port, _ } = args;
 let file = _[0];
-
-// console.log('ronaldy', args, file, port)
-
 file = path.resolve(process.cwd(), file)
 console.log('Starting static server for : ', file);
 
 const app = express();
-// app.use(express.static)
-
 app.get('/', (req, res) => {
     res.sendFile(file);
 });
-
 app.listen(port, () => console.log(`Server listening on : http://localhost:${port}/`));
