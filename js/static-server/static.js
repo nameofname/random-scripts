@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const path = require('path');
+const fs = require('fs');
 const yargs = require('yargs');
 const express = require('express');
 
@@ -27,7 +28,14 @@ file = path.resolve(process.cwd(), file)
 console.log('Starting static server for : ', file);
 
 const app = express();
-app.get('/', (req, res) => {
-    res.sendFile(file);
-});
+const isDir = fs.lstatSync(file).isDirectory();
+
+if (isDir) {
+    app.use(express.static(file));
+} else {
+    app.get('/', (req, res) => {
+        res.sendFile(file);
+    });
+}
+
 app.listen(port, () => console.log(`Server listening on : http://localhost:${port}/`));
