@@ -1,7 +1,7 @@
 let n:number = 5;
 console.log(n);
 
-// Arrays: 
+// // // // // // // // // // // Arrays: 
 // An array can be specified to be of a certain type : 
 const a1: string[] = ['asdf', 'asdfasdf'];
 const a2: number[] = [1,2,3];
@@ -21,7 +21,7 @@ type ArrayOfMyObj = {
 type ArrayOfOneMyObj = {
     objects: [MyObj?]
 }
-// Tuples : multiple types in arrays : 
+// // // // // // // // // // // Tuples : multiple types in arrays : 
 type Tup = [number, string];
 // now we have 2 ways of saying the same thing : 
 const tup: [number, string] = [1, 'asdf'];
@@ -46,7 +46,7 @@ const stringMatrix: string[][] = [
     ['one', 'two', 'three']
 ];
 
-// Functions : 
+// // // // // // // // // // // Functions : 
 function adder(x: number, y: number): number {
     return x + y;
 }
@@ -61,7 +61,7 @@ function cb(s: String) {
     return 'well i did this : ' + s;
 }
 
-// Functions as arguments : 
+// // // // // // // // // // // Functions as arguments : 
 function doSomething(callback: Function) {
     const s = 'id love to do this thing';
     console.log(s);
@@ -70,7 +70,7 @@ function doSomething(callback: Function) {
 
 doSomething(cb);
 
-// Enums: there is an enum concept in TS
+// // // // // // // // // // // Enums: there is an enum concept in TS
 // however for the normal use case you'd think of, 
 // ie. a string can only be one of 5 things
 // youd use string literals, like so : 
@@ -85,7 +85,7 @@ let cid: any = 1;
 let c1 = <number>cid;
 let c2 = cid as number;
 
-// Objects 
+// // // // // // // // // // // Objects 
 type User = {
     readonly id: number
     name: string
@@ -121,6 +121,21 @@ interface NameInterface {
 name: string
 }
 type pppperson = NameInterface & AgeInterface 
+
+// Sometimes you don't konw the keys that will be present in an object: 
+type FlexibleObject = {
+    [key: string]: number
+}
+
+const flexObj1 = {
+    ron: 1,
+    dani: 2
+};
+// However it's also legal to assign other values 
+const flexObj2 = {
+    ron: 'do',
+    dani: 'derp'
+};
 
 // I HONESTLY DON'T GET THE USE OF INTERFACES VS. TYPES!!! 
 
@@ -176,7 +191,7 @@ class ManGuy extends Guy {
     }
 }
 
-// Generics !!! 
+// // // // // // // // // // // Generics !!! 
 // Finally the fucking angle brackets! 
 // It's basically a placeholder type that you can define later
 // So... you could have a function like this : 
