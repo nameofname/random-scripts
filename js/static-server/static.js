@@ -19,10 +19,16 @@ const args = yargs(process.argv.slice(2))
         default: 5555,
         type: 'number'
     })
+    .option('t', {
+        alias: 'throttle',
+        describe: 'request timeout in milliseconds',
+        default: 0,
+        type: 'number'
+    })
     .help()
 .argv
 
-const { port, _ } = args;
+const { port, throttle, _ } = args;
 let file = _[0];
 file = path.resolve(process.cwd(), file)
 console.log('Starting static server for : ', file);
@@ -30,12 +36,16 @@ console.log('Starting static server for : ', file);
 const app = express();
 const isDir = fs.lstatSync(file).isDirectory();
 
+function throttler(req, res, next) {
+    setTimeout(next, throttle);
+}
+
 if (isDir) {
-    app.use(express.static(file));
+    app.use(throttler, express.static(file));
 } else {
-    app.get('/', (req, res) => {
+    app.use(throttler, (req, res) => {
         res.sendFile(file);
     });
 }
 
-app.listen(port, () => console.log(`Server listening on : http://localhost:${port}/`));
+app.listen(port, () => console.log(`Server listening on : http://localhost:${port}/ with throttle ${throttle}`));
