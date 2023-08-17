@@ -19,8 +19,8 @@ const args = yargs(process.argv.slice(2))
         default: 5555,
         type: 'number'
     })
-    .option('t', {
-        alias: 'throttle',
+    .option('d', {
+        alias: 'delay',
         describe: 'request timeout in milliseconds',
         default: 0,
         type: 'number'
