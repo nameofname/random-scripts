@@ -44,10 +44,10 @@ export default function serve() {
         app.get('/', delayer, function(req, res) {
             res.send(getIndex(_path));
         });
-        app.use(delayer, express.static(_path));
+        app.use(delayer, express.static(_path, { maxAge: 5000 }));
     } else {
         app.use(delayer, (req, res) => {
-            res.sendFile(_path);
+            res.sendFile(_path, { maxAge: 5000 });
         });
     }
     app.listen(port, () => console.log(`Server listening on : http://localhost:${port}/ with a delay of ${delay}`));
