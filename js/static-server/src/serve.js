@@ -38,15 +38,20 @@ function delayer(req, res, next) {
     setTimeout(next, delay);
 }
 
+function logger(req, res, next) {
+    console.log(req.method, req.url);
+    next();
+}
+
 export default function serve() {
     const app = express();
     if (isDir) {
-        app.get('/', delayer, function(req, res) {
+        app.get('/', delayer, logger, function(req, res) {
             res.send(getIndex(_path));
         });
-        app.use(delayer, express.static(_path, { maxAge: 5000 }));
+        app.use(delayer, logger, express.static(_path, { maxAge: 5000 }));
     } else {
-        app.use(delayer, (req, res) => {
+        app.use(delayer, logger, (req, res) => {
             res.sendFile(_path, { maxAge: 5000 });
         });
     }
