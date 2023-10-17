@@ -26,8 +26,8 @@ const args = yargs(process.argv.slice(2))
     })
     .help()
 .argv
-
 const { port, delay, _ } = args;
+
 let _path = _[0];
 _path = path.resolve(process.cwd(), _path)
 console.log('Starting static server for : ', _path);
