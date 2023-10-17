@@ -70,6 +70,13 @@ function doSomething(callback: Function) {
 
 doSomething(cb);
 
+// If you have a strongly typed function as an argument,
+// you can create a type for that with arrow function syntax! 
+type Cb = (s: string, n: number) => void;
+function punchIt(cb: Cb) {
+    cb('punch', 5);
+}
+
 // // // // // // // // // // // Enums: there is an enum concept in TS
 // however for the normal use case you'd think of, 
 // ie. a string can only be one of 5 things
