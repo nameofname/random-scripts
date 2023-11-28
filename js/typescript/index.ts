@@ -92,6 +92,19 @@ let cid: any = 1;
 let c1 = <number>cid;
 let c2 = cid as number;
 
+// Actual enums are one of the odd cases where TS will allow you to use a type as a value :
+enum Types {
+    ONE = 'one',
+    TWO = 'two',
+}
+
+console.log(Types.ONE);
+
+// and the enum can also be used to type check strings :
+const typeOne: Types = Types.ONE;
+// const typeTwo: Types = 'two'; // errors even though it's correct
+const typeTwo: Types = 'two' as Types; // over-ride b/c we know it's correct
+
 // // // // // // // // // // // Objects 
 type User = {
     readonly id: number
