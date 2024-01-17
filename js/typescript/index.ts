@@ -233,3 +233,28 @@ const strArray = getArray<string>(['bob', 'lob', 'law']);
 // So you can see that the <T> is kind of a placeholder, you want to use the same function
 // for different things, but you don't want to decide the type for all uses of the funciton
 // and it allows you to do that at function invocation time. 
+
+// keyof and index signatures 
+// https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures
+// https://www.typescriptlang.org/docs/handbook/2/keyof-types.html
+
+// keyof is super useful because sometimes you want tao specify that a variable 
+// is a key in another variable, eg. an object or array
+type SomeShape = Record<string, string>;
+let SomeShapeKey: keyof SomeShape;
+
+// combine keyof with typeof 
+const bla : Record<string, string> = {};
+bla['hey'] = 'adf';
+const blaKey: keyof typeof bla = 'hey';
+
+// The above can all be used with something called an index signature
+// An index signature is basically when you define what type the keys / indicies of an object can be : 
+type SomeOtherShape = { [key: string]: string };
+const SomeOtherKey: keyof SomeOtherShape = 'aKey';
+// in a sick twist of fate this is also legal :
+const SomeOtherKey1: keyof SomeOtherShape = 5;
+// because javascript coerces number keys to string
+// however, inexplicably, this is not legal : 
+// const SomeOtherKey2: keyof SomeOtherShape = true;
+// even though JS will coerce a boolean key to string as well
