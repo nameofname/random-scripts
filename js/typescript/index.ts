@@ -234,6 +234,78 @@ const strArray = getArray<string>(['bob', 'lob', 'law']);
 // for different things, but you don't want to decide the type for all uses of the funciton
 // and it allows you to do that at function invocation time. 
 
+// Generics can be optional! It's tricky though if you're passing optional generics around
+// https://garbagevalue.com/blog/optional-generic-typescript#detailed-example-of-optional-generic-type
+type OptionalGeneric<A, B = void> = {
+    contextA: A,
+    contextB: B,
+}
+
+// the following 2 types use OptionalGenric as base to define the new type
+// notice that 1 or 2 generics can be defined in the new type
+type Optional1<A> = OptionalGeneric<A>;
+type Optional2<A, B> = OptionalGeneric<A, B>;
+// type Optional3<A, B, C> = OptionalGeneric<A, B, C>; // error
+
+// A more realistic example is to have the base type require all generics
+// and child types overriding those generics as optional
+type BaseGeneric<A, B> = {
+    something: A,
+    else: B
+}
+
+type ExtendedGeneric1<A, B = void> = BaseGeneric<A, B>;
+type ExtendedGeneric2<A = void, B = void> = BaseGeneric<A, B>;
+
+// ExtendedGeneric1 requires a single generic to be defined
+const extended1: ExtendedGeneric1<string> = {
+    something: 'adsf',
+    else : undefined
+};
+
+// ExtendedGeneric2 requires neither generic to be defined
+const extended2: ExtendedGeneric2 = {
+    something: undefined,
+    else : undefined
+};
+
+// Here's an example where I want a property in an object to be optional : 
+type GenericTest<A, B = void> = {
+    something: A,
+    else?: B,
+};
+type ExtendedA<A, B> = GenericTest<A, B>;
+const extendedA: ExtendedA<string, string> = {
+    something: 'adsf',
+    else: 'asdf',
+}
+type ExtendedB<A> = GenericTest<A>;
+const extendedB: ExtendedB<number> = {
+    something: 1
+};
+
+// Here's another example where I show how to override a generic with string
+// notice the ? making the 'again' prop optional
+type GenericTest1<A, B, C> = {
+    something: A,
+    else: B, 
+    again?: C,
+}
+
+function useGeneric<A, B>(props: GenericTest1<A, B, string>): GenericTest1<A, B, string> {
+    const again = props.again ? props.again : 'derp';
+    return {
+        something: props.something,
+        else: props.else,
+        again: again
+    };
+}
+
+const result = useGeneric<number, number>({
+    something: 1,
+    else: 2,
+});
+
 // keyof and index signatures 
 // https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures
 // https://www.typescriptlang.org/docs/handbook/2/keyof-types.html
@@ -258,3 +330,5 @@ const SomeOtherKey1: keyof SomeOtherShape = 5;
 // however, inexplicably, this is not legal : 
 // const SomeOtherKey2: keyof SomeOtherShape = true;
 // even though JS will coerce a boolean key to string as well
+
+
