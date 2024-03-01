@@ -1,11 +1,12 @@
 {
   "name": "static-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Local server for static files",
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ssl-proxy": "node ./index.js $1 ~/Desktop/tmp/headers -p 5555 & local-ssl-proxy --source 443 --target 5555"
   },
   "bin": {
     "serve": "./index.js"
@@ -15,6 +16,7 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "express": "^4.18.2",
+    "local-ssl-proxy": "^2.0.5",
     "yargs": "^17.7.2"
   }
 }
