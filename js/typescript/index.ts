@@ -77,6 +77,25 @@ function punchIt(cb: Cb) {
     cb('punch', 5);
 }
 
+// Instead of typing the arguments and return value, you can define a
+// whole function and reuse it! This is really useful for React 
+// function components
+type aFunc = (a: string) => string;
+const func: aFunc = (a: string) => {
+    return 'adsf';
+}
+
+// More complicated is a function signature that denotes the function
+// should have some properties. It looks like an object but note the top
+// level callable 
+type funk = {
+    (b: string): string;
+    displayName: string; 
+}
+
+const myFunc: funk = (a: string) => `Hey ${a}`;
+myFunc.displayName = 'asdf';
+
 // // // // // // // // // // // Enums: there is an enum concept in TS
 // however for the normal use case you'd think of, 
 // ie. a string can only be one of 5 things
@@ -306,6 +325,29 @@ const result = useGeneric<number, number>({
     else: 2,
 });
 
+// here's a problem I was having with generics - how do you denote that a param
+// can be either or 2 types ?
+type Thing<A, B=void> = {
+    one: A,
+    two: B | {}
+};
+
+// this is the problem : 
+class Thingo<A, B = void> {
+    public doSomething(props: {one: A, two: B}): Thing<A, B> {
+        return {
+            one: props.one,
+            two: props.two,
+        }
+    }
+}
+
+const thing1 = new Thingo<string, string>();
+thing1.doSomething({ one: 'asdr', two: 'asdf'})
+const thing2 = new Thingo<string>();
+// ERROR! How to make this work??
+// thing2.doSomething({ one: 'asdr', two: {}});
+
 // keyof and index signatures 
 // https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures
 // https://www.typescriptlang.org/docs/handbook/2/keyof-types.html
@@ -330,5 +372,4 @@ const SomeOtherKey1: keyof SomeOtherShape = 5;
 // however, inexplicably, this is not legal : 
 // const SomeOtherKey2: keyof SomeOtherShape = true;
 // even though JS will coerce a boolean key to string as well
-
 
