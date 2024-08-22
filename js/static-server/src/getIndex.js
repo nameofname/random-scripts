@@ -1,12 +1,13 @@
 import path from 'path';
 import fs from 'fs';
 
-function para(s) {
-    return `<p><a href="/${s}">${s}</a></p>`;
+function para(reqPath, s) {
+    const newPath = path.join(reqPath, s);
+    return `<p><a href="/${newPath}">${s}</a></p>`;
 }
 
-let index;
-export default function getIndex(_path) {
+export default function getIndex(_path, reqPath) {
+    let index;
     if (index !== undefined) {
         return index;
     }
@@ -20,7 +21,7 @@ export default function getIndex(_path) {
         <body>
             <h1>Local Static Server Directory Listing /</h1>
             ${
-                fs.readdirSync(_path).reduce((a, c) => a + para(c), '')
+                fs.readdirSync(_path).reduce((a, c) => a + para(reqPath, c), '')
             }
         </body>
     </html>

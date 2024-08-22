@@ -26,7 +26,7 @@ const args = yargs(process.argv.slice(2))
         type: 'number'
     })
     .help()
-.argv
+    .argv
 const { port, delay, _ } = args;
 
 let _path = _[0];
@@ -44,8 +44,20 @@ function logger(req, res, next) {
     next();
 }
 
+function getDirectoryListing(req, res, next) {
+    const reqPath = '.' + req.path;
+
+    const newPath = path.resolve(_path, reqPath);
+    const isDir = fs.lstatSync(newPath).isDirectory();
+    console.log('getting request ', isDir, newPath)
+    if (isDir) {
+        return res.send(getIndex(newPath, reqPath));
+    }
+    return next();
+}
+
 // Respond to POST requests, mostly for testing purposes.
-function postResponder (req, res, next) {
+function postResponder(req, res, next) {
     if (Object.keys(req.body).length) {
         req.body.staticServer = true;
         return res.json(req.body);
@@ -56,14 +68,15 @@ function postResponder (req, res, next) {
 export default function serve() {
     const app = express();
     if (isDir) {
-        app.get('/', delayer, logger, function(req, res) {
-            res.send(getIndex(_path));
-        });
+        // app.get('/', delayer, logger, function(req, res) {
+        //     res.send(getIndex(_path));
+        // });
         app.use(
             delayer,
             bodyParser.json(),
             logger,
             postResponder,
+            getDirectoryListing,
             express.static(_path, { maxAge: 5000 })
         );
 
