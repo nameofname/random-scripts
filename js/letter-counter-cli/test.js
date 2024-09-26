@@ -24,7 +24,18 @@ const { stdin } = process;
 let stack = [];
 stdin.on('keypress', (s, key) => {
     process.stdout.write('\u001B[2J\u001B[0;0f');
-    console.log('ronaldy', key)
+    // console.log('ronaldy 1', s)
+    console.log('ronaldy 2', key)
+    if (key.name === 'backspace') {
+        stack.pop();
+    } else {
+        stack.push(key.name);
+    }
+
+    rl.write(`boop diddily \n ${stack.join('')}`);
+    // console.log('ronaldy 1', s)
+    // rl.write(stack.join(''));
+
     // stack.push(key.sequence) // TODO ! 
     // if (key.ctrl && key.name == 'l') {
     //     process.stdout.write('\u001B[2J\u001B[0;0f');
