@@ -9,12 +9,14 @@ const rl = readline.createInterface({
 });
 
 function isLetter(str) {
-    return str.length === 1 && str.match(/[a-z]/i);
+    return str && str.length === 1 && str.match(/[a-z]/i);
 }
 
 function isSpace(str) {
-     return str === ' '
+    return str === ' '
 }
+
+const allLetters = new Array(26).fill(1).map((_, i) => String.fromCharCode(97 + i));
 
 stdin.on('keypress', (s, key) => {
     process.stdout.write('\u001B[2J\u001B[0;0f');
@@ -23,16 +25,18 @@ stdin.on('keypress', (s, key) => {
     const kkey = key.name === 'space' ? ' ' : key.name;
     if (key.name === 'backspace') {
         stack.pop();
-        delete deduped[kkey];
-    } else {
-        if (isLetter(kkey)) {
-            Object.assign(deduped, { [kkey.toLowerCase()]: true });
-        }
-        if (isLetter(kkey) || isSpace(kkey)) {
-            stack.push(kkey);
-        }
+    } else if (isLetter(kkey) || isSpace(kkey)) {
+        stack.push(kkey.toLowerCase());
     }
 
-    const keyArr = Object.keys(deduped);
-    rl.write(`${stack.join('')} \n letters used (${keyArr.length}): [ ${keyArr.join(', ')} ]}`);
+    let deduped = stack.reduce((a, c) => {
+        return isLetter(c) ? Object.assign(a, { [c]: true }) : a;
+    }, {});
+    const remaining = allLetters.reduce((a, c) => deduped.hasOwnProperty(c) ? a : [...a, c], []);
+    deduped = Object.keys(deduped).sort();
+
+    rl.write(`${stack.join('')}
+        \n letters used (${deduped.length}): [ ${deduped.join(', ')} ]
+        \n remaining letters (${remaining.length}): [ ${remaining.join(', ')} ]
+        \n sentence length: ${stack.length}`);
 });
