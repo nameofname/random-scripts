@@ -1,0 +1,1 @@
+console.log('this is the child process', globalThis.ronald);
