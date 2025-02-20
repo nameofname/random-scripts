@@ -1,0 +1,40 @@
+config:
+  target: http://localhost:3000
+  phases:
+    - duration: 60
+      arrivalRate: 1
+      rampTo: 5
+      name: Warm up phase
+    - duration: 60
+      arrivalRate: 5
+      rampTo: 10
+      name: Ramp up load
+    # - duration: 30
+    #   arrivalRate: 10
+    #   rampTo: 30
+    #   name: Spike phase
+  # Load & configure a couple of useful plugins
+  # https://docs.art/reference/extensions
+  plugins:
+    ensure: {}
+    apdex: {}
+    metrics-by-endpoint: {}
+  apdex:
+    threshold: 100
+  variables:
+    id:
+      - '123'
+      - '234'
+      - '345'
+      - '456'
+      - '567'
+      - '678'
+      - '789'
+      - '890'
+      - '901'
+      - '012'
+scenarios:
+  - flow:
+        - get:
+            url: '/dynamic/{{ id }}'
+    count: 100
