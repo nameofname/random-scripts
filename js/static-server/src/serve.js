@@ -68,16 +68,15 @@ function postResponder(req, res, next) {
 export default function serve() {
     const app = express();
     if (isDir) {
-        // app.get('/', delayer, logger, function(req, res) {
-        //     res.send(getIndex(_path));
-        // });
+        console.log('ronaldy serving!');
         app.use(
             delayer,
             bodyParser.json(),
             logger,
             postResponder,
             getDirectoryListing,
-            express.static(_path, { maxAge: 5000 })
+            // express.static(_path, { maxAge: 0, lastModified: false })
+            express.static(_path)
         );
 
     } else {
