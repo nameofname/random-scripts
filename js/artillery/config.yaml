@@ -1,18 +1,14 @@
 config:
   target: http://localhost:3000
   phases:
-    - duration: 60
+    - duration: 5
       arrivalRate: 1
-      rampTo: 5
-      name: Warm up phase
-    - duration: 60
-      arrivalRate: 5
+      rampTo: 50
+      name: FAST warm up phase
+    - duration: 10
+      arrivalRate: 50
       rampTo: 10
-      name: Ramp up load
-    # - duration: 30
-    #   arrivalRate: 10
-    #   rampTo: 30
-    #   name: Spike phase
+      name: Spike phase
   # Load & configure a couple of useful plugins
   # https://docs.art/reference/extensions
   plugins:
@@ -36,5 +32,5 @@ config:
 scenarios:
   - flow:
         - get:
-            url: '/dynamic/{{ id }}'
+            url: '/dynamic/{{ id }}/mfe'
     count: 100
