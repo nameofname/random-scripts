@@ -1,14 +1,16 @@
 config:
-  target: http://localhost:3000
+  target: https://nameof-clouddesk.aka.corp.amazon.com:3000
+  tls:
+    rejectUnauthorized: false
   phases:
     - duration: 5
       arrivalRate: 1
-      rampTo: 50
-      name: FAST warm up phase
-    - duration: 10
-      arrivalRate: 50
-      rampTo: 10
-      name: Spike phase
+      # rampTo: 50
+      name: Slow consistent requests
+    # - duration: 10
+    #   arrivalRate: 50
+    #   rampTo: 10
+    #   name: Spike phase
   # Load & configure a couple of useful plugins
   # https://docs.art/reference/extensions
   plugins:
@@ -19,18 +21,13 @@ config:
     threshold: 100
   variables:
     id:
-      - '123'
-      - '234'
-      - '345'
-      - '456'
-      - '567'
-      - '678'
-      - '789'
-      - '890'
-      - '901'
-      - '012'
+      - '5026356150001'
+      - '594094548171872452'
+      - '577550071282002919'
+      - '3621556210401'
+      - '4541492570401'
 scenarios:
   - flow:
         - get:
-            url: '/dynamic/{{ id }}/mfe'
+            url: '/dsp/ENTITY3NWTTFDT6USZU/line-items/{{ id }}/edit?nextUX=true'
     count: 100
