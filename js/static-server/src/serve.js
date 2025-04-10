@@ -1,10 +1,14 @@
-import path from 'path';
+import path, { dirname } from 'path';
 import fs from 'fs';
 import yargs from 'yargs';
 import express from 'express';
 import getIndex from './getIndex.js';
 import bodyParser from 'body-parser';
+import serverFavicon from 'serve-favicon';
+import { fileURLToPath } from 'url';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const args = yargs(process.argv.slice(2))
     .command({
@@ -98,12 +102,13 @@ export default function serve() {
     if (isDir) {
         console.log('ronaldy serving!');
         app.use(
+            serverFavicon(path.join(__dirname, 'favicon/favicon.ico')),
             delayer,
             bodyParser.json(),
             logger,
             postResponder,
             getDirectoryListing,
-            // testFailOnce('FILE_NAME_HERE'),
+            testFailOnce('__federation_expose_sample.fe6e906f48e2a1f0.js'),
             express.static(_path)
         );
 
