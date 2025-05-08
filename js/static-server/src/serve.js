@@ -85,7 +85,8 @@ function testFailOnce(fileName) {
                 setTimeout(() => {
                     timeToDie = true
                     console.log('ready for another test.');
-                }, 30000);
+                // }, 30000);
+                }, 1000);
                 res.header('Content-Type', 'application/xml');
                 console.log('ronaldy breaking intentionally');
                 return res.status(404).send('<Error><Code>NoSuchKey</Code><Message>Blerp.</Message><Key>123-123-123-123-123/beep/bop/boop.js</Key><RequestId>ABC123</RequestId><HostId>heyyyy</HostId></Error>');
@@ -108,7 +109,8 @@ export default function serve() {
             logger,
             postResponder,
             getDirectoryListing,
-            testFailOnce('__federation_expose_sample.fe6e906f48e2a1f0.js'),
+            // testFailOnce('__federation_expose_mfeB.692dca6e2aee4495.js'),
+            testFailOnce('476.4d78d4bfc8dd4d3c.js'),
             express.static(_path)
         );
 
