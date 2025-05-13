@@ -1,5 +1,6 @@
 import path, { dirname } from 'path';
 import fs from 'fs';
+import { execSync } from 'child_process';
 import yargs from 'yargs';
 import express from 'express';
 import getIndex from './getIndex.js';
@@ -85,7 +86,6 @@ function testFailOnce(fileName) {
                 setTimeout(() => {
                     timeToDie = true
                     console.log('ready for another test.');
-                // }, 30000);
                 }, 1000);
                 res.header('Content-Type', 'application/xml');
                 console.log('ronaldy breaking intentionally');
@@ -96,6 +96,29 @@ function testFailOnce(fileName) {
         }
         return next();
     }
+}
+
+let timeToSwitch = 0;
+function testSwitchNextBuilds(req, res, next) {
+    if (!fs.existsSync('./_next_bak')) {
+        console.log('There is no BAK dir, do nothing.');
+        return next();
+    }
+    if (req.originalUrl.includes('remoteEntry.js') && req.originalUrl.includes('ssr')) {
+        if (timeToSwitch === 2) {
+            console.log('replacing your directory.');
+            execSync('mv _next_bak tmp && mv _next _next_bak && mv tmp _next');
+            timeToSwitch = false;
+            setTimeout(() => {
+                timeToSwitch = 0
+                console.log('ready for another test.');
+            }, 1000);
+        } else {
+            console.log('NOT replacing your directory.');
+            ++timeToSwitch;
+        }
+    }
+    return next();
 }
 
 export default function serve() {
@@ -109,8 +132,8 @@ export default function serve() {
             logger,
             postResponder,
             getDirectoryListing,
-            // testFailOnce('__federation_expose_mfeB.692dca6e2aee4495.js'),
-            testFailOnce('476.4d78d4bfc8dd4d3c.js'),
+            // testFailOnce('476.4d78d4bfc8dd4d3c.js'),
+            testSwitchNextBuilds,
             express.static(_path)
         );
 
