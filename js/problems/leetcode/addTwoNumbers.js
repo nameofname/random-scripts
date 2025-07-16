@@ -48,6 +48,10 @@ var addTwoNumbers_bak = function(l1, l2) {
 
     return first;
 };
+
+/**
+ * Second accepted answer using while loop. Works. 
+ */
 var addTwoNumbers = function(l1, l2) {
     let remainder = 0;
     let out;
@@ -71,3 +75,24 @@ var addTwoNumbers = function(l1, l2) {
 
     return out;
 };
+
+
+/**
+ * Came back a few years later and did this one using recursion. 
+ * LeetCode reports that this solution beasts 99.78% of submissions.
+ * Recursion FTW!
+ */
+var addTwoNumbers = function (l1, l2) {
+    function _nextNode(node1, node2, remainder) {
+        if (node1?.val !== undefined || node2?.val !== undefined) {
+            const sum = (node1?.val || 0) + (node2?.val || 0) + remainder;
+            remainder = sum > 9 ? 1 : 0;
+            const n = sum % 10;
+            // console.log('makin some nums', sum, remainder, n, node1?.val, node2?.val)
+            return new ListNode(n, _nextNode(node1?.next, node2?.next, remainder));
+        } else if (remainder) {
+            return new ListNode(remainder);
+        }
+    }
+    return _nextNode(l1, l2, 0);
+}
