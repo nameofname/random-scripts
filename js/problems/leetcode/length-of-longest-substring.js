@@ -118,3 +118,76 @@ console.log(lengthOfLongestSubstring('abcabcbb'))
 // console.log(lengthOfLongestSubstring("dvdf"))
 // console.log(lengthOfLongestSubstring("abcdedcba"))
 console.log(lengthOfLongestSubstring("12345367890")) // 45367890 (length of 8)
+
+
+////////////////////////////////////////////////////////////////
+
+/**
+ * Years later, just did this one, only took a few minutes but has terrible perf
+ */
+var lengthOfLongestSubstring = function (s) {
+    let longest = 0;
+    let currRun = 0;
+    const repeatMap = new Map();
+    for (let i = 0; i < s.length; i++) {
+        // console.log('where i at', i, longest, currRun)
+        const letter = s[i];
+        if (repeatMap.has(letter)) {
+            const lastOccurence = repeatMap.get(letter);
+            // console.log('what i make i now', repeatMap.get(letter), letter, lastOccurence + 1)
+            repeatMap.clear();
+            longest = currRun > longest ? currRun : longest;
+            // currRun = 1;
+            // repeatMap.set(letter, i)
+            i = lastOccurence;
+            currRun = 0;
+        } else {
+            repeatMap.set(letter, i);
+            currRun++;
+        }
+    }
+    return currRun > longest ? currRun : longest;
+}
+
+console.log('asdf', lengthOfLongestSubstring('dvdf'))
+
+
+
+
+/**
+ * Here's a good solution that uses one for loop, straight through
+ * Beats 80% of solutions
+ * This took me WAYYY too long to figure out
+ * The idea is you need to FIRST determine the last safe letter
+ * Then you figure out if you are in the longest run
+ * You always update the repeatMap with the position of the current letter
+ * This helps you find the last safe letter every time through 
+ */
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function (s) {
+    let longest = 0;
+    let lastSafeLetter = 0;
+    const repeatMap = new Map();
+    for (let i = 0; i < s.length; i++) {
+        const letter = s[i];
+        if (repeatMap.has(letter)) {
+            const candidate = repeatMap.get(letter) + 1;
+            lastSafeLetter = candidate < lastSafeLetter ? lastSafeLetter : candidate;
+        }
+        const currRun = i - lastSafeLetter + 1;
+        longest = longest > currRun ? longest : currRun;
+        repeatMap.set(letter, i);
+        // console.log('what i think happened', letter, i, lastSafeLetter, currRun, longest)
+
+    }
+    // console.log('ready to determine stuff', longest)
+    return longest;
+}
+
+// console.log('abba', lengthOfLongestSubstring('dvdf'))
+// console.log('abcba', lengthOfLongestSubstring('abba'))
+// console.log('dvdf', lengthOfLongestSubstring('dvdf'))
+// console.log('tmmzuxt', lengthOfLongestSubstring('tmmzuxt')) // 5
