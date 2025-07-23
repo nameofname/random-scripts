@@ -52,3 +52,20 @@ console.log(reverse(8463847412));
 // console.log(reverse(1534236469));
 // 9646324351
 // 2147483647
+
+/**
+ * Another solution from a year later... this one was pretty easy actually, idk why labeled medium.
+ */
+var reverse = function(x) {
+    let n = String(x).split('').reverse();
+    if (n[n.length - 1] === '-') {
+        n.unshift(n.pop())
+    }
+    // console.log('a', x, n, [n.length - 1] === '-');
+    n = Number(n.join(''));
+    // console.log('c', n, n > Math.pow(2, 31));
+    if ((Math.pow(2, 31) * -1) < n  && n < (Math.pow(2, 31) - 1)) {
+        return n;
+    }
+    return 0;
+};

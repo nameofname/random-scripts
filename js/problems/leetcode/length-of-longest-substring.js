@@ -156,7 +156,7 @@ console.log('asdf', lengthOfLongestSubstring('dvdf'))
 
 /**
  * Here's a good solution that uses one for loop, straight through
- * Beats 80% of solutions
+ * Beats 80 - 95% of solutions
  * This took me WAYYY too long to figure out
  * The idea is you need to FIRST determine the last safe letter
  * Then you figure out if you are in the longest run

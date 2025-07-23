@@ -40,3 +40,50 @@ var longestPalindrome = function(s) {
 // console.log(longestPalindrome('b'));
 console.log(longestPalindrome("gyyvvy")); // yvvy
 
+/**
+ * Here is my answer from a year later. 
+ * This one was not so good... Took a long time, and getting the left and right variables correct was very time consuming
+ * I'm taking lessons from this on being careful about zero based indexing, usage of .slice()
+ * Instead of just using an inner while loop on this one I used a closure
+ * IDK if that was the right choice... I can clearly see though that in my old answer there were fewer while loops
+ * ... which I achieved by simply using 2 right pointeres, and checking each in the same while loop. 
+ * That was definitely better.
+ */
+var longestPalindrome = function(s) {
+    let palindrome = s.slice(0, 1);
+
+    function _getPalindromeAt(substr, i) {
+        let currPalindrome = substr;
+        let right = i;
+        let left = right - substr.length + 1;
+        // console.log('_getPalindromeAt', left, right, substr);
+        if ((right + 1) < (s.length / 2)) {
+            nearestEdge = right;
+        }
+        whileLoop:
+        while (++right < s.length && --left >= 0) {
+            if (s[right] === s[left]) {
+                // console.log('re-evaluate', left, right, s.slice(left, right + 1));
+                currPalindrome = s.slice(left, right + 1);
+            } else {
+                break whileLoop;
+            }
+        }
+        if (currPalindrome.length > palindrome.length) {
+            palindrome = currPalindrome;
+        }
+    }
+
+    for (let i = 1; i < s.length; i++) {
+        // console.log('000', i, s[i], s[i-1], s[i-2])
+        if (s[i] === s[i - 2]) {
+            // console.log('111', i - 2, i, s.slice(i - 2, i + 1));
+            _getPalindromeAt(s.slice(i - 2, i + 1), i);
+        }
+        if (s[i] === s[i - 1]) {
+            // console.log('222', i - 1, i, s.slice(i - 1, i + 1));
+            _getPalindromeAt(s.slice(i - 1, i + 1), i);
+        }
+    }
+    return palindrome;
+}
