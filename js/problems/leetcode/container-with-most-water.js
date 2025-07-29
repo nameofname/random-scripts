@@ -127,3 +127,21 @@ console.log(maxArea([1,8,6,2,5,4,8,3,7]));
 console.log(maxArea([1,2]));
 // console.log(maxArea_bad([1,8,6,2,5,4,8,3,7]));
 // console.log(maxArea([1,1]));
+
+/**
+ * 2.6 years later... 
+ * I did this super quick and it beats ~80% in performance. 
+ * I recall thinking about this for a long time so maybe
+ * I remember it in the back of my mind... Still good. 
+ */
+var maxArea = function(arr) {
+    let max = 0, l = 0, r = arr.length - 1;
+    while (l < r) {
+        const h = Math.min(arr[l], arr[r]);
+        const area = (r - l) * h;
+        max = Math.max(max, area);
+        if (arr[l] > arr[r]) { r--; }
+        else l++
+    }
+    return max;
+}

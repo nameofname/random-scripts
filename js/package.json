@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "clm": "^1.2.0",
-    "colors": "^1.1.2"
+    "colors": "^1.1.2",
+    "nodeplotlib": "^1.1.2"
   }
 }
