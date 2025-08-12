@@ -88,6 +88,17 @@ function checkPerf(mergeSortImpl) {
 }
 
 /**
+ * Comparing my 
+ */
+function jsSort(arr) {
+    return arr.sort((a, b) => {
+        if (a < b) return -1;
+        else if (b < a) return 1;
+        else return 0;
+    });
+}
+
+/**
  * Show that n*log(n) is ALMOST a straight line
  */
 function graphNLogN() {
@@ -108,5 +119,6 @@ function graphNLogN() {
     plot(data);
 }
 
-checkPerf(mergeSort);
 
+checkPerf(mergeSort);
+// console.log(jsSort(getRandArray(20)));

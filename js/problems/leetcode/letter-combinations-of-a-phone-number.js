@@ -38,3 +38,36 @@ function letterCombinations(digits) {
 console.log(letterCombinations('2'));
 console.log(letterCombinations('23'));
 // console.log(letterCombinations('23659364647')); // DO NOT RUN TAKES FOREVER! 
+
+
+/**
+ * 2025 solution - this one beats 100% in run time! 
+ * @param {string} digits
+ * @return {string[]}
+ */
+var letterCombinations = function(digits) {
+    if (digits === "") return [];
+    const o = {
+        2: 'abc',
+        3: 'def',
+        4: 'ghi',
+        5: 'jkl',
+        6: 'mno',
+        7: 'pqrs',
+        8: 'tuv',
+        9: 'wxyz',
+    };
+    let idx = 0;
+    let results = o[digits[idx]].split('');
+    while (digits[++idx]) {
+        const currLetters = o[digits[idx]];
+        const currResults = results;
+        results = [];
+        for (let i = 0; i < currResults.length; i++) {
+            for (let j = 0; j < currLetters.length; j++) {
+                results.push(`${currResults[i]}${currLetters[j]}`)
+            }
+        }
+    }
+    return results;
+};

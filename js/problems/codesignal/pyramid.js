@@ -16,3 +16,21 @@ function pyramid(h) {
     return out.slice(0, -1);
 }
 console.log(pyramid(10));
+
+/**
+ * Did this implementation just now, i think it's slightly better.
+ */
+function pyramid1(h) {
+    const baseWidth = h * 2 - 1;
+    let pad = (baseWidth - 1) / 2;
+    const a = [];
+    for (let i = 0; i < h; i++) {
+        const asterisks = new Array((i + 1) * 2 - 1).fill('*').join('');
+        const ppad = new Array(pad).fill(' ').join('')
+        a.push(`${ppad}${asterisks}${ppad}`);
+        pad -= 1;
+    }
+    return a.join('\n');
+}
+
+console.log(pyramid(10));

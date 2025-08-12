@@ -63,3 +63,34 @@ console.log(isValid("(]"))
 console.log(isValid("{[]}"))
 console.log(isValid("["))
 
+/**
+ * 2025 solution - beats 85%
+ */
+/**
+ * @param {string} s
+ * @return {boolean}
+ */
+var isValid = function(s) {
+    const brackets = {
+        "{": null,
+        "[": null,
+        "(": null,
+        "}": "{",
+        "]": "[",
+        ")": "(",
+    };
+    const b = [];
+    for (let i= 0; i < s.length; i++) {
+        const c = brackets[s[i]];
+        if (c === null) {
+            b.push(s[i])
+        } else if (c) {
+            if (b.slice(-1)[0] !== c) {
+                return false;
+            } else {
+                b.pop();
+            }
+        }
+    }
+    return b.length === 0;
+};
