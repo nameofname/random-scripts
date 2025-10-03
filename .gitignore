@@ -3,4 +3,16 @@ js/salesman/node_modules/
 **/*/node_modules
 *.DS_STORE
 .vscode
+
+# python ignore rules:
+.venv/
+# bytecode & caches
+__pycache__/
 *.pyc
+*.py[cod]
+# tooling caches
+*.pytest_cache/
+.mypy_cache/
+.pytype/
+.pyre/
+
