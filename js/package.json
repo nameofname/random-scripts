@@ -12,5 +12,8 @@
     "clm": "^1.2.0",
     "colors": "^1.1.2",
     "nodeplotlib": "^1.1.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
   }
 }

@@ -59,11 +59,9 @@ const FormContext = createContext(null);
 
 const InputHoc = (Component) => {
   return (formFieldDefinition) => {
-
-    const { formData, updateFormData } = formFieldDefinition;
-    // const res = useContext(FormContext);
-    // const { formData, updateFormData } = res;
-    // console.log('what do i have', res)
+    const res = useContext(FormContext);
+    const { formData, updateFormData } = res;
+    console.log('what do i have', res) // this is null, why? 
 
     const updateFunction = ({ fieldName, fieldValue }) => {
       formData[fieldName] = fieldValue;

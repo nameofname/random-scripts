@@ -24,4 +24,4 @@ function findItin(departing, arriving, budget5) {
         }
     }
 
- * 
+ */

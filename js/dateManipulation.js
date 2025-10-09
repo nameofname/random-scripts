@@ -16,3 +16,5 @@ while (d.getMonth() === 9) {
 }
 
 console.log('Here are all the days in October: ', days);
+
+    #CDD0E5
